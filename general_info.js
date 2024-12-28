@@ -1,2 +1,9 @@
+
+// STANDARD
 STANDARD_ODDSMATCHER_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
 STANDARD_ODDSMATCHER_EXCHANGES = ['Smarkets']
+
+//2UP
+
+
+//EXTRA PLACE

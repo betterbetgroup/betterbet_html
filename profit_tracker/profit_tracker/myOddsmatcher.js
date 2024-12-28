@@ -2339,41 +2339,20 @@ alternateText() {
 
     render() {
         return fetch('z.html')
-            .then(response => response.text())
-            .then(html => {
-                this.shadowRoot.innerHTML = html;
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.text();
+        })
+        .then(html => {
+            // Attach content to shadow DOM
+            this.shadowRoot.innerHTML = html;
     
-                // Ensure elements are fully rendered
-
-            });
-
-
-            /*
-
-
-    return new Promise((resolve, reject) => {
-        try {
-
-            this.shadowRoot.innerHTML = `
-
-                <body>
-
-            `;
-    
-
-        resolve('done');  // Resolve the promise with the result
-
-    }
-
-    catch(error) {
-        reject(error);  // Reject the promise if an error occurs
-
-    }
-
-      });
-
-      */
-
+        })
+        .catch(error => {
+            console.error('Failed to fetch HTML:', error);
+        });
 
     }
 
@@ -2436,18 +2415,6 @@ alternateText() {
                 
 
                 this.shadowRoot.appendChild(link);
-
-
-                /*
-
-                    const style = document.createElement('style');
-                    style.textContent = ``;
-
-                    this.shadowRoot.appendChild(style);
-
-                */
-                
-
                     const fontAwesomeLink = document.createElement('link');
                     fontAwesomeLink.setAttribute('rel', 'stylesheet');
                     fontAwesomeLink.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
