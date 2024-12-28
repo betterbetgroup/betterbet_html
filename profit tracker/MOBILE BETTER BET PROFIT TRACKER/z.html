@@ -1,0 +1,314 @@
+<body>
+
+
+    <div id="outer-container-div">    
+
+
+        <div class="sorting_container"> 
+
+            <label class="filter-label" for="date-range">Sort Events</label>
+            <select id="date-range" class="custom-input-container">
+                <option value="date and time">Sort By Date & Time</option>
+                <option value="qualifying loss">Sort By Qualifying Loss</option>
+                <option value="potenital profit">Sort By Potential Profit</option>
+                <option value="actual profit">Sort By Final Profit</option>
+
+            </select>
+
+
+        </div>
+
+
+        <div class="switch_container">
+
+                <label class="filter-label no-margin-top" for="toggleSwitch">Show Filters</label>
+
+                <label class="switch">
+                    <input type="checkbox" id="toggleSwitch">
+                    <span class="slider"></span>
+                </label>
+        </div>
+
+
+    <div id="filter-panel-container">
+
+
+    
+    <div id="filter-panel">
+
+
+
+
+        <div class="filter-column">
+
+
+            <div class="label_and_input_container">
+                <label class="filter-label no-margin-top" for="bookmakers-select">Bookmakers</label>
+                <div id="bookmakers-dropdown-select-container" class="custom-select-container" tabindex="0">
+                    <div class="custom-select-trigger">
+                        <input id="bookmakers-select" type="text" value="Bookmakers" readonly>
+                    </div>
+                    <div class="dropdown-options" id="bookmakers-dropdown-options">
+                        <label><input type="checkbox" checked class="select-all"> <span></span>Select All Bookmakers</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="label_and_input_container">
+
+                <label class="filter-label no-margin-top" for="exchanges-select">Exchanges</label>
+                <div id="exchanges-dropdown-select-container" class="custom-select-container" tabindex="0">
+                    <div class="custom-select-trigger">
+                        <input id="exchanges-select" type="text" value="Exchanges" readonly>
+                    </div>
+                    <div class="dropdown-options" id="exchanges-dropdown-options">
+                        <label><input type="checkbox" checked class="select-all"> <span></span>Select All Exchanges</label>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+        <div class="filter-column">
+
+            <div class="label_and_input_container">
+
+
+            <label class="filter-label" for="oddsmatchers-select">Oddsmatchers</label>
+            <div id="oddsmatchers-dropdown-select-container" class="custom-select-container" tabindex="0">
+                <div class="custom-select-trigger">
+                    <input id="oddsmatchers-select" type="text" value="Oddsmatchers" readonly>
+                </div>
+                <div class="dropdown-options" id="oddsmatchers-dropdown-options">
+                    <label><input type="checkbox" checked class="select-all"> <span></span>Select All Oddsmatchers</label>
+                </div>
+            </div>
+            </div>
+
+            <div class="label_and_input_container">
+
+
+            <label class="filter-label" for="calculators-select">Calculators</label>
+            <div id="calculators-dropdown-select-container" class="custom-select-container" tabindex="0">
+                <div class="custom-select-trigger">
+                    <input id="calculators-select" type="text" value="Calculators" readonly>
+                </div>
+                <div class="dropdown-options" id="calculators-dropdown-options">
+                    <label><input type="checkbox" checked class="select-all"> <span></span>Select All Calculators</label>
+                </div>
+            </div>
+
+            </div>
+
+
+        </div>
+
+
+
+
+
+
+        <div class="filter-column">
+
+
+            <div class="label_and_input_container">
+
+            <label class="filter-label" for="date-range-start">Start Date</label>
+            <div class="custom-date-wrapper">
+                <input id="date-range-start" type="date" class="date-range-input" placeholder="Start Date">
+            </div>
+            </div>
+
+
+            <div class="label_and_input_container">
+            
+            <label class="filter-label" for="date-range-end">End Date</label>
+            <div class="custom-date-wrapper">
+                <input id="date-range-end" type="date" class="date-range-input" placeholder="End Date">
+            </div>
+            </div>
+
+
+
+
+        </div>
+
+
+
+
+
+        <div class="filter-column">
+
+
+            <div class="label_and_input_container">
+
+            <label class="filter-label" for="min-qualifying-loss">Min Qualifying Loss</label>
+            <div class="text-input-container">
+                <input class="text-input"  id="min-qualifying-loss" placeholder="Min QL" autocomplete="off">
+            </div>
+            </div>
+
+
+            <div class="label_and_input_container">
+
+            <label class="filter-label" for="min-potential-profit">Min Potential Profit</label>
+            <div class="text-input-container">
+                <input class="text-input"  id="min-potential-profit" placeholder="Min PP" autocomplete="off">
+            </div>
+            </div>
+
+
+        </div>
+
+
+
+        <div class="filter-column">
+
+
+            <div class="label_and_input_container">
+
+            <label class="filter-label" for="min-actual-profit">Min Final Profit</label>
+            <div class="text-input-container">
+                <input class="text-input"  id="min-actual-profit" placeholder="Min Final Profit" autocomplete="off">
+            </div>
+            </div>
+
+
+            <div class="label_and_input_container">
+
+            <label class="filter-label" for="max-actual-profit">Max Final Profit</label>
+            <div class="text-input-container">
+                <input class="text-input"  id="max-actual-profit" placeholder="Max Final Profit" autocomplete="off">
+            </div>
+
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+<div class="above-columns">
+
+    <div>
+
+        <div class="div-outside-filter-dropdown">
+
+            <label class="filter-label-filters" for="filters-select">Saved Filters</label>
+
+            <div id="filters-dropdown-select-container" class="custom-select-container-filter" tabindex="0">
+
+                <div class="custom-select-trigger-filter" >
+                    <input id="filters-select" type="text" value="Select Filter" readonly>
+                </div>
+
+                <div class="dropdown-options-filter" id="filters-dropdown-options">
+        
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="save-filter-button">Save Filter</button>
+
+    </div>
+
+
+
+
+
+    <div style="display: block; align-items: center;">
+
+
+        <div class="filter-dropdown-name-div">
+
+            <label class="filter-label-filters" id="type-filter-name" for="get-filter-name">Filter Name</label>
+
+            <input class="text-input-filter-name"  id="get-filter-name" placeholder="Enter a Filter Name" autocomplete="off">
+
+        </div>
+
+        <div style="display: flex; align-content: center; justify-content: center;">
+
+            <button class="confirm-filter-name">Confirm</button>
+
+            <button class="cancel-making-filter" aria-label="Close">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.3,5.71a1,1,0,0,0-1.41,0L12,10.59,7.11,5.7A1,1,0,0,0,5.7,7.11L10.59,12,5.7,16.89a1,1,0,1,0,1.41,1.41L12,13.41l4.89,4.89a1,1,0,0,0,1.41-1.41L13.41,12l4.89-4.89A1,1,0,0,0,18.3,5.71Z"/>
+                </svg>            
+            </button>
+
+        </div>
+
+
+    </div>
+
+                            
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="container-div">
+
+
+    <div id="content">
+
+    
+    <div>
+
+        <div class="container_div">
+
+
+        </div>
+            <!-- ROWS GET ADDED TO THE TABLE HERE  -->
+
+
+    </div>
+
+    <div id="pagination-container" style="text-align: center; margin-top: 20px;">
+        <button id="prev-page">Previous</button>
+        <span id="pagination-info"></span>
+        <button id="next-page">Next</button>
+    </div>
+
+    </div>
+
+
+
+</div>
+
+
+</div>
+
+
+</body>

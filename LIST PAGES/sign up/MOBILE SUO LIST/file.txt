@@ -1,0 +1,53 @@
+10Bet,10Bet
+888Sport,888Sport
+Bet365,Bet365
+Bet600,Bet600
+BetGoodwin,BetGoodwin
+BetMGM,BetMGM
+BetUK,BetUK
+BetVictor,BetVictor
+BetWay,BetWay
+BetZone,BetZone
+Betano,Betano
+Betfair Exchange,Betfair Exchange
+Betfred,Betfred
+BresBet,BresBet
+CopyBet,CopyBet
+DAZN Bet,DAZN Bet
+FafaBet,FafaBet
+FitzDares,FitzDares
+Grosvenor,Grosvenor
+Hollywood Bets,Hollywood Bets
+Kwiff,Kwiff
+Ladbrokes,Ladbrokes
+LeoVegas,LeoVegas
+LiveScoreBet,LiveScoreBet
+Lottoland,Lottoland
+Midnite,Midnite
+NRG,NRG
+NetBet,NetBet
+Paddy Power,Paddy Power
+Parimatch,Parimatch
+PlanetSportBet,PlanetSportBet
+QuinnBet,QuinnBet
+Rhino Bet,Rhino Bet
+Sky Bet,Sky Bet
+Space Casino,Space Casino
+Sporting Bet,Sporting Bet
+Sporting Index,Sporting Index
+SpreadEx,SpreadEx
+StarSports,StarSports
+TalkSPORT BET,TalkSPORT BET
+The Pools,The Pools
+Tote,Tote
+UniBet,UniBet
+VBet,VBet
+Vickers Bet,Vickers Bet
+Virgin Bet,Virgin Bet
+William Hill,William Hill
+
+
+
+Betfair Exchange,Betfair Exchange
+Matchbook,Matchbook
+Smarkets,Smarkets

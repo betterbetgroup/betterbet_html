@@ -1,0 +1,1532 @@
+
+* {
+    box-sizing: border-box; /* Ensures padding and border are included in the width and height */
+}
+
+
+body {
+    background: rgb(0, 0, 0);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    margin: 0;
+    justify-content: center;  
+    min-height: 100vh;        /* Ensures the body is at least the height of the viewport */
+    align-items: center;
+    display: flex;
+
+}
+
+
+#outer-container-div {
+    background: none;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding: 20px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 0 auto;
+    justify-content: center;  
+    min-height: 100vh;        /* Ensures the body is at least the height of the viewport */
+    align-items: center;
+    width: 100%;
+    padding-bottom: 100px;
+
+
+}
+
+#container-div {
+    display: flex;
+    width: 100%;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Neon Pulse Bars */
+.neon-pulse {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    perspective: 1000px;
+    animation: rotatePulse 2s linear infinite; /* Rotating neon bars */
+ }
+ 
+ 
+ .neon-bar {
+    width: 15px;
+    height: 60px;
+    background: #ff00c6;
+    box-shadow: 0px 0px 20px rgba(255, 0, 198, 0.8); /* Neon pink glow */
+    border-radius: 5px;
+    transform-origin: center bottom;
+    animation: neonGrow 1s ease-in-out infinite;
+ }
+ 
+ 
+ /* Keyframes for the growing and shrinking effect */
+ @keyframes neonGrow {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.5); /* Grow the bars */
+    }
+ }
+ 
+ 
+ /* Keyframes for rotating the bars */
+ @keyframes rotatePulse {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); /* Full rotation */
+    }
+ }
+ 
+ 
+ /* Background with a glowing gradient */
+ .loading, .no-data-div {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #0a0010, #330033, #0a0010);
+    background-size: 400% 400%;
+    animation: bgAnimation 8s ease infinite;
+    color: white;
+    width: 100%;
+ }
+ 
+ 
+ .no-data-div {
+    background: linear-gradient(270deg, #0a0010, #0c0033, #0a0010);
+    height: 150px;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ /* Smooth gradient animation */
+ @keyframes bgAnimation {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+ }
+ 
+ 
+ /* Loading text styling */
+ .loading-text {
+    margin-top: 40px;
+    font-size: 24px;
+    color: #ff00c6;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-in-out infinite;
+ }
+ 
+ 
+ .no-data-text {
+    margin: 0;
+    color: white;
+ }
+ 
+
+
+/*
+
+
+// NEW SETTINGS FOR CONTENT
+
+
+*/
+/* Hide loading screen and show content after load */
+#content {
+    opacity: 0;
+    animation: contentFadeIn 2s forwards;
+    text-align: center;
+    color: white;
+}
+
+@keyframes contentFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#content {
+    width: 100%; 
+}
+table {
+    border-collapse: collapse;
+    margin: 20px auto;
+    border: 1px solid #333;
+    background: #333;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+    width: 100%;
+ 
+ 
+ }
+ 
+ 
+ 
+ 
+ table:hover {
+    box-shadow: 0 12px 24px rgba(0,0,0,0.8); /* Enhanced hover effect */
+ }
+ 
+ 
+ th, td {
+    padding: 15px 10px; /* More balanced padding */
+    text-align: center; /* Center alignment for better readability */
+    border-bottom: 0px solid #555; /* Slightly lighter border for rows */
+ 
+ 
+ }
+ 
+ 
+ .table-header {
+    background: linear-gradient(180deg, #000000, #121212);
+    border: 1px solid #333;
+    border-radius: 12px 12px 0 0; /* top-left, top-right, bottom-right, bottom-left */
+ 
+ 
+ }
+ th {
+ 
+ 
+    color: #eee; /* Icy blue for clarity and visual appeal */
+    font-size: 16px;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px black; /* Text shadow for depth */
+    border-right: 0px solid #666;
+ 
+ 
+ }
+ td {
+    background: #222; /* Horizontal gradient for a glossy header */
+    color: #ddd;
+    font-size: 14px;
+    transition: background-color 0.3s; /* Smooth transition for hover */
+ }
+ tr:last-child td {
+    border-bottom: none;
+ }
+ 
+ 
+ tbody tr:nth-child(even) td {
+    background-color: #222; /* Darker shade */
+ }
+ 
+ 
+ tbody tr:nth-child(odd) td {
+    background-color: #1e1e1e; /* Lighter shade */
+ }
+ 
+ 
+ tbody tr:hover td {
+    background-color: #333; /* Subtle hover effect for cells */
+ }
+ 
+ 
+ 
+
+#rating_header {
+    width: 50px;
+    padding: 0;
+    padding-top: 13px;
+}
+
+
+#extra_places_header {
+    width: 70px;
+    padding: 0;
+}
+
+#outcome_header, #fixture_header {
+    max-width: 220px;
+}
+
+
+
+
+.rating_header_span, .extra_places_header_span {
+    margin-bottom: 20px;    
+}
+
+
+#fixture_info_header {
+    width: 40px;
+}
+
+#date_and_time_header {
+    width: 75px;
+    padding: 0;
+    padding-top: 13px;
+
+
+}
+
+#expected_profit_header {
+    width: 210px;
+    padding: 0;
+    padding-top: 13px;
+    padding-left: 2px;
+    padding-right: 2px;
+
+    
+}
+td[id^='date_time_'] {
+
+line-height: 135%;
+padding-top: 0px;
+padding-bottom: 0px;
+
+}
+
+
+div[class='expected_profit_data'] {
+    display: flex;  
+    align-items: center;  
+    justify-content: space-around; 
+    padding: 0;
+    margin: 0;
+    height: 65px;
+}
+
+.negative_profit_data, .positive_profit_data {
+    flex: 1;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+    height: 65px;
+
+    display: grid;
+    line-height: 65px;
+
+}
+
+
+
+
+
+
+div[class='odds_and_bookmaker'] {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 65px;
+}
+
+td[class='odds_and_bookmaker'] {
+    background: #222;
+    background: linear-gradient(145deg, #141313, #1e1d1d); /* Horizontal gradient for a glossy header */
+
+}
+
+
+
+#win_lay_odds_and_bookmaker {
+
+    background: linear-gradient( 145deg, rgba(84, 8, 84, 0.2), rgb(224, 46, 224, 0.2)); /* A green to light green gradient */
+
+}
+
+
+
+#back_each_way_odds_and_bookmaker {
+
+    background-color: rgba(37, 71, 221, 0.15);
+    background: linear-gradient( 145deg, rgba(23, 46, 144, 0.15), rgba(60, 90, 223, 0.12)); /* A green to light green gradient */
+
+}
+
+
+.no_padding_margin {
+    padding: 0;
+    margin: 0;
+}
+
+
+.back_odds_value {
+    background: linear-gradient( 145deg, #007bff, #5396de); /* A green to light green gradient */
+    display: flex;
+    align-items: center;  
+    justify-content: center;  
+
+}
+
+.lay_odds_value {
+    background: linear-gradient( 145deg, rgb(225, 104, 124), rgb(230, 127, 144)); /* A green to light green gradient */
+    display: flex;
+    align-items: center;  
+    justify-content: center;  
+
+}
+
+.lay_odds_value_2 {
+    background: linear-gradient( 145deg, rgb(142, 160, 8), rgb(170, 178, 14)); /* A green to light green gradient */
+    display: flex;
+    align-items: center;  
+    justify-content: center;  
+
+}
+
+
+
+
+
+.div_around_logo {
+    display: inline-block; 
+    width: 110px;
+}
+
+.bookmaker_logo_img, .exchange_logo_img {
+
+display: flex;
+align-items: center;  
+justify-content: space-around; 
+transition: all 0.3s ease;
+width: 100%;
+border-radius: 5px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+
+
+}
+
+
+.bookmaker_logo_img:hover, .exchange_logo_img:hover {
+    transform: scale(1.08); 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+
+}
+
+
+.back_odds_value, .bookmaker_logo_div, .lay_odds_value, .exchange_logo_div, .lay_odds_value_2 {
+    flex: 1;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+    height: 65px;
+    display: grid;
+
+}
+
+
+
+
+
+
+.back_odds_value, .lay_odds_value, .lay_odds_value_2 {
+    margin-left: 8px;
+    display: flex;
+    color: white;              
+    border-radius: 10%;        
+    width: 40px;              
+    height: 25px;   
+    border: 1px solid #bbb;  
+    line-height: 25px;
+
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+
+    transition: background 0.3s, transform 0.3s;
+
+    max-width: 40px;
+
+
+
+}
+
+
+
+.at_symbol, .at_symbol_outcome {
+
+    margin-right: 8px;
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.at_symbol_outcome {
+    margin-right: 0;
+}
+
+.bookmaker_logo_div, .exchange_logo_div {
+    padding: 0;
+    margin: 0;
+    margin-right: 8px;
+    max-width: 110px;
+                           
+}
+
+
+
+.outcome_value {
+    margin-left: 8px;
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+.positive_profit_data {
+    background: linear-gradient( 145deg, #00ab00, #27d427); /* A green to light green gradient */
+    color: white;
+    transition: background 0.3s ease-in-out;
+
+}
+.negative_profit_data {
+    background: linear-gradient( 145deg, #e40000, #ec4747); /* A red to orange gradient */
+    color: white; /* Ensures text is readable */
+    transition: background 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+
+
+
+
+#button-container {
+    padding: 0;
+    margin: 0;
+    margin-left: 0.6%;
+    background: None;
+    width: auto;
+
+
+}
+
+
+
+#info-container {
+    width: 40px;
+    background: None;
+    margin-right: 2px;
+    flex: 0 0 auto; /* Do not grow, allow shrinking, basis auto */
+
+}
+
+
+.select_button {
+    width: 80px;
+    height: 35px;
+    background: linear-gradient( 145deg, #ff00c6, #fa6fe1); /* Brighter hover state */
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+    border: 0;
+    font-weight: bold;
+
+}
+
+
+.select_button:hover {
+    cursor: pointer;
+    transform: scale(1.06); /* Slight scale to indicate interactive element */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+/* Slight scale to indicate interactive element */
+
+}
+
+.info_button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: None;
+    height: 25px;
+    width: 25px;
+
+
+}
+
+#more_info_button:hover {
+    cursor: pointer;
+    transform: scale(1.1); /* Slight scale to indicate interactive element */
+}
+
+
+
+td[id^='fixture_'] {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+td[id^='outcome'] {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+
+
+
+
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100%;
+    white-space: nowrap;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1000; /* Ensure it's above other elements */
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+#pagination-container button {
+    width: 100px; /* Set a fixed width for both buttons */
+    background: linear-gradient(145deg, #000000, #252525);
+    color: #eee;
+    padding: 10px 15px;
+    text-shadow: 1px 1px 2px black;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6); /* Added shadow */
+    transition: all 0.3s ease;
+    border: 1px solid #333;
+    font-weight: bold; 
+ 
+ 
+ 
+ }
+ 
+ 
+ #pagination-container button:hover {
+    background: linear-gradient(145deg, #000000, #252525);
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+    transform: scale(1.02); /* Slight scale to indicate interactive element */
+ 
+ 
+ }
+ 
+ 
+ #pagination-info {
+    text-shadow: 2px 2px 2px black;
+    font-size: 14px;
+ }
+ 
+
+
+
+
+
+
+
+
+
+
+ .not_premium_member_row {
+    height: 100px;
+    padding: 0;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(180deg, #000000, #121212);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    transition: all 0.3s ease;
+ }
+ 
+ 
+ .outer_div_upgrade {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+ }
+ 
+ 
+ .outer_div_upgrade_text_row {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    line-height: 150%;
+    font-size: 20px;
+    color: linear-gradient( 145deg, #a70707, #ff3321);
+    font-weight: bold;
+ 
+ 
+ }
+ 
+ 
+ .padlock-image {
+    width: 80px;
+    height: 80px;
+    margin: 0 5%;
+ }
+ 
+ 
+ .upgrade-button {
+    background: linear-gradient( 145deg, #a70707, #ff3321);
+    color: white;
+    border: None;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 310px;
+ }
+ 
+ 
+ .upgrade-button:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+ }
+ 
+ 
+ 
+ 
+ .not_premium_member_row:hover {
+    background-color: #222;
+ 
+ 
+ }
+ 
+ 
+ .padlock-image-button {
+ 
+ 
+    width: 26px;
+    height: auto;
+    margin-left: 12px;
+ 
+ 
+ }
+ 
+
+
+
+
+
+td[id^='rating_'] {
+
+    color: white;
+    font-weight: bold;
+    padding: 10px 8px;
+
+}
+
+
+
+
+
+#sort_by_img_rating {
+
+    width: 22px;
+    padding-top: 3px;
+}
+
+
+
+
+#sort_by_img_dt, #sort_by_img_ql, #sort_by_img_pp {
+    width: 22px;
+    padding-top: 3px;
+}
+
+
+
+
+.next_to_date_and_time {
+    padding: 0px;
+    margin: 0px;
+    padding-top: 2px;
+
+}
+
+.container_in_expected_profit_header {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.sort_by {
+    transition: all 0.3s ease;
+
+}
+
+
+.sort_by:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+
+}
+
+
+
+
+
+
+#filter-panel-container {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Change to column to stack elements vertically */
+    color: #eee;
+    margin: 0;
+    margin-bottom: 60px;
+    border-radius: 20px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+    padding-top: 0px;
+    padding-bottom: 5px;
+    border: 1px solid #222;
+    background: linear-gradient(180deg, #111111, #111111);
+}
+
+
+
+
+
+
+.box {
+    position: absolute;
+    width: 100%;
+    padding: 10px;
+    height: 100px;
+    display: flex;
+    flex-direction: column; /* Change to column to stack elements vertically */
+    left: 0;
+    right: 0;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    
+
+  }
+ 
+  .box2 {
+    background-color: black;
+    border-radius: 20px;
+    height: 250px;
+    z-index: 23000;
+    /* Removed opacity */
+}
+.box2 {
+    z-index: 100000;
+    background-color: transparent; /* No background here */
+}
+.box2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: black;
+    border-radius: 20px;
+    opacity: 89%;
+    z-index: -1; /* Behind the content */
+}
+
+.padlock-image-filters {
+    width: 100px;
+    height: 100px;
+    opacity: 1; /* Full opacity */
+}
+
+
+
+
+
+
+
+#filter-panel {
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
+
+
+
+
+
+.filter-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.custom-select-container, .custom-input-container {
+    position: relative;
+    width: calc(100% - 10px); /* Adjust width to fit padding */
+    background: #333;
+    border: 1px solid #444;
+    border-radius: 5px;
+    padding: 10px;
+    color: #eee;
+    margin: 5px 0;
+    cursor: pointer;
+    height: 40px; /* Set a fixed height to match the dropdowns */
+    align-items: center;
+    outline: none; /* Remove focus outline */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+
+}
+
+.custom-select-container:hover, .custom-input-container:hover {
+
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+
+}
+
+
+
+.custom-select-trigger, .custom-input-trigger, .custom-select-trigger-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.custom-select-trigger input, .custom-input-trigger input, .custom-select-trigger-filter input {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #eee;
+    padding-left: 5px;
+    outline: none; /* Remove focus outline */
+    cursor: pointer; /* Ensure pointer cursor */
+}
+
+.custom-select-trigger input:hover, .custom-select-trigger input:focus, .custom-select-trigger-filter input:hover, .custom-select-trigger-filter input:focus {
+    cursor: pointer; /* Ensure pointer cursor on hover and focus */
+
+}
+
+.custom-select-trigger:after, .custom-input-trigger select, .custom-select-trigger-filter:after {
+    content: '\\25BC'; /* Down arrow icon */
+    color: #eee;
+    pointer-events: none;
+    position: absolute;
+    right: 10px;
+}
+
+
+
+
+
+
+
+.custom-select-trigger-filter input {
+
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+
+}
+
+
+
+
+
+
+
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    background: #333;
+    border-radius: 0 0 8px 8px;
+    width: calc(100% + 2px);
+    overflow: hidden;
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1000; /* Ensure dropdown is always on top */
+    border: 1px solid #444; /* Slight border */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.dropdown-options label {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    padding-right: 30px; /* Increase padding to accommodate the scrollbar */
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+}
+
+.dropdown-options label:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.dropdown-options label:hover, .dropdown-option-filter:hover {
+    background-color: #444; /* Slight hover effect */
+}
+
+
+
+
+.dropdown-option-filter {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    padding-right: 22px;; /* Increase padding to accommodate the scrollbar */
+    cursor: pointer;
+    border-bottom: 1px solid #444;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dropdown-options-filter {
+
+    position: absolute;
+    top: 100%;
+    background: #333;
+    border-radius: 0 0 8px 8px;
+    width: 320px;
+    overflow: hidden;
+    display: none;
+    max-height: 200px;
+    overflow-y: auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    z-index: 1001; /* Ensure dropdown is always on top */
+    transition: all 0.3s ease; /* Smooth transition */
+    border: 1px solid #444; /* Slight border */
+
+
+}
+
+
+.dropdown-options {
+    position: absolute;
+    background: #333;
+    color: #fff;
+    width: calc(100% + 2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    z-index: 100;
+    display: none; /* Initially hidden */
+    left: -1px;
+}
+
+.dropdown-option-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 320px;
+}
+
+.filter-delete-button {
+    padding: 5px 10px;
+    font-size: 12px;
+    background: linear-gradient(145deg, #ae0404, #e62828);
+    transition: all 0.3s ease; /* Smooth transition */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: right;    
+}
+
+.filter-delete-button:hover {
+    background: linear-gradient(145deg, #f40a0a, #d73d3d);
+}
+
+
+
+
+.confirm-delete-button {
+    padding: 5px 10px;
+    font-size: 12px;
+    background: linear-gradient(145deg, #0303d9, #0b149b);
+    transition: all 0.3s ease; /* Smooth transition */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: right;   
+    display: none; 
+}
+
+.confirm-delete-button:hover {
+    background: linear-gradient(145deg, #0303d9, #1b26c1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+:host {
+    display: none; /* Hide the custom element initially */
+}
+
+
+/* 
+
+    REMOVE ALL
+
+    OF THE
+
+    CSS WITH CHECKBOX IN IT
+
+    AND COPY AND PASTE
+
+    THE FOLLOWING 
+
+*/
+
+input[type="checkbox"] {
+
+    padding-left: 0;
+    margin-right: 10px;
+    
+}
+
+
+
+.dropdown-options label {
+
+    padding-left: 5px;
+    padding-right: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 13.3px;    
+
+
+}
+
+
+
+
+
+.text-input {
+    width: calc(100% - 10px); /* Adjust width to fit padding */
+    padding: 10px;
+    border-radius: 5px;
+    background: #333;
+    color: #eee;
+    margin: 5px 0;
+    height: 40px; /* Set a fixed height to match the dropdowns */
+    outline: none; /* Remove focus outline */
+    border: 1px solid #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+
+
+}
+
+input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
+    width: calc(100% - 10px); /* Adjust width to fit padding */
+    padding: 10px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    background: #333;
+    color: #eee;
+    margin: 5px 0;
+    height: 40px; /* Set a fixed height to match the dropdowns */
+    outline: none; /* Remove focus outline */
+    position: relative;
+    padding-left: 45px; /* Add padding to the left to make room for the pound sign */
+}
+
+.text-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+}
+
+.text-input-container:before {
+    content: '£';
+    position: absolute;
+    color: #eee;
+    font-size: 22px;
+    z-index: 40; /* Ensure dropdown is always on top */
+    background: linear-gradient(to right, #000000, #1d1b1b); /* Brighter hover state */
+    height: 38px;
+    width: 35px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+    font-weight: bold;
+    border: 1px solid #444;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.text-input:hover {
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+
+}
+
+
+.filter-label {
+    font-size: 12px;
+    color: #bbb;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-top: 10px;
+}
+
+
+
+.above-columns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 95px;
+    border-bottom: 1px solid #222;
+    width: 100%;
+
+}
+
+.save-filter-button, .get-alerts-button, .confirm-filter-name {
+    background: linear-gradient( 145deg, #ff00c6, #fa6fe1); /* Brighter hover state */
+    width: 200px;
+    border-radius: 10px;
+    color: white;
+    font-size: 16px;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    height: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+    font-weight: bold;
+    border: 0;
+    margin-bottom: -10px;
+
+
+
+    
+}
+
+
+
+.cancel-making-filter {
+
+    border-radius: 100px;
+    height: 35px;
+    width: 35px;
+    transition: background 0.3s, transform 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    color: #eee;
+    font-size: 22px;
+    background: #333;
+    margin: 5px 0;
+    border: 1px solid #444;
+    margin: 0;
+    padding: 0;
+    margin-left: 15px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: -10px;
+    display: none;
+}
+
+
+
+
+
+.save-filter-button:hover, .get-alerts-button:hover, .confirm-filter-name:hover{
+    transform: scale(1.03); /* Slight scale to indicate interactive element */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+
+}
+
+.get-alerts-button {
+    background: linear-gradient(145deg, #D4AF37, #B8860B);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.save-filter-button {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.confirm-filter-name {
+
+    width: 120px;
+    background: linear-gradient(to right, #056202, #08ab36); /* Brighter hover state */
+    display: none;
+
+}
+
+
+.cancel-making-filter:hover {
+
+    cursor: pointer;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+
+
+}
+
+
+
+
+.custom-select-container-filter {
+
+    position: relative;
+    background: #333;
+    border: 1px solid #444;
+    color: #eee;
+    padding: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    cursor: pointer;
+    height: 40px; /* Set a fixed height to match the dropdowns */
+    align-items: center;
+    outline: none; /* Remove focus outline */
+    width: 320px;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+
+
+
+
+
+.filter-dropdown-name-div {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin-bottom: 7.5px;
+    margin-right: 10px;
+    display: none;
+}
+
+
+.get_alerts_img {
+    width: 25px;
+    margin-left: 10px;
+}
+
+
+
+.filter-label-filters {
+    font-size: 12px;
+    color: #bbb;
+    font-weight: bold;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    text-align: left;
+}
+
+
+.div-outside-filter-dropdown {
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 7.5px;
+
+    z-index: 10000;
+    
+}
+
+
+.text-input-filter-name {
+
+    width: 300px; /* Adjust width to fit padding */
+    padding: 0;
+    padding-left: 10px;
+    border-radius: 10px;
+    background: #333;
+    color: white;
+    height: 40px; /* Set a fixed height to match the dropdowns */
+    outline: none; /* Remove focus outline */
+    border: 1px solid #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+    font-size: 16px;
+
+
+}
+
+.text-input-filter-name:hover {
+
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+
+}
+
+
+
+.dropdown-option-filter {
+    background: #333; /* Default background */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-option-filter:hover {
+    background: #444; /* Hover background */
+}
+
+.dropdown-option-filter.active {
+    background: #252424; /* Active background */
+    border-left: 0;
+}
+
+.dropdown-option-filter.active:hover {
+    background: #252424; /* Active background */
+}
+
+
+
+.odds-link {
+    color: inherit; /* Inherits the text color from the parent */
+    text-decoration: none; /* Removes underline */
+    display: inline-block; /* Keeps the layout inline */
+    width: 100%; /* Ensures the link covers the full width of its container */
+}
+
+
+
+
+
+
+
+#back_odds_header {
+    width: 150px;    
+}
+
+#lay_odds_header {
+    width: 150px;
+
+}
+
+#place_lay_odds_header {
+    width: 150px;
+
+}
+
+
+
+
+#place_lay_odds_and_bookmaker {
+
+    background: linear-gradient( 145deg, rgba(4, 133, 145, 0.2), rgba(29, 188, 194, 0.2)); /* A green to light green gradient */
+
+}
+
+
+#fixture_header {
+    text-align: left;
+ }
+ #fixture_header, .fixture_data, #outcome_header, .outcome_data  {
+    text-align: left;
+ }
+ 
+ .highlight {
+    background-color: #333 !important;  /* Ensuring it overrides other background-color settings */
+ }
+ 

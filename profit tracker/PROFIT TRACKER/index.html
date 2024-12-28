@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Tracker</title>
+
+
+</head>
+
+<style>
+  @keyframes pulseBackground {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 1), rgb(29, 1, 23), rgba(0, 0, 0, 1));
+    background-size: 200% 200%;
+    animation: pulseBackground 15s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+</style>
+
+<body style="margin-top: 0;">
+
+    <div id="app"  >
+        <profit-tracker ></profit-tracker>
+    </div>
+
+    <script src="myOddsmatcher.js"></script>
+
+    <script>
+        
+        let finalData = {
+
+    "rows": [
+  {
+    "calculator": "dutching",
+    "secondbookie": "Betfair Exchange",
+    "commission": "0,0,0",
+    "thirdbookie": "William Hill",
+    "description": "Dutching Bet with Smarkets, Extra Place Bet on William Hill betting on Indemnity E/W @ 8 (offering 4 Places at 1/5 odds) at the 17:50 Doncaster, Win lay bet placed on Smarkets @ 8.8, Lay bet for 4 Places placed on Smarkets @ 2.8.",
+    "_id": "360f28bc-6d40-4d08-9f5c-669ef840e075",
+    "_owner": "7a0e3af7-3b95-40e4-b557-55060904e9dd",
+    "_createdDate": "Mon Sep 16 2024 09:57:46 GMT+0100 (British Summer Time)",
+    "backodds": "4.90,4.20,2",
+    "potentialprofit": "£2.83",
+    "betId": "bet_1726477066569_512",
+    "_updatedDate": "Mon Sep 16 2024 09:57:46 GMT+0100 (British Summer Time)",
+    "qloss": "£2.83",
+    "complete": false,
+    "date": "12/09/2024",
+    "iscalc": true,
+    "bookie": "Smarkets",
+    "target": "first",
+    "actualprofit": "£2.83",
+    "userId": "7a0e3af7-3b95-40e4-b557-55060904e9dd",
+    "legs": "3",
+    "type": "standard",
+    "backstake": "10",
+    "fixture": 'Extra Place Bet on William Hill betting on ',
+    "outcome": 'Indemnity E/W @ 8'
+  },
+  {
+    "calculator": "dutching",
+    "secondbookie": "Betfair Exchange",
+    "commission": "0,0,0",
+    "thirdbookie": "William Hill",
+    "description": "Dutching Free Bet with Smarkets, Betfair Exchange, and William Hill on Harrogate Town v Doncaster",
+    "_id": "97db6727-b7df-4512-9d38-3ce9034ef8ab",
+    "_owner": "7a0e3af7-3b95-40e4-b557-55060904e9dd",
+    "_createdDate": "Mon Sep 16 2024 09:50:48 GMT+0100 (British Summer Time)",
+    "backodds": "4.90,4.20,1.75",
+    "potentialprofit": "£22.29",
+    "betId": "bet_1726476648454_207",
+    "_updatedDate": "Mon Sep 16 2024 09:50:48 GMT+0100 (British Summer Time)",
+    "qloss": "£22.29",
+    "complete": true,
+    "date": "12/09/2024",
+    "iscalc": true,
+    "bookie": "Smarkets",
+    "target": "first",
+    "actualprofit": "£22.29",
+    "userId": "7a0e3af7-3b95-40e4-b557-55060904e9dd",
+    "legs": "3",
+    "type": "free",
+    "backstake": "30"
+  },
+  {
+    "calculator": "extraplace",
+    "commission": "0,0",
+    "description": "Extra Place Bet on William Hill betting on Indemnity E/W @ 8 (offering 4 Places at 1/5 odds) at the 17:50 Doncaster, Win lay bet placed on Smarkets @ 8.8, Lay bet for 4 Places placed on Smarkets @ 2.9.",
+    "_id": "9524ef3f-c28b-4fc9-af27-9e6387cf9255",
+    "_owner": "5c49b356-2e1d-42db-85ef-2c09ebd14405",
+    "_createdDate": "Sun Sep 15 2024 22:21:31 GMT+0100 (British Summer Time)",
+    "backodds": "8",
+    "placefraction": "5",
+    "potentialprofit": "£21.37",
+    "stakereturned": false,
+    "betId": "bet_1726435284202_936",
+    "_updatedDate": "Sun Sep 15 2024 22:21:31 GMT+0100 (British Summer Time)",
+    "qloss": "-£2.63",
+    "exchange": "Smarkets",
+    "complete": false,
+    "date": "12/09/2024",
+    "iscalc": true,
+    "bookie": "William Hill",
+    "actualprofit": "",
+    "place_exchange": "Smarkets",
+    "userId": "5c49b356-2e1d-42db-85ef-2c09ebd14405",
+    "places": "4,3",
+    "backstake": "10",
+    "ispayout": false,
+    "layodds": "8.8,2.9"
+  },
+  {
+    "calculator": "extraplace",
+    "commission": "0,0",
+    "description": "Extra Place Bet on William Hill betting on Indemnity E/W @ 8 (offering 4 Places at 1/5 odds) at the 17:50 Doncaster, Win lay bet placed on Smarkets @ 8.8, Lay bet for 4 Places placed on Smarkets @ 2.8.",
+    "_id": "5e4be0a3-4ad0-4f2e-a118-75334e7a9b7f",
+    "_owner": "7a0e3af7-3b95-40e4-b557-55060904e9dd",
+    "_createdDate": "Sun Sep 15 2024 22:18:03 GMT+0100 (British Summer Time)",
+    "backodds": "8",
+    "placefraction": "5",
+    "potentialprofit": "£21.66",
+    "stakereturned": false,
+    "betId": "bet_1726435083011_75",
+    "_updatedDate": "Sun Sep 15 2024 22:18:03 GMT+0100 (British Summer Time)",
+    "qloss": "-£2.34",
+    "exchange": "Smarkets",
+    "complete": false,
+    "date": "12/09/2024",
+    "iscalc": true,
+    "bookie": "William Hill",
+    "actualprofit": "",
+    "place_exchange": "Smarkets",
+    "userId": "7a0e3af7-3b95-40e4-b557-55060904e9dd",
+    "places": "4,3",
+    "backstake": "10",
+    "ispayout": false,
+    "layodds": "8.8,2.8"
+  },
+  {
+    "description": "10 Free Spins - Ladbucks",
+    "_id": "47c4c2cf-40ed-4656-9559-86e5dbd11a8f",
+    "_owner": "7300b122-903c-4059-b93b-bfe23715e215",
+    "_createdDate": "Sun Sep 15 2024 21:56:29 GMT+0100 (British Summer Time)",
+    "potentialprofit": "£1.26",
+    "betId": "bet_1726433788543_209",
+    "_updatedDate": "Sun Sep 15 2024 21:56:29 GMT+0100 (British Summer Time)",
+    "qloss": "£",
+    "complete": false,
+    "date": "15/09/2024",
+    "bookie": "Ladbrokes",
+    "actualprofit": "£1.26",
+    "userId": "7300b122-903c-4059-b93b-bfe23715e215"
+  },
+  {
+    "description": "Cancelled Bet - Bolton ",
+    "_id": "74be17a2-673c-4d39-b103-bfcf21164533",
+    "_owner": "7300b122-903c-4059-b93b-bfe23715e215",
+    "_createdDate": "Sun Sep 15 2024 21:43:37 GMT+0100 (British Summer Time)",
+    "potentialprofit": "-£1.91",
+    "betId": "bet_1726433015333_252",
+    "_updatedDate": "Sun Sep 15 2024 21:43:37 GMT+0100 (British Summer Time)",
+    "qloss": "-£1.91",
+    "complete": false,
+    "date": "15/09/2024",
+    "bookie": "Other",
+    "actualprofit": "-£1.91",
+    "userId": "7300b122-903c-4059-b93b-bfe23715e215"
+  },
+  {
+    "calculator": "free",
+    "commission": "0",
+    "description": "Free Bet - Kansas v Cincinnati - £10 for £5",
+    "_id": "ac4486a3-2b87-4601-9f20-0e4aa265f6a8",
+    "_owner": "7300b122-903c-4059-b93b-bfe23715e215",
+    "_createdDate": "Sun Sep 15 2024 21:37:41 GMT+0100 (British Summer Time)",
+    "backodds": "3.2",
+    "potentialprofit": "£4.32",
+    "stakereturned": true,
+    "betId": "bet_1726432660988_690",
+    "_updatedDate": "Mon Sep 16 2024 00:29:23 GMT+0100 (British Summer Time)",
+    "qloss": "£4.32",
+    "complete": true,
+    "date": "15/09/2024",
+    "iscalc": true,
+    "laytype": "Standard",
+    "bookie": "Betfred",
+    "actualprofit": "£4.33",
+    "userId": "7300b122-903c-4059-b93b-bfe23715e215",
+    "backstake": "5",
+    "layodds": "3.7"
+  },
+  {
+    "calculator": "standard",
+    "commission": "0",
+    "description": "Qualifying Bet used on Avai v Sport Recife to get BetVictor Free Bet",
+    "_id": "8da45dac-7a28-4483-a12e-1ecc185f0930",
+    "_owner": "c5f2738b-03fc-434c-90ce-949d8e16e9c8",
+    "_createdDate": "Sun Sep 15 2024 21:28:59 GMT+0100 (British Summer Time)",
+    "backodds": "3",
+    "potentialprofit": "-£0.91",
+    "betId": "bet_1726432140573_33",
+    "_updatedDate": "Sun Sep 15 2024 21:28:59 GMT+0100 (British Summer Time)",
+    "qloss": "-£0.91",
+    "complete": false,
+    "date": "08/09/2024",
+    "iscalc": true,
+    "bookie": "BetVictor",
+    "actualprofit": "",
+    "userId": "c5f2738b-03fc-434c-90ce-949d8e16e9c8",
+    "backstake": "10",
+    "layodds": "3.3"
+  },
+  {
+    "calculator": "free",
+    "commission": "0",
+    "description": "Free Bet - Cincinnati v Kansas - £5 for £5",
+    "_id": "66af5a23-8371-4abd-a874-e3f879251fb6",
+    "_owner": "7300b122-903c-4059-b93b-bfe23715e215",
+    "_createdDate": "Sun Sep 15 2024 21:23:43 GMT+0100 (British Summer Time)",
+    "backodds": "5.88",
+    "potentialprofit": "£2.71",
+    "stakereturned": false,
+    "betId": "bet_1726431822792_701",
+    "_updatedDate": "Mon Sep 16 2024 00:28:37 GMT+0100 (British Summer Time)",
+    "qloss": "£2.71",
+    "complete": true,
+    "date": "15/09/2024",
+    "iscalc": true,
+    "laytype": "Standard",
+    "bookie": "Betfair",
+    "actualprofit": "£2.71",
+    "userId": "7300b122-903c-4059-b93b-bfe23715e215",
+    "backstake": "5",
+    "layodds": "9"
+  },
+  {
+    "calculator": "standard",
+    "commission": "0",
+    "description": "QB - San Francisco v Minnesota - £10 for £5",
+    "_id": "0d9b0809-a280-4770-9aa8-596cca1713dc",
+    "_owner": "7300b122-903c-4059-b93b-bfe23715e215",
+    "_createdDate": "Sun Sep 15 2024 19:50:52 GMT+0100 (British Summer Time)",
+    "backodds": "2.15",
+    "potentialprofit": "£-0.40",
+    "betId": "bet_1726426252398_949",
+    "_updatedDate": "Sun Sep 15 2024 21:03:37 GMT+0100 (British Summer Time)",
+    "qloss": "-£0.40",
+    "complete": false,
+    "date": "15/09/2024",
+    "iscalc": true,
+    "laytype": "Standard",
+    "bookie": "Betfred",
+    "actualprofit": "-0",
+    "userId": "7300b122-903c-4059-b93b-bfe23715e215",
+    "backstake": "10",
+    "layodds": "2.24"
+  },
+  {
+    "calculator": "standard",
+    "commission": "0",
+    "description": "Price Boost - Cincinnati v Kansas",
+    "_id": "dd09b47e-283c-4c7b-b285-87b70b51822f",
+    "_owner": "7300b122-903c-4059-b93b-bfe23715e215",
+    "_createdDate": "Sun Sep 15 2024 18:16:17 GMT+0100 (British Summer Time)",
+    "backodds": "3",
+    "potentialprofit": "£0.56",
+    "betId": "bet_1726420577307_116",
+    "_updatedDate": "Mon Sep 16 2024 00:28:24 GMT+0100 (British Summer Time)",
+    "qloss": "£0.56",
+    "complete": true,
+    "date": "15/09/2024",
+    "iscalc": true,
+    "laytype": "Standard",
+    "bookie": "Sky Bet",
+    "actualprofit": "£0.56",
+    "userId": "7300b122-903c-4059-b93b-bfe23715e215",
+    "backstake": "10",
+    "layodds": "2.84"
+  },
+  {
+    "calculator": "free",
+    "commission": "0",
+    "description": "Free Bet - Toulouse v Le Harve ",
+    "_id": "bb976773-4a18-44fb-acce-273238d902b8",
+    "_owner": "7300b122-903c-4059-b93b-bfe23715e215",
+    "_createdDate": "Sun Sep 15 2024 16:58:47 GMT+0100 (British Summer Time)",
+    "backodds": "8",
+    "potentialprofit": "£3.89",
+    "stakereturned": false,
+    "betId": "bet_1726415926780_446",
+    "_updatedDate": "Sun Sep 15 2024 17:46:59 GMT+0100 (British Summer Time)",
+    "qloss": "£3.89",
+    "complete": false,
+    "date": "15/09/2024",
+    "iscalc": true,
+    "laytype": "Standard",
+    "bookie": "Livescore",
+    "actualprofit": "£3.89",
+    "userId": "7300b122-903c-4059-b93b-bfe23715e215",
+    "backstake": "5",
+    "layodds": "9"
+  }
+]
+,
+    "wix_filters": {},
+    "premium_member": true
+}
+            setTimeout(() => {
+                document.querySelector('profit-tracker').setAttribute('data-odds', JSON.stringify(finalData));
+            }, 500);
+
+
+            document.querySelector('profit-tracker').addEventListener('Delete-Filter', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('profit-tracker').addEventListener('Save-Filter', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('profit-tracker').addEventListener('Select-Event', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('profit-tracker').addEventListener('Calculator', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('profit-tracker').addEventListener('Checkbox', (event)=>{
+                console.log(event)
+            })
+
+
+
+    </script>
+
+</body>
+</html>
