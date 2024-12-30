@@ -1,6 +1,6 @@
 // STANDARD
-const STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
-const STANDARD_EXCHANGES = ['Smarkets']
+let STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
+let STANDARD_EXCHANGES = ['Smarkets']
 
 //2UP
 
@@ -21,7 +21,7 @@ const STANDARD_EXCHANGES = ['Smarkets']
 
 
 
-const bookmakerImages = {
+let bookmakerImages = {
     "Bet365": 'https://static.wixstatic.com/media/7a0e3a_74b1758549414a87aef5c7d5d4a2c619~mv2.png',
     "Betfred": 'https://static.wixstatic.com/media/7a0e3a_7f5a1de40338499f862587a987744fde~mv2.png',
     "Virgin Bet": 'https://static.wixstatic.com/media/7a0e3a_d7313dc914d245acb174e5958627ce8e~mv2.png', 
@@ -34,7 +34,7 @@ const bookmakerImages = {
 
 };
 
-const exchangeImages = {
+let exchangeImages = {
     "Betfair Exchange": 'https://static.wixstatic.com/media/7a0e3a_42e9ff11344a49fea33b58dcda917542~mv2.png',
     "Smarkets": "https://static.wixstatic.com/media/7a0e3a_64979ac474b340868914fbf484d4ee89~mv2.png",
     "Matchbook": "https://static.wixstatic.com/media/7a0e3a_c44a32e46bc34b6da0c9665311ed48b1~mv2.png"
