@@ -11,7 +11,7 @@
 <body style="background: rgb(0, 0, 0); margin-top: 0;">
 
     <div id="app"  >
-        <guide-oddsmatcher ></guide-oddsmatcher>
+        <freebet-oddsmatcher ></freebet-oddsmatcher>
     </div>
 
     <script src="myOddsmatcher.js"></script>
@@ -601,18 +601,18 @@
     "premium_member": true
 }
             setTimeout(() => {
-                document.querySelector('guide-oddsmatcher').setAttribute('data-odds', JSON.stringify(finalData))
+                document.querySelector('freebet-oddsmatcher').setAttribute('data-odds', JSON.stringify(finalData))
 
             }, 5000);
 
             
-            document.querySelector('guide-oddsmatcher').addEventListener('Select-Event', (event)=>{
+            document.querySelector('freebet-oddsmatcher').addEventListener('Select-Event', (event)=>{
                 console.log(event)
             })
-            document.querySelector('guide-oddsmatcher').addEventListener('More-Info', (event)=>{
+            document.querySelector('freebet-oddsmatcher').addEventListener('More-Info', (event)=>{
                 console.log(event)
             })
-            document.querySelector('guide-oddsmatcher').addEventListener('Upgrade', (event)=>{
+            document.querySelector('freebet-oddsmatcher').addEventListener('Upgrade', (event)=>{
                 console.log(event)
             })
 

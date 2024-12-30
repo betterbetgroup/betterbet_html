@@ -32,14 +32,11 @@ const SHOW_INFO_WIDTH = 1015;
 
 
     let sort_rating = 'ascending';
-    let sort_qualifying_loss = 'descending';
-    let sort_potential_profit = 'ascending';
+    let sort_qualifying_loss = 'ascending';
+    let sort_potential_profit = 'descending';
     let sort_date_and_time = 'ascending';
 
-
-    let current_sort = 'qualifying loss';
-
-
+    let current_sort = 'potential profit';
 
     const marketsList = ['Match Odds', 'Winner', 'BTTS', 'Over/Under'];
 
@@ -48,33 +45,11 @@ const SHOW_INFO_WIDTH = 1015;
         "Horse Racing": "https://img.icons8.com/?size=100&id=LuhFumPGCq9L&format=png&color=000000"
     };
 
-    const bookmakerImages = {
-        "Bet365": 'https://static.wixstatic.com/media/7a0e3a_74b1758549414a87aef5c7d5d4a2c619~mv2.png',
-        "Betfred": 'https://static.wixstatic.com/media/7a0e3a_7f5a1de40338499f862587a987744fde~mv2.png',
-        "Virgin Bet": 'https://static.wixstatic.com/media/7a0e3a_d7313dc914d245acb174e5958627ce8e~mv2.png', 
-        "Livescore": 'https://static.wixstatic.com/media/7a0e3a_a3167bbd323a4656afc84718bbf88380~mv2.png',
-        "888Sport": 'https://static.wixstatic.com/media/7a0e3a_39af396146c84a38a96e953f938290ef~mv2.png',
-        "Paddy Power": 'https://static.wixstatic.com/media/7a0e3a_fcbb73ffbfa6454b8506f7a6e7e25c67~mv2.png',
-        "Skybet": 'https://static.wixstatic.com/media/7a0e3a_3b25d869c20042f38fc666d42118cedb~mv2.png',
-        "Betway": 'https://static.wixstatic.com/media/7a0e3a_2e3ef618674d4c94a2850b097873d5bb~mv2.png',
-        "William Hill": 'https://static.wixstatic.com/media/7a0e3a_0269c527e1ab4ea9be81154957f4c824~mv2.png',
-
-    };
-
-    const exchangeImages = {
-        "Betfair Exchange": 'https://static.wixstatic.com/media/7a0e3a_42e9ff11344a49fea33b58dcda917542~mv2.png',
-        "Smarkets": "https://static.wixstatic.com/media/7a0e3a_64979ac474b340868914fbf484d4ee89~mv2.png",
-        "Matchbook": "https://static.wixstatic.com/media/7a0e3a_c44a32e46bc34b6da0c9665311ed48b1~mv2.png"
-    };
-
-
-
-
 
 let data_loaded_from_wix = false;
 
 
-class GuideOddsmatcher extends HTMLElement {
+class FreeBetOddsmatcher extends HTMLElement {
 
     constructor() {
         super();
@@ -90,13 +65,14 @@ class GuideOddsmatcher extends HTMLElement {
 
         this.style.display = 'none'; // Make the host element visible
 
+        loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js')
+
 
             this.render()  
             .then(() => {
 
                 this.addStyles()
                 .then(() => {
-
                     this.runSpecificScript(); 
                     this.add_loading_row();
                     this.isContentLoaded = true;
@@ -148,8 +124,6 @@ class GuideOddsmatcher extends HTMLElement {
         this.filterData();
 
     }
-
-
         
     
     displayRows(page, rows, totalPages) {
@@ -825,7 +799,7 @@ class GuideOddsmatcher extends HTMLElement {
     // Method to inject CSS styles into the shadow DOM.
 
     render() {
-        return fetch('z.html')
+        return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/free_bet/z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
@@ -833,34 +807,6 @@ class GuideOddsmatcher extends HTMLElement {
                 // Ensure elements are fully rendered
 
             });
-
-
-            /*
-
-
-    return new Promise((resolve, reject) => {
-        try {
-
-            this.shadowRoot.innerHTML = `
-
-                <body>
-
-            `;
-    
-
-        resolve('done');  // Resolve the promise with the result
-
-    }
-
-    catch(error) {
-        reject(error);  // Reject the promise if an error occurs
-
-    }
-
-      });
-
-      */
-
 
     }
 
@@ -875,21 +821,9 @@ class GuideOddsmatcher extends HTMLElement {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                link.setAttribute('href', 'styles.css'); 
+                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/free_bet/styles.css'); 
                 
-
                 this.shadowRoot.appendChild(link);
-
-
-                /*
-
-                    const style = document.createElement('style');
-                    style.textContent = ``;
-
-                    this.shadowRoot.appendChild(style);
-
-                */
-                
 
                 const fontAwesomeLink = document.createElement('link');
                 fontAwesomeLink.setAttribute('rel', 'stylesheet');
@@ -1239,7 +1173,17 @@ class GuideOddsmatcher extends HTMLElement {
 
 }
 
-customElements.define('guide-oddsmatcher', GuideOddsmatcher);
+customElements.define('freebet-oddsmatcher', FreeBetOddsmatcher);
 
 
 
+function loadExternalScript(scriptUrl) {
+    return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = scriptUrl;
+        script.type = 'text/javascript';
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+    });
+}

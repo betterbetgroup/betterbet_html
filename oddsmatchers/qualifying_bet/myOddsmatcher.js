@@ -825,7 +825,7 @@ class QualBetOddsmatcher extends HTMLElement {
     // Method to inject CSS styles into the shadow DOM.
 
     render() {
-        return fetch('z.html')
+        return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/qualifying_bet/z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
@@ -848,21 +848,10 @@ class QualBetOddsmatcher extends HTMLElement {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                link.setAttribute('href', 'styles.css'); 
+                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/qualifying_bet/styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);
-
-
-                /*
-
-                    const style = document.createElement('style');
-                    style.textContent = ``;
-
-                    this.shadowRoot.appendChild(style);
-
-                */
-                
 
                 const fontAwesomeLink = document.createElement('link');
                 fontAwesomeLink.setAttribute('rel', 'stylesheet');
