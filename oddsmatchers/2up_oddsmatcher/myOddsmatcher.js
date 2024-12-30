@@ -36,17 +36,6 @@ const SHOW_DATE_AND_TIME = 1000;
     let current_sort = 'qualifying loss';
 
 
-    const bookmakerImages = {
-        "Bet365": 'https://static.wixstatic.com/media/7a0e3a_74b1758549414a87aef5c7d5d4a2c619~mv2.png',
-    };
-
-    const exchangeImages = {
-        "Betfair Exchange": 'https://static.wixstatic.com/media/7a0e3a_42e9ff11344a49fea33b58dcda917542~mv2.png',
-        "Smarkets": "https://static.wixstatic.com/media/7a0e3a_64979ac474b340868914fbf484d4ee89~mv2.png",
-        "Matchbook": "https://static.wixstatic.com/media/7a0e3a_c44a32e46bc34b6da0c9665311ed48b1~mv2.png"
-    };
-
-
     let globalFilters = {
         bookmakers: Object.keys(bookmakerImages),
         exchanges: Object.keys(exchangeImages),
@@ -240,6 +229,17 @@ class TwoUpOddsmatcher extends HTMLElement {
             });
     
 
+    }
+
+    loadExternalScript(scriptUrl) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = scriptUrl;
+            script.type = 'text/javascript';
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
     }
 
   
@@ -1789,7 +1789,8 @@ alternateText() {
             .then(html => {
                 this.shadowRoot.innerHTML = html;
     
-                // Ensure elements are fully rendered
+                this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js')
+                
                 requestAnimationFrame(() => {
                         this.make_premium_box_correct_size();
                 });

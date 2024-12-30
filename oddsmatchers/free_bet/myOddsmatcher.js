@@ -65,9 +65,6 @@ class FreeBetOddsmatcher extends HTMLElement {
 
         this.style.display = 'none'; // Make the host element visible
 
-        loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js')
-
-
             this.render()  
             .then(() => {
 
@@ -123,6 +120,18 @@ class FreeBetOddsmatcher extends HTMLElement {
         globalData = data.rows;
         this.filterData();
 
+    }
+
+
+    loadExternalScript(scriptUrl) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = scriptUrl;
+            script.type = 'text/javascript';
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
     }
         
     
@@ -803,8 +812,8 @@ class FreeBetOddsmatcher extends HTMLElement {
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
-    
-                // Ensure elements are fully rendered
+
+                this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js')
 
             });
 
@@ -1176,14 +1185,3 @@ class FreeBetOddsmatcher extends HTMLElement {
 customElements.define('freebet-oddsmatcher', FreeBetOddsmatcher);
 
 
-
-function loadExternalScript(scriptUrl) {
-    return new Promise((resolve, reject) => {
-        const script = document.createElement('script');
-        script.src = scriptUrl;
-        script.type = 'text/javascript';
-        script.onload = resolve;
-        script.onerror = reject;
-        document.head.appendChild(script);
-    });
-}

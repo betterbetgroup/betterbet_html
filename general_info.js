@@ -1,7 +1,7 @@
 
 // STANDARD
-STANDARD_ODDSMATCHER_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
-STANDARD_ODDSMATCHER_EXCHANGES = ['Smarkets']
+STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
+STANDARD_EXCHANGES = ['Smarkets']
 
 //2UP
 
