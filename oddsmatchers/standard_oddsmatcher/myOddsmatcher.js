@@ -980,8 +980,6 @@ add_lock_if_premium() {
     
         filteredData = globalData.filter(row => {
     
-    
-    
             const sportMatch = globalFilters.sports.includes(row.sport);
             const marketMatch = globalFilters.markets.includes(row.market_type);
             const bookmakerMatch = globalFilters.bookmakers.includes(row.bookmaker);
