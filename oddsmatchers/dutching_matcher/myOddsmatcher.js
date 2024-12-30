@@ -2100,7 +2100,7 @@ apply_custom_filters_from_dropdown(filters) {
     // Method to inject CSS styles into the shadow DOM.
 
     render() {
-        return fetch('z.html')
+        return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/dutching_matcher/z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
@@ -2108,33 +2108,6 @@ apply_custom_filters_from_dropdown(filters) {
                 // Ensure elements are fully rendered
 
             });
-
-
-            /*
-
-
-    return new Promise((resolve, reject) => {
-        try {
-
-            this.shadowRoot.innerHTML = `
-
-                <body>
-
-            `;
-    
-
-        resolve('done');  // Resolve the promise with the result
-
-    }
-
-    catch(error) {
-        reject(error);  // Reject the promise if an error occurs
-
-    }
-
-      });
-
-      */
 
 
     }
@@ -2196,21 +2169,10 @@ apply_custom_filters_from_dropdown(filters) {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                link.setAttribute('href', 'styles.css'); 
+                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/dutching_matcher/styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);
-
-
-                /*
-
-                    const style = document.createElement('style');
-                    style.textContent = ``;
-
-                    this.shadowRoot.appendChild(style);
-
-                */
-                
 
                 const fontAwesomeLink = document.createElement('link');
                 fontAwesomeLink.setAttribute('rel', 'stylesheet');

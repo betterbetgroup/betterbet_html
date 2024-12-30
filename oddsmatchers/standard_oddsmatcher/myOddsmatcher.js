@@ -2078,7 +2078,7 @@ add_lock_if_premium() {
     // Method to inject CSS styles into the shadow DOM.
 
     render() {
-        return fetch('z.html')
+        return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/standard_oddsmatcher/z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
@@ -2086,34 +2086,6 @@ add_lock_if_premium() {
                 // Ensure elements are fully rendered
 
             });
-
-
-            /*
-
-
-    return new Promise((resolve, reject) => {
-        try {
-
-            this.shadowRoot.innerHTML = `
-
-                <body>
-
-            `;
-    
-
-        resolve('done');  // Resolve the promise with the result
-
-    }
-
-    catch(error) {
-        reject(error);  // Reject the promise if an error occurs
-
-    }
-
-      });
-
-      */
-
 
     }
 
@@ -2176,21 +2148,10 @@ add_lock_if_premium() {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                link.setAttribute('href', 'styles.css'); 
+                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/standard_oddsmatcher/styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);
-
-
-                /*
-
-                    const style = document.createElement('style');
-                    style.textContent = ``;
-
-                    this.shadowRoot.appendChild(style);
-
-                */
-                
 
                 const fontAwesomeLink = document.createElement('link');
                 fontAwesomeLink.setAttribute('rel', 'stylesheet');
