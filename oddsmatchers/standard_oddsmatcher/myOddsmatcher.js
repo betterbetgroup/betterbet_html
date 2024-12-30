@@ -80,7 +80,6 @@ class StandardOddsmatcher extends HTMLElement {
 
         this.style.display = 'none'; // Make the host element visible
 
-
             this.render()  
             .then(() => {
 
@@ -1898,7 +1897,6 @@ add_lock_if_premium() {
 
         let filtName = 'No Filter'
 
-        this.append_options_for_dropdowns();
         this.create_event_listeners_for_select_containers();
         this.create_text_box_and_time_dropdown_event_listeners();
         this.add_event_listener_for_saved_filters();
@@ -2047,6 +2045,7 @@ add_lock_if_premium() {
                 this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js')
                     .then(() => {
                         this.filter_bookmakers_and_exchanges(); 
+                        this.append_options_for_dropdowns();
                     })
 
             });
