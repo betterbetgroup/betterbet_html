@@ -51,33 +51,9 @@ const SHOW_INFO_WIDTH = 1;
 
 
 
-    let globalFilters = {
-        bookmakers: Object.keys(bookmakerImages),
-        exchanges: Object.keys(exchangeImages),
-        startTime: '',
-        minoutcomes: null,
-        minrating: null,
-        maxrating: null,
-        minQualifyingLoss: null,
-        minPotentialProfit: null,
-    };
+    let globalFilters = {}
 
-    let customFilters = {
-
-        'No Filter':
-        
-                {
-                    "bookmakers": Object.keys(bookmakerImages),
-                    "exchanges": Object.keys(exchangeImages),
-                    "startTime": "",
-                    "minoutcomes": "null",
-                    "minrating": "null",
-                    "maxrating": "null",
-                    "minQualifyingLoss": "null",
-                    "minPotentialProfit": "null"
-                }
-        
-        }
+    let customFilters = {};
 
 
 
@@ -1224,14 +1200,15 @@ function_that_takes_global_filters_and_appends_it_to_current_with_name(name_for_
 
 function_using_global_data_and_global_filters_to_make_filtered_data() {
 
-
     const now = new Date(); 
 
     const allPlatforms = globalFilters.bookmakers.concat(globalFilters.exchanges);
 
     filteredData = globalData.filter(row => {
 
-        const bookmakerMatch = allPlatforms.includes(row.first_bookmaker && row.second_bookmaker && row.third_bookmaker);
+        const allBookmakers = [row.first_bookmaker, row.second_bookmaker, row.third_bookmaker];
+        const bookmakerMatch = allBookmakers.every(bookmaker => allPlatforms.includes(bookmaker));
+        
         const outcomesMatch = globalFilters.minoutcomes === null || (parseFloat(row.outcomes) >= globalFilters.minoutcomes) && (parseFloat(row.outcomes) >= globalFilters.minoutcomes);
 
         const ratingMatch = (globalFilters.minrating === null || parseFloat(row.rating) >= globalFilters.minrating) &&
@@ -1243,8 +1220,6 @@ function_using_global_data_and_global_filters_to_make_filtered_data() {
         // Parse row date and time
         const rowDateTime = this.parseDateAndTime_filterData(row.date_and_time);
         let timeMatch = true; // Default to true if (No Selected Filter) is set
-
-
 
         if (globalFilters.startTime) {
             switch (globalFilters.startTime) {
@@ -1519,6 +1494,7 @@ append_options_for_dropdowns() {
     this.append_options_for_the_four_filter_dropdowns('#bookmakers-dropdown-options', Object.keys(bookmakerImages));
     this.append_options_for_the_four_filter_dropdowns('#exchanges-dropdown-options', Object.keys(exchangeImages));
 
+    this.create_event_listeners_for_select_containers();
 }
 
 
@@ -1947,8 +1923,6 @@ apply_custom_filters_from_dropdown(filters) {
 
         let filtName = 'No Filter'
 
-        this.append_options_for_dropdowns();
-        this.create_event_listeners_for_select_containers();
         this.create_text_box_and_time_dropdown_event_listeners();
         this.add_event_listener_for_saved_filters();
 
@@ -2094,10 +2068,51 @@ apply_custom_filters_from_dropdown(filters) {
                 this.shadowRoot.innerHTML = html;
     
                 this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js')
-
+                    .then(() => {
+                        this.filter_bookmakers_and_exchanges(); 
+                    })
             });
 
 
+    }
+
+    filter_bookmakers_and_exchanges() {
+
+        bookmakerImages = Object.fromEntries(
+            Object.entries(bookmakerImages).filter(([key]) => DUTCHING_BOOKMAKERS.includes(key))
+        );
+
+        exchangeImages = Object.fromEntries(
+            Object.entries(exchangeImages).filter(([key]) => DUTCHING_EXCHANGES.includes(key))
+        );
+
+        customFilters = {
+            'No Filter':
+                {
+                    "bookmakers": Object.keys(bookmakerImages),
+                    "exchanges": Object.keys(exchangeImages),
+                    "startTime": "",
+                    "minoutcomes": "null",
+                    "minrating": "null",
+                    "maxrating": "null",
+                    "minQualifyingLoss": "null",
+                    "minPotentialProfit": "null"
+                }
+        };
+
+        globalFilters = {
+            bookmakers: Object.keys(bookmakerImages),
+            exchanges: Object.keys(exchangeImages),
+            startTime: '',
+            minoutcomes: null,
+            minrating: null,
+            maxrating: null,
+            minQualifyingLoss: null,
+            minPotentialProfit: null,
+        };
+
+        this.append_options_for_dropdowns();
+   
     }
 
 

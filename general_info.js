@@ -3,7 +3,7 @@ let STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
 let STANDARD_EXCHANGES = ['Smarkets', 'Betfair Exchange']
 
 //2UP
-let TWOUP_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
+let TWOUP_BOOKMAKERS = ['Bet365']
 let TWOUP_EXCHANGES = ['Smarkets']
 
 //EXTRA PLACE

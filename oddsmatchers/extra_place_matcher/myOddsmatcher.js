@@ -54,10 +54,7 @@ const SHOW_INFO_WIDTH = 1030;
     let customFilters = {}
 
 
-
-
-
-let data_loaded_from_wix = false;
+    let data_loaded_from_wix = false;
 
 
 
@@ -997,8 +994,7 @@ add_lock_if_premium() {
     
     
     function_using_global_data_and_global_filters_to_make_filtered_data() {
-    
-    
+
         const now = new Date(); 
     
         filteredData = globalData.filter(row => {

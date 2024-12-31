@@ -46,37 +46,9 @@ const SHOW_INFO_WIDTH = 0;
 
 
 
-    let globalFilters = {
-        bookmakers: Object.keys(bookmakerImages),
-        exchanges: Object.keys(exchangeImages),
-        startTime: '',
-        minLiquidity: null,
-        minBackOdds: null,
-        maxBackOdds: null,
-        minRating: null,
-        maxRating: null,
-        minQualifyingLoss: null,
-        minROI: null,
-    };
+    let globalFilters = {};
 
-    let customFilters = {
-
-        'No Filter':
-        
-                {
-                    "bookmakers": Object.keys(bookmakerImages),
-                    "exchanges": Object.keys(exchangeImages),
-                    "startTime": "",
-                    "minLiquidity": "null",
-                    "minBackOdds": "null",
-                    "maxBackOdds": "null",
-                    "minRating": "null",
-                    "maxRating": "null",
-                    "minQualifyingLoss": "null",
-                    "minROI": "null"
-                }
-        
-        }
+    let customFilters = {};
 
 
 
@@ -1259,6 +1231,7 @@ append_options_for_dropdowns() {
     this.append_options_for_the_four_filter_dropdowns('#bookmakers-dropdown-options', Object.keys(bookmakerImages));
     this.append_options_for_the_four_filter_dropdowns('#exchanges-dropdown-options', Object.keys(exchangeImages));
 
+    this.create_event_listeners_for_select_containers();
 }
 
 
@@ -1873,8 +1846,6 @@ runSpecificScript() {
 
     let filtName = 'No Filter';
 
-    this.append_options_for_dropdowns();
-    this.create_event_listeners_for_select_containers();
     this.create_text_box_and_time_dropdown_event_listeners();
     this.add_event_listener_for_saved_filters();
 
@@ -2067,12 +2038,54 @@ setInterval(() => {
                 this.shadowRoot.innerHTML = html;
 
                 this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js')
-
+                    .then(() => {
+                        this.filter_bookmakers_and_exchanges(); 
+                    })
     
             });
+    }
 
+    filter_bookmakers_and_exchanges() {
 
+        bookmakerImages = Object.fromEntries(
+            Object.entries(bookmakerImages).filter(([key]) => BOG_BOOKMAKERS.includes(key))
+        );
 
+        exchangeImages = Object.fromEntries(
+            Object.entries(exchangeImages).filter(([key]) => BOG_EXCHANGES.includes(key))
+        );
+
+        customFilters = {
+            'No Filter':
+                {
+                    "bookmakers": Object.keys(bookmakerImages),
+                    "exchanges": Object.keys(exchangeImages),
+                    "startTime": "",
+                    "minLiquidity": "null",
+                    "minBackOdds": "null",
+                    "maxBackOdds": "null",
+                    "minRating": "null",
+                    "maxRating": "null",
+                    "minQualifyingLoss": "null",
+                    "minROI": "null"
+                }
+        };
+
+        globalFilters = {
+            bookmakers: Object.keys(bookmakerImages),
+            exchanges: Object.keys(exchangeImages),
+            startTime: '',
+            minLiquidity: null,
+            minBackOdds: null,
+            maxBackOdds: null,
+            minRating: null,
+            maxRating: null,
+            minQualifyingLoss: null,
+            minROI: null,
+        };
+
+        this.append_options_for_dropdowns();
+   
     }
 
 
