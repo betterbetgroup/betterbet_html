@@ -10,8 +10,6 @@ let user_suo_object = []
    
     let is_premium_member = false;
 
-    let globalData = sign_up_offer_list;
-
     let filteredData = [];
 
     let currentPage = 1;
@@ -27,33 +25,7 @@ let user_suo_object = []
     let current_sort = 'none';
 
 
-    const bookmakerImages = {
-        "Bet365": 'https://static.wixstatic.com/media/7a0e3a_74b1758549414a87aef5c7d5d4a2c619~mv2.png',
-        "Betfred": 'https://static.wixstatic.com/media/7a0e3a_7f5a1de40338499f862587a987744fde~mv2.png',
-        "Virgin Bet": 'https://static.wixstatic.com/media/7a0e3a_d7313dc914d245acb174e5958627ce8e~mv2.png', 
-        "Livescore": 'https://static.wixstatic.com/media/7a0e3a_a3167bbd323a4656afc84718bbf88380~mv2.png',
-        "888Sport": 'https://static.wixstatic.com/media/7a0e3a_39af396146c84a38a96e953f938290ef~mv2.png',
-        "Paddy Power": 'https://static.wixstatic.com/media/7a0e3a_fcbb73ffbfa6454b8506f7a6e7e25c67~mv2.png',
-        "Skybet": 'https://static.wixstatic.com/media/7a0e3a_3b25d869c20042f38fc666d42118cedb~mv2.png',
-        "Betway": 'https://static.wixstatic.com/media/7a0e3a_2e3ef618674d4c94a2850b097873d5bb~mv2.png',
-        "William Hill": 'https://static.wixstatic.com/media/7a0e3a_0269c527e1ab4ea9be81154957f4c824~mv2.png',
-        "Other": 'https://static.wixstatic.com/media/7a0e3a_5ba0942899474154a8d3d0ab5095bc1e~mv2.png',
-
-    };
-
-    const exchangeImages = {
-        "Betfair Exchange": 'https://static.wixstatic.com/media/7a0e3a_42e9ff11344a49fea33b58dcda917542~mv2.png',
-        "Smarkets": "https://static.wixstatic.com/media/7a0e3a_64979ac474b340868914fbf484d4ee89~mv2.png",
-        "Matchbook": "https://static.wixstatic.com/media/7a0e3a_c44a32e46bc34b6da0c9665311ed48b1~mv2.png", 
-        "Other": 'https://static.wixstatic.com/media/7a0e3a_5ba0942899474154a8d3d0ab5095bc1e~mv2.png',
-    };
-
-
-
-
-
-
-let data_loaded_from_wix = false;
+    let data_loaded_from_wix = false;
 
 
 
@@ -2153,43 +2125,28 @@ alternateText() {
     // Method to inject CSS styles into the shadow DOM.
 
     render() {
-        return fetch('z.html')
+        return fetch('https://betterbetgroup.github.io/betterbet_html/list_pages/sign_up/sign_up/z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
     
-                // Ensure elements are fully rendered
-
+                this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/sign_up.js')
+                    .then(() => {
+                        globalData = sign_up_offer_list;
+                    })
             });
 
-
-            /*
-
-
-    return new Promise((resolve, reject) => {
-        try {
-
-            this.shadowRoot.innerHTML = `
-
-                <body>
-
-            `;
-    
-
-        resolve('done');  // Resolve the promise with the result
-
     }
 
-    catch(error) {
-        reject(error);  // Reject the promise if an error occurs
-
-    }
-
-      });
-
-      */
-
-
+    loadExternalScript(scriptUrl) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = scriptUrl;
+            script.type = 'text/javascript';
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
     }
 
 
@@ -2216,21 +2173,11 @@ alternateText() {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                link.setAttribute('href', 'styles.css'); 
+                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/list_pages/sign_up/sign_up/z.html'); 
                 
 
                 this.shadowRoot.appendChild(link);
 
-
-                /*
-
-                    const style = document.createElement('style');
-                    style.textContent = ``;
-
-                    this.shadowRoot.appendChild(style);
-
-                */
-                
 
                     const fontAwesomeLink = document.createElement('link');
                     fontAwesomeLink.setAttribute('rel', 'stylesheet');

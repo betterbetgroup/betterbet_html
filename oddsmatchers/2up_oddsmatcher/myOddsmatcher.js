@@ -36,38 +36,10 @@ const SHOW_DATE_AND_TIME = 1000;
     let current_sort = 'qualifying loss';
 
 
-    let globalFilters = {
-        bookmakers: Object.keys(bookmakerImages),
-        exchanges: Object.keys(exchangeImages),
-        startTime: '',
-        minLiquidity: null,
-        minBackOdds: null,
-        maxBackOdds: null,
-        minRating: null,
-        maxRating: null,
-        minQualifyingLoss: null,
-        minPotentialProfit: null,
-    };
+    let globalFilters = {};
     
 
-let customFilters = {
-
-'No Filter':
-
-        {
-            "bookmakers": Object.keys(bookmakerImages),
-            "exchanges": Object.keys(exchangeImages),
-            "startTime": "",
-            "minLiquidity": "null",
-            "minBackOdds": "null",
-            "maxBackOdds": "null",
-            "minRating": "null",
-            "maxRating": "null",
-            "minQualifyingLoss": "null",
-            "minPotentialProfit": "null"
-        }
-
-}
+    let customFilters = {};
 
 
 
@@ -1032,7 +1004,6 @@ class TwoUpOddsmatcher extends HTMLElement {
             }
         });
 
-        this.create_event_listeners_for_select_containers();
         this.add_event_listener_for_saved_filters(this.shadowRoot);
     }
 
@@ -1733,11 +1704,14 @@ alternateText() {
 
         }
 
-        runSpecificScript() {
-
+        append_options_for_dropdowns() {
             this.append_options_for_the_four_filter_dropdowns('#bookmakers-dropdown-options', Object.keys(bookmakerImages));
-
             this.append_options_for_the_four_filter_dropdowns('#exchanges-dropdown-options', Object.keys(exchangeImages));
+
+            this.create_event_listeners_for_select_containers();
+        }
+
+        runSpecificScript() {
 
             this.shadowRoot.querySelector('.save-filter-button').addEventListener('click', () => { this.open_text_box_and_confirm(); });
 
@@ -1790,12 +1764,58 @@ alternateText() {
                 this.shadowRoot.innerHTML = html;
     
                 this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js')
-                
+                    .then(() => {
+                        this.filter_bookmakers_and_exchanges(); 
+                    })
+
                 requestAnimationFrame(() => {
                         this.make_premium_box_correct_size();
                 });
             });
+    }
 
+
+    filter_bookmakers_and_exchanges() {
+
+        bookmakerImages = Object.fromEntries(
+            Object.entries(bookmakerImages).filter(([key]) => TWOUP_BOOKMAKERS.includes(key))
+        );
+
+        exchangeImages = Object.fromEntries(
+            Object.entries(exchangeImages).filter(([key]) => TWOUP_EXCHANGES.includes(key))
+        );
+
+        customFilters = {
+            'No Filter':
+                {
+                    "bookmakers": Object.keys(bookmakerImages),
+                    "exchanges": Object.keys(exchangeImages),
+                    "startTime": "",
+                    "minLiquidity": "null",
+                    "minBackOdds": "null",
+                    "maxBackOdds": "null",
+                    "minRating": "null",
+                    "maxRating": "null",
+                    "minQualifyingLoss": "null",
+                    "minPotentialProfit": "null"
+                }
+        };
+
+        globalFilters = {
+            bookmakers: Object.keys(bookmakerImages),
+            exchanges: Object.keys(exchangeImages),
+            startTime: '',
+            minLiquidity: null,
+            minBackOdds: null,
+            maxBackOdds: null,
+            minRating: null,
+            maxRating: null,
+            minQualifyingLoss: null,
+            minPotentialProfit: null,
+        };
+
+        this.append_options_for_dropdowns();
+   
     }
 
     make_premium_box_correct_size() {
