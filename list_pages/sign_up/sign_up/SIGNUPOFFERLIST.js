@@ -12,6 +12,8 @@ let user_suo_object = []
 
     let filteredData = [];
 
+    let globalData = {}
+
     let currentPage = 1;
     const rowsPerPage = 11;
 
@@ -30,7 +32,7 @@ let user_suo_object = []
 
 
 
-class ProfitTracker extends HTMLElement {
+class SignUpOfferList extends HTMLElement {
 
     constructor() {
         super();
@@ -2173,7 +2175,7 @@ alternateText() {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/list_pages/sign_up/sign_up/z.html'); 
+                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/list_pages/sign_up/sign_up/styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);
@@ -2618,7 +2620,7 @@ alternateText() {
 
 }
 
-customElements.define('sign-up-offer-list', ProfitTracker);
+customElements.define('sign-up-offer-list', SignUpOfferList);
 
 
 
