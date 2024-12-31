@@ -2221,7 +2221,7 @@ alternateText() {
     
                 this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/weekly.js')
                     .then(() => {
-                        globalData = weekly_bet_club_offer_list;
+                        globalData = weekly_bet_club_list;
                     })
             });
 
