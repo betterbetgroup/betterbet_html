@@ -49,41 +49,9 @@ const SHOW_INFO_WIDTH = 1030;
     let current_sort = 'Implied Odds';
 
 
-    let globalFilters = {
-        bookmakers: Object.keys(bookmakerImages),
-        exchanges: Object.keys(exchangeImages),
-        startTime: '',
-        minLiquidity: null,
-        minBackOdds: null,
-        maxBackOdds: null,
-        minImpliedOdds: null,
-        maxImpliedOdds: null,
-        minPlaces: null,
-        minExtraPlaces: null,
-        minQualifyingLoss: null,
-        minPotentialProfit: null,
-    };
+    let globalFilters = {}
 
-    let customFilters = {
-
-        'No Filter':
-        
-                {
-                    "bookmakers": Object.keys(bookmakerImages),
-                    "exchanges": Object.keys(exchangeImages),
-                    "startTime": "",
-                    "minLiquidity": "null",
-                    "minBackOdds": "null",
-                    "maxBackOdds": "null",
-                    "minImpliedOdds": "null",
-                    "maxImpliedOdds": "null",
-                    "minPlaces": "null",
-                    "minExtraPlaces": "null",
-                    "minQualifyingLoss": "null",
-                    "minPotentialProfit": "null"
-                }
-        
-        }
+    let customFilters = {}
 
 
 
@@ -1333,6 +1301,8 @@ add_lock_if_premium() {
     
         this.append_options_for_the_four_filter_dropdowns('#bookmakers-dropdown-options', Object.keys(bookmakerImages));
         this.append_options_for_the_four_filter_dropdowns('#exchanges-dropdown-options', Object.keys(exchangeImages));
+
+        this.create_event_listeners_for_select_containers();
     
     }
     
@@ -1880,8 +1850,6 @@ add_lock_if_premium() {
 
         let filtName = 'No Filter'
 
-        this.append_options_for_dropdowns();
-        this.create_event_listeners_for_select_containers();
         this.create_text_box_and_time_dropdown_event_listeners();
         this.add_event_listener_for_saved_filters();
 
@@ -2027,10 +1995,58 @@ add_lock_if_premium() {
                 this.shadowRoot.innerHTML = html;
     
                 this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js')
-
+                    .then(() => {
+                        this.filter_bookmakers_and_exchanges(); 
+                    })
             });
 
+    }
 
+    filter_bookmakers_and_exchanges() {
+
+        bookmakerImages = Object.fromEntries(
+            Object.entries(bookmakerImages).filter(([key]) => EXTRA_PLACE_BOOKMAKERS.includes(key))
+        );
+
+        exchangeImages = Object.fromEntries(
+            Object.entries(exchangeImages).filter(([key]) => EXTRA_PLACE_EXCHANGES.includes(key))
+        );
+
+        customFilters = {
+            'No Filter':
+                {
+                    "bookmakers": Object.keys(bookmakerImages),
+                    "exchanges": Object.keys(exchangeImages),
+                    "startTime": "",
+                    "minLiquidity": "null",
+                    "minBackOdds": "null",
+                    "maxBackOdds": "null",
+                    "minImpliedOdds": "null",
+                    "maxImpliedOdds": "null",
+                    "minPlaces": "null",
+                    "minExtraPlaces": "null",
+                    "minQualifyingLoss": "null",
+                    "minPotentialProfit": "null"
+                }
+        }
+
+        globalFilters = {
+            bookmakers: Object.keys(bookmakerImages),
+            exchanges: Object.keys(exchangeImages),
+            startTime: '',
+            minLiquidity: null,
+            minBackOdds: null,
+            maxBackOdds: null,
+            minImpliedOdds: null,
+            maxImpliedOdds: null,
+            minPlaces: null,
+            minExtraPlaces: null,
+            minQualifyingLoss: null,
+            minPotentialProfit: null,
+        };
+
+        this.append_options_for_dropdowns();
+   
     }
 
 

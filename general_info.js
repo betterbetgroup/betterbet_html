@@ -1,19 +1,26 @@
 // STANDARD
 let STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
-let STANDARD_EXCHANGES = ['Smarkets']
+let STANDARD_EXCHANGES = ['Smarkets', 'Betfair Exchange']
 
 //2UP
-
-
+let TWOUP_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
+let TWOUP_EXCHANGES = ['Smarkets']
 
 //EXTRA PLACE
+let EXTRA_PLACE_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
+let EXTRA_PLACE_EXCHANGES = ['Smarkets']
 
+//EACH WAY
+let EACH_WAY_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
+let EACH_WAY_EXCHANGES = ['Smarkets']
 
+//DUTCHING 
+let DUTCHING_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
+let DUTCHING_EXCHANGES = ['Smarkets']
 
-
-
-
-
+//BOG 
+let BOG_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
+let BOG_EXCHANGES = ['Smarkets']
 
 
 

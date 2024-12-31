@@ -44,8 +44,6 @@ const SHOW_INFO_WIDTH = 1015;
 
     let current_sort = 'qualifying loss';
 
-
-
     const marketsList = ['Match Odds', 'Winner', 'BTTS', 'Over/Under'];
 
     const sportIconUrls = {
@@ -54,14 +52,13 @@ const SHOW_INFO_WIDTH = 1015;
     };
 
 
-    let globalFilters = {};
-
+    let globalFilters = {}
 
 
     let customFilters = {}
 
 
-let data_loaded_from_wix = false;
+    let data_loaded_from_wix = false;
 
 
 class StandardOddsmatcher extends HTMLElement {
@@ -834,8 +831,7 @@ add_lock_if_premium() {
     
     
     
-    set_global_filters_as_filters_selected_in_dropdown(filters) {
-    
+    set_global_filters_as_filters_selected_in_dropdown(filters) {    
     
         if (!filters) {
             console.log("(No Selected Filter)s provided for updating.");
@@ -1285,7 +1281,8 @@ add_lock_if_premium() {
         this.append_options_for_the_four_filter_dropdowns('#markets-dropdown-options', marketsList);
         this.append_options_for_the_four_filter_dropdowns('#bookmakers-dropdown-options', Object.keys(bookmakerImages));
         this.append_options_for_the_four_filter_dropdowns('#exchanges-dropdown-options', Object.keys(exchangeImages));
-    
+
+        this.create_event_listeners_for_select_containers();
     }
     
     
@@ -1296,9 +1293,9 @@ add_lock_if_premium() {
         const selectContainers = this.shadowRoot.querySelectorAll('.custom-select-container');
     
         selectContainers.forEach(container => {
+
             const selectAll = container.querySelector('.select-all');
             const checkboxes = container.querySelectorAll('input[type="checkbox"]:not(.select-all)');
-    
     
             // EVENT LISTENERS FOR THE DROPDOWNS, FOR CLICKING AND VALUE CHANGES. IT JUST CALLS THE this.UPDATEGLOBALFILTERS FOR EACH, AND TOGGLES DISPLAY OF DROPDOWNS
     
@@ -1895,7 +1892,6 @@ add_lock_if_premium() {
 
         let filtName = 'No Filter'
 
-        this.create_event_listeners_for_select_containers();
         this.create_text_box_and_time_dropdown_event_listeners();
         this.add_event_listener_for_saved_filters();
 
@@ -2043,14 +2039,11 @@ add_lock_if_premium() {
                 this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js')
                     .then(() => {
                         this.filter_bookmakers_and_exchanges(); 
-                        this.append_options_for_dropdowns();
                     })
 
             });
 
     }
-
-    
 
     filter_bookmakers_and_exchanges() {
 
@@ -2080,7 +2073,24 @@ add_lock_if_premium() {
                     "minPotentialProfit": "null"
                 }
         }
-        
+
+        globalFilters = {
+            sports: Object.keys(sportIconUrls),
+            markets: marketsList,
+            bookmakers: Object.keys(bookmakerImages),
+            exchanges: Object.keys(exchangeImages),
+            startTime: '',
+            minLiquidity: null,
+            minBackOdds: null,
+            maxBackOdds: null,
+            minRating: null,
+            maxRating: null,
+            minQualifyingLoss: null,
+            minPotentialProfit: null
+        }
+
+        this.append_options_for_dropdowns();
+   
     }
     
 
