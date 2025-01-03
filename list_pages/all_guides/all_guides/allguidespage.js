@@ -1,14 +1,12 @@
     let all_guides_object = []
    
-    let globalData = all_guides;
+    let globalData = {};
 
     let filteredData = [];
 
     let current_sort = 'none';
 
     let data_loaded_from_wix = false;
-
-
 
 
 class AllGuides extends HTMLElement {
@@ -485,43 +483,27 @@ class AllGuides extends HTMLElement {
     // Method to inject CSS styles into the shadow DOM.
 
     render() {
-        return fetch('z.html')
+        return fetch('https://betterbetgroup.github.io/betterbet_html/list_pages/all_guides/all_guides/z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
     
-                // Ensure elements are fully rendered
-
+                this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/guides.js')
+                    .then(() => {
+                        globalData = all_guides;
+                    })
             });
-
-
-            /*
-
-
-    return new Promise((resolve, reject) => {
-        try {
-
-            this.shadowRoot.innerHTML = `
-
-                <body>
-
-            `;
-    
-
-        resolve('done');  // Resolve the promise with the result
-
     }
 
-    catch(error) {
-        reject(error);  // Reject the promise if an error occurs
-
-    }
-
-      });
-
-      */
-
-
+    loadExternalScript(scriptUrl) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = scriptUrl;
+            script.type = 'text/javascript';
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
     }
 
 
@@ -548,20 +530,10 @@ class AllGuides extends HTMLElement {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                link.setAttribute('href', 'styles.css'); 
+                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/list_pages/all_guides/all_guides/styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);
-
-
-                /*
-
-                    const style = document.createElement('style');
-                    style.textContent = ``;
-
-                    this.shadowRoot.appendChild(style);
-
-                */
                 
 
                     const fontAwesomeLink = document.createElement('link');

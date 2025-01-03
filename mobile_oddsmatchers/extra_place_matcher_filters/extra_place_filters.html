@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Better Bet 2up Filters</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://betterbetgroup.github.io/betterbet_html/mobile_oddsmatchers/extra_place_matcher_filters/styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style >
@@ -18,16 +18,12 @@
     <div id="outer-container-div">
 
 
-        
-
 
         <div class="box box2" id="covering_filters">
             <svg fill="#ffffff" height="180px" width="160px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_509_"> <path id="XMLID_510_" d="M65,330h200c8.284,0,15-6.716,15-15V145c0-8.284-6.716-15-15-15h-15V85c0-46.869-38.131-85-85-85 S80,38.131,80,85v45H65c-8.284,0-15,6.716-15,15v170C50,323.284,56.716,330,65,330z M180,234.986V255c0,8.284-6.716,15-15,15 s-15-6.716-15-15v-20.014c-6.068-4.565-10-11.824-10-19.986c0-13.785,11.215-25,25-25s25,11.215,25,25 C190,223.162,186.068,230.421,180,234.986z M110,85c0-30.327,24.673-55,55-55s55,24.673,55,55v45H110V85z"></path> </g> </g></svg>
             <a class="upgrade-button">Upgrade to Premium <img src="https://img.icons8.com/?size=100&id=60654&format=png&color=ffffff" class="padlock-image-button" alt="Padlock" > </a>
 
         </div>
-
-        
 
 
     <div id="filter-panel-container">
@@ -36,45 +32,10 @@
     <div id="filter-panel">
 
 
-
-
-        <div class="filter-column">
-            
-            <div class="label_and_input_container">
-                <label class="filter-label no-margin-top" for="sports-select">Sports</label>
-                <div id="sports-dropdown-select-container" class="custom-select-container" tabindex="0">
-                    <div class="custom-select-trigger">
-                        <input id="sports-select" type="text" value="Sports" readonly>
-                    </div>
-                    <div class="dropdown-options" id="sports-dropdown-options">
-                        <label><input type="checkbox" checked class="select-all"> <span></span>Select All Sports</label>
-                    </div>
-                </div>
-            </div>
-
-            <div class="label_and_input_container">
-
-                <label class="filter-label no-margin-top for="markets-select">Markets</label>
-                <div id="markets-dropdown-select-container" class="custom-select-container" tabindex="0">
-                    <div class="custom-select-trigger">
-                        <input id="markets-select" type="text" value="Markets" readonly>
-                    </div>
-                    <div class="dropdown-options" id="markets-dropdown-options">
-                        <label><input type="checkbox" checked class="select-all"> <span></span>Select All Markets</label>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
-
-
-
         <div class="filter-column">
             
                 <div class="label_and_input_container">
-                    <label class="filter-label" for="bookmakers-select">Bookmakers</label>
+                    <label class="filter-label no-margin-top" for="bookmakers-select">Bookmakers</label>
                     <div id="bookmakers-dropdown-select-container" class="custom-select-container" tabindex="0">
                         <div class="custom-select-trigger">
                             <input id="bookmakers-select" type="text" value="Bookmakers" readonly>
@@ -87,7 +48,7 @@
 
                 <div class="label_and_input_container">
 
-                    <label class="filter-label" for="exchanges-select">Exchanges</label>
+                    <label class="filter-label no-margin-top" for="exchanges-select">Exchanges</label>
                     <div id="exchanges-dropdown-select-container" class="custom-select-container" tabindex="0">
                         <div class="custom-select-trigger">
                             <input id="exchanges-select" type="text" value="Exchanges" readonly>
@@ -136,14 +97,14 @@
 
             <div class="label_and_input_container">
 
-            <label class="filter-label" for="min-back-odds">Min Back Odds</label>
-            <input class="text-input"  id="min-back-odds" placeholder="Min Odds" autocomplete="off">
+                <label class="filter-label" for="min-back-odds">Min E/W Odds</label>
+                <input class="text-input"  id="min-back-odds" placeholder="Min E/W Odds" autocomplete="off">
 
             </div>
             <div class="label_and_input_container">
 
-            <label class="filter-label" for="max-back-odds">Max Back Odds</label>
-            <input class="text-input"  id="max-back-odds" placeholder="Max Odds" autocomplete="off">
+                <label class="filter-label" for="max-back-odds">Max E/W Odds</label>
+                <input class="text-input"  id="max-back-odds" placeholder="Max E/W Odds" autocomplete="off">
 
             </div>
 
@@ -153,14 +114,32 @@
 
             <div class="label_and_input_container">
 
-            <label class="filter-label" for="min-rating">Min Rating</label>
-            <input class="text-input"  id="min-rating" placeholder="Min Rating" autocomplete="off">
+                <label class="filter-label" for="min-Implied Odds">Min Implied Odds</label>
+                <input class="text-input"  id="min-Implied Odds" placeholder="Min Implied Odds" autocomplete="off">
 
             </div>
             <div class="label_and_input_container">
 
-            <label class="filter-label" for="max-rating">Max Rating</label>
-            <input class="text-input"  id="max-rating" placeholder="Max Rating" autocomplete="off">
+                <label class="filter-label" for="max-Implied Odds">Max Implied Odds</label>
+                <input class="text-input"  id="max-Implied Odds" placeholder="Max Implied Odds" autocomplete="off">
+
+            </div>
+
+
+        </div>
+
+        <div class="filter-column">
+
+            <div class="label_and_input_container">
+
+                <label class="filter-label" for="min-places">Min Places</label>
+                <input class="text-input"  id="min-places" placeholder="Min Places" autocomplete="off">
+
+            </div>
+            <div class="label_and_input_container">
+                
+                <label class="filter-label" for="min-extra_places">Min Extra Places</label>
+                <input class="text-input"  id="min-extra_places" placeholder="Min Extra Places" autocomplete="off">
 
             </div>
 
@@ -199,85 +178,64 @@
 </div>
 
 
+<script src="https://betterbetgroup.github.io/betterbet_html/general_info.js"></script>
+
 <script>
     
 
+let is_premium_member = false;
 
 
+bookmakerImages = Object.fromEntries(
+    Object.entries(bookmakerImages).filter(([key]) => EXTRA_PLACE_BOOKMAKERS.includes(key))
+);
 
-    let is_premium_member = false;
-
-    const marketsList = ['Match Odds', 'Winner', 'BTTS', 'Over/Under'];
-
-    const sportIconUrls = {
-        "Football": "https://img.icons8.com/?size=100&id=65497&format=png&color=000000",
-        "Horse Racing": "https://img.icons8.com/?size=100&id=LuhFumPGCq9L&format=png&color=000000"
-    };
-
-    const bookmakerImages = {
-        "Bet365": 'https://static.wixstatic.com/media/7a0e3a_74b1758549414a87aef5c7d5d4a2c619~mv2.png',
-        "Betfred": 'https://static.wixstatic.com/media/7a0e3a_7f5a1de40338499f862587a987744fde~mv2.png',
-        "Virgin Bet": 'https://static.wixstatic.com/media/7a0e3a_d7313dc914d245acb174e5958627ce8e~mv2.png', 
-        "Livescore": 'https://static.wixstatic.com/media/7a0e3a_a3167bbd323a4656afc84718bbf88380~mv2.png',
-        "888Sport": 'https://static.wixstatic.com/media/7a0e3a_39af396146c84a38a96e953f938290ef~mv2.png',
-        "Paddy Power": 'https://static.wixstatic.com/media/7a0e3a_fcbb73ffbfa6454b8506f7a6e7e25c67~mv2.png',
-        "Skybet": 'https://static.wixstatic.com/media/7a0e3a_3b25d869c20042f38fc666d42118cedb~mv2.png',
-        "Betway": 'https://static.wixstatic.com/media/7a0e3a_2e3ef618674d4c94a2850b097873d5bb~mv2.png',
-        "William Hill": 'https://static.wixstatic.com/media/7a0e3a_0269c527e1ab4ea9be81154957f4c824~mv2.png',
-
-    };
-
-    const exchangeImages = {
-        "Betfair Exchange": 'https://static.wixstatic.com/media/7a0e3a_42e9ff11344a49fea33b58dcda917542~mv2.png',
-        "Smarkets": "https://static.wixstatic.com/media/7a0e3a_64979ac474b340868914fbf484d4ee89~mv2.png",
-        "Matchbook": "https://static.wixstatic.com/media/7a0e3a_c44a32e46bc34b6da0c9665311ed48b1~mv2.png"
-    };
-
-
-
-
-
-
-
+exchangeImages = Object.fromEntries(
+    Object.entries(exchangeImages).filter(([key]) => EXTRA_PLACE_EXCHANGES.includes(key))
+);
 
 
 let globalFilters = {
-    sports: Object.keys(sportIconUrls),
-    markets: marketsList,
     bookmakers: Object.keys(bookmakerImages),
     exchanges: Object.keys(exchangeImages),
     startTime: '',
     minLiquidity: null,
     minBackOdds: null,
     maxBackOdds: null,
-    minRating: null,
-    maxRating: null,
+    minImpliedOdds: null,
+    maxImpliedOdds: null,
+    minPlaces: null,
+    minExtraPlaces: null,
     minQualifyingLoss: null,
     minPotentialProfit: null,
 };
 
 
 
+
 let customFilters = {
 
-'Qualifying Bet':
+'No Filter':
 
         {
-            "sports": Object.keys(sportIconUrls),
-            "markets": marketsList,
             "bookmakers": Object.keys(bookmakerImages),
             "exchanges": Object.keys(exchangeImages),
             "startTime": "",
             "minLiquidity": "null",
             "minBackOdds": "null",
             "maxBackOdds": "null",
-            "minRating": "null",
-            "maxRating": "null",
+            "minImpliedOdds": "null",
+            "maxImpliedOdds": "null",
+            "minPlaces": "null",
+            "minExtraPlaces": "null",
             "minQualifyingLoss": "null",
             "minPotentialProfit": "null"
         }
 
 }
+
+
+
 
 function check_if_dropdown_matches_global_filter_settings() {
 
@@ -293,19 +251,20 @@ function check_if_dropdown_matches_global_filter_settings() {
 
 
         let adjusted_global_filters = {
-                "sports": globalFilters.sports.slice(), 
-                "markets": globalFilters.markets.slice(), 
                 "bookmakers": globalFilters.bookmakers.slice(), 
                 "exchanges": globalFilters.exchanges.slice(), 
                 "startTime": globalFilters.startTime || "", 
                 "minLiquidity": globalFilters.minLiquidity || "null",
                 "minBackOdds": globalFilters.minBackOdds || "null",
                 "maxBackOdds": globalFilters.maxBackOdds || "null",
-                "minRating": globalFilters.minRating || "null",
-                "maxRating": globalFilters.maxRating || "null",
+                "minImpliedOdds": globalFilters.minImpliedOdds || "null",
+                "maxImpliedOdds": globalFilters.maxImpliedOdds || "null",
+                "minPlaces": globalFilters.minPlaces || "null",
+                "minExtraPlaces": globalFilters.minExtraPlaces || "null",
                 "minQualifyingLoss": globalFilters.minQualifyingLoss || "null",
                 "minPotentialProfit": globalFilters.minPotentialProfit || "null"
             };
+    
 
 
         if (deepEqual(customFilters[key], adjusted_global_filters)) {
@@ -330,9 +289,6 @@ function check_if_dropdown_matches_global_filter_settings() {
 
 
 }
-
-
-
 
 function set_input_values_using_filter(filters) {
 
@@ -366,11 +322,8 @@ function set_input_values_using_filter(filters) {
     }
 
     // Apply filters for dropdowns with select-all functionality
-        manageDropdownCheckboxes('sports-dropdown-options', filters.sports, 'Select All Sports');
-        manageDropdownCheckboxes('markets-dropdown-options', filters.markets, 'Select All Markets');
-        manageDropdownCheckboxes('bookmakers-dropdown-options', filters.bookmakers, 'Select All Bookmakers');
-        manageDropdownCheckboxes('exchanges-dropdown-options', filters.exchanges, 'Select All Exchanges');
-    
+    manageDropdownCheckboxes('bookmakers-dropdown-options', filters.bookmakers, 'Select All Bookmakers');
+    manageDropdownCheckboxes('exchanges-dropdown-options', filters.exchanges, 'Select All Exchanges');
 
 
     const startTimeSelect = document.getElementById('date-range');
@@ -382,13 +335,15 @@ function set_input_values_using_filter(filters) {
         input.value = value === 'null' ? '' : value;
     }
 
-    setInputValue('min-liquidity', filters.minLiquidity);
-    setInputValue('min-back-odds', filters.minBackOdds);
-    setInputValue('max-back-odds', filters.maxBackOdds);
-    setInputValue('min-rating', filters.minRating);
-    setInputValue('max-rating', filters.maxRating);
-    setInputValue('min-qualifying-loss', filters.minQualifyingLoss);
-    setInputValue('min-potential-profit', filters.minPotentialProfit);
+        setInputValue('min-liquidity', filters.minLiquidity);
+        setInputValue('min-back-odds', filters.minBackOdds);
+        setInputValue('max-back-odds', filters.maxBackOdds);
+        setInputValue('min-Implied Odds', filters.minImpliedOdds);
+        setInputValue('max-Implied Odds', filters.maxImpliedOdds);
+        setInputValue('min-places', filters.minPlaces);
+        setInputValue('min-extra_places', filters.minExtraPlaces);
+        setInputValue('min-qualifying-loss', filters.minQualifyingLoss);
+        setInputValue('min-potential-profit', filters.minPotentialProfit);
 
 }
 
@@ -414,21 +369,19 @@ function function_that_takes_global_filters_and_appends_it_to_current_with_name(
 
 
     customFilters[name_for_filter] = {
-            "sports": globalFilters.sports.slice(), // Create a shallow copy of the array
-            "markets": globalFilters.markets.slice(), // Shallow copy
             "bookmakers": globalFilters.bookmakers.slice(), // Shallow copy
             "exchanges": globalFilters.exchanges.slice(), // Shallow copy
             "startTime": globalFilters.startTime || "", // Default to "null" if undefined or empty
             "minLiquidity": globalFilters.minLiquidity || "null",
             "minBackOdds": globalFilters.minBackOdds || "null",
             "maxBackOdds": globalFilters.maxBackOdds || "null",
-            "minRating": globalFilters.minRating || "null",
-            "maxRating": globalFilters.maxRating || "null",
+            "minImpliedOdds": globalFilters.minImpliedOdds || "null",
+            "maxImpliedOdds": globalFilters.maxImpliedOdds || "null",
+            "minPlaces": globalFilters.minPlaces || "null",
+            "minExtraPlaces": globalFilters.minExtraPlaces || "null",
             "minQualifyingLoss": globalFilters.minQualifyingLoss || "null",
             "minPotentialProfit": globalFilters.minPotentialProfit || "null"
         };
-
-
 
     return {
 
@@ -441,49 +394,49 @@ function function_that_takes_global_filters_and_appends_it_to_current_with_name(
 
 function go_to_input_and_update_global_for_the_input(filterId) {
 
-        switch (filterId) {
+    switch (filterId) {
     
-            case 'sports-dropdown-select-container':
-                globalFilters.sports = getCheckedOptions('#sports-dropdown-options');
-                break;
-            case 'markets-dropdown-select-container':
-                globalFilters.markets = getCheckedOptions('#markets-dropdown-options');
-                break;
-            case 'bookmakers-dropdown-select-container':
-                globalFilters.bookmakers = getCheckedOptions('#bookmakers-dropdown-options');
-                break;
-            case 'exchanges-dropdown-select-container':
-                globalFilters.exchanges = getCheckedOptions('#exchanges-dropdown-options');
-                break;
-    
-    
-            case 'min-liquidity':
-                globalFilters.minLiquidity = parseFloat(document.getElementById('min-liquidity').value) || null;
-                break;
-            case 'min-back-odds':
-                globalFilters.minBackOdds = parseFloat(document.getElementById('min-back-odds').value) || null;
-                break;
-            case 'max-back-odds':
-                globalFilters.maxBackOdds = parseFloat(document.getElementById('max-back-odds').value) || null;
-                break;
-            case 'min-rating':
-                globalFilters.minRating = parseFloat(document.getElementById('min-rating').value) || null;
-                break;
-            case 'max-rating':
-                globalFilters.maxRating = parseFloat(document.getElementById('max-rating').value) || null;
-                break;
-            case 'min-qualifying-loss':
-                let ql = parseFloat(document.getElementById('min-qualifying-loss').value);
-                globalFilters.minQualifyingLoss = isNaN(ql) ? null : ql;
-                break;
-            case 'min-potential-profit':
-                let pp = parseFloat(document.getElementById('min-potential-profit').value);
-                globalFilters.minPotentialProfit = isNaN(pp) ? null : pp;
-                break;
-            case 'date-range':
-                globalFilters.startTime = document.getElementById('date-range').value;
-                break;
-        }
+    case 'bookmakers-dropdown-select-container':
+        globalFilters.bookmakers = getCheckedOptions('#bookmakers-dropdown-options');
+        break;
+    case 'exchanges-dropdown-select-container':
+        globalFilters.exchanges = getCheckedOptions('#exchanges-dropdown-options');
+        break;
+
+
+    case 'min-liquidity':
+        globalFilters.minLiquidity = parseFloat(document.getElementById('min-liquidity').value) || null;
+        break;
+    case 'min-back-odds':
+        globalFilters.minBackOdds = parseFloat(document.getElementById('min-back-odds').value) || null;
+        break;
+    case 'max-back-odds':
+        globalFilters.maxBackOdds = parseFloat(document.getElementById('max-back-odds').value) || null;
+        break;
+    case 'min-Implied Odds':
+        globalFilters.minImpliedOdds = parseFloat(document.getElementById('min-Implied Odds').value) || null;
+        break;
+    case 'max-Implied Odds':
+        globalFilters.maxImpliedOdds = parseFloat(document.getElementById('max-Implied Odds').value) || null;
+        break;
+    case 'min-places':
+        globalFilters.minPlaces = parseFloat(document.getElementById('min-places').value) || null;
+        break;
+    case 'min-extra_places':
+        globalFilters.minExtraPlaces = parseFloat(document.getElementById('min-extra_places').value) || null;
+        break;
+    case 'min-qualifying-loss':
+        let ql = parseFloat(document.getElementById('min-qualifying-loss').value);
+        globalFilters.minQualifyingLoss = isNaN(ql) ? null : ql;
+        break;
+    case 'min-potential-profit':
+        globalFilters.minPotentialProfit = parseFloat(document.getElementById('min-potential-profit').value) || null;
+        break;
+        
+    case 'date-range':
+        globalFilters.startTime = document.getElementById('date-range').value;
+        break;
+}
 
     send_global_filters_to_wix();
 
@@ -492,11 +445,9 @@ function go_to_input_and_update_global_for_the_input(filterId) {
 
 function append_options_for_dropdowns() {
 
-    append_options_for_the_four_filter_dropdowns('#sports-dropdown-options', Object.keys(sportIconUrls));
-    append_options_for_the_four_filter_dropdowns('#markets-dropdown-options', marketsList);
     append_options_for_the_four_filter_dropdowns('#bookmakers-dropdown-options', Object.keys(bookmakerImages));
     append_options_for_the_four_filter_dropdowns('#exchanges-dropdown-options', Object.keys(exchangeImages));
-    
+
 }
 
 
@@ -1026,8 +977,6 @@ function append_options_for_the_four_filter_dropdowns(containerId, optionsList) 
         container.appendChild(label);
     });
 }
-
-
 function getCheckedOptions(containerId) {
     const container = document.querySelector(containerId);
     const labels = container.querySelectorAll('label');
@@ -1045,8 +994,6 @@ function getCheckedOptions(containerId) {
 
 
 function send_global_filters_to_wix() {
-
-    console.log(globalFilters)
 
     const message = {
         type: 'Filter Change',

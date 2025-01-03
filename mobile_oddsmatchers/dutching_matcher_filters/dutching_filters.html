@@ -3,12 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Better Bet 2up Filters</title>
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="https://betterbetgroup.github.io/betterbet_html/mobile_oddsmatchers/dutching_matcher_filters/styles.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <style >
-
-
 
 </style>
 </head>
@@ -81,10 +79,8 @@
 
             <div class="label_and_input_container">
 
-                    <label class="filter-label" for="min-liquidity">Min Liquidity</label>
-                    <div class="text-input-container">
-                        <input class="text-input" id="min-liquidity" placeholder="Min Liquidity" autocomplete="off">
-                    </div>
+                <label class="filter-label" for="min-outcomes">Min Outcomes</label>
+                <input class="text-input" id="min-outcomes" placeholder="Min Outcomes" autocomplete="off">
             </div>
 
 
@@ -92,59 +88,26 @@
         </div>
 
 
-        <div class="filter-column">
-
-
-            <div class="label_and_input_container">
-
-                <label class="filter-label" for="min-back-odds">Min E/W Odds</label>
-                <input class="text-input"  id="min-back-odds" placeholder="Min E/W Odds" autocomplete="off">
-
-            </div>
-            <div class="label_and_input_container">
-
-                <label class="filter-label" for="max-back-odds">Max E/W Odds</label>
-                <input class="text-input"  id="max-back-odds" placeholder="Max E/W Odds" autocomplete="off">
-
-            </div>
-
-
-        </div>
-        <div class="filter-column">
-
-            <div class="label_and_input_container">
-
-                <label class="filter-label" for="min-Implied Odds">Min Implied Odds</label>
-                <input class="text-input"  id="min-Implied Odds" placeholder="Min Implied Odds" autocomplete="off">
-
-            </div>
-            <div class="label_and_input_container">
-
-                <label class="filter-label" for="max-Implied Odds">Max Implied Odds</label>
-                <input class="text-input"  id="max-Implied Odds" placeholder="Max Implied Odds" autocomplete="off">
-
-            </div>
-
-
-        </div>
 
         <div class="filter-column">
 
             <div class="label_and_input_container">
 
-                <label class="filter-label" for="min-places">Min Places</label>
-                <input class="text-input"  id="min-places" placeholder="Min Places" autocomplete="off">
+                <label class="filter-label" for="min-rating">Min Rating</label>
+                <input class="text-input"  id="min-rating" placeholder="Min Rating" autocomplete="off">
 
             </div>
             <div class="label_and_input_container">
-                
-                <label class="filter-label" for="min-extra_places">Min Extra Places</label>
-                <input class="text-input"  id="min-extra_places" placeholder="Min Extra Places" autocomplete="off">
+
+                <label class="filter-label" for="max-rating">Max Rating</label>
+                <input class="text-input"  id="max-rating" placeholder="Max Rating" autocomplete="off">
 
             </div>
 
 
         </div>
+
+
         <div class="filter-column">
 
             <div class="label_and_input_container">
@@ -178,74 +141,44 @@
 </div>
 
 
+<script src="https://betterbetgroup.github.io/betterbet_html/general_info.js"></script>
+
 <script>
     
 
+let is_premium_member = false;
 
 
+bookmakerImages = Object.fromEntries(
+    Object.entries(bookmakerImages).filter(([key]) => DUTCHING_BOOKMAKERS.includes(key))
+);
 
-    let is_premium_member = false;
-
-
-const bookmakerImages = {
-    "Bet365": 'https://static.wixstatic.com/media/7a0e3a_74b1758549414a87aef5c7d5d4a2c619~mv2.png',
-    "Betfred": 'https://static.wixstatic.com/media/7a0e3a_7f5a1de40338499f862587a987744fde~mv2.png',
-    "Virgin Bet": 'https://static.wixstatic.com/media/7a0e3a_d7313dc914d245acb174e5958627ce8e~mv2.png', 
-    "Livescore": 'https://static.wixstatic.com/media/7a0e3a_a3167bbd323a4656afc84718bbf88380~mv2.png',
-    "888Sport": 'https://static.wixstatic.com/media/7a0e3a_39af396146c84a38a96e953f938290ef~mv2.png',
-    "Paddy Power": 'https://static.wixstatic.com/media/7a0e3a_fcbb73ffbfa6454b8506f7a6e7e25c67~mv2.png',
-    "Skybet": 'https://static.wixstatic.com/media/7a0e3a_3b25d869c20042f38fc666d42118cedb~mv2.png',
-    "Betway": 'https://static.wixstatic.com/media/7a0e3a_2e3ef618674d4c94a2850b097873d5bb~mv2.png',
-    "William Hill": 'https://static.wixstatic.com/media/7a0e3a_0269c527e1ab4ea9be81154957f4c824~mv2.png',
-};
-
-const exchangeImages = {
-    "Betfair Exchange": 'https://static.wixstatic.com/media/7a0e3a_42e9ff11344a49fea33b58dcda917542~mv2.png',
-    "Smarkets": "https://static.wixstatic.com/media/7a0e3a_64979ac474b340868914fbf484d4ee89~mv2.png",
-    "Matchbook": "https://static.wixstatic.com/media/7a0e3a_c44a32e46bc34b6da0c9665311ed48b1~mv2.png"
-};
-
-
-
-
-
-
-
-
+exchangeImages = Object.fromEntries(
+    Object.entries(exchangeImages).filter(([key]) => DUTCHING_EXCHANGES.includes(key))
+);
 
 let globalFilters = {
     bookmakers: Object.keys(bookmakerImages),
     exchanges: Object.keys(exchangeImages),
     startTime: '',
-    minLiquidity: null,
-    minBackOdds: null,
-    maxBackOdds: null,
-    minImpliedOdds: null,
-    maxImpliedOdds: null,
-    minPlaces: null,
-    minExtraPlaces: null,
+    minoutcomes: null,
+    minrating: null,
+    maxrating: null,
     minQualifyingLoss: null,
     minPotentialProfit: null,
 };
 
-
-
-
 let customFilters = {
 
-'Bet365 All times':
+'No Filter':
 
         {
             "bookmakers": Object.keys(bookmakerImages),
             "exchanges": Object.keys(exchangeImages),
             "startTime": "",
-            "minLiquidity": "null",
-            "minBackOdds": "null",
-            "maxBackOdds": "null",
-            "minImpliedOdds": "null",
-            "maxImpliedOdds": "null",
-            "minPlaces": "null",
-            "minExtraPlaces": "null",
+            "minoutcomes": "null",
+            "minrating": "null",
+            "maxrating": "null",
             "minQualifyingLoss": "null",
             "minPotentialProfit": "null"
         }
@@ -269,19 +202,15 @@ function check_if_dropdown_matches_global_filter_settings() {
 
 
         let adjusted_global_filters = {
-                "bookmakers": globalFilters.bookmakers.slice(), 
-                "exchanges": globalFilters.exchanges.slice(), 
-                "startTime": globalFilters.startTime || "", 
-                "minLiquidity": globalFilters.minLiquidity || "null",
-                "minBackOdds": globalFilters.minBackOdds || "null",
-                "maxBackOdds": globalFilters.maxBackOdds || "null",
-                "minImpliedOdds": globalFilters.minImpliedOdds || "null",
-                "maxImpliedOdds": globalFilters.maxImpliedOdds || "null",
-                "minPlaces": globalFilters.minPlaces || "null",
-                "minExtraPlaces": globalFilters.minExtraPlaces || "null",
-                "minQualifyingLoss": globalFilters.minQualifyingLoss || "null",
-                "minPotentialProfit": globalFilters.minPotentialProfit || "null"
-            };
+            "bookmakers": globalFilters.bookmakers.slice(), 
+            "exchanges": globalFilters.exchanges.slice(), 
+            "startTime": globalFilters.startTime || "", 
+            "minoutcomes": globalFilters.minoutcomes || "null",
+            "minrating": globalFilters.minrating || "null",
+            "maxrating": globalFilters.maxrating || "null",
+            "minQualifyingLoss": globalFilters.minQualifyingLoss || "null",
+            "minPotentialProfit": globalFilters.minPotentialProfit || "null"
+        };
     
 
 
@@ -353,15 +282,11 @@ function set_input_values_using_filter(filters) {
         input.value = value === 'null' ? '' : value;
     }
 
-        setInputValue('min-liquidity', filters.minLiquidity);
-        setInputValue('min-back-odds', filters.minBackOdds);
-        setInputValue('max-back-odds', filters.maxBackOdds);
-        setInputValue('min-Implied Odds', filters.minImpliedOdds);
-        setInputValue('max-Implied Odds', filters.maxImpliedOdds);
-        setInputValue('min-places', filters.minPlaces);
-        setInputValue('min-extra_places', filters.minExtraPlaces);
-        setInputValue('min-qualifying-loss', filters.minQualifyingLoss);
-        setInputValue('min-potential-profit', filters.minPotentialProfit);
+    setInputValue('min-outcomes', filters.minoutcomes);
+    setInputValue('min-rating', filters.minrating);
+    setInputValue('max-rating', filters.maxrating);
+    setInputValue('min-qualifying-loss', filters.minQualifyingLoss);
+    setInputValue('min-potential-profit', filters.minPotentialProfit);
 
 }
 
@@ -387,19 +312,15 @@ function function_that_takes_global_filters_and_appends_it_to_current_with_name(
 
 
     customFilters[name_for_filter] = {
-            "bookmakers": globalFilters.bookmakers.slice(), // Shallow copy
-            "exchanges": globalFilters.exchanges.slice(), // Shallow copy
-            "startTime": globalFilters.startTime || "", // Default to "null" if undefined or empty
-            "minLiquidity": globalFilters.minLiquidity || "null",
-            "minBackOdds": globalFilters.minBackOdds || "null",
-            "maxBackOdds": globalFilters.maxBackOdds || "null",
-            "minImpliedOdds": globalFilters.minImpliedOdds || "null",
-            "maxImpliedOdds": globalFilters.maxImpliedOdds || "null",
-            "minPlaces": globalFilters.minPlaces || "null",
-            "minExtraPlaces": globalFilters.minExtraPlaces || "null",
-            "minQualifyingLoss": globalFilters.minQualifyingLoss || "null",
-            "minPotentialProfit": globalFilters.minPotentialProfit || "null"
-        };
+        "bookmakers": globalFilters.bookmakers.slice(), // Shallow copy
+        "exchanges": globalFilters.exchanges.slice(), // Shallow copy
+        "startTime": globalFilters.startTime || "", // Default to "null" if undefined or empty
+        "minoutcomes": globalFilters.minoutcomes || "null",
+        "minrating": globalFilters.minrating || "null",
+        "maxrating": globalFilters.maxrating || "null",
+        "minQualifyingLoss": globalFilters.minQualifyingLoss || "null",
+        "minPotentialProfit": globalFilters.minPotentialProfit || "null"
+    };
 
     return {
 
@@ -413,49 +334,37 @@ function function_that_takes_global_filters_and_appends_it_to_current_with_name(
 function go_to_input_and_update_global_for_the_input(filterId) {
 
     switch (filterId) {
+
+case 'bookmakers-dropdown-select-container':
+    globalFilters.bookmakers = getCheckedOptions('#bookmakers-dropdown-options');
+    break;
+case 'exchanges-dropdown-select-container':
+    globalFilters.exchanges = getCheckedOptions('#exchanges-dropdown-options');
+    break;
+
+
+case 'min-outcomes':
+    globalFilters.minoutcomes = parseFloat(document.getElementById('min-outcomes').value) || null;
+    break;
+case 'min-rating':
+    globalFilters.minrating = parseFloat(document.getElementById('min-rating').value) || null;
+    break;
+case 'max-rating':
+    globalFilters.maxrating = parseFloat(document.getElementById('max-rating').value) || null;
+    break;
+case 'min-qualifying-loss':
+    let ql = parseFloat(document.getElementById('min-qualifying-loss').value);
+    globalFilters.minQualifyingLoss = isNaN(ql) ? null : ql;
+    break;
+case 'min-potential-profit':
+    let pp = parseFloat(document.getElementById('min-potential-profit').value);
+    globalFilters.minPotentialProfit = isNaN(pp) ? null : pp;
+    break;
     
-    case 'bookmakers-dropdown-select-container':
-        globalFilters.bookmakers = getCheckedOptions('#bookmakers-dropdown-options');
-        break;
-    case 'exchanges-dropdown-select-container':
-        globalFilters.exchanges = getCheckedOptions('#exchanges-dropdown-options');
-        break;
-
-
-    case 'min-liquidity':
-        globalFilters.minLiquidity = parseFloat(document.getElementById('min-liquidity').value) || null;
-        break;
-    case 'min-back-odds':
-        globalFilters.minBackOdds = parseFloat(document.getElementById('min-back-odds').value) || null;
-        break;
-    case 'max-back-odds':
-        globalFilters.maxBackOdds = parseFloat(document.getElementById('max-back-odds').value) || null;
-        break;
-    case 'min-Implied Odds':
-        globalFilters.minImpliedOdds = parseFloat(document.getElementById('min-Implied Odds').value) || null;
-        break;
-    case 'max-Implied Odds':
-        globalFilters.maxImpliedOdds = parseFloat(document.getElementById('max-Implied Odds').value) || null;
-        break;
-    case 'min-places':
-        globalFilters.minPlaces = parseFloat(document.getElementById('min-places').value) || null;
-        break;
-    case 'min-extra_places':
-        globalFilters.minExtraPlaces = parseFloat(document.getElementById('min-extra_places').value) || null;
-        break;
-    case 'min-qualifying-loss':
-        let ql = parseFloat(document.getElementById('min-qualifying-loss').value);
-        globalFilters.minQualifyingLoss = isNaN(ql) ? null : ql;
-        break;
-    case 'min-potential-profit':
-        globalFilters.minPotentialProfit = parseFloat(document.getElementById('min-potential-profit').value) || null;
-        break;
-        
-    case 'date-range':
-        globalFilters.startTime = document.getElementById('date-range').value;
-        break;
+case 'date-range':
+    globalFilters.startTime = document.getElementById('date-range').value;
+    break;
 }
-
     send_global_filters_to_wix();
 
 }
@@ -1012,6 +921,8 @@ function getCheckedOptions(containerId) {
 
 
 function send_global_filters_to_wix() {
+
+    console.log(globalFilters)
 
     const message = {
         type: 'Filter Change',
