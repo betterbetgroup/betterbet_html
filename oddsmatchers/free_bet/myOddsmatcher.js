@@ -12,6 +12,7 @@
 
 // make free bet version that just sorts by potential profit by default, - doesn't need to be new file just new custom element on wix
 
+(function () {
 
 
 const LARGE_FONT_WIDTH = 1390;
@@ -1185,3 +1186,4 @@ class FreeBetOddsmatcher extends HTMLElement {
 customElements.define('freebet-oddsmatcher', FreeBetOddsmatcher);
 
 
+})();

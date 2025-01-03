@@ -1,3 +1,7 @@
+(function () {
+
+
+
 let is_available = true;
 
 let user_suo_object = []
@@ -2655,3 +2659,4 @@ customElements.define('mobile-suo', MobileSignUpOfferList);
 
 
 
+})();

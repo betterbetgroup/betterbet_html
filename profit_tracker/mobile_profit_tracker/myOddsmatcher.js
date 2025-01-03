@@ -1,50 +1,7 @@
 
 
+(function () {
 
-// events are 'Select-Event', 'Calculator', 'Checkbox', 'Delete-Filter', 'Save-Filter
-
-
-
-
-
-//
-
-
-//
-
-
-
-// HAVE CURRENTLY REMOVED CURRENT PAGE = 1 AT FILTER DATA TO SEE
-
-
-
-
-//
-
-
-
-//
-
-
-
-
-// SHOULD WORK AS THEY CAN'T DELETE ROWS SO PAGE WILL NOT GO ABOVE DATA
-
-
-
-
-//
-
-
-
-
-
-//
-
-
-
-
-// FOR MOBILE JUST REPLAC THE TABLE WITH A DIV AND PUT DIVS ON TOP AND CHANGE ROW CREATE TO DIV CREATE
 
 
 
@@ -2755,4 +2712,5 @@ alternateText() {
 customElements.define('profit-tracker', ProfitTracker);
 
 
+})();
 

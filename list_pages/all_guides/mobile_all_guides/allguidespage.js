@@ -1,4 +1,8 @@
-    let all_guides_object = []
+   
+   (function () {
+
+   
+   let all_guides_object = []
    
     let globalData = {};
 
@@ -570,3 +574,4 @@ customElements.define('allguides-page', AllGuides);
 
 
 
+})();

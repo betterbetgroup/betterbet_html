@@ -8,6 +8,7 @@
 
 
 
+(function() {
 
 
 // make free bet version that just sorts by potential profit by default, - doesn't need to be new file just new custom element on wix
@@ -1192,3 +1193,4 @@ customElements.define('qualbet-oddsmatcher', QualBetOddsmatcher);
 
 
 
+})();

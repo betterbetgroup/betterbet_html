@@ -17,6 +17,10 @@
 
 // events are 'Select-Event', 'More-Info', 'Upgrade', 'Delete-Filter', 'Save-Filter
 
+(function () {
+
+
+
 
 const LARGE_FONT_WIDTH = 1400;
 const LARGE_BOOKMAKER_AND_ODDS = 1280;
@@ -2413,3 +2417,4 @@ customElements.define('each-way-oddsmatcher', eachWayOddsmatcher);
 
 
 
+})();

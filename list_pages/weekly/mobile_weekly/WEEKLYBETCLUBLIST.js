@@ -1,3 +1,6 @@
+(function () {
+
+
 
 let is_available = true;
 
@@ -2712,3 +2715,4 @@ customElements.define('mobile-weekly', ProfitTracker);
 
 
 
+})();

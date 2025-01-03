@@ -1,4 +1,5 @@
 
+(function () {
 
 
 const LARGE_FONT_WIDTH = 1650;
@@ -2865,3 +2866,4 @@ customElements.define('profit-tracker', ProfitTracker);
 
 
 
+})();

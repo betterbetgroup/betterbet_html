@@ -18,6 +18,9 @@
 // events are 'Select-Event', 'More-Info', 'Upgrade', 'Delete-Filter', 'Save-Filter
 
 
+(function () {
+
+
 const LARGE_FONT_WIDTH = 1530;
 const LARGE_BOOKMAKER_AND_ODDS = 1385;
 const MEDIUM_FONT_WIDTH = 1275;
@@ -2476,3 +2479,4 @@ customElements.define('dutching-oddsmatcher', dutchingOddsmatcher);
 
 
 
+})();

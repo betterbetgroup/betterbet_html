@@ -11,6 +11,12 @@
 // events are 'Select-Event', 'More-Info', 'Upgrade', 'Delete-Filter', 'Save-Filter
 
 
+
+(function () {
+
+
+
+
 const LARGE_FONT_WIDTH = 1370;
 const LARGE_BOOKMAKER_AND_ODDS = 1180
 const MEDIUM_FONT_WIDTH = 1060;
@@ -2083,3 +2089,4 @@ customElements.define('two-up-oddsmatcher', TwoUpOddsmatcher);
 
 
 
+})();

@@ -2153,7 +2153,6 @@ alternateText() {
     }
 
 
-
     getAbsoluteX(element) {
         let actualLeft = element.offsetLeft;
         let current = element.offsetParent; // Get the nearest positioned ancestor
