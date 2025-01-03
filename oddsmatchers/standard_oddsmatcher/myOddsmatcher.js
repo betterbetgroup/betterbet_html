@@ -9,6 +9,7 @@
 // HAVE TO GO THROUGH AND CHANGE EVENT LISTNERS TO BE ARROWS
 
 
+(function() {
 
 
 // NOW JUST NEED TO MAKE THE SIZING WORK
@@ -2420,3 +2421,4 @@ customElements.define('standard-oddsmatcher', StandardOddsmatcher);
 
 
 
+})();

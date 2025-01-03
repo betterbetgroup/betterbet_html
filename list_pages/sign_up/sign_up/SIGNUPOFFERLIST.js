@@ -1,6 +1,7 @@
 // events are 'suo_array'
 
 
+(function() {
 
 
 
@@ -2624,3 +2625,4 @@ customElements.define('sign-up-offer-list', SignUpOfferList);
 
 
 
+})();

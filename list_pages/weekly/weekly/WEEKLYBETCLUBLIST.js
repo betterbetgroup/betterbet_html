@@ -1,3 +1,6 @@
+(function () {
+
+
 let is_available = true;
 
 let user_suo_object = []
@@ -2710,3 +2713,4 @@ customElements.define('weekly-bet-club-offer-list', ProfitTracker);
 
 
 
+})();

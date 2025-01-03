@@ -1,3 +1,5 @@
+(function () {
+
 // betano and betvictor removed as they're mobile only offers
 // can probably work them back in
 
@@ -503,3 +505,6 @@ let unused_offers = [
         "bookmaker": "QuinnBet"
       }
     ]
+
+
+  })();

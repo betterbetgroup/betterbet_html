@@ -1,12 +1,15 @@
-    let all_guides_object = []
-   
-    let globalData = {};
+(function () {
 
-    let filteredData = [];
+    
+let all_guides_object = []
 
-    let current_sort = 'none';
+let globalData = {};
 
-    let data_loaded_from_wix = false;
+let filteredData = [];
+
+let current_sort = 'none';
+
+let data_loaded_from_wix = false;
 
 
 class AllGuides extends HTMLElement {
@@ -573,3 +576,4 @@ customElements.define('allguides-page', AllGuides);
 
 
 
+})();

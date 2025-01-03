@@ -1,3 +1,5 @@
+(function () {
+
 const weekly_bet_club_list = [
     {
       "offer_description": "Bet £30, Get £5 Free Bet",
@@ -153,3 +155,5 @@ const weekly_bet_club_list = [
       "logo": "https://static.wixstatic.com/media/7a0e3a_fcbb73ffbfa6454b8506f7a6e7e25c67~mv2.png",
     },
   ]
+
+})();

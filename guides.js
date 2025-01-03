@@ -1,3 +1,5 @@
+(function () {
+
 const all_guides = [
     {
       "guide": "https://www.betterbetgroup.com/sign-up-offer-tutorial-beginners",
@@ -60,3 +62,5 @@ const all_guides = [
       "difficulty": "Advanced",
     },
   ]
+
+})();
