@@ -870,7 +870,7 @@ td[id^='outcome'] {
 }
 
 .custom-select-trigger:after, .custom-input-trigger select, .custom-select-trigger-filter:after {
-    content: '\\25BC'; 
+    content: '\25BC'; 
     color: #eee;
     pointer-events: none;
     position: absolute;

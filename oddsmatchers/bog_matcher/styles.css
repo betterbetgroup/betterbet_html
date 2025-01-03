@@ -876,7 +876,7 @@ td[id^='rating_'] {
 }
 
 .custom-select-trigger:after, .custom-input-trigger select, .custom-select-trigger-filter:after {
-    content: '\\25BC'; /* Down arrow icon */
+    content: '\25BC'; /* Down arrow icon */
     color: #eee;
     pointer-events: none;
     position: absolute;
