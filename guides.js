@@ -1,4 +1,3 @@
-(function () {
 
 const all_guides = [
     {
@@ -63,4 +62,3 @@ const all_guides = [
     },
   ]
 
-})();

@@ -1,4 +1,3 @@
-(function () {
 
 const weekly_bet_club_list = [
     {
@@ -156,4 +155,3 @@ const weekly_bet_club_list = [
     },
   ]
 
-})();
