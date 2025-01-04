@@ -1,5 +1,5 @@
 
-window.all_guides = [
+const all_guides = [
     {
       "guide": "https://www.betterbetgroup.com/sign-up-offer-tutorial-beginners",
       "title": "Signup Offer Tutorial",
