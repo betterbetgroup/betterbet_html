@@ -1,10 +1,8 @@
-import { all_guides } from 'https://betterbetgroup.github.io/betterbet_html/guides.js';
-
 (function () {
 
 let all_guides_object = []
 
-let globalData = all_guides;
+let globalData = {};
 
 let filteredData = [];
 
@@ -490,11 +488,26 @@ class AllGuides extends HTMLElement {
         return fetch('https://betterbetgroup.github.io/betterbet_html/list_pages/all_guides/all_guides/z.html')
             .then(response => response.text())
             .then(html => {
-                
                 this.shadowRoot.innerHTML = html;
-
+    
+                this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/guides.js')
+                    .then(() => {
+                        globalData = all_guides;
+                    })
             });
     }
+
+    loadExternalScript(scriptUrl) {
+        return new Promise((resolve, reject) => {
+            const script = document.createElement('script');
+            script.src = scriptUrl;
+            script.type = 'text/javascript';
+            script.onload = resolve;
+            script.onerror = reject;
+            document.head.appendChild(script);
+        });
+    }
+
 
 
     getAbsoluteX(element) {
