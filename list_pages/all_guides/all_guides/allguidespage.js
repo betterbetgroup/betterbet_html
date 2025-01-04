@@ -1,8 +1,17 @@
 (function () {
 
-let all_guides_object = []
+const script = document.createElement('script');
+script.src = 'https://betterbetgroup.github.io/betterbet_html/guides.js';
 
-let globalData = {};
+let globalData = {}
+
+script.onload = () => {
+
+    globalData = window.all_guides;
+
+};
+
+let all_guides_object = []
 
 let filteredData = [];
 
@@ -490,10 +499,6 @@ class AllGuides extends HTMLElement {
             .then(html => {
                 this.shadowRoot.innerHTML = html;
     
-                this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/guides.js')
-                    .then(() => {
-                        globalData = all_guides;
-                    })
             });
     }
 
