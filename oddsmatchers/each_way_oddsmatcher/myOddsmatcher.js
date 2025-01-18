@@ -2413,7 +2413,7 @@ add_lock_if_premium() {
 
 }
 
-customElements.define('each-way-oddsmatcher', eachWayOddsmatcher);
+customElements.define('each-oddsmatcher', eachWayOddsmatcher);
 
 
 
