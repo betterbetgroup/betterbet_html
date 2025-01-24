@@ -1,8 +1,5 @@
 
 
-if (typeof BettingSetup === 'undefined') {
-
-    let BettingSetup = "File Loaded"
 
     // STANDARD
     let STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power']
@@ -53,4 +50,4 @@ if (typeof BettingSetup === 'undefined') {
         "Matchbook": "https://static.wixstatic.com/media/7a0e3a_c44a32e46bc34b6da0c9665311ed48b1~mv2.png"
     };
 
-}
+

@@ -1,8 +1,5 @@
 
-
-if (typeof all_guides === 'undefined') {
-
-  const all_guides = [
+  var all_guides = [
       {
         "guide": "https://www.betterbetgroup.com/sign-up-offer-tutorial-beginners",
         "title": "Signup Offer Tutorial",
@@ -64,5 +61,5 @@ if (typeof all_guides === 'undefined') {
         "difficulty": "Advanced",
       },
     ]
-    
-  }
+
+  
