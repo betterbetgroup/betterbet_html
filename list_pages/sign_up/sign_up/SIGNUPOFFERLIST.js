@@ -90,6 +90,7 @@ class SignUpOfferList extends HTMLElement {
     }
 
     attributeChangedCallback(name, oldValue, newValue) {
+        console.log('attribute callback')
         if (this.isContentLoaded) {
             if (name === 'data-odds') {
                 this.process_new_final_data(newValue);
@@ -2079,52 +2080,6 @@ alternateText() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     // Method to inject CSS styles into the shadow DOM.
 
     render() {
@@ -2135,6 +2090,7 @@ alternateText() {
     
                 this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/sign_up.js')
                     .then(() => {
+                        console.log('set final data')
                         globalData = sign_up_offer_list;
                     })
             });
