@@ -14,9 +14,8 @@
 
 
   
-  if (typeof sign_up_offer_list === 'undefined') {
 
-    const sign_up_offer_list = [
+    var sign_up_offer_list = [
     
         {
           "logo": "https://static.wixstatic.com/media/7a0e3a_475f8122a9234ce6b476fd166b34ee89~mv2.png",
@@ -428,4 +427,4 @@
       ]
 
 
-  }
+  

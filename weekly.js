@@ -1,8 +1,5 @@
 
-
-if (typeof weekly_bet_club_list === 'undefined') {
-
-  const weekly_bet_club_list = [
+  var weekly_bet_club_list = [
       {
         "offer_description": "Bet £30, Get £5 Free Bet",
         "odds_details": "2.0",
@@ -158,4 +155,4 @@ if (typeof weekly_bet_club_list === 'undefined') {
       },
     ]
 
-  }
+  
