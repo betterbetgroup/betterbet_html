@@ -2371,7 +2371,12 @@ alternateText() {
                     fontAwesomeLink.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css');
                     
                     this.shadowRoot.appendChild(fontAwesomeLink);
-                    this.style.display = 'block'; // Make the host element visible
+
+                    setTimeout(() => {
+
+                        this.style.display = 'block'; // Make the host element visible
+                        
+                    }, 100);
 
 
                 return resolve('done')

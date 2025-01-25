@@ -2276,7 +2276,11 @@ alternateText() {
                     
                     this.shadowRoot.appendChild(fontAwesomeLink);
 
-                    this.style.display = 'flex'; // Make the host element visible so it doesn't show it before it's applied the styles
+                    setTimeout(() => {
+
+                        this.style.display = 'flex'; // Make the host element visible so it doesn't show it before it's applied the styles
+                        
+                    }, 100);
 
 
                 return resolve('done')

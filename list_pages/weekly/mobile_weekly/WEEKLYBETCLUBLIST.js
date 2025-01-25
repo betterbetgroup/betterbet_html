@@ -2288,6 +2288,14 @@ alternateText() {
                     
                     this.shadowRoot.appendChild(fontAwesomeLink);
 
+                    setTimeout(() => {
+
+                        this.style.display = 'flex'; // Make the host element visible so it doesn't show it before it's applied the styles
+                        
+                    }, 100);
+
+
+
                 return resolve('done')
 
             } catch(error) {
@@ -2305,8 +2313,6 @@ alternateText() {
         const width = (window.innerWidth * 0.98)-10;
         const contentDiv = this.shadowRoot.getElementById('outer-container-div');
         contentDiv.style.width = `${width}px`; // MAKE THE OUTER CONTAINER BE THE WIDTH OF THE WINDOW
-
-        this.style.display = 'flex'; // Make the host element visible so it doesn't show it before it's applied the styles
 
         //this.set_font_size(width);
 

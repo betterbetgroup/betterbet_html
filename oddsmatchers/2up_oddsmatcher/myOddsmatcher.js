@@ -1897,7 +1897,11 @@ render() {
                 
                 this.shadowRoot.appendChild(fontAwesomeLink);
 
-                this.style.display = 'block'; // Make the host element visible
+                setTimeout(() => {
+
+                    this.style.display = 'block'; // Make the host element visible
+                    
+                }, 8);
 
                 return resolve('done')
 
