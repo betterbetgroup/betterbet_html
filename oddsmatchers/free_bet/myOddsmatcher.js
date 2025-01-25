@@ -813,12 +813,19 @@ class FreeBetOddsmatcher extends HTMLElement {
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
-
-                this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js')
-
+                // Return the promise from loadExternalScript to ensure it completes before proceeding
+                return this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js');
+            })
+            .then(() => {
+                // This then() block will execute only after the script has fully loaded
+                // Any actions dependent on the script should be called here
+            })
+            .catch(error => {
+                // Catch and log any errors that occur during the fetch or script loading
+                console.error('Error loading script or processing data:', error);
             });
-
     }
+    
 
 
 

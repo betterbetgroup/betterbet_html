@@ -2157,13 +2157,23 @@ alternateText() {
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
-    
-                this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/sign_up.js')
-                    .then(() => {
-                        globalData = sign_up_offer_list;
-                    })
+                // Return the promise to ensure it completes before moving to the next then block
+                return this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/sign_up.js');
+            })
+            .then(() => {
+                // This then() block will now only execute after the script has fully loaded
+                if (typeof sign_up_offer_list !== 'undefined') {
+                    globalData = sign_up_offer_list;
+                } else {
+                    console.error('sign_up_offer_list is undefined');
+                }
+            })
+            .catch(error => {
+                // Catch any errors that occur during the fetch or script loading
+                console.error('Error loading script or processing data:', error);
             });
     }
+    
 
     loadExternalScript(scriptUrl) {
         return new Promise((resolve, reject) => {

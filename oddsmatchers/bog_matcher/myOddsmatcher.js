@@ -2042,14 +2042,19 @@ setInterval(() => {
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
-
-                this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js')
-                    .then(() => {
-                        this.filter_bookmakers_and_exchanges(); 
-                    })
-    
+                // Return the promise from loadExternalScript to ensure it completes before proceeding
+                return this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js');
+            })
+            .then(() => {
+                // This then() block will execute only after the script has fully loaded
+                this.filter_bookmakers_and_exchanges(); 
+            })
+            .catch(error => {
+                // Catch and log any errors that occur during the fetch or script loading
+                console.error('Error loading script or processing data:', error);
             });
     }
+    
 
     filter_bookmakers_and_exchanges() {
 

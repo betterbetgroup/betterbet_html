@@ -489,13 +489,23 @@ class AllGuides extends HTMLElement {
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
-    
-                this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/guides.js')
-                    .then(() => {
-                        globalData = all_guides;
-                    })
+                // Return the promise from loadExternalScript to ensure it completes before proceeding
+                return this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/guides.js');
+            })
+            .then(() => {
+                // This then() block will execute only after the script has fully loaded
+                if (typeof all_guides !== 'undefined') {
+                    globalData = all_guides;
+                } else {
+                    console.error('all_guides is undefined');
+                }
+            })
+            .catch(error => {
+                // Catch and log any errors that occur during the fetch or script loading
+                console.error('Error loading script or processing data:', error);
             });
     }
+    
 
     loadExternalScript(scriptUrl) {
         return new Promise((resolve, reject) => {

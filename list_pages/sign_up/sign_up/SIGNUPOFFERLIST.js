@@ -2087,15 +2087,19 @@ alternateText() {
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
-    
-                this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/sign_up.js')
-                    .then(() => {
-                        console.log('set final data')
-                        globalData = sign_up_offer_list;
-                    })
+                return this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/sign_up.js');
+            })
+            .then(() => {
+                if (typeof sign_up_offer_list !== 'undefined') {
+                    globalData = sign_up_offer_list;
+                } 
+            })
+            .catch(error => {
+                console.error('Error loading script or processing data:', error);
             });
-
     }
+
+
 
     loadExternalScript(scriptUrl) {
         return new Promise((resolve, reject) => {

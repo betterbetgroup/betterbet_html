@@ -12,9 +12,6 @@
 // removed space casino as you have to email for free bet, doesn't calculate right, and it's only £2.50 profit
 
 
-
-  
-
     var sign_up_offer_list = [
     
         {

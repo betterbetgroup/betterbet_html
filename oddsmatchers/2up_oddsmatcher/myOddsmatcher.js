@@ -1763,22 +1763,29 @@ alternateText() {
 
     // Method to inject CSS styles into the shadow DOM.
 
-    render() {
-        return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/2up_oddsmatcher/z.html')
-            .then(response => response.text())
-            .then(html => {
-                this.shadowRoot.innerHTML = html;
-    
-                this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js')
-                    .then(() => {
-                        this.filter_bookmakers_and_exchanges(); 
-                    })
+render() {
+    return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/2up_oddsmatcher/z.html')
+        .then(response => response.text())
+        .then(html => {
+            this.shadowRoot.innerHTML = html;
+            // Return the promise to ensure script loads before proceeding
+            return this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/general_info.js');
+        })
+        .then(() => {
+            // Now we are sure the script is loaded, we can safely call this function
+            this.filter_bookmakers_and_exchanges(); 
 
-                requestAnimationFrame(() => {
-                        this.make_premium_box_correct_size();
-                });
+            // Using requestAnimationFrame to make sure changes are visually updated correctly
+            requestAnimationFrame(() => {
+                this.make_premium_box_correct_size();
             });
-    }
+        })
+        .catch(error => {
+            // Catch any errors that occur during the fetch or script loading
+            console.error('Error loading script or processing data:', error);
+        });
+}
+
 
 
     filter_bookmakers_and_exchanges() {

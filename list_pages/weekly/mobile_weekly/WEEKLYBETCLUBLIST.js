@@ -2222,15 +2222,23 @@ alternateText() {
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
-    
-                this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/weekly.js')
-                    .then(() => {
-                        globalData = weekly_bet_club_list;
-                    })
+                // Return the promise from loadExternalScript to ensure it completes before proceeding
+                return this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/weekly.js');
+            })
+            .then(() => {
+                // This then() block will execute only after the script has fully loaded
+                if (typeof weekly_bet_club_list !== 'undefined') {
+                    globalData = weekly_bet_club_list;
+                } else {
+                    console.error('weekly_bet_club_list is undefined');
+                }
+            })
+            .catch(error => {
+                // Catch and log any errors that occur during the fetch or script loading
+                console.error('Error loading script or processing data:', error);
             });
-
-
     }
+    
 
     loadExternalScript(scriptUrl) {
         return new Promise((resolve, reject) => {
