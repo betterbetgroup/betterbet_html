@@ -42,13 +42,15 @@ class SignUpOfferList extends HTMLElement {
 
         this.isContentLoaded = false;
         this.attributeChangeQueue = [];
-        
+
     }
 
     connectedCallback() {
 
-        this.loadConfettiScript();
+        this.style.display = 'none'; 
 
+
+        this.loadConfettiScript();
 
             this.render()  
             .then(() => {

@@ -15,7 +15,7 @@
 <body>
 
 
-    <div id="outer-container-div">
+    <div id="outer-container-div" >
 
 
 
@@ -877,6 +877,8 @@ function parseDateAndTime_filterData(dateString) {
     const [hour, minute] = time.split(':');
     return new Date(`20${year}`, month - 1, day, hour, minute);
 }
+
+
 function make_premium_box_correct_size() {
 
 
@@ -896,7 +898,6 @@ function make_premium_box_correct_size() {
             box_for_covering_filters_.style.top = `${0}px`;
 
     }, 100);
-
 
 }
 

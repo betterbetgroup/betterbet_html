@@ -2151,9 +2151,8 @@ apply_custom_filters_from_dropdown(filters) {
 
         });
 
-        this.style.display = 'block'; // Make the host element visible
 
-    }, 100);
+    }, 10);
 
 
     }
@@ -2191,6 +2190,8 @@ apply_custom_filters_from_dropdown(filters) {
                 fontAwesomeLink.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
                 
                 this.shadowRoot.appendChild(fontAwesomeLink);
+
+                this.style.display = 'block'; // Make the host element visible
 
                 return resolve('done')
 

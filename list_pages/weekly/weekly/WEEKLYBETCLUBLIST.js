@@ -43,6 +43,8 @@ class ProfitTracker extends HTMLElement {
 
     connectedCallback() {
 
+        this.style.display = 'none'; 
+
         this.loadConfettiScript();
 
 

@@ -29,6 +29,8 @@ class AllGuides extends HTMLElement {
 
     connectedCallback() {
 
+        this.style.display = 'none'; 
+
             this.render()  
             .then(() => {
 

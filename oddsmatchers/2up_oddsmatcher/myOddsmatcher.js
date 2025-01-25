@@ -71,7 +71,6 @@ class TwoUpOddsmatcher extends HTMLElement {
 
         this.style.display = 'none'; // Make the host element visible
 
-
             this.render()  
             .then(() => {
 
@@ -1779,6 +1778,7 @@ render() {
             requestAnimationFrame(() => {
                 this.make_premium_box_correct_size();
             });
+
         })
         .catch(error => {
             // Catch any errors that occur during the fetch or script loading
@@ -1858,13 +1858,7 @@ render() {
 
             });
 
-            this.style.display = 'block'; // Make the host element visible
-
-
-        }, 100);
-
-
-
+        }, 10);
 
     }
 
@@ -1902,6 +1896,8 @@ render() {
                 fontAwesomeLink.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
                 
                 this.shadowRoot.appendChild(fontAwesomeLink);
+
+                this.style.display = 'block'; // Make the host element visible
 
                 return resolve('done')
 

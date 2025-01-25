@@ -853,6 +853,8 @@ class QualBetOddsmatcher extends HTMLElement {
                 
                 this.shadowRoot.appendChild(fontAwesomeLink);
 
+                this.style.display = 'block'; // Make the host element visible
+
                 return resolve('done')
 
             } catch(error) {
@@ -882,11 +884,6 @@ class QualBetOddsmatcher extends HTMLElement {
 
         this.check_if_removing_or_showing_sport(width);
 
-        setTimeout(() => {
-
-            this.style.display = 'block'; 
-            
-        }, 50);
         
     }   
 

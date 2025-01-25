@@ -2131,10 +2131,8 @@ add_lock_if_premium() {
 
             });
 
-            this.style.display = 'block'; // Make the host element visible
 
-
-        }, 100);
+        }, 10);
 
 
     }
@@ -2172,6 +2170,8 @@ add_lock_if_premium() {
                 fontAwesomeLink.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
                 
                 this.shadowRoot.appendChild(fontAwesomeLink);
+
+                this.style.display = 'block'; // Make the host element visible
 
                 return resolve('done')
 
