@@ -86,7 +86,6 @@ class eachWayOddsmatcher extends HTMLElement {
 
         this.style.display = 'none'; // Make the host element visible
 
-
             this.render()  
             .then(() => {
 
@@ -2143,7 +2142,7 @@ add_lock_if_premium() {
 
                 setTimeout(() => {
 
-                    this.style.display = 'block'; // Make the host element visible
+                    this.style.display = 'block'; 
                     
                 }, 8);
 

@@ -11,7 +11,7 @@
 <body style="background: rgb(27, 0, 25); margin-top: 0;">
 
     <div id="app"  >
-        <each-way-oddsmatcher ></each-way-oddsmatcher>
+        <each-oddsmatcher ></each-oddsmatcher>
     </div>
 
     <script src="myOddsmatcher.js"></script>
@@ -157,15 +157,19 @@
 }
             setTimeout(() => {
                 
-                document.querySelector('each-way-oddsmatcher').setAttribute('data-odds', JSON.stringify(finalData));
+                document.querySelector('each-oddsmatcher').setAttribute('data-odds', JSON.stringify(finalData));
         
             }, 500);
 
 
-            document.querySelector('each-way-oddsmatcher').addEventListener('Select-Event', (event)=>{
+            document.querySelector('each-oddsmatcher').addEventListener('Select-Event', (event)=>{
                 console.log(event)
             })
-            document.querySelector('each-way-oddsmatcher').addEventListener('Upgrade', (event)=>{
+            document.querySelector('each-oddsmatcher').addEventListener('Upgrade', (event)=>{
+                console.log(event)
+            })
+
+            document.querySelector('each-oddsmatcher').addEventListener('Get-Alerts', (event)=>{
                 console.log(event)
             })
 

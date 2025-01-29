@@ -1,0 +1,55 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    color: white;
+    font-family: 'Arial', sans-serif;
+}
+
+#outer-container-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: black;
+    height: 100%;
+    width: 100%;
+}
+
+header h1 {
+    font-size: 7vw; /* Adjusted for responsiveness */
+    color: #FF00FF; /* Magenta, similar to your screenshot */
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+header p {
+    font-size: 4.5vw; /* Adjusted for responsiveness */
+    color: white;
+    text-align: center;
+    margin: 0.25em 0;
+}
+
+button {
+    background-color: #FF00FF;
+    border: none;
+    color: white;
+    padding: 1em 2em;
+    font-size: 3vw; /* Adjusted for responsiveness */
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 20px 0;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #ff66ff;
+}
+
+footer p {
+    font-size: 3vw; /* Adjusted for responsiveness */
+    text-align: center;
+    color: #FF00FF;
+}
