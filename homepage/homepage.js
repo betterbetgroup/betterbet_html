@@ -48,7 +48,7 @@ class Homepage extends HTMLElement {
     runSpecificScript() {
 
         console.log('running')
-        this.style.display = 'flex';
+        this.style.display = 'block';
 
     }
 
