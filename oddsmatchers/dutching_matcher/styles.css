@@ -620,7 +620,7 @@ td[id^='outcome'] {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
-    z-index: 1000; /* Ensure it's above other elements */
+    z-index: 1; /* Ensure it's above other elements */
 }
 
 [data-tooltip]:hover::after {
@@ -868,11 +868,10 @@ td[id^='rating_'] {
     background-color: black;
     border-radius: 20px;
     height: 250px;
-    z-index: 23000;
-    /* Removed opacity */
+
 }
 .box2 {
-    z-index: 100000;
+    z-index: 5;
     background-color: transparent; /* No background here */
 }
 .box2::before {
@@ -1011,7 +1010,6 @@ td[id^='rating_'] {
     max-height: 200px;
     overflow-y: auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    z-index: 1000; /* Ensure dropdown is always on top */
     border: 1px solid #444; /* Slight border */
     transition: all 0.3s ease; /* Smooth transition */
 }
@@ -1077,7 +1075,7 @@ td[id^='rating_'] {
     max-height: 200px;
     overflow-y: auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    z-index: 1001; /* Ensure dropdown is always on top */
+    z-index: 3; /* Ensure dropdown is always on top */
     transition: all 0.3s ease; /* Smooth transition */
     border: 1px solid #444; /* Slight border */
 
@@ -1091,7 +1089,7 @@ td[id^='rating_'] {
     color: #fff;
     width: calc(100% + 2px);
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    z-index: 100;
+    z-index: 2;
     display: none; /* Initially hidden */
     left: -1px;
 }
@@ -1241,7 +1239,7 @@ input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
     position: absolute;
     color: #eee;
     font-size: 22px;
-    z-index: 40; /* Ensure dropdown is always on top */
+    z-index: 1; /* Ensure dropdown is always on top */
     background: linear-gradient(to right, #000000, #1d1b1b); /* Brighter hover state */
     height: 38px;
     width: 35px;
@@ -1432,7 +1430,7 @@ input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
     margin: 0;
     margin-bottom: 7.5px;
 
-    z-index: 10000;
+    z-index: 4;
     
 }
 
