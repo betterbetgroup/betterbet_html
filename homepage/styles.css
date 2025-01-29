@@ -12,10 +12,10 @@ body {
 #outer-container-div {
     display: flex;
     flex-direction: column;
-    background: #000000;
+    background: #121111;
     height: 100%;
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     justify-content: center;  
     align-items: center;
     width: 100%;
