@@ -44,7 +44,7 @@ class ProfitTracker extends HTMLElement {
 
     connectedCallback() {
 
-        this.style.display = 'none'; 
+        this.style.visibility = 'hidden'; // Make the host element visible
 
         this.loadConfettiScript();
 
@@ -2290,9 +2290,9 @@ alternateText() {
 
                     setTimeout(() => {
 
-                        this.style.display = 'flex'; // Make the host element visible so it doesn't show it before it's applied the styles
+                        this.style.visibility = 'visible'; // Make the host element visible
                         
-                    }, 100);
+                    }, 250);
 
 
 
