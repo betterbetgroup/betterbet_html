@@ -55,8 +55,8 @@ class Homepage extends HTMLElement {
 
 
     render() {
-        //return fetch('z.html')
-        return fetch('https://betterbetgroup.github.io/betterbet_html/homepage/z.html')
+        return fetch('z.html')
+        //return fetch('https://betterbetgroup.github.io/betterbet_html/homepage/z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
@@ -72,8 +72,8 @@ class Homepage extends HTMLElement {
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
 
-                //link.setAttribute('href', 'styles.css'); 
-                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/homepage/styles.css'); 
+                link.setAttribute('href', 'styles.css'); 
+                //link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/homepage/styles.css'); 
                 
                 this.shadowRoot.appendChild(link);
                 const fontAwesomeLink = document.createElement('link');
