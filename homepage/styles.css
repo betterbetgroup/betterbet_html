@@ -15,10 +15,9 @@ body, html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: blue;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
+    background: purple;
+
+    margin: 0;
 }
 
 header h1 {
