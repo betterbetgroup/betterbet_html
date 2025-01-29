@@ -1056,12 +1056,6 @@ td[id^='outcome'] {
 
 
 
-:host {
-    display: none; 
-}
-
-
-
 
 input[type="checkbox"] {
 

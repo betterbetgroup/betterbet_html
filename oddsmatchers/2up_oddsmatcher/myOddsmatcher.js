@@ -69,7 +69,7 @@ class TwoUpOddsmatcher extends HTMLElement {
 
     connectedCallback() {
 
-        this.style.display = 'none'; // Make the host element visible
+        this.style.visibility = 'hidden'; // Make the host element visible
 
             this.render()  
             .then(() => {
@@ -1858,7 +1858,7 @@ render() {
 
             });
 
-        }, 10);
+        }, 100);
 
     }
 
@@ -1887,6 +1887,7 @@ render() {
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
                 link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/2up_oddsmatcher/styles.css'); 
+                //link.setAttribute('href', 'styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);
@@ -1899,9 +1900,10 @@ render() {
 
                 setTimeout(() => {
 
-                    this.style.display = 'block'; // Make the host element visible
+                    this.style.visibility = 'visible'; // Make the host element visible
                     
-                }, 8);
+                }, 250);
+                    
 
                 return resolve('done')
 

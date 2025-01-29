@@ -1120,17 +1120,6 @@ td[id^='rating_'] {
 
 
 
-
-
-
-
-
-
-:host {
-    display: none; /* Hide the custom element initially */
-}
-
-
 /* 
 
     REMOVE ALL

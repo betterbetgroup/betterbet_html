@@ -1095,11 +1095,6 @@ td[id^='rating_'] {
 
 
 
-:host {
-    display: none; 
-}
-
-
 
 
 input[type="checkbox"] {
