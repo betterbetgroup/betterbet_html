@@ -1,31 +1,83 @@
 body {
-    color: rgb(0, 0, 0);
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     justify-content: center;  
     min-height: 100vh;        /* Ensures the body is at least the height of the viewport */
     display: flex;
-    align-items: center;  
+    align-items: center; 
+
 }
+
 
 #outer-container-div {
     display: flex;
     flex-direction: column;
     justify-self: center;
-    background: #121111;
     height: 100%;
     width: 100%;
     margin: 0 auto;
     justify-content: center;  
     align-items: center;
+
+    /* Animated Background */
+    background: linear-gradient(270deg, #000000, #330033, #000000);
+    background-size: 400% 400%;
+    animation: AnimationName 15s ease infinite;
+
+    /* Stronger Gradient Fade at Top and Bottom */
+    mask-image: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0) 0%,        /* Fully transparent at top */
+        rgba(0, 0, 0, 0.3) 5%, 
+        rgba(0, 0, 0, 0.6) 10%, 
+        rgba(0, 0, 0, 0.9) 15%, 
+        rgba(0, 0, 0, 1) 20%,      /* Fully visible in the middle */
+        rgba(0, 0, 0, 1) 80%, 
+        rgba(0, 0, 0, 0.9) 85%, 
+        rgba(0, 0, 0, 0.6) 90%, 
+        rgba(0, 0, 0, 0.3) 95%, 
+        rgba(0, 0, 0, 0) 100%);   /* Fully transparent at bottom */
+
+    -webkit-mask-image: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0) 0%,        /* Fully transparent at top */
+        rgba(0, 0, 0, 0.3) 5%, 
+        rgba(0, 0, 0, 0.6) 10%, 
+        rgba(0, 0, 0, 0.9) 15%, 
+        rgba(0, 0, 0, 1) 20%,      /* Fully visible in the middle */
+        rgba(0, 0, 0, 1) 80%, 
+        rgba(0, 0, 0, 0.9) 85%, 
+        rgba(0, 0, 0, 0.6) 90%, 
+        rgba(0, 0, 0, 0.3) 95%, 
+        rgba(0, 0, 0, 0) 100%);   /* Fully transparent at bottom */
+        
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+
 }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 header h1 {
-    font-size: 7vw; /* Adjusted for responsiveness */
-    color: #FF00FF; /* Magenta, similar to your screenshot */
+    font-size: 10vw; /* Adjusted for responsiveness */
+    color: #ff00c6; /* Magenta, similar to your screenshot */
     text-align: center;
     margin: 0.5em 0;
 }
@@ -38,23 +90,24 @@ header p {
 }
 
 button {
-    background-color: #FF00FF;
+    background-color: #ff00c6;
     border: none;
     color: white;
-    padding: 1em 2em;
+    padding: 0.57em 2em;
     font-size: 3vw; /* Adjusted for responsiveness */
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 25em;
     margin: 20px 0;
     transition: background-color 0.3s;
+    font-weight: bold;
 }
 
 button:hover {
-    background-color: #ff66ff;
+    background-color: #ff00c6;
 }
 
 footer p {
     font-size: 3vw; /* Adjusted for responsiveness */
     text-align: center;
-    color: #FF00FF;
+    color: #ff00c6;
 }

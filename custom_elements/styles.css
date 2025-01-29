@@ -1,0 +1,73 @@
+body {
+    color: rgb(0, 0, 0);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: center;  
+    min-height: 100vh;        /* Ensures the body is at least the height of the viewport */
+    display: flex;
+    align-items: center;  
+}
+
+#outer-container-div {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    background: #000000;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;  
+    align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+header h1 {
+    font-size: 10vw; /* Adjusted for responsiveness */
+    color: #ff00c6; /* Magenta, similar to your screenshot */
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+header p {
+    font-size: 4.5vw; /* Adjusted for responsiveness */
+    color: white;
+    text-align: center;
+    margin: 0.25em 0;
+}
+
+button {
+    background-color: #ff00c6;
+    border: none;
+    color: white;
+    padding: 0.57em 2em;
+    font-size: 3vw; /* Adjusted for responsiveness */
+    cursor: pointer;
+    border-radius: 25em;
+    margin: 20px 0;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #ff00c6;
+}
+
+footer p {
+    font-size: 3vw; /* Adjusted for responsiveness */
+    text-align: center;
+    color: #ff00c6;
+}
