@@ -1,8 +1,8 @@
 body {
     color: rgb(0, 0, 0);
     font-family: 'Arial', sans-serif;
-    padding: 20px;
     margin: 0;
+    padding: 0;
     justify-content: center;  
     min-height: 100vh;        /* Ensures the body is at least the height of the viewport */
     display: flex;
@@ -12,13 +12,13 @@ body {
 #outer-container-div {
     display: flex;
     flex-direction: column;
+    justify-self: center;
     background: #121111;
     height: 100%;
     width: 100%;
     margin: 0 auto;
     justify-content: center;  
     align-items: center;
-    width: 100%;
 }
 
 
