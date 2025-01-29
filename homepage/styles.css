@@ -3,8 +3,10 @@ body, html {
     padding: 0;
     height: 100%;
     width: 100%;
-    background-color: black;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: 'Arial', sans-serif;
 }
 
