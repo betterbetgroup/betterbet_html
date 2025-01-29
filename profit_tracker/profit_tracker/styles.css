@@ -1175,14 +1175,6 @@ div[id^='qualifying_loss_'] {
 
 
 
-
-
-
-:host {
-    display: none; /* Hide the custom element initially */
-}
-
-
 /* 
 
     REMOVE ALL

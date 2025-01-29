@@ -84,7 +84,7 @@ class eachWayOddsmatcher extends HTMLElement {
 
     connectedCallback() {
 
-        this.style.display = 'none'; // Make the host element visible
+        this.style.visibility = 'hidden'; 
 
             this.render()  
             .then(() => {
@@ -2101,7 +2101,7 @@ add_lock_if_premium() {
         });
 
 
-    }, 10);
+    }, 100);
 
 
     }
@@ -2142,9 +2142,9 @@ add_lock_if_premium() {
 
                 setTimeout(() => {
 
-                    this.style.display = 'block'; 
+                    this.style.visibility = 'visible'; // Make the host element visible
                     
-                }, 8);
+                }, 250);
 
                 return resolve('done')
 

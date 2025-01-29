@@ -65,7 +65,7 @@ class QualBetOddsmatcher extends HTMLElement {
 
     connectedCallback() {
 
-        this.style.display = 'none'; // Make the host element visible
+        this.style.visibility = 'hidden'; // Make the host element visible
 
 
             this.render()  
@@ -855,9 +855,9 @@ class QualBetOddsmatcher extends HTMLElement {
 
                 setTimeout(() => {
 
-                    this.style.display = 'block'; // Make the host element visible
+                    this.style.visibility = 'visible'; // Make the host element visible
                     
-                }, 8);
+                }, 250);
 
                 return resolve('done')
 

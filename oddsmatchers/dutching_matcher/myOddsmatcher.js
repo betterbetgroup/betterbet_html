@@ -83,7 +83,7 @@ class dutchingOddsmatcher extends HTMLElement {
 
     connectedCallback() {
 
-        this.style.display = 'none'; // Make the host element visible
+        this.style.visibility = 'hidden'; // Make the host element visible
 
 
             this.render()  
@@ -2152,7 +2152,7 @@ apply_custom_filters_from_dropdown(filters) {
         });
 
 
-    }, 10);
+    }, 100);
 
 
     }
@@ -2193,9 +2193,9 @@ apply_custom_filters_from_dropdown(filters) {
 
                 setTimeout(() => {
 
-                    this.style.display = 'block'; // Make the host element visible
+                    this.style.visibility = 'visible'; // Make the host element visible
                     
-                }, 8);
+                }, 250);
 
                 return resolve('done')
 
