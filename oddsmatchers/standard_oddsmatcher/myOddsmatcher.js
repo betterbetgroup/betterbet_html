@@ -2033,6 +2033,7 @@ add_lock_if_premium() {
 
     render() {
         return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/standard_oddsmatcher/z.html')
+        //return fetch('z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
@@ -2161,6 +2162,7 @@ add_lock_if_premium() {
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
                 link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/standard_oddsmatcher/styles.css'); 
+                //link.setAttribute('href', 'styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);

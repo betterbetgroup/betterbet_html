@@ -568,7 +568,7 @@ td[id^='outcome'] {
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
-    z-index: 1000; 
+    z-index: 1; 
 }
 
 [data-tooltip]:hover::after {
@@ -804,14 +804,13 @@ td[id^='rating_'] {
 
   }
  
-  .box2 {
+.box2 {
     background-color: black;
     border-radius: 20px;
     height: 250px;
-    z-index: 23000;
 }
 .box2 {
-    z-index: 100000;
+    z-index: 5;
     background-color: transparent;
 }
 .box2::before {
@@ -949,7 +948,6 @@ td[id^='rating_'] {
     max-height: 200px;
     overflow-y: auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    z-index: 1000; 
     border: 1px solid #444; 
     transition: all 0.3s ease; 
 }
@@ -1015,7 +1013,7 @@ td[id^='rating_'] {
     max-height: 200px;
     overflow-y: auto;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    z-index: 1001; 
+    z-index: 3; 
     transition: all 0.3s ease; 
     border: 1px solid #444; 
 
@@ -1029,7 +1027,7 @@ td[id^='rating_'] {
     color: #fff;
     width: calc(100% + 2px);
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
-    z-index: 100;
+    z-index: 2;
     display: none; 
     left: -1px;
 }
@@ -1177,7 +1175,7 @@ input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potent
     position: absolute;
     color: #eee;
     font-size: 22px;
-    z-index: 40; 
+    z-index: 1; 
     background: linear-gradient(to right, #000000, #1d1b1b); 
     height: 38px;
     width: 35px;
@@ -1368,7 +1366,7 @@ input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potent
     margin: 0;
     margin-bottom: 7.5px;
 
-    z-index: 10000;
+    z-index: 4;
     
 }
 
