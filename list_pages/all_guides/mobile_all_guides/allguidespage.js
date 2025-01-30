@@ -37,6 +37,11 @@ class AllGuides extends HTMLElement {
                 this.addStyles()
                 .then(() => {
 
+                    setTimeout(() => {
+
+                        this.style.visibility = 'visible'; 
+                    }, 250);
+
                     this.runSpecificScript(); 
                     this.add_loading_row();
                     this.isContentLoaded = true;
@@ -494,6 +499,7 @@ class AllGuides extends HTMLElement {
                 return this.loadExternalScript('https://betterbetgroup.github.io/betterbet_html/guides.js');
             })
             .then(() => {
+
                 // This then() block will now only execute after the script has fully loaded
                 if (typeof all_guides !== 'undefined') {
                     globalData = all_guides;
@@ -554,11 +560,6 @@ class AllGuides extends HTMLElement {
                     
                     this.shadowRoot.appendChild(fontAwesomeLink);
 
-                    setTimeout(() => {
-                        
-                        this.style.visibility = 'visible'; // Make the host element visible
-                        
-                    }, 250);
 
                 return resolve('done')
 

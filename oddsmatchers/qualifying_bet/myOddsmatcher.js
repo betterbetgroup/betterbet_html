@@ -74,16 +74,22 @@ class QualBetOddsmatcher extends HTMLElement {
                 this.addStyles()
                 .then(() => {
 
-                    this.runSpecificScript(); 
-                    this.add_loading_row();
-                    this.isContentLoaded = true;
-                    this.processQueuedAttributeChanges();
-                    this.handleResize();
-                    window.addEventListener('resize', this.handleResize.bind(this));
+                    this.make_premium_box_correct_size().then(() => {
+                        setTimeout(() => {
+                            this.style.visibility = 'visible'; 
+                        }, 100);
 
+                        this.runSpecificScript(); 
+                        this.add_loading_row();
+                        this.isContentLoaded = true;
+                        this.processQueuedAttributeChanges();
+                        this.handleResize();
+                        window.addEventListener('resize', this.handleResize.bind(this));
 
-                    this.shadowRoot.querySelector('#info-container').style.display = 'none';
-                    this.shadowRoot.querySelector('#button-container').style.display = 'none';
+                        this.shadowRoot.querySelector('#info-container').style.display = 'none';
+                        this.shadowRoot.querySelector('#button-container').style.display = 'none';
+
+                    });
 
                 });
 

@@ -91,16 +91,23 @@ class eachWayOddsmatcher extends HTMLElement {
 
                 this.addStyles()
                 .then(() => {
+                    
+                    this.make_premium_box_correct_size().then(() => {
+                        setTimeout(() => {
+                            this.style.visibility = 'visible'; 
+                        }, 100);
 
-                    this.runSpecificScript(); 
-                    this.add_loading_row();
-                    this.isContentLoaded = true;
-                    this.processQueuedAttributeChanges();
-                    this.handleResize();
-                    window.addEventListener('resize', this.handleResize.bind(this));
+                        this.runSpecificScript(); 
+                        this.add_loading_row();
+                        this.isContentLoaded = true;
+                        this.processQueuedAttributeChanges();
+                        this.handleResize();
+                        window.addEventListener('resize', this.handleResize.bind(this));
 
-                    this.shadowRoot.querySelector('#info-container').style.display = 'none';
-                    this.shadowRoot.querySelector('#button-container').style.display = 'none';
+                        this.shadowRoot.querySelector('#info-container').style.display = 'none';
+                        this.shadowRoot.querySelector('#button-container').style.display = 'none';
+
+                    });
 
                 });
 
@@ -2075,49 +2082,32 @@ add_lock_if_premium() {
 
 
     make_premium_box_correct_size() {
-
-        setTimeout(() => {
-            
-
-        requestAnimationFrame(() => {
- 
-
-            const filter_panel_container = this.shadowRoot.querySelector('#filter-panel-container');
-            const box_for_covering_filters_ = this.shadowRoot.querySelector('#covering_filters');
-
-            box_for_covering_filters_.style.margin = '0 auto';
-
-            const rect = filter_panel_container.getBoundingClientRect(); // Get the dimensions and position
-
-            const xPosition = this.getAbsoluteX(filter_panel_container);
-
-
-            // Use the dimensions from getBoundingClientRect()
-            box_for_covering_filters_.style.width = `${rect.width}px`;
-            box_for_covering_filters_.style.height = `${rect.height}px`;
-            box_for_covering_filters_.style.top = `${20}px`;
-
-
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                requestAnimationFrame(() => {
+                    const filter_panel_container = this.shadowRoot.querySelector('#filter-panel-container');
+                    const box_for_covering_filters_ = this.shadowRoot.querySelector('#covering_filters');
+    
+                    if (!filter_panel_container || !box_for_covering_filters_) {
+                        console.error("Elements not found.");
+                        resolve(); // Resolve anyway to prevent infinite waiting
+                        return;
+                    }
+    
+                    box_for_covering_filters_.style.margin = '0 auto';
+    
+                    const rect = filter_panel_container.getBoundingClientRect();
+    
+                    box_for_covering_filters_.style.width = `${rect.width}px`;
+                    box_for_covering_filters_.style.height = `${rect.height}px`;
+                    box_for_covering_filters_.style.top = `${20}px`;
+    
+                    resolve(); 
+                });
+            }, 100);
         });
-
-
-    }, 100);
-
-
     }
 
-    getAbsoluteX(element) {
-        let actualLeft = element.offsetLeft;
-        let current = element.offsetParent; // Get the nearest positioned ancestor
-
-        while (current !== null) {
-        actualLeft += current.offsetLeft;
-        current = current.offsetParent; // Move up in the offsetParent chain
-        }
-
-        return actualLeft;
-
-    }
 
 
 
@@ -2139,12 +2129,7 @@ add_lock_if_premium() {
                 fontAwesomeLink.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
                 
                 this.shadowRoot.appendChild(fontAwesomeLink);
-
-                setTimeout(() => {
-
-                    this.style.visibility = 'visible'; // Make the host element visible
-                    
-                }, 250);
+                this.handleResize();
 
                 return resolve('done')
 

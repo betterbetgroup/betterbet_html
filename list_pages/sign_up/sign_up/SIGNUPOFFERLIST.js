@@ -74,6 +74,10 @@ class SignUpOfferList extends HTMLElement {
                 this.addStyles()
                 .then(() => {
 
+                    setTimeout(() => {
+                        this.style.visibility = 'visible'; 
+                    }, 250);
+
                     this.runSpecificScript(); 
                     this.add_loading_row();
                     this.isContentLoaded = true;
@@ -2149,11 +2153,6 @@ alternateText() {
                     
                     this.shadowRoot.appendChild(fontAwesomeLink);
 
-                    setTimeout(() => {
-
-                        this.style.visibility = 'visible'; // Make the host element visible
-                        
-                    }, 250);
 
 
                 return resolve('done')

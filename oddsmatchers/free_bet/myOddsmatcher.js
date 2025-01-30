@@ -71,16 +71,23 @@ class FreeBetOddsmatcher extends HTMLElement {
 
                 this.addStyles()
                 .then(() => {
-                    this.runSpecificScript(); 
-                    this.add_loading_row();
-                    this.isContentLoaded = true;
-                    this.processQueuedAttributeChanges();
-                    this.handleResize();
-                    window.addEventListener('resize', this.handleResize.bind(this));
 
+                    this.make_premium_box_correct_size().then(() => {
+                        setTimeout(() => {
+                            this.style.visibility = 'visible'; 
+                        }, 100);
 
-                    this.shadowRoot.querySelector('#info-container').style.display = 'none';
-                    this.shadowRoot.querySelector('#button-container').style.display = 'none';
+                        this.runSpecificScript(); 
+                        this.add_loading_row();
+                        this.isContentLoaded = true;
+                        this.processQueuedAttributeChanges();
+                        this.handleResize();
+                        window.addEventListener('resize', this.handleResize.bind(this));
+
+                        this.shadowRoot.querySelector('#info-container').style.display = 'none';
+                        this.shadowRoot.querySelector('#button-container').style.display = 'none';
+
+                    });
 
                 });
 
@@ -847,12 +854,6 @@ class FreeBetOddsmatcher extends HTMLElement {
                 fontAwesomeLink.setAttribute('href', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
                 
                 this.shadowRoot.appendChild(fontAwesomeLink);
-
-                setTimeout(() => {
-
-                    this.style.visibility = 'visible'; // Make the host element visible
-                    
-                }, 250);
 
                 return resolve('done')
 

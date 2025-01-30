@@ -1,14 +1,16 @@
-body {
+* { 
     font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
     padding: 0;
     justify-content: center;  
     min-height: 100vh;        /* Ensures the body is at least the height of the viewport */
     display: flex;
     align-items: center; 
-
 }
-
 
 #outer-container-div {
     display: flex;
@@ -21,9 +23,9 @@ body {
     align-items: center;
 
     /* Animated Background */
-    background: linear-gradient(270deg, #000000, #330033, #000000);
+    background: linear-gradient(270deg, #000000, #21012c, #000000);
     background-size: 400% 400%;
-    animation: AnimationName 15s ease infinite;
+    animation: AnimationName 10s ease infinite;
 
     /* Stronger Gradient Fade at Top and Bottom */
     mask-image: linear-gradient(to bottom, 
@@ -71,33 +73,79 @@ body {
 
 
 
-
-
-
-
-header h1 {
-    font-size: 10vw; /* Adjusted for responsiveness */
-    color: #ff00c6; /* Magenta, similar to your screenshot */
-    text-align: center;
-    margin: 0.5em 0;
+#div_around_main_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
 }
 
-header p {
-    font-size: 4.5vw; /* Adjusted for responsiveness */
+#main_container_left, #main_container_right {
+    height: 100%;
+
+    display: flex;
+    align-items: center;     
+    justify-content: center;
+}
+
+#main_container_left {
+    width: 57%;
+}
+#main_container_right {
+    width: 43%;
+}
+
+#left_main_div {
+    text-align: left;
+    margin: 0 40px;
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+#left_main_div h1 {
+    font-size: 7.5vw; 
+    color: #ff00c6;
+
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+
+
+}
+
+
+
+
+
+
+#left_main_div p {
+    font-size: 2.9vw; 
     color: white;
-    text-align: center;
-    margin: 0.25em 0;
+    font-weight: bold;
+
+    margin-top: 2vw;
+    margin-bottom: 2vw;
 }
+
+#we_offer_div {
+    margin-top: 4vw;
+    margin-bottom: 0;
+}
+
+
+
+
 
 button {
     background-color: #ff00c6;
     border: none;
     color: white;
     padding: 0.57em 2em;
-    font-size: 3vw; /* Adjusted for responsiveness */
+    font-size: 2vw; /* Adjusted for responsiveness */
     cursor: pointer;
     border-radius: 25em;
-    margin: 20px 0;
     transition: background-color 0.3s;
     font-weight: bold;
 }
@@ -106,8 +154,3 @@ button:hover {
     background-color: #ff00c6;
 }
 
-footer p {
-    font-size: 3vw; /* Adjusted for responsiveness */
-    text-align: center;
-    color: #ff00c6;
-}
