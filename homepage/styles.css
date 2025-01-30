@@ -30,26 +30,26 @@ body {
     /* Stronger Gradient Fade at Top and Bottom */
     mask-image: linear-gradient(to bottom, 
         rgba(0, 0, 0, 0) 0%,        /* Fully transparent at top */
-        rgba(0, 0, 0, 0.3) 5%, 
+        rgba(0, 0, 0, 0.3) 2%, 
         rgba(0, 0, 0, 0.6) 10%, 
         rgba(0, 0, 0, 0.9) 15%, 
         rgba(0, 0, 0, 1) 20%,      /* Fully visible in the middle */
         rgba(0, 0, 0, 1) 80%, 
         rgba(0, 0, 0, 0.9) 85%, 
         rgba(0, 0, 0, 0.6) 90%, 
-        rgba(0, 0, 0, 0.3) 95%, 
+        rgba(0, 0, 0, 0.3) 98%, 
         rgba(0, 0, 0, 0) 100%);   /* Fully transparent at bottom */
 
     -webkit-mask-image: linear-gradient(to bottom, 
         rgba(0, 0, 0, 0) 0%,        /* Fully transparent at top */
-        rgba(0, 0, 0, 0.3) 5%, 
+        rgba(0, 0, 0, 0.3) 2%, 
         rgba(0, 0, 0, 0.6) 10%, 
         rgba(0, 0, 0, 0.9) 15%, 
         rgba(0, 0, 0, 1) 20%,      /* Fully visible in the middle */
         rgba(0, 0, 0, 1) 80%, 
         rgba(0, 0, 0, 0.9) 85%, 
         rgba(0, 0, 0, 0.6) 90%, 
-        rgba(0, 0, 0, 0.3) 95%, 
+        rgba(0, 0, 0, 0.3) 98%, 
         rgba(0, 0, 0, 0) 100%);   /* Fully transparent at bottom */
         
 }
@@ -104,14 +104,18 @@ body {
 }
 
 #left_main_div h1 {
+    font-family: 'Archivo Black', sans-serif;
     font-size: 7.5vw; 
     color: #ff00c6;
+
+    font-weight: bold;
+
+    letter-spacing: -3px; 
 
     margin-top: 2vw;
     margin-bottom: 2vw;
 
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-
 
 }
 
