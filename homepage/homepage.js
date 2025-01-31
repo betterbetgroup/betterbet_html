@@ -9,6 +9,8 @@ class Homepage extends HTMLElement {
         this.attachShadow({ mode: 'open' }); 
 
         this.isContentLoaded = false;
+
+        this.initializeObserver();
         
     }
 
@@ -32,6 +34,18 @@ class Homepage extends HTMLElement {
             
     }
 
+    initializeObserver() {
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'childList' || mutation.type === 'attributes') {
+                    this.style.visibility = 'visible';
+                    this.dispatchEvent(new CustomEvent('Homescreen-Loaded', { bubbles: true, composed: true }));
+                }
+            });
+        });
+        observer.observe(this.shadowRoot, { attributes: true, childList: true, subtree: true });
+    }
+
     handleResize() {
 
         const contentDiv = this.shadowRoot.getElementById('outer-container-div');
@@ -50,12 +64,6 @@ class Homepage extends HTMLElement {
         this.make_typed_text_run();
 
         this.style.visibility = 'visible';
-
-        const raise_event = new CustomEvent('Homescreen-Loaded', {
-            bubbles: true,     
-            composed: true        
-        });
-        this.shadowRoot.dispatchEvent(raise_event); 
 
         this.add_event_listener_for_button();
 
@@ -163,7 +171,7 @@ class Homepage extends HTMLElement {
 
     add_event_listener_for_button() {
 
-        this.shadowRoot.querySelector('tutorial-button').addEventListener('click', (event) => {
+        this.shadowRoot.querySelector('#tutorial-button').addEventListener('click', (event) => {
 
             const raise_event = new CustomEvent('Tutorial', {
                 bubbles: true,     
