@@ -14,7 +14,7 @@ class Homepage extends HTMLElement {
 
     connectedCallback() {
 
-        this.style.display = 'none'; // Make the host element visible
+        this.style.visibility = 'hidden';
 
             this.render()  
             .then(() => {
@@ -47,8 +47,9 @@ class Homepage extends HTMLElement {
 
     runSpecificScript() {
 
-        console.log('running')
-        this.style.display = 'block';
+        this.make_typed_text_run();
+
+        this.style.visibility = 'visible';
 
     }
 
@@ -102,6 +103,57 @@ class Homepage extends HTMLElement {
             document.head.appendChild(script);
         });
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    make_typed_text_run() {
+
+        const typedTextSpan = this.shadowRoot.querySelector(".typed-text");
+        const cursorSpan = this.shadowRoot.querySelector(".cursor");
+        const textArray = ["Guides & Tutorials", "Calculators", "Oddsmatchers", "Real-time Betting Alerts", "A Profit Tracker"];
+        const typingDelay = 120;
+        const erasingDelay = 50;
+        const newTextDelay = 1000; 
+        let textArrayIndex = 0;
+        let charIndex = 0;
+    
+        const type = () => {
+            if (charIndex < textArray[textArrayIndex].length) {
+                typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(type, typingDelay);
+            } else {
+                setTimeout(erase, newTextDelay);
+            }
+        };
+    
+        const erase = () => {
+            if (charIndex > 0) {
+                typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(erase, erasingDelay);
+            } else {
+                textArrayIndex = (textArrayIndex + 1) % textArray.length;
+                setTimeout(type, typingDelay + 1100);
+            }
+        };
+    
+        setTimeout(type, newTextDelay + 250);
+
+    }
+
+    
 
 
 
