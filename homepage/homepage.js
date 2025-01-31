@@ -51,6 +51,14 @@ class Homepage extends HTMLElement {
 
         this.style.visibility = 'visible';
 
+        const raise_event = new CustomEvent('Homescreen-Loaded', {
+            bubbles: true,     
+            composed: true        
+        });
+        this.shadowRoot.dispatchEvent(raise_event); 
+
+        this.add_event_listener_for_button();
+
     }
 
 
@@ -153,7 +161,20 @@ class Homepage extends HTMLElement {
 
     }
 
-    
+    add_event_listener_for_button() {
+
+        this.shadowRoot.querySelector('tutorial-button').addEventListener('click', (event) => {
+
+            const raise_event = new CustomEvent('Tutorial', {
+                bubbles: true,     
+                composed: true        
+            });
+            this.shadowRoot.dispatchEvent(raise_event); 
+
+        });
+    }
+
+
 
 
 
