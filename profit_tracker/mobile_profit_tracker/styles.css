@@ -1589,7 +1589,7 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
 .filter-label {
     align-self: flex-start; /* Aligns the label to the left */
     font-size: 10px;
-    color: #fff;
+    color: #ffffff;
     font-weight: bold;
     margin-left: 8px;
     margin-top: 10px;
@@ -1745,7 +1745,7 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
 
 .filter-label-filters {
     font-size: 10px;
-    color: #fff;
+    color: #ffffff;
     font-weight: bold;
     margin-left: 5px;
     margin-bottom: 5px;
