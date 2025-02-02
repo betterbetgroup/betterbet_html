@@ -246,17 +246,6 @@
           "bookmaker": "NetBet"
         },
         {
-          "logo": "https://static.wixstatic.com/media/7a0e3a_d1e0766b549a409aa9fdcbfb03ebc900~mv2.png",
-          "promo": "BONUS10",
-          "offer": "https://betzone.co.uk/?promo=bonus10",
-          "guide": "https://www.betterbetgroup.com/sign-up-offer-guides/betzone-sign-up-offer",
-          "odds_details": "2",
-          "offer_description": "Bet £30, Get £5 Free Bet",
-          "difficulty": "Easy",
-          "profit": "£2.50",
-          "bookmaker": "BetZone"
-        },
-        {
           "logo": "https://static.wixstatic.com/media/7a0e3a_27a9ecf4eb2042bfb0ff1b09ecc0e202~mv2.png",
           "promo": "",
           "offer": "https://www.betuk.com/promotions/exclusive-free-bet-offer",
@@ -303,12 +292,12 @@
         {
           "logo": "https://static.wixstatic.com/media/7a0e3a_fcbb73ffbfa6454b8506f7a6e7e25c67~mv2.png",
           "promo": "",
-          "offer": "https://promotions.paddypower.com/prs/pp-uk-ie-sports-acq-aff-b10g50-bb-football",
+          "offer": "https://promotions.paddypower.com/prs/sports-uk-ie-acq-aff-bau-b10g60-football-xmas",
           "guide": "https://www.betterbetgroup.com/sign-up-offer-guides/paddy-power-sign-up-offer",
           "odds_details": "1.5",
-          "offer_description": "Bet £10, Get £50 Free Bet",
+          "offer_description": "Bet £10, Get £60 Free Bet",
           "difficulty": "Avg",
-          "profit": "£30.00",
+          "profit": "£37.50",
           "bookmaker": "Paddy Power"
         },
         {
@@ -316,10 +305,10 @@
           "promo": "",
           "offer": "https://www.unibet.co.uk/registration",
           "guide": "https://www.betterbetgroup.com/sign-up-offer-guides/unibet-sign-up-offer",
-          "odds_details": "1.4",
-          "offer_description": "£40 Risk Free Bet",
+          "odds_details": "2",
+          "offer_description": "Bet £10, Get £20 Free Bet",
           "difficulty": "Avg",
-          "profit": "£25.00",
+          "profit": "£14.00",
           "bookmaker": "UniBet"
         },
         {

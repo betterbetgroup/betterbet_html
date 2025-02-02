@@ -72,22 +72,20 @@ class FreeBetOddsmatcher extends HTMLElement {
                 this.addStyles()
                 .then(() => {
 
-                    this.make_premium_box_correct_size().then(() => {
-                        setTimeout(() => {
-                            this.style.visibility = 'visible'; 
-                        }, 100);
+                    setTimeout(() => {
+                        this.style.visibility = 'visible'; 
+                    }, 100);
 
-                        this.runSpecificScript(); 
-                        this.add_loading_row();
-                        this.isContentLoaded = true;
-                        this.processQueuedAttributeChanges();
-                        this.handleResize();
-                        window.addEventListener('resize', this.handleResize.bind(this));
+                    this.runSpecificScript(); 
+                    this.add_loading_row();
+                    this.isContentLoaded = true;
+                    this.processQueuedAttributeChanges();
+                    this.handleResize();
+                    window.addEventListener('resize', this.handleResize.bind(this));
 
-                        this.shadowRoot.querySelector('#info-container').style.display = 'none';
-                        this.shadowRoot.querySelector('#button-container').style.display = 'none';
+                    this.shadowRoot.querySelector('#info-container').style.display = 'none';
+                    this.shadowRoot.querySelector('#button-container').style.display = 'none';
 
-                    });
 
                 });
 
@@ -447,10 +445,8 @@ class FreeBetOddsmatcher extends HTMLElement {
     
     
                             <div class="outer_div_upgrade_text_row" > 
-    
-                                Access More Events Across All Of Our Oddsmatchers
-    
-                                <a class="upgrade-button">UPGRADE TO PREMIUM <img src="https://img.icons8.com/?size=100&id=60654&format=png&color=ffffff" class="padlock-image-button" alt="Padlock" > </a>
+        
+                                <a class="upgrade-button">Upgrade to Premium <img src="https://img.icons8.com/?size=100&id=60654&format=png&color=ffffff" class="padlock-image-button" alt="Padlock" > </a>
     
                             </div>
     

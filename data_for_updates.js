@@ -1,5 +1,16 @@
 let unused_sign_up_offers = [
     {
+      "logo": "https://static.wixstatic.com/media/7a0e3a_d1e0766b549a409aa9fdcbfb03ebc900~mv2.png",
+      "promo": "BONUS10",
+      "offer": "https://betzone.co.uk/?promo=bonus10",
+      "guide": "https://www.betterbetgroup.com/sign-up-offer-guides/betzone-sign-up-offer",
+      "odds_details": "2",
+      "offer_description": "Bet £30, Get £5 Free Bet",
+      "difficulty": "Easy",
+      "profit": "£2.50",
+      "bookmaker": "BetZone"
+    },
+    {
       "logo": "https://static.wixstatic.com/media/7a0e3a_6bea71614dad44019eb7657e7fb97bb2~mv2.png",
       "promo": "",
       "offer": "https://www.betvictor.com/en-gb/offer/CQ58",
@@ -75,6 +86,37 @@ let unused_sign_up_offers = [
       "difficulty": "Easy",
       "profit": "£2.50",
       "bookmaker": "Space Casino"
+    },
+  ]
+
+
+  let unused_weekly_offers = [
+    {
+      "offer_description": "Bet £50, Get £5 Free Bet",
+      "odds_details": "2.0",
+      "bookmaker": "CopyBet",
+      "profit": "£1.50",
+      "guide": "",
+      "offer": "https://www.copybet.com/promo/weekly-challenge/",
+      "logo": "https://static.wixstatic.com/media/7a0e3a_7639840a36854961bde4fda778d08807~mv2.png",
+    },
+    {
+      "offer_description": "Bet £20, Get £5 Free Bet",
+      "odds_details": "2.0",
+      "bookmaker": "BetMGM",
+      "profit": "£2",
+      "guide": "",
+      "offer": "https://www.betmgm.co.uk/",
+      "logo": "https://static.wixstatic.com/media/7a0e3a_1be9e466f5754e22981886692d69deb8~mv2.png",
+    },
+    {
+      "offer_description": "Bet £100, Get £20 Free Bet",
+      "odds_details": "1.5",
+      "bookmaker": "Kwiff",
+      "profit": "Varies",
+      "guide": "",
+      "offer": "https://promo.kwiff.com/sports-reward-club/",
+      "logo": "https://static.wixstatic.com/media/7a0e3a_c2ecfb4964e3445a8989ac350cc547a6~mv2.png",
     },
   ]
   

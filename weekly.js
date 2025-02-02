@@ -40,7 +40,7 @@
         "offer_description": "Bet £30, Get £5 Free Bet",
         "odds_details": "2.0",
         "bookmaker": "Vickers Bet",
-        "profit": "£2.50",
+        "profit": "£2.00",
         "guide": "",
         "offer": "https://www.vickers.bet/promotions/vickers-bet-club/",
         "logo": "https://static.wixstatic.com/media/7a0e3a_5e43d2ea7fb14e2f82be513b97aea470~mv2.png",
@@ -64,15 +64,6 @@
         "logo": "https://static.wixstatic.com/media/7a0e3a_59e5257dc642477abaa8702660ca3621~mv2.png",
       },
       {
-        "offer_description": "Bet £100, Get £20 Free Bet",
-        "odds_details": "1.5",
-        "bookmaker": "Kwiff",
-        "profit": "Varies",
-        "guide": "",
-        "offer": "https://promo.kwiff.com/sports-reward-club/",
-        "logo": "https://static.wixstatic.com/media/7a0e3a_c2ecfb4964e3445a8989ac350cc547a6~mv2.png",
-      },
-      {
         "offer_description": "Bet £100, Get £10 Free Bet",
         "odds_details": "2.0",
         "bookmaker": "BetWay",
@@ -82,31 +73,13 @@
         "logo": "https://static.wixstatic.com/media/7a0e3a_2e3ef618674d4c94a2850b097873d5bb~mv2.png",
       },
       {
-        "offer_description": "Bet £20, Get £10 Free Bet",
-        "odds_details": "3.0",
+        "offer_description": "Bet £10, Get £5 Free Bet",
+        "odds_details": "2.0",
         "bookmaker": "The Pools",
-        "profit": "£6",
+        "profit": "Varies",
         "guide": "",
-        "offer": "https://www.thepools.com/promotions/sports/weekly-acca-offer",
+        "offer": "https://www.thepools.com/promotions/weekly-bet-builder-offer",
         "logo": "https://static.wixstatic.com/media/7a0e3a_a90d9ef212ce4120bb4fb787efdc3376~mv2.png",
-      },
-      {
-        "offer_description": "Bet £20, Get £5 Free Bet",
-        "odds_details": "2.0",
-        "bookmaker": "BetMGM",
-        "profit": "£2",
-        "guide": "",
-        "offer": "https://www.betmgm.co.uk/",
-        "logo": "https://static.wixstatic.com/media/7a0e3a_1be9e466f5754e22981886692d69deb8~mv2.png",
-      },
-      {
-        "offer_description": "Bet £50, Get £5 Free Bet",
-        "odds_details": "2.0",
-        "bookmaker": "CopyBet",
-        "profit": "£1.50",
-        "guide": "",
-        "offer": "https://www.copybet.com/promo/weekly-challenge/",
-        "logo": "https://static.wixstatic.com/media/7a0e3a_7639840a36854961bde4fda778d08807~mv2.png",
       },
       {
         "offer_description": "Bet £100, Get £10 Free Bet",
@@ -153,6 +126,16 @@
         "offer": "https://promotions.paddypower.com/paddysrewardsclub",
         "logo": "https://static.wixstatic.com/media/7a0e3a_fcbb73ffbfa6454b8506f7a6e7e25c67~mv2.png",
       },
+      {
+        "offer_description": "Bet £25, Get £8 Free Bet",
+        "odds_details": "4.0",
+        "bookmaker": "Lottoland",
+        "profit": "£3.90",
+        "guide": "",
+        "offer": "https://www.lottoland.co.uk/betclub",
+        "logo": "https://static.wixstatic.com/media/7a0e3a_93219c714b554f309efa17e32bb84547~mv2.png",
+      },
+
     ]
 
   

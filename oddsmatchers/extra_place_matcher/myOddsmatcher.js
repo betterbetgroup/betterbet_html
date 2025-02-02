@@ -753,9 +753,7 @@ add_lock_if_premium() {
 
                         <div class="outer_div_upgrade_text_row" >
 
-                            Access More Events Across All Of Our Oddsmatchers
-
-                            <a class="upgrade-button">UPGRADE TO PREMIUM <img src="https://img.icons8.com/?size=100&id=60654&format=png&color=ffffff" class="padlock-image-button" alt="Padlock" > </a>
+                            <a class="upgrade-button">Upgrade to Premium <img src="https://img.icons8.com/?size=100&id=60654&format=png&color=ffffff" class="padlock-image-button" alt="Padlock" > </a>
 
                         </div>
 

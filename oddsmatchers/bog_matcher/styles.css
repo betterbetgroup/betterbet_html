@@ -177,8 +177,8 @@ body {
 table {
     border-collapse: collapse;
     margin: 20px auto;
-    border: 1px solid #333;
-    background: #333;
+    background: #222;
+    border: 1px solid #222;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.6);
     overflow: hidden;
@@ -207,7 +207,6 @@ table {
  
  .table-header {
     background: linear-gradient(180deg, #000000, #121212);
-    border: 1px solid #333;
     border-radius: 12px 12px 0 0; /* top-left, top-right, bottom-right, bottom-left */
  
  
@@ -641,7 +640,6 @@ td[id^='outcome'] {
     border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
-    margin-top: 15px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
