@@ -2,7 +2,7 @@
 
 
     // STANDARD
-    let STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet']
+    let STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet']
     let STANDARD_EXCHANGES = ['Smarkets', 'Betfair Exchange']
 
     //2UP
@@ -10,19 +10,19 @@
     let TWOUP_EXCHANGES = ['Smarkets', 'Betfair Exchange']
 
     //EXTRA PLACE
-    let EXTRA_PLACE_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet']
+    let EXTRA_PLACE_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet']
     let EXTRA_PLACE_EXCHANGES = ['Smarkets', 'Betfair Exchange']
 
     //EACH WAY
-    let EACH_WAY_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet']
+    let EACH_WAY_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet']
     let EACH_WAY_EXCHANGES = ['Smarkets', 'Betfair Exchange']
 
     //DUTCHING 
-    let DUTCHING_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet']
+    let DUTCHING_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet']
     let DUTCHING_EXCHANGES = ['Smarkets', 'Betfair Exchange']
 
     //BOG 
-    let BOG_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet']
+    let BOG_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet']
     let BOG_EXCHANGES = ['Smarkets', 'Betfair Exchange']
 
 
