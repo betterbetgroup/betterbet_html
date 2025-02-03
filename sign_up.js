@@ -334,17 +334,6 @@
           "bookmaker": "Midnite"
         },
         {
-          "logo": "https://static.wixstatic.com/media/7a0e3a_efd50a72013945059b1f6ea062f0e9be~mv2.png",
-          "promo": "",
-          "offer": "https://www.vbet.co.uk/sport/welcome-offer",
-          "guide": "https://www.betterbetgroup.com/sign-up-offer-guides/vbet-sign-up-offer",
-          "odds_details": "1.4",
-          "offer_description": "Bet £10, Get £10 Free Bet",
-          "difficulty": "Avg",
-          "profit": "£7.50",
-          "bookmaker": "VBet"
-        },
-        {
           "logo": "https://static.wixstatic.com/media/7a0e3a_dc4396b6acac4f8e8c6b48d4236747c7~mv2.png",
           "promo": "SPORT",
           "offer": "https://tinyurl.com/ybv38398",

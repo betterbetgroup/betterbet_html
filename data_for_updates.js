@@ -87,6 +87,17 @@ let unused_sign_up_offers = [
       "profit": "£2.50",
       "bookmaker": "Space Casino"
     },
+    {
+      "logo": "https://static.wixstatic.com/media/7a0e3a_efd50a72013945059b1f6ea062f0e9be~mv2.png",
+      "promo": "",
+      "offer": "https://www.vbet.co.uk/en/promotions/all/577511/sign-up-offer",
+      "guide": "https://www.betterbetgroup.com/sign-up-offer-guides/vbet-sign-up-offer",
+      "odds_details": "1.4",
+      "offer_description": "£20 Risk Free Bet",
+      "difficulty": "Avg",
+      "profit": "£13.50",
+      "bookmaker": "VBet"
+    },
   ]
 
 
