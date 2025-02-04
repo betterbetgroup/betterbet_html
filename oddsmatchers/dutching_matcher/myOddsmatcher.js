@@ -927,10 +927,10 @@ tr.setAttribute('data-id', row._id)
 
         const row_height = getComputedStyle(tr).height.replace('px', '');
 
-        const select_button_height = 35;
+        const select_button_height = getComputedStyle(selectButton).height.replace('px', '');
         const margin_top_for_select_button_on_row = (row_height - select_button_height) / 2;  
 
-        const info_button_height = 35;
+        const info_button_height = getComputedStyle(selectButton).height.replace('px', '');
         const margin_top_for_info_button_on_row = (row_height - info_button_height) / 2;
                 
             
@@ -2224,9 +2224,9 @@ apply_custom_filters_from_dropdown(filters) {
 
         let odds_height = '25px';
 
-        let odds_width = '40px'
+        let odds_width = '40px';
 
-
+        let pagination_container_height = '50px';
 
     
         if (width < LARGE_FONT_WIDTH) {
@@ -2240,7 +2240,9 @@ apply_custom_filters_from_dropdown(filters) {
 
             odds_height = '20px';
 
-            odds_width = '35px'
+            odds_width = '35px';
+
+            pagination_container_height = '45px';
 
         } 
 
@@ -2255,7 +2257,9 @@ apply_custom_filters_from_dropdown(filters) {
 
             // no need to change odds height
 
-            odds_width = '30px'
+            odds_width = '30px';
+
+            pagination_container_height = '40px';
 
         } 
 
@@ -2278,6 +2282,8 @@ apply_custom_filters_from_dropdown(filters) {
                 header.style.paddingLeft = '3px';
                 header.style.paddingRight = '3px';
             });
+
+            pagination_container_height = '38px';
 
 
         } else {
@@ -2318,6 +2324,7 @@ apply_custom_filters_from_dropdown(filters) {
             header.style.fontSize = header_font_size;
         });
 
+        this.shadowRoot.querySelector('#pagination-container').style.height = pagination_container_height;
         this.shadowRoot.querySelector('#pagination-info').style.fontSize = header_font_size;
         this.shadowRoot.querySelector('#prev-page').style.fontSize = header_font_size;
         this.shadowRoot.querySelector('#next-page').style.fontSize = header_font_size;

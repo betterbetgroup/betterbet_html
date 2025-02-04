@@ -196,16 +196,14 @@ body {
 }
 table {
     border-collapse: collapse;
-    background: #222;
-    border: 1px solid #222;
+    background: #121212;
+    border: 1px solid #121212;
     margin: 20px auto;
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.6);
     overflow: hidden;
     transition: box-shadow 0.3s;
-    width: 100%;
- 
- 
+    width: 100%; 
  }
  
  
@@ -494,24 +492,21 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 
 
 .select_button {
-    width: 80px;
-    height: 35px;
-    background: linear-gradient( 145deg, #ff00c6, #fa6fe1); 
+    width: 6.8vw;
+    height: 2.4vw;
+    background: linear-gradient( 145deg, #ff00c6, #ff00c6); 
     border-radius: 10px;
     color: white;
-    font-size: 16px;
+    font-size: 1.1vw;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
     border: 0;
     font-weight: bold;
-
 }
 
 
 .select_button:hover {
     cursor: pointer;
-    transform: scale(1.06); 
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4); 
-
 }
 
 .info_button {
@@ -519,15 +514,12 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     padding: 0;
     margin: 0;
     background: None;
-    height: 25px;
-    width: 25px;
-
+    height: 35px;
+    width: 35px;
 
 }
-
 #more_info_button:hover {
     cursor: pointer;
-    transform: scale(1.1); 
 }
 
 
@@ -577,39 +569,43 @@ td[id^='outcome'] {
 
 
 
+
+
+#pagination-container {
+    background: linear-gradient(180deg, #000000, #121212);
+    width: 420px;
+    justify-self: center;
+    border-radius: 12px;
+    border: 1px solid #121212;
+    height: 40px;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 #pagination-container button {
-    width: 100px; /* Set a fixed width for both buttons */
-    background: linear-gradient(145deg, #000000, #252525);
-    color: #eee;
-    padding: 10px 15px;
-    text-shadow: 1px 1px 2px black;
+    width: 80px;
+    height: 100%;
+    background: 0;
+    color: #fff;
     border-radius: 5px;
     cursor: pointer;
     margin: 0 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.6); /* Added shadow */
     transition: all 0.3s ease;
-    border: 1px solid #333;
     font-weight: bold; 
- 
- 
- 
- }
- 
- 
- #pagination-container button:hover {
-    background: linear-gradient(145deg, #000000, #252525);
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
-    transform: scale(1.02); /* Slight scale to indicate interactive element */
- 
- 
- }
- 
- 
- #pagination-info {
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#pagination-info {
     text-shadow: 2px 2px 2px black;
     font-size: 14px;
- }
+    padding: 0;
+    margin: 0;
+}
  
+
 
 
 
@@ -618,7 +614,6 @@ td[id^='outcome'] {
 
 
  .not_premium_member_row {
-    height: 100px;
     padding: 0;
     margin: 0;
     padding: 20px;
@@ -645,7 +640,7 @@ td[id^='outcome'] {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 10px;
+    padding: 1.7vw;
     line-height: 150%;
     font-size: 20px;
     color: linear-gradient( 145deg, #a70707, #ff3321);
@@ -666,18 +661,17 @@ td[id^='outcome'] {
     background: linear-gradient( 145deg, #a70707, #ff3321);
     color: white;
     border: None;
-    padding: 10px 24px;
+    padding: 0.85vw 3.5vw;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 1.5vw;
     border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 310px;
  }
  
  
@@ -766,7 +760,7 @@ td[id^='rating_'] {
 
 #filter-panel-container {
     width: 100%;
-    padding: 10px;
+    padding: 0;
     display: flex;
     flex-direction: column; 
     color: #eee;
@@ -776,12 +770,9 @@ td[id^='rating_'] {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
     padding-top: 0px;
     padding-bottom: 5px;
-    border: 1px solid #222;
-    background: linear-gradient(180deg, #111111, #111111);
+    border: 1px solid #121212;
+    background: linear-gradient(180deg, #000000, #121212);
 }
-
-
-
 
 
 
@@ -1204,13 +1195,16 @@ input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potent
     align-items: center;
     text-align: center;
     height: 95px;
-    border-bottom: 1px solid #222;
     width: 100%;
+    background: 0;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border-bottom: 1px solid #121212;
 
 }
 
 .save-filter-button, .get-alerts-button, .confirm-filter-name {
-    background: linear-gradient( 145deg, #ff00c6, #fa6fe1); 
+    background: linear-gradient( 145deg, #ff00c6, #ff00c6); 
     width: 200px;
     border-radius: 10px;
     color: white;
@@ -1224,9 +1218,6 @@ input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potent
     border: 0;
     margin-bottom: -10px;
 
-
-
-    
 }
 
 
@@ -1254,8 +1245,6 @@ input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potent
 
 
 
-
-
 .save-filter-button:hover, .get-alerts-button:hover, .confirm-filter-name:hover{
     transform: scale(1.03); 
     box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.8); 
@@ -1263,7 +1252,7 @@ input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potent
 }
 
 .get-alerts-button {
-    background: linear-gradient(145deg, #D4AF37, #B8860B);
+    background: linear-gradient(145deg, #5165F6, #5165F6);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1275,7 +1264,7 @@ input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potent
 .confirm-filter-name {
 
     width: 120px;
-    background: linear-gradient(to right, #056202, #08ab36); 
+    background: linear-gradient(to right, #057001, #057001); 
     display: none;
 
 }

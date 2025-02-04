@@ -612,10 +612,10 @@
         
                 const row_height = getComputedStyle(tr).height.replace('px', '');
         
-                const select_button_height = 35;
+                const select_button_height = getComputedStyle(selectButton).height.replace('px', '');
                 const margin_top_for_select_button_on_row = (row_height - select_button_height) / 2;  
         
-                const info_button_height = 35;
+                const info_button_height = getComputedStyle(selectButton).height.replace('px', '');
                 const margin_top_for_info_button_on_row = (row_height - info_button_height) / 2;
                         
                 const trRect = tr.getBoundingClientRect();
@@ -2256,7 +2256,8 @@
             let rating_header_width = '70px';
             let sport_header_width = '55px';
     
-        
+            let pagination_container_height = '50px';
+    
             if (width < LARGE_FONT_WIDTH) {
     
                 header_font_size = '14px';
@@ -2266,6 +2267,8 @@
                 date_and_time_header_width = '60px';
                 rating_header_width = '60px';
                 sport_header_width = '50px';
+    
+                pagination_container_height = '45px';
             } 
     
             if (width < MEDIUM_FONT_WIDTH) {
@@ -2277,6 +2280,8 @@
                 date_and_time_header_width = '50px';
                 rating_header_width = '50px';
                 sport_header_width = '30px';
+    
+                pagination_container_height = '40px';
     
     
             } 
@@ -2291,7 +2296,9 @@
             headers.forEach(function(header) {
                 header.style.fontSize = header_font_size;
             });
-    
+
+
+            this.shadowRoot.querySelector('#pagination-container').style.height = pagination_container_height;
             this.shadowRoot.querySelector('#pagination-info').style.fontSize = header_font_size;
             this.shadowRoot.querySelector('#prev-page').style.fontSize = header_font_size;
             this.shadowRoot.querySelector('#next-page').style.fontSize = header_font_size;

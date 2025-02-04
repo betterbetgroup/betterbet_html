@@ -829,7 +829,9 @@ class ProfitTracker extends HTMLElement {
             const selectRect = selectButton.getBoundingClientRect();
 
     
-            const select_button_height = selectRect.height;
+
+            const select_button_height = getComputedStyle(selectButton).height.replace('px', '');
+
             const margin_top_for_select_button_on_row = (row_height - select_button_height) / 2; 
             
             
@@ -2452,14 +2454,12 @@ alternateText() {
         let pagination_padding_left_right = '22px';
         let pagination_width = '130px';
 
-        let pagination_font_size = '16px';
-
 
         let select_font_size = '14px';
         let select_height = '30px';
         let select_width = '60px';
 
-
+        let pagination_container_height = '50px';
 
 
         if (width < LARGE_FONT_WIDTH) {
@@ -2483,12 +2483,8 @@ alternateText() {
             pagination_padding_left_right = '22px';
             pagination_width = '130px';
     
-            pagination_font_size = '16px';
+            pagination_container_height = '45px';
 
-
-
-
-        
         } 
 
         if (width < MEDIUM_FONT_WIDTH) {
@@ -2527,14 +2523,13 @@ alternateText() {
             pagination_padding_left_right = '18px';
             pagination_width = '110px';
 
-            pagination_font_size = '14px';
-
-
 
             select_font_size = '12px';
             select_height = '27px';
             select_width = '57px';
 
+            
+            pagination_container_height = '40px';
  
         } 
 
@@ -2572,12 +2567,12 @@ alternateText() {
             pagination_padding_left_right = '18px';
             pagination_width = '110px';
 
-            pagination_font_size = '14px';
-
 
             select_font_size = '10px';
             select_height = '23px';
             select_width = '52px';
+
+            pagination_container_height = '37px';
 
  
         } 
@@ -2613,12 +2608,7 @@ alternateText() {
 
 
 
-        var select_boxes = this.shadowRoot.querySelectorAll('.select_button') 
-        select_boxes.forEach(function(button) {
-            button.style.fontSize = select_font_size;
-            button.style.height = select_height
-            button.style.width = select_width
-        });
+
 
 
 
@@ -2670,10 +2660,10 @@ alternateText() {
 
 
 
-        this.shadowRoot.querySelector('#pagination-info').style.fontSize = pagination_font_size;
-
-        this.shadowRoot.querySelector('#prev-page').style.fontSize = pagination_font_size;
-        this.shadowRoot.querySelector('#next-page').style.fontSize = pagination_font_size;
+        this.shadowRoot.querySelector('#pagination-info').style.fontSize = header_font_size;
+        this.shadowRoot.querySelector('#pagination-container').style.height = pagination_container_height;
+        this.shadowRoot.querySelector('#prev-page').style.fontSize = header_font_size;
+        this.shadowRoot.querySelector('#next-page').style.fontSize = header_font_size;
 
 
         var cells = this.shadowRoot.querySelectorAll('td');

@@ -634,10 +634,10 @@ tr.setAttribute('data-id', row._id)
 
         const row_height = getComputedStyle(tr).height.replace('px', '');
 
-        const select_button_height = 35;
+        const select_button_height = getComputedStyle(selectButton).height.replace('px', '');
         const margin_top_for_select_button_on_row = (row_height - select_button_height) / 2;  
 
-        const info_button_height = 35;
+        const info_button_height = getComputedStyle(selectButton).height.replace('px', '');
         const margin_top_for_info_button_on_row = (row_height - info_button_height) / 2;
                 
             
@@ -2234,6 +2234,8 @@ setInterval(() => {
         let date_and_time_header_width = '75px';
         let rating_header_width = '70px';
 
+        let pagination_container_height = '50px';
+
     
         if (width < LARGE_FONT_WIDTH) {
 
@@ -2243,6 +2245,8 @@ setInterval(() => {
             expected_profit_header_width = '80px';
             date_and_time_header_width = '60px';
             rating_header_width = '60px';
+
+            pagination_container_height = '45px';
         } 
 
         if (width < MEDIUM_FONT_WIDTH) {
@@ -2254,6 +2258,7 @@ setInterval(() => {
             date_and_time_header_width = '50px';
             rating_header_width = '50px';
 
+            pagination_container_height = '40px';
 
         } 
 
@@ -2267,6 +2272,8 @@ setInterval(() => {
             header.style.fontSize = header_font_size;
         });
 
+
+        this.shadowRoot.querySelector('#pagination-container').style.height = pagination_container_height;
         this.shadowRoot.querySelector('#pagination-info').style.fontSize = header_font_size;
         this.shadowRoot.querySelector('#prev-page').style.fontSize = header_font_size;
         this.shadowRoot.querySelector('#next-page').style.fontSize = header_font_size;

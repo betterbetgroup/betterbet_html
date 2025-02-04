@@ -590,7 +590,7 @@ tr.setAttribute('data-id', row._id)
         let infoButton = document.createElement('button');
         infoButton.innerHTML = 
                 `   
-                <div id="info_image_${row._id}" data-tooltip="More info" style="background: None; height:35px; width:35px; padding:0; margin: 0; display: flex;">
+                <div id="info_image_${row._id}" data-tooltip="More info" style="background: None; height: 35px; width:35px; padding:0; margin: 0; display: flex;">
                     <img class="more_info_image" data-id="${row._id}" id="more_info_button" src="https://img.icons8.com/?size=100&id=xxQh3SPI3ID7&format=png&color=000000" alt="Info">
                 </div>
                 `
@@ -612,10 +612,10 @@ tr.setAttribute('data-id', row._id)
     
             const row_height = getComputedStyle(tr).height.replace('px', '');
     
-            const select_button_height = 35;
+            const select_button_height = getComputedStyle(selectButton).height.replace('px', '');
             const margin_top_for_select_button_on_row = (row_height - select_button_height) / 2;  
     
-            const info_button_height = 35;
+            const info_button_height = getComputedStyle(selectButton).height.replace('px', '');
             const margin_top_for_info_button_on_row = (row_height - info_button_height) / 2;
                     
             const trRect = tr.getBoundingClientRect();
@@ -2147,8 +2147,8 @@ add_lock_if_premium() {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/standard_oddsmatcher/styles.css'); 
-                //link.setAttribute('href', 'styles.css'); 
+                //link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/standard_oddsmatcher/styles.css'); 
+                link.setAttribute('href', 'styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);
@@ -2256,7 +2256,8 @@ add_lock_if_premium() {
         let rating_header_width = '70px';
         let sport_header_width = '55px';
 
-    
+        let pagination_container_height = '50px';
+
         if (width < LARGE_FONT_WIDTH) {
 
             header_font_size = '14px';
@@ -2266,6 +2267,8 @@ add_lock_if_premium() {
             date_and_time_header_width = '60px';
             rating_header_width = '60px';
             sport_header_width = '50px';
+
+            pagination_container_height = '45px';
         } 
 
         if (width < MEDIUM_FONT_WIDTH) {
@@ -2277,6 +2280,8 @@ add_lock_if_premium() {
             date_and_time_header_width = '50px';
             rating_header_width = '50px';
             sport_header_width = '30px';
+
+            pagination_container_height = '40px';
 
 
         } 
@@ -2292,6 +2297,7 @@ add_lock_if_premium() {
             header.style.fontSize = header_font_size;
         });
 
+        this.shadowRoot.querySelector('#pagination-container').style.height = pagination_container_height;
         this.shadowRoot.querySelector('#pagination-info').style.fontSize = header_font_size;
         this.shadowRoot.querySelector('#prev-page').style.fontSize = header_font_size;
         this.shadowRoot.querySelector('#next-page').style.fontSize = header_font_size;

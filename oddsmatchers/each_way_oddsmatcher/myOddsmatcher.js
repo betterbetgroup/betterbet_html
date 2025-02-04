@@ -694,10 +694,10 @@ tr.setAttribute('data-id', row._id)
     
             const row_height = getComputedStyle(tr).height.replace('px', '');
     
-            const select_button_height = 35;
+            const select_button_height = getComputedStyle(selectButton).height.replace('px', '');
             const margin_top_for_select_button_on_row = (row_height - select_button_height) / 2;  
     
-            const info_button_height = 35;
+            const info_button_height = getComputedStyle(selectButton).height.replace('px', '');
             const margin_top_for_info_button_on_row = (row_height - info_button_height) / 2;
                     
                 
@@ -2230,9 +2230,9 @@ add_lock_if_premium() {
 
         let odds_height = '25px';
 
-        let odds_width = '40px'
+        let odds_width = '40px';
 
-
+        let pagination_container_height = '50px';
 
     
         if (width < LARGE_FONT_WIDTH) {
@@ -2247,7 +2247,9 @@ add_lock_if_premium() {
 
             odds_height = '20px';
 
-            odds_width = '35px'
+            odds_width = '35px';
+
+            pagination_container_height = '45px';
 
         } 
 
@@ -2262,7 +2264,9 @@ add_lock_if_premium() {
 
             // no need to change odds height
 
-            odds_width = '30px'
+            odds_width = '30px';
+
+            pagination_container_height = '40px';
 
 
         } 
@@ -2291,6 +2295,7 @@ add_lock_if_premium() {
             header.style.fontSize = header_font_size;
         });
 
+        this.shadowRoot.querySelector('#pagination-container').style.height = pagination_container_height;
         this.shadowRoot.querySelector('#pagination-info').style.fontSize = header_font_size;
         this.shadowRoot.querySelector('#prev-page').style.fontSize = header_font_size;
         this.shadowRoot.querySelector('#next-page').style.fontSize = header_font_size;
