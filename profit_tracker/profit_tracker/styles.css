@@ -632,15 +632,14 @@ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle but more pronounced shadow *
 
 }
 
-
 .select_button {
-    width: 5.2vw;
-    height: 2.2vw;
+    width: 4.6vw;
+    height: 2vw;
     background: linear-gradient( 145deg, #ff00c6, #ff00c6); 
-    border-radius: 10px;
+    border-radius: 0.71vw;
     color: white;
-    font-size: 0.9vw;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    font-size: 0.85vw;
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); 
     border: 0;
     font-weight: bold;
 }

@@ -8,7 +8,7 @@ body {
     background: rgb(0, 0, 0);
     color: white;
     font-family: 'Arial', sans-serif;
-    padding: 20px;
+    padding: 1.43vw;
     margin: 0;
     justify-content: center;  
     min-height: 100vh;        /* Ensures the body is at least the height of the viewport */
@@ -22,15 +22,15 @@ body {
     background: none;
     color: white;
     font-family: 'Arial', sans-serif;
-    padding: 20px;
-    padding-left: 5px;
-    padding-right: 5px;
+    padding: 1.43vw;
+    padding-left: 0.36vw;
+    padding-right: 0.36vw;
     margin: 0 auto;
     justify-content: center;  
     min-height: 100vh;        /* Ensures the body is at least the height of the viewport */
     align-items: center;
     width: 100%;
-    padding-bottom: 100px;
+    padding-bottom: 7.14vw;
 
 
 }
@@ -54,22 +54,22 @@ body {
 /* Neon Pulse Bars */
 .neon-pulse {
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 7.14vw;
+    height: 7.14vw;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    perspective: 1000px;
+    perspective: 71.43vw;
     animation: rotatePulse 2s linear infinite; /* Rotating neon bars */
  }
  
  
  .neon-bar {
-    width: 15px;
-    height: 60px;
+    width: 1.07vw;
+    height: 4.29vw;
     background: #ff00c6;
-    box-shadow: 0px 0px 20px rgba(255, 0, 198, 0.8); /* Neon pink glow */
-    border-radius: 5px;
+    box-shadow: 0.00vw 0.00vw 1.43vw rgba(255, 0, 198, 0.8); /* Neon pink glow */
+    border-radius: 0.36vw;
     transform-origin: center bottom;
     animation: neonGrow 1s ease-in-out infinite;
  }
@@ -99,7 +99,7 @@ body {
  
  /* Background with a glowing gradient */
  .loading, .no-data-div {
-    height: 300px;
+    height: 21.43vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -114,7 +114,7 @@ body {
  
  .no-data-div {
     background: linear-gradient(270deg, #0a0010, #0c0033, #0a0010);
-    height: 150px;
+    height: 10.71vw;
  }
  
  
@@ -135,8 +135,8 @@ body {
  
  /* Loading text styling */
  .loading-text {
-    margin-top: 40px;
-    font-size: 24px;
+    margin-top: 2.86vw;
+    font-size: 1.71vw;
     color: #ff00c6;
     text-transform: uppercase;
     animation: fadeIn 2s ease-in-out infinite;
@@ -188,11 +188,11 @@ body {
 }
 table {
     border-collapse: collapse;
-    margin: 20px auto;
+    margin: 1.43vw auto;
     background: #121212;
-    border: 1px solid #121212;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+    border: 0.07vw solid #121212;
+    border-radius: 0.86vw;
+    box-shadow: 0 0.57vw 1.14vw rgba(0,0,0,0.6);
     overflow: hidden;
     transition: box-shadow 0.3s;
     width: 100%;
@@ -204,14 +204,14 @@ table {
  
  
  table:hover {
-    box-shadow: 0 12px 24px rgba(0,0,0,0.8); /* Enhanced hover effect */
+    box-shadow: 0 0.86vw 1.71vw rgba(0,0,0,0.8); /* Enhanced hover effect */
  }
  
  
  th, td {
-    padding: 15px 10px; /* More balanced padding */
+    padding: 1.07vw 0.71vw; /* More balanced padding */
     text-align: center; /* Center alignment for better readability */
-    border-bottom: 0px solid #555; /* Slightly lighter border for rows */
+    border-bottom: 0.00vw solid #555; /* Slightly lighter border for rows */
  
  
  }
@@ -219,7 +219,7 @@ table {
  
  .table-header {
     background: linear-gradient(180deg, #000000, #121212);
-    border-radius: 12px 12px 0 0; /* top-left, top-right, bottom-right, bottom-left */
+    border-radius: 0.86vw 0.86vw 0 0; /* top-left, top-right, bottom-right, bottom-left */
  
  
  }
@@ -227,17 +227,17 @@ table {
  
  
     color: #eee; /* Icy blue for clarity and visual appeal */
-    font-size: 16px;
+    font-size: 1.00vw;
     font-weight: bold;
-    text-shadow: 1px 1px 1px black; /* Text shadow for depth */
-    border-right: 0px solid #666;
+    text-shadow: 0.07vw 0.07vw 0.07vw black; /* Text shadow for depth */
+    border-right: 0.00vw solid #666;
  
  
  }
  td {
     background: #222; /* Horizontal gradient for a glossy header */
     color: #ddd;
-    font-size: 14px;
+    font-size: 0.86vw;
     transition: background-color 0.3s; /* Smooth transition for hover */
  }
  tr:last-child td {
@@ -263,55 +263,55 @@ table {
  
 
 #rating_header {
-    width: 50px;
+    width: 4.29vw;
     padding: 0;
-    padding-top: 13px;
+    padding-top: 0.93vw;
 }
 
 
 #extra_places_header {
-    width: 70px;
+    width: 5.00vw;
     padding: 0;
 }
 
 #outcome_header, #fixture_header {
-    max-width: 220px;
+    max-width: 15.71vw;
 }
 
 
 
 
 .rating_header_span, .extra_places_header_span {
-    margin-bottom: 20px;    
+    margin-bottom: 1.43vw;    
 }
 
 
 #fixture_info_header {
-    width: 40px;
+    width: 2.86vw;
 }
 
 #date_and_time_header {
-    width: 75px;
+    width: 4.29vw;
     padding: 0;
-    padding-top: 13px;
+    padding-top: 0.93vw;
 
 
 }
 
 #expected_profit_header {
-    width: 210px;
+    width: 12.86vw;
     padding: 0;
-    padding-top: 13px;
-    padding-left: 2px;
-    padding-right: 2px;
+    padding-top: 0.93vw;
+    padding-left: 0.14vw;
+    padding-right: 0.14vw;
 
     
 }
 td[id^='date_time_'] {
 
 line-height: 135%;
-padding-top: 0px;
-padding-bottom: 0px;
+padding-top: 0.00vw;
+padding-bottom: 0.00vw;
 
 }
 
@@ -322,7 +322,7 @@ div[class='expected_profit_data'] {
     justify-content: space-around; 
     padding: 0;
     margin: 0;
-    height: 65px;
+    height: 4.64vw;
 }
 
 .negative_profit_data, .positive_profit_data {
@@ -330,10 +330,12 @@ div[class='expected_profit_data'] {
     justify-content: space-evenly;
     align-items: center;
     font-weight: bold;
-    height: 65px;
+    height: 4.64vw;
 
     display: grid;
-    line-height: 65px;
+    line-height: 4.64vw;
+
+    font-size: 0.86vw;
 
 }
 
@@ -348,7 +350,7 @@ div[class='odds_and_bookmaker'] {
     align-items: center;
     padding: 0;
     margin: 0;
-    height: 65px;
+    height: 4.64vw;
 }
 
 td[class='odds_and_bookmaker'] {
@@ -411,7 +413,7 @@ td[class='odds_and_bookmaker'] {
 
 .div_around_logo {
     display: inline-block; 
-    width: 110px;
+    width: 7.14vw;
 }
 
 .bookmaker_logo_img, .exchange_logo_img {
@@ -421,16 +423,16 @@ align-items: center;
 justify-content: space-around; 
 transition: all 0.3s ease;
 width: 100%;
-border-radius: 5px;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+border-radius: 0.36vw;
+box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
 
 
 }
 
 
 .bookmaker_logo_img:hover, .exchange_logo_img:hover {
-    transform: scale(1.08); 
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+    transform: scale(1.03); 
+    box-shadow: 0.00vw 0.43vw 0.86vw rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
 
 }
 
@@ -440,7 +442,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow *
     justify-content: space-evenly;
     align-items: center;
     font-weight: bold;
-    height: 65px;
+    height: 4.64vw;
     display: grid;
 
 }
@@ -451,22 +453,22 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow *
 
 
 .back_odds_value, .lay_odds_value, .lay_odds_value_2 {
-    margin-left: 8px;
+    margin-left: 0.43vw;
     display: flex;
     color: white;              
     border-radius: 10%;        
-    width: 40px;              
-    height: 25px;   
-    border: 1px solid #bbb;  
-    line-height: 25px;
+    width: 2.50vw;              
+    height: 1.43vw;   
+    border: 0.07vw solid #bbb;  
+    line-height: 1.43vw;
 
-    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+    box-shadow: 0.00vw 0.14vw 0.43vw rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
 
     transition: background 0.3s, transform 0.3s;
 
-    max-width: 40px;
+    max-width: 2.50vw;
 
-
+    font-size: 0.86vw;
 
 }
 
@@ -474,10 +476,11 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow *
 
 .at_symbol, .at_symbol_outcome {
 
-    margin-right: 8px;
-    margin-left: 8px;
+    margin-right: 0.43vw;
+    margin-left: 0.43vw;
     display: flex;
     align-items: center;
+    font-size: 0.86vw;
 }
 
 .at_symbol_outcome {
@@ -487,15 +490,15 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow *
 .bookmaker_logo_div, .exchange_logo_div {
     padding: 0;
     margin: 0;
-    margin-right: 8px;
-    max-width: 110px;
+    margin-right: 0.43vw;
+    max-width: 7.86vw;
                            
 }
 
 
 
 .outcome_value {
-    margin-left: 8px;
+    margin-left: 0.43vw;
     font-weight: bold;
 }
 
@@ -537,22 +540,22 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow *
 
 
 #info-container {
-    width: 40px;
+    width: 2.86vw;
     background: None;
-    margin-right: 2px;
+    margin-right: 0.14vw;
     flex: 0 0 auto; /* Do not grow, allow shrinking, basis auto */
 
 }
 
 
 .select_button {
-    width: 6.8vw;
-    height: 2.4vw;
+    width: 6vw;
+    height: 2.2vw;
     background: linear-gradient( 145deg, #ff00c6, #ff00c6); 
-    border-radius: 10px;
+    border-radius: 0.71vw;
     color: white;
-    font-size: 1.1vw;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    font-size: 1vw;
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); 
     border: 0;
     font-weight: bold;
 }
@@ -560,7 +563,7 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow *
 
 .select_button:hover {
     cursor: pointer;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4); 
+    box-shadow: 0.00vw 0.36vw 0.71vw rgba(0, 0, 0, 0.4); 
 }
 
 .info_button {
@@ -568,27 +571,26 @@ box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow *
     padding: 0;
     margin: 0;
     background: None;
-    height: 25px;
-    width: 25px;
+    height: 1.79vw;
+    width: 1.79vw;
 
 
 }
 
 #more_info_button:hover {
     cursor: pointer;
-    transform: scale(1.1); /* Slight scale to indicate interactive element */
 }
 
 
 
 td[id^='fixture_'] {
-    padding-top: 1px;
-    padding-bottom: 1px;
+    padding-top: 0.07vw;
+    padding-bottom: 0.07vw;
 }
 
 td[id^='outcome'] {
-    padding-top: 1px;
-    padding-bottom: 1px;
+    padding-top: 0.07vw;
+    padding-bottom: 0.07vw;
 }
 
 
@@ -609,9 +611,9 @@ td[id^='outcome'] {
     white-space: nowrap;
     background-color: black;
     color: white;
-    padding: 5px 10px;
-    border-radius: 6px;
-    font-size: 14px;
+    padding: 0.36vw 0.71vw;
+    border-radius: 0.43vw;
+    font-size: 1.00vw;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s, visibility 0.3s;
@@ -627,24 +629,24 @@ td[id^='outcome'] {
 
 #pagination-container {
     background: linear-gradient(180deg, #000000, #121212);
-    width: 420px;
+    width: 30.00vw;
     justify-self: center;
-    border-radius: 12px;
-    border: 1px solid #121212;
-    height: 40px;
+    border-radius: 0.86vw;
+    border: 0.07vw solid #121212;
+    height: 3.21vw;
     align-items: center;
     display: flex;
     justify-content: space-evenly;
 }
 
 #pagination-container button {
-    width: 80px;
+    width: 5.71vw;
     height: 100%;
     background: 0;
     color: #fff;
-    border-radius: 5px;
+    border-radius: 0.36vw;
     cursor: pointer;
-    margin: 0 10px;
+    margin: 0 0.71vw;
     transition: all 0.3s ease;
     font-weight: bold; 
     border: 0;
@@ -653,10 +655,13 @@ td[id^='outcome'] {
 }
 
 #pagination-info {
-    text-shadow: 2px 2px 2px black;
-    font-size: 14px;
+    text-shadow: 0.14vw 0.14vw 0.14vw black;
+    font-size: 1.00vw;
     padding: 0;
     margin: 0;
+}
+#next-page, #prev-page {
+    font-size: 1.00vw;
 }
  
  
@@ -673,10 +678,10 @@ td[id^='outcome'] {
  .not_premium_member_row {
     padding: 0;
     margin: 0;
-    padding: 20px;
+    padding: 1.43vw;
     background: linear-gradient(180deg, #000000, #121212);
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0.71vw;
+    padding-bottom: 0.71vw;
     transition: all 0.3s ease;
  }
  
@@ -686,7 +691,7 @@ td[id^='outcome'] {
     justify-content: space-around;
     align-items: center;
     width: 100%;
-    padding: 0 20px;
+    padding: 0 1.43vw;
  }
  
  
@@ -699,7 +704,7 @@ td[id^='outcome'] {
     text-align: center;
     padding: 1.7vw;
     line-height: 150%;
-    font-size: 20px;
+    font-size: 1.43vw;
     color: linear-gradient( 145deg, #a70707, #ff3321);
     font-weight: bold;
  
@@ -708,8 +713,8 @@ td[id^='outcome'] {
  
  
  .padlock-image {
-    width: 80px;
-    height: 80px;
+    width: 5.71vw;
+    height: 5.71vw;
     margin: 0 5%;
  }
  
@@ -723,8 +728,8 @@ td[id^='outcome'] {
     font-weight: bold;
     cursor: pointer;
     font-size: 1.5vw;
-    border-radius: 30px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 2.14vw;
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
@@ -733,7 +738,7 @@ td[id^='outcome'] {
  
  
  .upgrade-button:hover {
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0.57vw 1.14vw rgba(0, 0, 0, 0.4);
  }
  
  
@@ -749,9 +754,9 @@ td[id^='outcome'] {
  .padlock-image-button {
  
  
-    width: 26px;
+    width: 1.86vw;
     height: auto;
-    margin-left: 12px;
+    margin-left: 0.86vw;
  
  
  }
@@ -765,7 +770,7 @@ td[id^='rating_'] {
 
     color: white;
     font-weight: bold;
-    padding: 10px 8px;
+    padding: 0.71vw 0.57vw;
 
 }
 
@@ -775,25 +780,25 @@ td[id^='rating_'] {
 
 #sort_by_img_rating {
 
-    width: 22px;
-    padding-top: 3px;
+    width: 1.57vw;
+    padding-top: 0.21vw;
 }
 
 
 
 
 #sort_by_img_dt, #sort_by_img_ql, #sort_by_img_pp {
-    width: 22px;
-    padding-top: 3px;
+    width: 1.57vw;
+    padding-top: 0.21vw;
 }
 
 
 
 
 .next_to_date_and_time {
-    padding: 0px;
-    margin: 0px;
-    padding-top: 2px;
+    padding: 0.00vw;
+    margin: 0.00vw;
+    padding-top: 0.14vw;
 
 }
 
@@ -827,12 +832,12 @@ td[id^='rating_'] {
     flex-direction: column; 
     color: #eee;
     margin: 0;
-    margin-bottom: 60px;
-    border-radius: 20px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-    padding-top: 0px;
-    padding-bottom: 5px;
-    border: 1px solid #121212;
+    margin-bottom: 4.29vw;
+    border-radius: 1.43vw;
+    box-shadow: 0 0.43vw 0.86vw rgba(0, 0, 0, 0.5);
+    padding-top: 0.00vw;
+    padding-bottom: 0.36vw;
+    border: 0.07vw solid #121212;
     background: linear-gradient(180deg, #000000, #121212);
 }
 
@@ -845,8 +850,8 @@ td[id^='rating_'] {
 .box {
     position: absolute;
     width: 100%;
-    padding: 10px;
-    height: 100px;
+    padding: 0.71vw;
+    height: 7.14vw;
     display: flex;
     flex-direction: column; /* Change to column to stack elements vertically */
     left: 0;
@@ -860,8 +865,7 @@ td[id^='rating_'] {
  
   .box2 {
     background-color: black;
-    border-radius: 20px;
-    height: 250px;
+    height: 17.86vw;
 
 }
 .box2 {
@@ -876,14 +880,16 @@ td[id^='rating_'] {
     right: 0;
     bottom: 0;
     background-color: black;
-    border-radius: 20px;
+    border-radius: 1.43vw;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0; 
     opacity: 89%;
     z-index: -1; /* Behind the content */
 }
 
 .padlock-image-filters {
-    width: 100px;
-    height: 100px;
+    width: 7.14vw;
+    height: 7.14vw;
     opacity: 1; /* Full opacity */
 }
 
@@ -895,7 +901,7 @@ td[id^='rating_'] {
 
 #filter-panel {
     width: 100%;
-    padding: 10px;
+    padding: 0.71vw;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -913,30 +919,32 @@ td[id^='rating_'] {
     flex-direction: column;
     justify-content: space-around;
     flex: 1;
-    padding: 5px;
-    margin-left: 10px;
+    padding: 0.36vw;
+    margin-left: 0.71vw;
 }
 
 .custom-select-container, .custom-input-container {
     position: relative;
-    width: calc(100% - 10px); /* Adjust width to fit padding */
+    width: calc(100% - 0.71vw); /* Adjust width to fit padding */
     background: #333;
-    border: 1px solid #444;
-    border-radius: 5px;
-    padding: 10px;
+    border: 0.07vw solid #444;
+    border-radius: 0.36vw;
+    padding: 0.71vw;
     color: #eee;
-    margin: 5px 0;
+    margin: 0.36vw 0;
     cursor: pointer;
-    height: 40px; /* Set a fixed height to match the dropdowns */
+    height: 2.86vw; /* Set a fixed height to match the dropdowns */
     align-items: center;
     outline: none; /* Remove focus outline */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+    font-size: 1.04vw;
+    display: flex;
 
 }
 
 .custom-select-container:hover, .custom-input-container:hover {
 
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+    box-shadow: 0.00vw 0.43vw 0.71vw rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
 
 }
 
@@ -955,9 +963,11 @@ td[id^='rating_'] {
     background: none;
     border: none;
     color: #eee;
-    padding-left: 5px;
+    padding-left: 0.36vw;
     outline: none; /* Remove focus outline */
     cursor: pointer; /* Ensure pointer cursor */
+    font-size: 1.04vw;
+
 }
 
 .custom-select-trigger input:hover, .custom-select-trigger input:focus, .custom-select-trigger-filter input:hover, .custom-select-trigger-filter input:focus {
@@ -970,7 +980,7 @@ td[id^='rating_'] {
     color: #eee;
     pointer-events: none;
     position: absolute;
-    right: 10px;
+    right: 0.71vw;
 }
 
 
@@ -981,7 +991,7 @@ td[id^='rating_'] {
 
 .custom-select-trigger-filter input {
 
-    font-size: 16px;
+    font-size: 1.14vw;
     font-weight: bold;
     color: white;
 
@@ -997,24 +1007,24 @@ td[id^='rating_'] {
     position: absolute;
     top: 100%;
     background: #333;
-    border-radius: 0 0 8px 8px;
-    width: calc(100% + 2px);
+    border-radius: 0 0 0.57vw 0.57vw;
+    width: calc(100% + 0.14vw);
     overflow: hidden;
     display: none;
-    max-height: 200px;
+    max-height: 14.29vw;
     overflow-y: auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-    border: 1px solid #444; /* Slight border */
+    box-shadow: 0 0.29vw 0.86vw rgba(0, 0, 0, 0.4);
+    border: 0.07vw solid #444; /* Slight border */
     transition: all 0.3s ease; /* Smooth transition */
 }
 
 .dropdown-options label {
     display: flex;
     align-items: center;
-    padding: 10px 15px;
-    padding-right: 30px; /* Increase padding to accommodate the scrollbar */
+    padding: 0.71vw 1.07vw;
+    padding-right: 2.14vw; /* Increase padding to accommodate the scrollbar */
     cursor: pointer;
-    border-bottom: 1px solid #444;
+    border-bottom: 0.07vw solid #444;
 }
 
 .dropdown-options label:last-child {
@@ -1031,10 +1041,10 @@ td[id^='rating_'] {
 .dropdown-option-filter {
     display: flex;
     align-items: center;
-    padding: 10px 15px;
-    padding-right: 22px;; /* Increase padding to accommodate the scrollbar */
+    padding: 0.71vw 1.07vw;
+    padding-right: 1.57vw;; /* Increase padding to accommodate the scrollbar */
     cursor: pointer;
-    border-bottom: 1px solid #444;
+    border-bottom: 0.07vw solid #444;
 }
 
 
@@ -1062,16 +1072,16 @@ td[id^='rating_'] {
     position: absolute;
     top: 100%;
     background: #333;
-    border-radius: 0 0 8px 8px;
-    width: 320px;
+    border-radius: 0 0 0.57vw 0.57vw;
+    width: 22.86vw;
     overflow: hidden;
     display: none;
-    max-height: 200px;
+    max-height: 14.29vw;
     overflow-y: auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 0.29vw 0.86vw rgba(0, 0, 0, 0.4);
     z-index: 3; /* Ensure dropdown is always on top */
     transition: all 0.3s ease; /* Smooth transition */
-    border: 1px solid #444; /* Slight border */
+    border: 0.07vw solid #444; /* Slight border */
 
 
 }
@@ -1081,11 +1091,11 @@ td[id^='rating_'] {
     position: absolute;
     background: #333;
     color: #fff;
-    width: calc(100% + 2px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    width: calc(100% + 0.14vw);
+    box-shadow: 0 0.14vw 0.36vw rgba(0,0,0,0.5);
     z-index: 2;
     display: none; /* Initially hidden */
-    left: -1px;
+    left: -0.07vw;
 }
 
 .dropdown-option-filter {
@@ -1093,18 +1103,18 @@ td[id^='rating_'] {
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
-    width: 320px;
+    width: 22.86vw;
 }
 
 .filter-delete-button {
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 0.36vw 0.71vw;
+    font-size: 0.86vw;
     background: linear-gradient(145deg, #ae0404, #e62828);
     transition: all 0.3s ease; /* Smooth transition */
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 0.36vw;
     align-self: right;    
 }
 
@@ -1116,14 +1126,14 @@ td[id^='rating_'] {
 
 
 .confirm-delete-button {
-    padding: 5px 10px;
-    font-size: 12px;
+    padding: 0.36vw 0.71vw;
+    font-size: 0.86vw;
     background: linear-gradient(145deg, #0303d9, #0b149b);
     transition: all 0.3s ease; /* Smooth transition */
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
+    border-radius: 0.36vw;
     align-self: right;   
     display: none; 
 }
@@ -1166,7 +1176,7 @@ td[id^='rating_'] {
 input[type="checkbox"] {
 
     padding-left: 0;
-    margin-right: 10px;
+    margin-right: 0.71vw;
     
 }
 
@@ -1174,11 +1184,11 @@ input[type="checkbox"] {
 
 .dropdown-options label {
 
-    padding-left: 5px;
-    padding-right: 12px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    font-size: 13.3px;    
+    padding-left: 0.36vw;
+    padding-right: 0.86vw;
+    padding-top: 0.57vw;
+    padding-bottom: 0.57vw;
+    font-size: 13.0.21vw;    
 
 
 }
@@ -1188,32 +1198,36 @@ input[type="checkbox"] {
 
 
 .text-input {
-    width: calc(100% - 10px); /* Adjust width to fit padding */
-    padding: 10px;
-    border-radius: 5px;
+    width: calc(100% - 0.71vw); /* Adjust width to fit padding */
+    padding: 0.71vw;
+    border-radius: 0.36vw;
     background: #333;
     color: #eee;
-    margin: 5px 0;
-    height: 40px; /* Set a fixed height to match the dropdowns */
+    margin: 0.36vw 0;
+    height: 2.86vw; /* Set a fixed height to match the dropdowns */
     outline: none; /* Remove focus outline */
-    border: 1px solid #444;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+    border: 0.07vw solid #444;
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+    font-size: 1.04vw;
+}
 
-
+#filters_padlock {
+    height: 6.42vw;
+    width: 6.42vw;
 }
 
 input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
-    width: calc(100% - 10px); /* Adjust width to fit padding */
-    padding: 10px;
-    border: 1px solid #444;
-    border-radius: 5px;
+    width: calc(100% - 0.71vw); /* Adjust width to fit padding */
+    padding: 0.71vw;
+    border: 0.07vw solid #444;
+    border-radius: 0.36vw;
     background: #333;
     color: #eee;
-    margin: 5px 0;
-    height: 40px; /* Set a fixed height to match the dropdowns */
+    margin: 0.36vw 0;
+    height: 2.86vw; /* Set a fixed height to match the dropdowns */
     outline: none; /* Remove focus outline */
     position: relative;
-    padding-left: 45px; /* Add padding to the left to make room for the pound sign */
+    padding-left: 2.91vw; 
 }
 
 .text-input-container {
@@ -1227,15 +1241,15 @@ input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
     content: '£';
     position: absolute;
     color: #eee;
-    font-size: 22px;
+    font-size: 1.57vw;
     z-index: 1; /* Ensure dropdown is always on top */
     background: linear-gradient(to right, #000000, #1d1b1b); /* Brighter hover state */
-    height: 38px;
-    width: 35px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
+    height: 2.75vw;
+    width: 2.20vw;
+    border-bottom-left-radius: 0.36vw;
+    border-top-left-radius: 0.36vw;
     font-weight: bold;
-    border: 1px solid #444;
+    border: 0.07vw solid #444;
     display: flex;
     align-items: center;
     text-align: center;
@@ -1244,17 +1258,17 @@ input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
 }
 
 .text-input:hover {
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+    box-shadow: 0.00vw 0.43vw 0.71vw rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
 
 }
 
 
 .filter-label {
-    font-size: 12px;
+    font-size: 0.86vw;
     color: #ffffff;
     font-weight: bold;
-    margin-left: 5px;
-    margin-top: 10px;
+    margin-left: 0.36vw;
+    margin-top: 0.71vw;
 }
 
 
@@ -1263,29 +1277,29 @@ input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 95px;
+    height: 6.79vw;
     width: 100%;
     background: 0;
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px;
-    border-bottom: 1px solid #121212;
+    border-top-right-radius: 1.43vw;
+    border-top-left-radius: 1.43vw;
+    border-bottom: 0.07vw solid #121212;
 
 }
 
 .save-filter-button, .get-alerts-button, .confirm-filter-name {
     background: linear-gradient( 145deg, #ff00c6, #ff00c6); 
-    width: 200px;
-    border-radius: 10px;
+    width: 14.29vw;
+    border-radius: 0.71vw;
     color: white;
-    font-size: 16px;
+    font-size: 1.14vw;
     padding: 0;
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
-    height: 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    height: 2.86vw;
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); 
     font-weight: bold;
     border: 0;
-    margin-bottom: -10px;
+    margin-bottom: -1.25vw;
 
 }
 
@@ -1293,30 +1307,29 @@ input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
 
 .cancel-making-filter {
 
-    border-radius: 100px;
-    height: 35px;
-    width: 35px;
+    border-radius: 7.14vw;
+    height: 2.50vw;
+    width: 2.50vw;
     transition: background 0.3s, transform 0.3s;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); 
     color: #eee;
-    font-size: 22px;
+    font-size: 1.57vw;
     background: #333;
-    margin: 5px 0;
-    border: 1px solid #444;
+    margin: 0.36vw 0;
+    border: 0.07vw solid #444;
     margin: 0;
     padding: 0;
-    margin-left: 15px;
+    margin-left: 1.07vw;
     align-items: center;
     justify-content: center;
-    margin-bottom: -10px;
+    margin-bottom: -1.25vw;
     display: none;
 }
 
 
 
 .save-filter-button:hover, .get-alerts-button:hover, .confirm-filter-name:hover{
-    transform: scale(1.03); 
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.8); 
+    box-shadow: 0.00vw 0.43vw 0.86vw rgba(0, 0, 0, 0.8); 
 
 }
 
@@ -1327,12 +1340,12 @@ input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
     justify-content: center;
 }
 .save-filter-button {
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 2.14vw;
+    margin-right: 2.14vw;
 }
 .confirm-filter-name {
 
-    width: 120px;
+    width: 8.57vw;
     background: linear-gradient(to right, #057001, #057001); 
     display: none;
 
@@ -1341,7 +1354,7 @@ input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
 .cancel-making-filter:hover {
 
     cursor: pointer;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+    box-shadow: 0.00vw 0.43vw 0.86vw rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
 
 
 }
@@ -1353,23 +1366,23 @@ input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
 
     position: relative;
     background: #333;
-    border: 1px solid #444;
+    border: 0.07vw solid #444;
     color: #eee;
-    padding: 10px;
-    padding-top: 2px;
-    padding-bottom: 2px;
+    padding: 0.71vw;
+    padding-top: 0.14vw;
+    padding-bottom: 0.14vw;
     cursor: pointer;
-    height: 40px; /* Set a fixed height to match the dropdowns */
+    height: 2.86vw; /* Set a fixed height to match the dropdowns */
     align-items: center;
     outline: none; /* Remove focus outline */
-    width: 320px;
-    font-size: 16px;
+    width: 22.86vw;
+    font-size: 1.14vw;
     font-weight: bold;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
     vertical-align: middle;
     display: flex;
     justify-content: center;
-    border-radius: 10px;
+    border-radius: 0.71vw;
 }
 
 
@@ -1382,25 +1395,25 @@ input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
     flex-direction: column;
     align-items: left;
     justify-content: center;
-    margin-bottom: 7.5px;
-    margin-right: 10px;
+    margin-bottom: 7.0.36vw;
+    margin-right: 0.71vw;
     display: none;
 }
 
 
 .get_alerts_img {
-    width: 25px;
-    margin-left: 10px;
+    width: 1.79vw;
+    margin-left: 0.71vw;
 }
 
 
 
 .filter-label-filters {
-    font-size: 12px;
+    font-size: 0.86vw;
     color: #ffffff;
     font-weight: bold;
-    margin-left: 5px;
-    margin-bottom: 5px;
+    margin-left: 0.36vw;
+    margin-bottom: 0.36vw;
     text-align: left;
 }
 
@@ -1413,33 +1426,33 @@ input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
     justify-content: center;
     padding: 0;
     margin: 0;
-    margin-bottom: 7.5px;
+    margin-bottom: 7.0.36vw;
 
-    z-index: 4;
+    z-index: 6;
     
 }
 
 
 .text-input-filter-name {
 
-    width: 300px; /* Adjust width to fit padding */
+    width: 21.43vw; /* Adjust width to fit padding */
     padding: 0;
-    padding-left: 10px;
-    border-radius: 10px;
+    padding-left: 0.71vw;
+    border-radius: 0.71vw;
     background: #333;
     color: white;
-    height: 40px; /* Set a fixed height to match the dropdowns */
+    height: 2.86vw; /* Set a fixed height to match the dropdowns */
     outline: none; /* Remove focus outline */
-    border: 1px solid #444;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
-    font-size: 16px;
+    border: 0.07vw solid #444;
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+    font-size: 1.14vw;
 
 
 }
 
 .text-input-filter-name:hover {
 
-    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+    box-shadow: 0.00vw 0.43vw 0.71vw rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
 
 }
 
@@ -1479,16 +1492,16 @@ input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
 
 
 #back_odds_header {
-    width: 150px;    
+    width: 10.71vw;    
 }
 
 #lay_odds_header {
-    width: 150px;
+    width: 10.71vw;
 
 }
 
 #place_lay_odds_header {
-    width: 150px;
+    width: 10.71vw;
 
 }
 

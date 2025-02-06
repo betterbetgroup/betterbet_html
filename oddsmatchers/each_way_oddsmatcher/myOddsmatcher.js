@@ -22,19 +22,6 @@
 
 
 
-const LARGE_FONT_WIDTH = 1400;
-const LARGE_BOOKMAKER_AND_ODDS = 1280;
-const SHOW_PLACES = 1210; 
-const MEDIUM_FONT_WIDTH = 1130;
-const SHOW_DATE_AND_TIME_WIDTH = 1025;
-const SHOW_INFO_WIDTH = 0;
-
-
-
-
-
-
-
     let is_premium_member = false;
 
 
@@ -672,7 +659,7 @@ tr.setAttribute('data-id', row._id)
         let infoButton = document.createElement('button');
         infoButton.innerHTML = 
                 `   
-                <div id="info_image_${row._id}" data-tooltip="More info" style="background: None; height:35px; width:35px; padding:0; margin: 0; display: flex;">
+                <div id="info_image_${row._id}" data-tooltip="More info" style="background: None; height: 2.5vw; width: 2.5vw; padding:0; margin: 0; display: flex;">
                     <img class="more_info_image" data-id="${row._id}" id="more_info_button" src="https://img.icons8.com/?size=100&id=xxQh3SPI3ID7&format=png&color=000000" alt="Info">
                 </div>
                 `
@@ -1073,7 +1060,7 @@ add_lock_if_premium() {
     
         let dropdown = this.shadowRoot.querySelector('#filters-dropdown-select-container')
     
-        dropdown.style.borderRadius = '10px';
+        dropdown.style.borderRadius = '0.71vw';
     }
     
     
@@ -1088,7 +1075,7 @@ add_lock_if_premium() {
     
         dropdown_corners.forEach((dropdown) => {
     
-            dropdown.style.borderRadius = '5px';
+            dropdown.style.borderRadius = '0.36vw';
     
         });
     
@@ -1343,12 +1330,12 @@ add_lock_if_premium() {
     
                 if (container.querySelector('.dropdown-options').style.display == 'block') {
                     container.querySelector('.dropdown-options').style.display = 'none';
-                    container.style.borderRadius = '5px';
+                    container.style.borderRadius = '0.36vw';
     
                 } else {
                 this.closeAllDropdowns(); // Close all other dropdowns
                 container.querySelector('.dropdown-options').style.display = 'block'; // Show current dropdown
-                container.style.borderRadius = '5px 5px 0 0';
+                container.style.borderRadius = '0.36vw 0.36vw 0 0';
                 
                 }
             });
@@ -1633,11 +1620,11 @@ add_lock_if_premium() {
     
             if (this.shadowRoot.querySelector('#filters-dropdown-options').style.display == 'block') {
                 this.shadowRoot.querySelector('#filters-dropdown-options').style.display = 'none'
-                container.style.borderRadius = '10px';
+                container.style.borderRadius = '0.71vw';
             } else {
                 this.closeAllDropdowns(); // Close all other dropdowns
             this.shadowRoot.querySelector('#filters-dropdown-options').style.display = 'block'; // Show current dropdown
-            container.style.borderRadius = '10px 10px 0 0';
+            container.style.borderRadius = '0.71vw 0.71vw 0 0';
     
             
             }
@@ -2018,6 +2005,7 @@ add_lock_if_premium() {
 
     render() {
         return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/each_way_oddsmatcher/z.html')
+        //return fetch('z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
@@ -2083,7 +2071,7 @@ add_lock_if_premium() {
         return new Promise((resolve) => {
             setTimeout(() => {
                 requestAnimationFrame(() => {
-                    const filter_panel_container = this.shadowRoot.querySelector('#filter-panel-container');
+                    const filter_panel_container = this.shadowRoot.querySelector('#filter-panel');
                     const box_for_covering_filters_ = this.shadowRoot.querySelector('#covering_filters');
     
                     if (!filter_panel_container || !box_for_covering_filters_) {
@@ -2095,10 +2083,13 @@ add_lock_if_premium() {
                     box_for_covering_filters_.style.margin = '0 auto';
     
                     const rect = filter_panel_container.getBoundingClientRect();
-    
-                    box_for_covering_filters_.style.width = `${rect.width}px`;
-                    box_for_covering_filters_.style.height = `${rect.height}px`;
-                    box_for_covering_filters_.style.top = `${20}px`;
+
+                    let filter_panel_container_outer = getComputedStyle(this.shadowRoot.querySelector('#filter-panel-container'));
+                    let padding_bottom_container = parseFloat((filter_panel_container_outer.paddingBottom).replace('px', ''));
+                        
+                    box_for_covering_filters_.style.width = `${rect.width + 4}px`;
+                    box_for_covering_filters_.style.height = `${rect.height + padding_bottom_container + 2}px`;
+                    box_for_covering_filters_.style.top = `${8.28}vw`;
     
                     resolve(); 
                 });
@@ -2118,6 +2109,7 @@ add_lock_if_premium() {
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
                 link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/each_way_oddsmatcher/styles.css'); 
+                //link.setAttribute('href', 'styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);
@@ -2148,258 +2140,19 @@ add_lock_if_premium() {
         contentDiv.style.width = `${width}px`; // MAKE THE OUTER CONTAINER BE THE WIDTH OF THE WINDOW
         contentDiv.style.margin = "0 auto";     // Center the div within its parent
 
-        this.set_font_size(width);
-
-        this.make_odds_and_platform_small_if_screen_small(width)
-
-        this.check_if_removing_or_showing_date_and_time(width);
-
-        this.check_if_removing_or_showing_places(width);
-
-        this.check_if_removing_or_showing_info(width);
-
-        this.change_dropdowns_dropdown_width(width);
-
         this.make_premium_box_correct_size();
         
     }   
 
 
-    check_if_removing_or_showing_info(width) {
-
-        let td_date_and_time_display = 'block';
-
-        if (width < SHOW_INFO_WIDTH) {
-            td_date_and_time_display = 'none';
-        }
-        if (filteredData.length == 0) {
-            td_date_and_time_display = 'none';
-        }
- 
-
-        this.shadowRoot.querySelector('#info-container').style.display = td_date_and_time_display;
-
-    }
 
 
 
-    check_if_removing_or_showing_date_and_time(width) {
-
-        let td_date_and_time_display = 'table-cell';
-
-        if (width < SHOW_DATE_AND_TIME_WIDTH) {
-            td_date_and_time_display = 'none';
-        }
-
-        this.shadowRoot.querySelector('#date_and_time_header').style.display = td_date_and_time_display;
-
-        var date_and_time_values = this.shadowRoot.querySelectorAll('.date_and_time_data');
-        date_and_time_values.forEach(function(date_and_time_value) {
-            date_and_time_value.style.display = td_date_and_time_display;
-        });
-
-    }
 
 
-    check_if_removing_or_showing_places(width) {
 
-        let places_display = 'table-cell';
-
-        if (width < SHOW_PLACES) {
-            places_display = 'none';
-        }
-
-        this.shadowRoot.querySelector('#extra_places_header').style.display = places_display;
-
-        var date_and_time_values = this.shadowRoot.querySelectorAll('.extra_places_data');
-        date_and_time_values.forEach(function(date_and_time_value) {
-            date_and_time_value.style.display = places_display;
-        });
-
-    }
-
-    set_font_size(width) {
-
-        let header_font_size = '16px';
-        let data_font_size = '14px';
-
-        let expected_profit_header_width = '100px';
-        let date_and_time_header_width = '75px';
-        let rating_header_width = '70px';
-        let places_width = '70px';
-
-        let odds_height = '25px';
-
-        let odds_width = '40px';
-
-        let pagination_container_height = '50px';
 
     
-        if (width < LARGE_FONT_WIDTH) {
-
-            header_font_size = '14px';
-            data_font_size = '12px';
-
-            expected_profit_header_width = '80px';
-            date_and_time_header_width = '60px';
-            rating_header_width = '60px';
-            places_width = '60px';
-
-            odds_height = '20px';
-
-            odds_width = '35px';
-
-            pagination_container_height = '45px';
-
-        } 
-
-        if (width < MEDIUM_FONT_WIDTH) {
-
-            header_font_size = '12px';
-            data_font_size = '10px';
-
-            expected_profit_header_width = '70px';
-            date_and_time_header_width = '50px';
-
-
-            // no need to change odds height
-
-            odds_width = '30px';
-
-            pagination_container_height = '40px';
-
-
-        } 
-
-
-
-        const oddsValues = this.shadowRoot.querySelectorAll('.back_odds_value, .lay_odds_value');
-        oddsValues.forEach(element => {
-            element.style.height = odds_height;
-            element.style.lineHeight = odds_height;
-            element.style.width = odds_width;
-        });
-
-
-
-
-
-        this.shadowRoot.querySelector('#expected_profit_header').style.width = expected_profit_header_width;
-        this.shadowRoot.querySelector('#date_and_time_header').style.width = date_and_time_header_width;
-        this.shadowRoot.querySelector('#rating_header').style.width = rating_header_width;
-        this.shadowRoot.querySelector('#extra_places_header').style.width = places_width;
-
-    
-        var headers = this.shadowRoot.querySelectorAll('th');
-        headers.forEach(function(header) {
-            header.style.fontSize = header_font_size;
-        });
-
-        this.shadowRoot.querySelector('#pagination-container').style.height = pagination_container_height;
-        this.shadowRoot.querySelector('#pagination-info').style.fontSize = header_font_size;
-        this.shadowRoot.querySelector('#prev-page').style.fontSize = header_font_size;
-        this.shadowRoot.querySelector('#next-page').style.fontSize = header_font_size;
-
-        
-        var back_odds_values = this.shadowRoot.querySelectorAll('.back_odds_value');
-        back_odds_values.forEach(function(back_odds_value) {
-            back_odds_value.style.fontSize = data_font_size;
-        });
-
-        var lay_odds_values = this.shadowRoot.querySelectorAll('.lay_odds_value');
-        lay_odds_values.forEach(function(lay_odds_value) {
-            lay_odds_value.style.fontSize = data_font_size;
-        });
-
-        var at_symbols = this.shadowRoot.querySelectorAll('.at_symbol, .and_symbol');
-        at_symbols.forEach(function(at_symbol) {
-            at_symbol.style.fontSize = header_font_size;
-        });
-
-
-            var cells = this.shadowRoot.querySelectorAll('td');
-            cells.forEach(function(cell) {
-                cell.style.fontSize = data_font_size;
-            });
-
-            var profit_qual = this.shadowRoot.querySelectorAll('.positive_profit_data, .negative_profit_data');
-            profit_qual.forEach(function(pq) {
-                pq.style.fontSize = data_font_size;
-            });
-
-    }
-
-
-
-
-
-    make_odds_and_platform_small_if_screen_small(width) {
-
-        let div_around_logo_width = '110px';
-        let margin_size = '8px';
-
-        if (width < LARGE_BOOKMAKER_AND_ODDS) {
-
-            div_around_logo_width = '90px';
-            margin_size = '5px';
-
-        }
-        
-        const divAroundLogo = this.shadowRoot.querySelectorAll('.div_around_logo');
-        divAroundLogo.forEach(element => {
-            element.style.width = div_around_logo_width;
-        });
-
-        const oddsValues = this.shadowRoot.querySelectorAll('.back_odds_value, .lay_odds_value');
-        oddsValues.forEach(element => {
-            element.style.marginLeft = margin_size;
-        });
-    
-        // Change style for the element with class 'at_symbol'
-        const atSymbol = this.shadowRoot.querySelectorAll('.at_symbol');
-        atSymbol.forEach(element => {
-            element.style.marginRight = margin_size;
-            element.style.marginLeft = margin_size;
-        });
-
-        const and_symbol = this.shadowRoot.querySelectorAll('.and_symbol');
-        and_symbol.forEach(element => {
-            element.style.marginLeft = margin_size;
-        });
-    
-        // Change style for elements with classes 'bookmaker_logo_div' and 'exchange_logo_div'
-        const logoDivs = this.shadowRoot.querySelectorAll('.bookmaker_logo_div, .exchange_logo_div');
-        logoDivs.forEach(element => {
-            element.style.marginRight = margin_size;
-        });
-    
-    
-    }
-    
-
-
-
-
-    change_dropdowns_dropdown_width(width) {
-
-        const dropdowns = this.shadowRoot.querySelectorAll('.dropdown-options');
-        let dropdown_width = '100%'
-        
-            if (width < 1050) {
-                dropdown_width = '120%'
-            }
-
-        dropdowns.forEach(dropdown => {
-            dropdown.style.width = dropdown_width;
-        });
-    }
-
-
-
-
-
-
-
 
 
 
