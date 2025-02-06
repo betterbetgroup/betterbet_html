@@ -19,7 +19,7 @@ def process_css_file(input_file_path, output_file_path):
         file.write(converted_css)
 
 # Paths to the input and output CSS files
-input_css_path = "oddsmatchers/qualifying_bet/styles.css"
+input_css_path = "profit_tracker/profit_tracker/styles.css"
 output_css_path = "new_styles.css"
 
 # Call the function to process the CSS file

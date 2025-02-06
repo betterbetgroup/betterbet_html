@@ -996,7 +996,7 @@
     
     }
     
-    customElements.define('qualbet-oddsmatcher', QualBetOddsmatcher);
+    customElements.define('freebet-oddsmatcher', QualBetOddsmatcher);
     
     
     

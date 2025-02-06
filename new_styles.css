@@ -92,8 +92,8 @@
 }
 
 .bookmaker_img:hover, .exchange_img:hover {
-    transform: scale(1.02); 
-    box-shadow: 0.00vw 0.43vw 0.86vw rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+    transform: scale(1.04); 
+    box-shadow: 0.00vw 0.43vw 0.86vw rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
 }
 
 
@@ -561,7 +561,7 @@ box-shadow: 0 0.14vw 0.36vw rgba(0, 0, 0, 0.2); /* Subtle but more pronounced sh
 
 
 .bookmaker_logo_img:hover, .exchange_logo_img:hover {
-    transform: scale(1.03); 
+    transform: scale(1.08); 
     box-shadow: 0.00vw 0.43vw 0.86vw rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
 
 }
@@ -664,6 +664,7 @@ box-shadow: 0 0.14vw 0.36vw rgba(0, 0, 0, 0.2); /* Subtle but more pronounced sh
 
 #more_info_button:hover {
     cursor: pointer;
+    transform: scale(1.1); /* Slight scale to indicate interactive element */
 }
 
 
@@ -1294,7 +1295,7 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
     height: 2.71vw; /* Set a fixed height to match the dropdowns */
     outline: none; /* Remove focus outline */
     position: relative;
-    padding-left: 2.91vw; /* Add padding to the left to make room for the pound sign */
+    padding-left: 3.21vw; /* Add padding to the left to make room for the pound sign */
 }
 
 .text-input-container {
@@ -1313,7 +1314,7 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
     z-index: 40; /* Ensure dropdown is always on top */
     background: linear-gradient(to right, #000000, #1d1b1b); /* Brighter hover state */
     height: 2.57vw;
-    width: 2.20vw;
+    width: 2.50vw;
     border-bottom-left-radius: 0.36vw;
     border-top-left-radius: 0.36vw;
     font-weight: bold;
@@ -1332,7 +1333,7 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
 
 
 .filter-label {
-    font-size: 0.82vw;
+    font-size: 11.0.36vw;
     color: #ffffff;
     font-weight: bold;
     margin-left: 0.36vw;
@@ -1367,7 +1368,7 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
     box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); 
     font-weight: bold;
     border: 0;
-    margin-bottom: -1.29vw;
+    margin-bottom: -0.71vw;
 
 }
 
@@ -1390,13 +1391,14 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
     margin-left: 1.07vw;
     align-items: center;
     justify-content: center;
-    margin-bottom: -1.29vw;
+    margin-bottom: -0.71vw;
     display: none;
 }
 
 
 
 .save-filter-button:hover, .get-alerts-button:hover, .confirm-filter-name:hover{
+    transform: scale(1.03); 
     box-shadow: 0.00vw 0.43vw 0.86vw rgba(0, 0, 0, 0.8); 
 
 }
@@ -1477,7 +1479,7 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
 
 
 .filter-label-filters {
-    font-size: 0.82vw;
+    font-size: 11.0.36vw;
     color: #ffffff;
     font-weight: bold;
     margin-left: 0.36vw;

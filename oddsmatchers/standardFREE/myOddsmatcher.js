@@ -2284,7 +2284,7 @@
     
     }
     
-    customElements.define('standard-oddsmatcher', StandardOddsmatcher);
+    customElements.define('standard-free-oddsmatcher', StandardOddsmatcher);
     
     
     

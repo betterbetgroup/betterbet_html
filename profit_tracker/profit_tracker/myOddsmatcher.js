@@ -2,16 +2,6 @@
 (function () {
 
 
-const LARGE_FONT_WIDTH = 1650;
-
-const MEDIUM_FONT_WIDTH = 1490;
-
-const SMALL_FONT_WIDTH = 1190;
-
-
-
-
-
     let is_premium_member = false;
 
 
@@ -769,7 +759,7 @@ class ProfitTracker extends HTMLElement {
         let infoButton = document.createElement('button');
         infoButton.innerHTML = 
                 `   
-                <div class="tooltip_div_around_calculator" id="info_image_${row.betId}" data-tooltip=${row.calculator.replace(' ', '-') || ''} style="background: None; height:35px; width:35px; padding:0; margin: 0; display: flex;">
+                <div class="tooltip_div_around_calculator" id="info_image_${row.betId}" data-tooltip=${row.calculator.replace(' ', '-') || ''} style="background: None; height: 2.5vw; width: 2.5vw; padding:0; margin: 0; display: flex;">
                     <img class="calculator_image" data-id="${row.betId}" id="more_info_button" src="https://img.icons8.com/?size=100&id=12780&format=png&color=000000" alt="Info">
                 </div>
                 `
@@ -1245,7 +1235,7 @@ alternateText() {
     
         let dropdown = this.shadowRoot.querySelector('#filters-dropdown-select-container')
     
-        dropdown.style.borderRadius = '10px';
+        dropdown.style.borderRadius = '0.71vw';
     }
     
     
@@ -1259,7 +1249,7 @@ alternateText() {
     
         dropdown_corners.forEach((dropdown) => {
     
-            dropdown.style.borderRadius = '5px';
+            dropdown.style.borderRadius = '0.36vw';
     
         });
     
@@ -1531,12 +1521,12 @@ alternateText() {
     
                 if (container.querySelector('.dropdown-options').style.display == 'block') {
                     container.querySelector('.dropdown-options').style.display = 'none';
-                    container.style.borderRadius = '5px';
+                    container.style.borderRadius = '0.36vw';
     
                 } else {
                 this.closeAllDropdowns(); // Close all other dropdowns
                 container.querySelector('.dropdown-options').style.display = 'block'; // Show current dropdown
-                container.style.borderRadius = '5px 5px 0 0';
+                container.style.borderRadius = '0.36vw 0.36vw 0 0';
                 
                 }
             });
@@ -1841,12 +1831,11 @@ alternateText() {
     
             if (this.shadowRoot.querySelector('#filters-dropdown-options').style.display == 'block') {
                 this.shadowRoot.querySelector('#filters-dropdown-options').style.display = 'none'
-                container.style.borderRadius = '10px';
+                container.style.borderRadius = '0.71vw';
             } else {
             this.closeAllDropdowns(); // Close all other dropdowns
             this.shadowRoot.querySelector('#filters-dropdown-options').style.display = 'block'; // Show current dropdown
-            container.style.borderRadius = '10px 10px 0 0';
-    
+            container.style.borderRadius = '0.71vw 0.71vw 0 0';
             
             }
         });
@@ -2317,48 +2306,7 @@ alternateText() {
     }
 
 
-    make_premium_box_correct_size() {
 
-        setTimeout(() => {
-            
-        requestAnimationFrame(() => {
- 
-
-            const filter_panel_container = this.shadowRoot.querySelector('#filter-panel-container');
-            const box_for_covering_filters_ = this.shadowRoot.querySelector('#covering_filters');
-
-            box_for_covering_filters_.style.margin = '0 auto';
-
-            const rect = filter_panel_container.getBoundingClientRect(); // Get the dimensions and position
-
-            const xPosition = this.getAbsoluteX(filter_panel_container);
-
-
-            // Use the dimensions from getBoundingClientRect()
-            box_for_covering_filters_.style.width = `${rect.width}px`;
-            box_for_covering_filters_.style.height = `${rect.height}px`;
-            box_for_covering_filters_.style.top = `${20}px`;
-
-
-        });
-        
-    }, 10);
-
-
-    }
-
-    getAbsoluteX(element) {
-        let actualLeft = element.offsetLeft;
-        let current = element.offsetParent; // Get the nearest positioned ancestor
-
-        while (current !== null) {
-        actualLeft += current.offsetLeft;
-        current = current.offsetParent; // Move up in the offsetParent chain
-        }
-
-        return actualLeft;
-
-    }
 
 
     addStyles() {
@@ -2399,351 +2347,15 @@ alternateText() {
         const contentDiv = this.shadowRoot.getElementById('outer-container-div');
         contentDiv.style.width = `${width}px`; // MAKE THE OUTER CONTAINER BE THE WIDTH OF THE WINDOW
 
-    
-        this.set_font_size(width);
-
-        //this.change_dropdowns_dropdown_width(width);
-
-        this.make_premium_box_correct_size();
-
-        //check_if_make_description_text_smaller();  
+        setTimeout(() => {
+            this.alignControls();
+        }, 120);
 
     }   
 
 
 
-    
 
-
-
-    set_font_size(width) {
-
-        let header_font_size = '16px';
-        let data_font_size = '14px';
-
-        let final_profit_header_width = '68px';
-        let expected_profit_header = '135px';
-        let ql_pp_data = '68px';
-        let date_width = '80px';
-        let event_width = '180px';
-        let bet_width = '120px';
-
-
-        let padding_top_sort_columns = '13px';
-
-        let tick_svg_size = '20px';
-        let cross_svg_size = '15px';
-
-        let settled_line_font_size = '22px';
-
-        let label_font_size = '12px';
-
-
-        let filter_style_height = '40px';
-        let filter_minus_two = '38px';
-
-
-        let checkbox_size = '35px;';
-
-
-        let text_on_top_height = '40px';
-        let text_on_top = '16px';
-        let delete_filter_font_size = '10px';
-
-
-
-        let pagination_padding_top_bottom = '12px';
-        let pagination_padding_left_right = '22px';
-        let pagination_width = '130px';
-
-
-        let select_font_size = '14px';
-        let select_height = '30px';
-        let select_width = '60px';
-
-        let pagination_container_height = '50px';
-
-
-        if (width < LARGE_FONT_WIDTH) {
-
-            header_font_size = '14px';
-            data_font_size = '12px';
-
-            final_profit_header_width = '68px';
-            expected_profit_header = '135px';
-            ql_pp_data = '68px';
-
-            date_width = '60px';
-            event_width = '150px';
-            bet_width = '105px';
-
-            padding_top_sort_columns = '11px';
-
-            label_font_size = '10px';
-
-            pagination_padding_top_bottom = '12px';
-            pagination_padding_left_right = '22px';
-            pagination_width = '130px';
-    
-            pagination_container_height = '45px';
-
-        } 
-
-        if (width < MEDIUM_FONT_WIDTH) {
-
-            header_font_size = '12px';
-            data_font_size = '10px';
-
-            final_profit_header_width = '55px';
-            expected_profit_header = '110px';
-            ql_pp_data = '55px';
-
-            date_width = '50px';
-            event_width = '140px';
-            bet_width = '95px';
-
-            padding_top_sort_columns = '9px';
-
-            tick_svg_size = '15px';
-            cross_svg_size = '10px';
-
-            settled_line_font_size = '16px';
-
-            label_font_size = '10px';
-
-            filter_style_height = '35px';
-            filter_minus_two = '33px';
-
-            checkbox_size = '25px';
-
-            text_on_top_height = '35px';
-            text_on_top = '14px';
-            delete_filter_font_size = '8px';
-
-
-            pagination_padding_top_bottom = '10px';
-            pagination_padding_left_right = '18px';
-            pagination_width = '110px';
-
-
-            select_font_size = '12px';
-            select_height = '27px';
-            select_width = '57px';
-
-            
-            pagination_container_height = '40px';
- 
-        } 
-
-        if (width < SMALL_FONT_WIDTH) {
-
-            header_font_size = '10px';
-            data_font_size = '8px';
-
-            final_profit_header_width = '50px';
-            expected_profit_header = '100px';
-            ql_pp_data = '50px';
-
-            date_width = '45px';
-            event_width = '110px';
-            bet_width = '65px';
-
-            padding_top_sort_columns = '9px';
-
-            tick_svg_size = '15px';
-            cross_svg_size = '10px';
-
-            settled_line_font_size = '16px';
-
-            label_font_size = '10px';
-
-            filter_style_height = '35px';
-            filter_minus_two = '33px';
-
-            checkbox_size = '20px';
-
-            text_on_top_height = '35px';
-            text_on_top = '14px';
-
-            pagination_padding_top_bottom = '10px';
-            pagination_padding_left_right = '18px';
-            pagination_width = '110px';
-
-
-            select_font_size = '10px';
-            select_height = '23px';
-            select_width = '52px';
-
-            pagination_container_height = '37px';
-
- 
-        } 
-
-
-
-
-
-
-
-
-
-        this.shadowRoot.querySelector('.tick_svg').style.width = tick_svg_size;
-        this.shadowRoot.querySelector('.tick_svg').style.height = tick_svg_size;
-
-        this.shadowRoot.querySelector('.cross_svg').style.width = cross_svg_size;
-        this.shadowRoot.querySelector('.cross_svg').style.height = cross_svg_size;
-
-
-        this.shadowRoot.querySelector('#settled_header span').style.fontSize = settled_line_font_size;
-
-
-
-
-        this.shadowRoot.querySelector('#date_and_time_header').style.width = date_width;
-        this.shadowRoot.querySelector('#fixture_header').style.width = event_width;
-        this.shadowRoot.querySelector('#outcome_header').style.width = bet_width;
-
-        this.shadowRoot.querySelector('#final_profit_header').style.width = final_profit_header_width;
-        this.shadowRoot.querySelector('#settled_header').style.width = final_profit_header_width;
-
-        this.shadowRoot.querySelector('#expected_profit_header').style.width = expected_profit_header;
-
-
-
-
-
-
-
-
-        var pagination_buttons = this.shadowRoot.querySelectorAll('#next-page, #prev-page') 
-        pagination_buttons.forEach(function(button) {
-            button.style.paddingLeft = pagination_padding_left_right;
-            button.style.paddingRight = pagination_padding_left_right;
-            button.style.paddingTop = pagination_padding_top_bottom;
-            button.style.paddingBottom = pagination_padding_top_bottom;
-            button.style.width = pagination_width;
-        });
-
-
-        let tooltips = this.shadowRoot.querySelectorAll('[data-tooltip]');
-        tooltips.forEach(function(pq) {
-            pq.style.setProperty('--tooltip-fontSize', header_font_size);
-        });
-
-
-
-
-
-        var top_texts = this.shadowRoot.querySelectorAll('.save-filter-button, #filters-select, .dropdown-option-filter, .confirm-filter-name, .text-input-filter-name') 
-        top_texts.forEach(function(box) {
-            box.style.height = text_on_top_height;
-            box.style.fontSize = text_on_top;
-        });
-
-        var checkboxes_settled = this.shadowRoot.querySelectorAll('.settled_checkbox')
-        checkboxes_settled.forEach(function(check) {
-            check.style.height = final_profit_header_width;
-            check.style.width = final_profit_header_width;
-            check.style.backgroundSize = checkbox_size;
-
-        });
-
-        var headers = this.shadowRoot.querySelectorAll('th, .text-input, .custom-select-trigger input, .date-range-input, .dropdown-options label');
-        headers.forEach(function(header) {
-            header.style.fontSize = header_font_size;
-        });
-
-
-
-        var headers = this.shadowRoot.querySelectorAll('#date_and_time_header, #expected_profit_header, #final_profit_header');
-        headers.forEach(function(header) {
-            header.style.paddingTop = padding_top_sort_columns;
-        });
-
-
-
-        this.shadowRoot.querySelector('#pagination-info').style.fontSize = header_font_size;
-        this.shadowRoot.querySelector('#pagination-container').style.height = pagination_container_height;
-        this.shadowRoot.querySelector('#prev-page').style.fontSize = header_font_size;
-        this.shadowRoot.querySelector('#next-page').style.fontSize = header_font_size;
-
-
-        var cells = this.shadowRoot.querySelectorAll('td');
-        cells.forEach(function(cell) {
-            cell.style.fontSize = data_font_size;
-        });
-
-        var profit_qual = this.shadowRoot.querySelectorAll('.positive_profit_data, .negative_profit_data');
-        profit_qual.forEach(function(pq) {
-            pq.style.fontSize = data_font_size;
-        });
-
-
-
-        var delete_filters = this.shadowRoot.querySelectorAll('.filter-delete-button, .confirm-delete-button');
-        delete_filters.forEach(function(pq) {
-            pq.style.fontSize = delete_filter_font_size;
-        });
-
-       
-
-
-
-        // row heights are done by changing these .settled_checkbox, .expected_profit_data, 
-        
-        // and these heights AND LINE HEIGHTS .negative_profit_data, .positive_profit_data, 
-
-        let to_change_row_heights = this.shadowRoot.querySelectorAll('.negative_profit_data, .positive_profit_data, .expected_profit_data')
-        to_change_row_heights.forEach(function(pq) {
-            pq.style.height = final_profit_header_width;
-            pq.style.lineHeight = final_profit_header_width;
-        });
-
-
-        let labels = this.shadowRoot.querySelectorAll('.filter-label')
-        labels.forEach(function(pq) {
-            pq.style.fontSize = label_font_size;
-        });
-
-
-
-
-        let filters = this.shadowRoot.querySelectorAll('.custom-select-container, custom-input-container, #min-actual-profit, #min-qualifying-loss, #min-potential-profit, #max-actual-profit, text-input, .date-range-input ')
-        filters.forEach(function(pq) {
-            pq.style.height = filter_style_height;
-        });   
-
-
-        filters = this.shadowRoot.querySelectorAll('.text-input-container')
-        filters.forEach(function(pq) {
-            pq.style.setProperty('--filter-height', filter_minus_two);
-        });   
-
-
-        setTimeout(() => {
-
-            this.alignControls();
-            
-        }, 100);
-
-
-    }
-
-
-
-    change_dropdowns_dropdown_width(width) {
-
-        const dropdowns = this.shadowRoot.querySelectorAll('.dropdown-options');
-        let dropdown_width = '100%'
-        
-            if (width < 1050) {
-                dropdown_width = '120%'
-            }
-
-        dropdowns.forEach(dropdown => {
-            dropdown.style.width = dropdown_width;
-        });
-    }
 
 
     loadConfettiScript() {
