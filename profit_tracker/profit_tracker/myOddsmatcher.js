@@ -2286,8 +2286,8 @@ alternateText() {
     // Method to inject CSS styles into the shadow DOM.
 
     render() {
-        //return fetch('https://betterbetgroup.github.io/betterbet_html/profit_tracker/profit_tracker/z.html')
-        return fetch('z.html')
+        return fetch('https://betterbetgroup.github.io/betterbet_html/profit_tracker/profit_tracker/z.html')
+        //return fetch('z.html')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -2317,8 +2317,8 @@ alternateText() {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                //link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/profit_tracker/profit_tracker/styles.css'); 
-                link.setAttribute('href', 'styles.css'); 
+                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/profit_tracker/profit_tracker/styles.css'); 
+                //link.setAttribute('href', 'styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);
