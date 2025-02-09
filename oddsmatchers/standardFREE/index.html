@@ -11,7 +11,7 @@
 <body style="background: rgb(0, 0, 0); margin-top: 0;">
 
     <div id="app"  >
-        <standard-oddsmatcher ></standard-oddsmatcher>
+        <standard-free-oddsmatcher ></standard-free-oddsmatcher>
     </div>
 
     <script src="myOddsmatcher.js"></script>
@@ -602,15 +602,15 @@
     "premium_member": false
 }
             setTimeout(() => {
-                document.querySelector('standard-oddsmatcher').setAttribute('data-odds', JSON.stringify(finalData))
+                document.querySelector('standard-free-oddsmatcher').setAttribute('data-odds', JSON.stringify(finalData))
 
             }, 500);
 
             
-            document.querySelector('standard-oddsmatcher').addEventListener('Get-Alerts', (event)=>{
+            document.querySelector('standard-free-oddsmatcher').addEventListener('Get-Alerts', (event)=>{
                 console.log(event)
             })
-            document.querySelector('standard-oddsmatcher').addEventListener('Save-Filter', (event)=>{
+            document.querySelector('standard-free-oddsmatcher').addEventListener('Save-Filter', (event)=>{
                 console.log(event)
             })
 

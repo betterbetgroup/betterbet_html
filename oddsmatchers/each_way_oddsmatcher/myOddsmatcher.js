@@ -579,15 +579,15 @@ tr.setAttribute('data-id', row._id)
             <td id="back_odds_data_${row._id}" class="no_padding_margin">
                 <div class="odds_and_bookmaker" id='back_each_way_odds_and_bookmaker'>
                     <div id="back_odds_value_${row._id}" class="back_odds_value">
-                        <a href="${row.bookmaker_link}" target="_blank" class="odds-link">${row.bookmaker_each_way_odds}</a>
+                        <a ${row.bookmaker_link ? `href="${row.bookmaker_link}" target="_blank"` : ''} class="odds-link">${row.bookmaker_each_way_odds}</a>
                     </div>    
                     <div class="and_symbol">&</div>
                     <div id="back_ew_odds_value_${row._id}" class="back_odds_value">
-                        <a href="${row.bookmaker_link}" target="_blank" class="odds-link">${implied_back_place_odds}</a>
+                        <a ${row.bookmaker_link ? `href="${row.bookmaker_link}" target="_blank"` : ''} class="odds-link">${implied_back_place_odds}</a>
                     </div>    
                     <div class="at_symbol">@</div>
                     <div id="bookmaker_logo_${row._id}" class="bookmaker_logo_div">
-                        <a class="div_around_logo" href="${row.bookmaker_link}" target="_blank" >
+                        <a class="div_around_logo" ${row.bookmaker_link ? `href="${row.bookmaker_link}" target="_blank"` : ''} >
                             <img class='bookmaker_logo_img' src="${bookmaker_image}" alt="${row.sport} ${row.bookmaker} each way bet">
                         </a>
                     </div>
@@ -597,11 +597,11 @@ tr.setAttribute('data-id', row._id)
             <td id="lay_odds_data_${row._id}" class="no_padding_margin">
                 <div class="odds_and_bookmaker" id='win_lay_odds_and_bookmaker'>
                     <div id="lay_odds_value_${row._id}" class="lay_odds_value">
-                        <a href="${row.win_exchange_link}" target="_blank" class="odds-link">${row.exchange_win_odds}</a>
+                        <a ${row.win_exchange_link ? `href="${row.win_exchange_link}" target="_blank"` : ''} class="odds-link">${row.exchange_win_odds}</a>
                     </div>
                     <div class="at_symbol">@</div>
                     <div id="exchange_logo_${row._id}" class="exchange_logo_div">
-                        <a class="div_around_logo" href="${row.win_exchange_link}" target="_blank" >
+                        <a class="div_around_logo" ${row.win_exchange_link ? `href="${row.win_exchange_link}" target="_blank"` : ''} >
                             <img class='exchange_logo_img' src="${win_exchange_image}" alt="${row.sport} ${row.win_exchange}" >
                         </a>
                     </div>
@@ -611,11 +611,11 @@ tr.setAttribute('data-id', row._id)
             <td id="lay_odds_data_${row._id}" class="no_padding_margin">
                 <div class="odds_and_bookmaker" id='place_lay_odds_and_bookmaker'>
                     <div id="lay_odds_value_${row._id}" class="lay_odds_value">
-                        <a href="${row.place_exchange_link}" target="_blank" class="odds-link">${row.exchange_place_odds}</a>
+                        <a ${row.place_exchange_link ? `href="${row.place_exchange_link}" target="_blank"` : ''} class="odds-link">${row.exchange_place_odds}</a>
                     </div>
                     <div class="at_symbol">@</div>
                     <div id="exchange_logo_${row._id}" class="exchange_logo_div">
-                        <a class="div_around_logo" href="${row.place_exchange_link}" target="_blank" >
+                        <a class="div_around_logo" ${row.place_exchange_link ? `href="${row.place_exchange_link}" target="_blank"` : ''} >
                             <img class='exchange_logo_img' src="${place_exchange_image}" alt="${row.sport} ${row.place_exchange}" >
                         </a>
                     </div>

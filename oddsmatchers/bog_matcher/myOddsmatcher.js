@@ -541,11 +541,11 @@ tr.setAttribute('data-id', row._id)
         <td id="back_odds_data_${row._id}" class="no_padding_margin">
             <div class="odds_and_bookmaker" id="back_odds_and_bookmaker_div">
                 <div id="back_odds_value_${row._id}" class="back_odds_value">
-                    <a href="${row.bookmaker_link}" target="_blank" class="odds-link">${row.back_odds}</a>
+                    <a ${row.bookmaker_link ? `href="${row.bookmaker_link}" target="_blank"` : ''} class="odds-link">${row.back_odds}</a>
                 </div>    
                 <div class="at_symbol">@</div>
                 <div id="bookmaker_logo_${row._id}" class="bookmaker_logo_div">
-                    <a class="div_around_logo" href="${row.bookmaker_link}" target="_blank" >
+                    <a class="div_around_logo" ${row.bookmaker_link ? `href="${row.bookmaker_link}" target="_blank"` : ''} >
                         <img class='bookmaker_logo_img' src="${bookmaker_image}" alt="${row.sport} ${row.bookmaker} 2up bet">
                     </a>
                 </div>

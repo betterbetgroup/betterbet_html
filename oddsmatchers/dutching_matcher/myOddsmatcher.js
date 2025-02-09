@@ -781,19 +781,19 @@ tr.setAttribute('data-id', row._id)
 
 
                 <div id="first_outcome_${row._id}" class="outcome_value">
-                    <a href="${row.first_link}" target="_blank" class="odds-link">${first_outcome}</a>
+                    <a ${row.first_link ? `href="${row.first_link}" target="_blank"` : ''} class="odds-link">${first_outcome}</a>
                 </div>    
 
                 <div class="at_symbol_outcome">@</div>
 
                 <div id="back_odds_value_${row._id}" class="back_odds_value">
-                    <a href="${row.first_link}" target="_blank" class="odds-link">${row.first_odds}</a>
+                    <a ${row.first_link ? `href="${row.first_link}" target="_blank"` : ''} class="odds-link">${row.first_odds}</a>
                 </div>    
 
                 <div class="at_symbol">@</div>
 
                 <div id="bookmaker_logo_${row._id}" class="bookmaker_logo_div">
-                    <a class="div_around_logo" href="${row.first_link}" target="_blank" >
+                    <a class="div_around_logo" ${row.first_link ? `href="${row.first_link}" target="_blank"` : ''} >
                         <img class='bookmaker_logo_img' src="${bookmaker_image}" alt="${row.sport} ${row.bookmaker} each way bet">
                     </a>
                 </div>
@@ -806,18 +806,18 @@ tr.setAttribute('data-id', row._id)
             <div class="odds_and_bookmaker" id='win_lay_odds_and_bookmaker'>
 
                 <div id="first_outcome_${row._id}" class="outcome_value">
-                    <a href="${row.second_link}" target="_blank" class="odds-link">${second_outcome}</a>
+                    <a ${row.second_link ? `href="${row.second_link}" target="_blank"` : ''} class="odds-link">${second_outcome}</a>
                 </div>    
 
                 <div class="at_symbol_outcome">@</div>
 
 
                 <div id="lay_odds_value_${row._id}" class="lay_odds_value">
-                    <a href="${row.second_link}" target="_blank" class="odds-link">${row.second_odds}</a>
+                    <a ${row.second_link ? `href="${row.second_link}" target="_blank"` : ''} class="odds-link">${row.second_odds}</a>
                 </div>
                 <div class="at_symbol">@</div>
                 <div id="exchange_logo_${row._id}" class="exchange_logo_div">
-                    <a class="div_around_logo" href="${row.second_link}" target="_blank" >
+                    <a class="div_around_logo" ${row.second_link ? `href="${row.second_link}" target="_blank"` : ''} >
                         <img class='exchange_logo_img' src="${win_exchange_image}" alt="${row.sport} ${row.win_exchange}" >
                     </a>
                 </div>
@@ -828,18 +828,18 @@ tr.setAttribute('data-id', row._id)
             <div class="odds_and_bookmaker" id='place_lay_odds_and_bookmaker'>
 
                 <div id="first_outcome_${row._id}" class="outcome_value">
-                    <a href="${row.third_link}" target="_blank" class="odds-link">${third_outcome}</a>
+                    <a ${row.third_link ? `href="${row.third_link}" target="_blank"` : ''} class="odds-link">${third_outcome}</a>
                 </div>    
 
                 <div class="at_symbol_outcome">@</div>
 
 
                 <div id="lay_odds_value_${row._id}" class="lay_odds_value_2">
-                    <a href="${row.third_link}" target="_blank" class="odds-link">${row.third_odds}</a>
+                    <a ${row.third_link ? `href="${row.third_link}" target="_blank"` : ''} class="odds-link">${row.third_odds}</a>
                 </div>
                 <div class="at_symbol">@</div>
                 <div id="exchange_logo_${row._id}" class="exchange_logo_div">
-                    <a class="div_around_logo" href="${row.third_link}" target="_blank" >
+                    <a class="div_around_logo" ${row.third_link ? `href="${row.third_link}" target="_blank"` : ''} >
                         <img class='exchange_logo_img' src="${place_exchange_image}" alt="${row.sport} ${row.place_exchange}" >
                     </a>
                 </div>

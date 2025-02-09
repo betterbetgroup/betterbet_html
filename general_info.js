@@ -10,11 +10,11 @@
     let TWOUP_EXCHANGES = ['Smarkets', 'Betfair Exchange']
 
     //EXTRA PLACE
-    let EXTRA_PLACE_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet']
+    let EXTRA_PLACE_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'Spreadex', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'Star Sports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets']
     let EXTRA_PLACE_EXCHANGES = ['Smarkets', 'Betfair Exchange']
 
     //EACH WAY
-    let EACH_WAY_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet']
+    let EACH_WAY_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'Spreadex', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'Star Sports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets']
     let EACH_WAY_EXCHANGES = ['Smarkets', 'Betfair Exchange']
 
     //DUTCHING 
@@ -22,8 +22,9 @@
     let DUTCHING_EXCHANGES = ['Smarkets', 'Betfair Exchange']
 
     //BOG 
-    let BOG_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet']
+    let BOG_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'Spreadex', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'Star Sports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets']
     let BOG_EXCHANGES = ['Smarkets', 'Betfair Exchange']
+
 
     let bookmakerImages = {
         "Bet365": 'https://static.wixstatic.com/media/7a0e3a_74b1758549414a87aef5c7d5d4a2c619~mv2.png',
@@ -49,7 +50,6 @@
         "BetGoodwin": 'https://static.wixstatic.com/media/7a0e3a_9848deaabc2d4eb797957fb961372033~mv2.png', 
         "VBet": 'https://static.wixstatic.com/media/7a0e3a_efd50a72013945059b1f6ea062f0e9be~mv2.png', 
         "AK Bets": 'https://static.wixstatic.com/media/7a0e3a_11e7e76214754f33a216d0c9d6db1ea1~mv2.png', 
-
     };
 
     let exchangeImages = {
