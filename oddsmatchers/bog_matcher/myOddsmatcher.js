@@ -2056,11 +2056,15 @@ setInterval(() => {
     filter_bookmakers_and_exchanges() {
 
         bookmakerImages = Object.fromEntries(
-            Object.entries(bookmakerImages).filter(([key]) => BOG_BOOKMAKERS.includes(key))
+            Object.entries(bookmakerImages)
+            .filter(([key]) => BOG_BOOKMAKERS.includes(key))
+            .sort((a, b) => a[0].localeCompare(b[0]))  
         );
 
         exchangeImages = Object.fromEntries(
-            Object.entries(exchangeImages).filter(([key]) => BOG_EXCHANGES.includes(key))
+            Object.entries(exchangeImages)
+            .filter(([key]) => BOG_EXCHANGES.includes(key))
+            .sort((a, b) => a[0].localeCompare(b[0]))  
         );
 
         customFilters = {

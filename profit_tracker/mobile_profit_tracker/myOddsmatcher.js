@@ -37,9 +37,11 @@ const SMALL_FONT_WIDTH = 1190;
     let current_sort = 'date and time';
 
 
+
     const bookmakerImages = {
         "10Bet": "https://static.wixstatic.com/media/7a0e3a_dc4396b6acac4f8e8c6b48d4236747c7~mv2.png",
         "888Sport": "https://static.wixstatic.com/media/7a0e3a_39af396146c84a38a96e953f938290ef~mv2.png",
+        "AK Bets": 'https://static.wixstatic.com/media/7a0e3a_11e7e76214754f33a216d0c9d6db1ea1~mv2.png', 
         "Bet365": "https://static.wixstatic.com/media/7a0e3a_74b1758549414a87aef5c7d5d4a2c619~mv2.png",
         "Bet600": "https://static.wixstatic.com/media/7a0e3a_f246bfd0e60e437585c79d24ab27b4f0~mv2.png",
         "BetGoodwin": "https://static.wixstatic.com/media/7a0e3a_9848deaabc2d4eb797957fb961372033~mv2.png",
@@ -69,9 +71,10 @@ const SMALL_FONT_WIDTH = 1190;
         "Paddy Power": "https://static.wixstatic.com/media/7a0e3a_fcbb73ffbfa6454b8506f7a6e7e25c67~mv2.png",
         "Parimatch": "https://static.wixstatic.com/media/7a0e3a_8d758436e3294657ab36115cfeb07e48~mv2.png",
         "PlanetSportBet": "https://static.wixstatic.com/media/7a0e3a_1ca0c9f5bb514a22ad2a42c2726bd1f1~mv2.png",
+        "PricedUP": 'https://static.wixstatic.com/media/7a0e3a_08a41acb30d34b99b404c84d57bdccf0~mv2.png',
         "QuinnBet": "https://static.wixstatic.com/media/7a0e3a_8a5853fa8cbb4ec69e8939ec31e6dea6~mv2.png",
         "Rhino Bet": "https://static.wixstatic.com/media/7a0e3a_1211a46db3dc44fda37c8b6541893faf~mv2.png",
-        "Sky Bet": "https://static.wixstatic.com/media/7a0e3a_3b25d869c20042f38fc666d42118cedb~mv2.png",
+        "Skybet": "https://static.wixstatic.com/media/7a0e3a_3b25d869c20042f38fc666d42118cedb~mv2.png",
         "Space Casino": "https://static.wixstatic.com/media/7a0e3a_6d28deda641f4283923eb6a9f062a18b~mv2.png",
         "Sporting Bet": "https://static.wixstatic.com/media/7a0e3a_244491d3eacf4b3aab826f380175d65a~mv2.png",
         "Sporting Index": "https://static.wixstatic.com/media/7a0e3a_cfbd3b75ad62487680c059b122d3aa41~mv2.png",
@@ -90,11 +93,10 @@ const SMALL_FONT_WIDTH = 1190;
 
     const exchangeImages = {
         "Betfair Exchange": 'https://static.wixstatic.com/media/7a0e3a_42e9ff11344a49fea33b58dcda917542~mv2.png',
-        "Smarkets": "https://static.wixstatic.com/media/7a0e3a_64979ac474b340868914fbf484d4ee89~mv2.png",
         "Matchbook": "https://static.wixstatic.com/media/7a0e3a_c44a32e46bc34b6da0c9665311ed48b1~mv2.png", 
-        "Other": 'https://static.wixstatic.com/media/7a0e3a_5ba0942899474154a8d3d0ab5095bc1e~mv2.png',
+        "Smarkets": "https://static.wixstatic.com/media/7a0e3a_64979ac474b340868914fbf484d4ee89~mv2.png",
+        "Other": 'https://static.wixstatic.com/media/7a0e3a_5ba0942899474154a8d3d0ab5095bc1e~mv2.png'
     };
-
 
 
 
@@ -132,7 +134,7 @@ const SMALL_FONT_WIDTH = 1190;
         "PlanetSportBet": "https://planetsportbet.com/",
         "QuinnBet": "https://www.quinnbet.com/sportsbook/",
         "Rhino Bet": "https://rhino.bet/",
-        "Sky Bet": "https://m.skybet.com/",
+        "Skybet": "https://m.skybet.com/",
         "Space Casino": "https://www.spacecasino.co.uk/",
         "Sporting Bet": "https://sports.sportingbet.com/en/sports",
         "Sporting Index": "https://www.sportingindex.com/sports/en-GB/spread-betting",

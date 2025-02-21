@@ -2080,11 +2080,15 @@ apply_custom_filters_from_dropdown(filters) {
     filter_bookmakers_and_exchanges() {
 
         bookmakerImages = Object.fromEntries(
-            Object.entries(bookmakerImages).filter(([key]) => DUTCHING_BOOKMAKERS.includes(key))
+            Object.entries(bookmakerImages)
+            .filter(([key]) => DUTCHING_BOOKMAKERS.includes(key))
+            .sort((a, b) => a[0].localeCompare(b[0]))  
         );
 
         exchangeImages = Object.fromEntries(
-            Object.entries(exchangeImages).filter(([key]) => DUTCHING_EXCHANGES.includes(key))
+            Object.entries(exchangeImages)
+            .filter(([key]) => DUTCHING_EXCHANGES.includes(key))
+            .sort((a, b) => a[0].localeCompare(b[0]))  
         );
 
         customFilters = {

@@ -2026,11 +2026,15 @@ add_lock_if_premium() {
     filter_bookmakers_and_exchanges() {
 
         bookmakerImages = Object.fromEntries(
-            Object.entries(bookmakerImages).filter(([key]) => EACH_WAY_BOOKMAKERS.includes(key))
+            Object.entries(bookmakerImages)
+            .filter(([key]) => EACH_WAY_BOOKMAKERS.includes(key))
+            .sort((a, b) => a[0].localeCompare(b[0]))  
         );
 
         exchangeImages = Object.fromEntries(
-            Object.entries(exchangeImages).filter(([key]) => EACH_WAY_EXCHANGES.includes(key))
+            Object.entries(exchangeImages)
+            .filter(([key]) => EACH_WAY_EXCHANGES.includes(key))
+            .sort((a, b) => a[0].localeCompare(b[0]))  
         );
 
         customFilters = {

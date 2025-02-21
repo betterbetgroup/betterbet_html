@@ -370,11 +370,11 @@ class TwoUpOddsmatcher extends HTMLElement {
             <td id="lay_odds_data_${row._id}" class="no_padding_margin">
                 <div class="odds_and_bookmaker">
                     <div id="lay_odds_value_${row._id}" class="lay_odds_value">
-                        <a href="${row.exchange_link}" target="_blank" class="odds-link">${row.lay_odds}</a>
+                        <a ${row.exchange_link ? `href="${row.exchange_link}" target="_blank"` : ''} class="odds-link">${row.lay_odds}</a>
                     </div>
                     <div class="at_symbol">@</div>
                     <div id="exchange_logo_${row._id}" class="exchange_logo_div">
-                        <a class="div_around_logo" href="${row.exchange_link}" target="_blank" >
+                        <a class="div_around_logo" ${row.exchange_link ? `href="${row.exchange_link}" target="_blank"` : ''} >
                             <img class='exchange_logo_img' src="${row_object.exchange_image}" alt="${row.sport} ${row.exchange}" >
                         </a>
                     </div>
@@ -1629,11 +1629,15 @@ render() {
     filter_bookmakers_and_exchanges() {
 
         bookmakerImages = Object.fromEntries(
-            Object.entries(bookmakerImages).filter(([key]) => TWOUP_BOOKMAKERS.includes(key))
+            Object.entries(bookmakerImages)
+            .filter(([key]) => TWOUP_BOOKMAKERS.includes(key))
+            .sort((a, b) => a[0].localeCompare(b[0]))  
         );
 
         exchangeImages = Object.fromEntries(
-            Object.entries(exchangeImages).filter(([key]) => TWOUP_EXCHANGES.includes(key))
+            Object.entries(exchangeImages)
+            .filter(([key]) => TWOUP_EXCHANGES.includes(key))
+            .sort((a, b) => a[0].localeCompare(b[0]))  
         );
 
         customFilters = {
