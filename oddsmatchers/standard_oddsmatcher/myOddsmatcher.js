@@ -145,8 +145,10 @@ class StandardOddsmatcher extends HTMLElement {
 
 
         // use rows to update the table - filter and sort appropriatly first
-        globalData = data.rows;
-        this.filterData();
+        if (data.rows) {
+            globalData = data.rows;
+            this.filterData();
+        }
 
         // run something with filters
 
