@@ -764,7 +764,7 @@ td[id^='outcome'] {
 
 
 
- 
+
 
 
 
@@ -1656,6 +1656,6 @@ input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
 #data_timer {
     margin-left: 1.55vw;
     margin-right: 1.55vw;
-    font-size: 1.14vw;
+    font-size: 1.54vw;
     font-weight: bold;
 }
