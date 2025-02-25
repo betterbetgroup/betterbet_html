@@ -15,18 +15,13 @@
 
 
 
-const LARGE_FONT_WIDTH = 1390;
-const LARGE_BOOKMAKER_AND_ODDS = 1335;
-const SHOW_SPORT_WIDTH = 1235;
-const MEDIUM_FONT_WIDTH = 1190;
-const SHOW_DATE_AND_TIME_WIDTH = 1065;
-const SHOW_INFO_WIDTH = 1015;
 
 
-    let is_premium_member = true;
+    let is_premium_member = false;
 
 
     let globalData = [];
+    let waiting_globalData = [];
 
     let currentPage = 1;
     const rowsPerPage = 10;
@@ -117,18 +112,27 @@ class QualBetOddsmatcher extends HTMLElement {
         this.attributeChangeQueue = [];
     }
 
+
     process_new_final_data(data) {
 
         data_loaded_from_wix = true;
-
         data = JSON.parse(data);
+
 
         is_premium_member = data.premium_member;
 
-        globalData = data.rows;
-        this.filterData();
+
+        if (data.rows) {
+            waiting_globalData = data.rows;
+            if (data.is_first) {
+                globalData = data.rows;
+                this.filterData();
+            }
+        }   
 
     }
+
+    
 
     loadExternalScript(scriptUrl) {
         return new Promise((resolve, reject) => {
@@ -154,6 +158,8 @@ class QualBetOddsmatcher extends HTMLElement {
         this.shadowRoot.getElementById('button-container').innerHTML = '';
         this.shadowRoot.getElementById('info-container').innerHTML = '';
 
+        this.shadowRoot.getElementById('info-container').style.display = 'none';
+
         this.add_loading_row();
 
 
@@ -162,8 +168,8 @@ class QualBetOddsmatcher extends HTMLElement {
 
         setTimeout(() => {
 
-            this.shadowRoot.querySelector('#info-container').style.display = 'block';
-            this.shadowRoot.querySelector('#button-container').style.display = 'block';
+            this.shadowRoot.querySelector('#info-container').style.display = 'flex';
+            this.shadowRoot.querySelector('#button-container').style.display = 'flex';
 
             this.shadowRoot.querySelector('table tbody').innerHTML = '';
 
@@ -379,8 +385,6 @@ class QualBetOddsmatcher extends HTMLElement {
     
         buttonContainer.appendChild(selectButton);
     
-        selectButton.style.display = 'none';
-    
     
     
         let infoButton = document.createElement('button');
@@ -396,43 +400,7 @@ class QualBetOddsmatcher extends HTMLElement {
     
     
         infoContainer.appendChild(infoButton);
-    
-        infoButton.style.display = 'none';
-    
-    
-        setTimeout(() => {
-    
-            infoButton.style.display = 'block'
-    
-            selectButton.style.display = 'block'
-    
-            const row_height = getComputedStyle(tr).height.replace('px', '');
-    
-            const select_button_height = getComputedStyle(selectButton).height.replace('px', '');
-            const margin_top_for_select_button_on_row = (row_height - select_button_height) / 2;  
-    
-            const info_button_height = getComputedStyle(selectButton).height.replace('px', '');
-            const margin_top_for_info_button_on_row = (row_height - info_button_height) / 2;
-                    
-            const trRect = tr.getBoundingClientRect();
-            const selectRect = selectButton.getBoundingClientRect();
-            const infoRect = infoButton.getBoundingClientRect();
-    
-            selectButton.style.marginTop = `${trRect.top - selectRect.top + margin_top_for_select_button_on_row}px`;
-            infoButton.style.marginTop = `${trRect.top - infoRect.top + margin_top_for_info_button_on_row}px`;
-    
-            setTimeout(() => {
-                selectButton.style.transition = 'all 0.3s ease';
-            }, 100);
-    
-                    
-        }, 100);
-
-
-        this.add_hover_listener_to_select_boxes_and_calculator();
-
-    
-    
+        
     }
     
     
@@ -634,8 +602,8 @@ class QualBetOddsmatcher extends HTMLElement {
 
         this.handleResize();
 
-        
-    
+        this.add_hover_listener_to_select_boxes_and_calculator();
+
     }
 
 
@@ -686,12 +654,67 @@ class QualBetOddsmatcher extends HTMLElement {
         });
 
     }
+
+
+
+
+    make_timer_run_and_add_event_listener() {
+    
+        let timer = this.shadowRoot.getElementById('data_timer');
+        let refreshButton = this.shadowRoot.getElementById('refresh_results');
+    
+        let seconds = 0;  
+        let intervalId = null;
+    
+        function updateTimerDisplay() {
+            const minutes = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            timer.textContent = 
+                (minutes < 10 ? "0" + minutes : minutes) + ":" + 
+                (secs < 10 ? "0" + secs : secs);
+    
+                if (seconds > 60) {
+                    timer.style.color = 'red';
+                } else {
+                    timer.style.color = 'white'; // Reset to default color if timer is reset
+                }
+        }
+    
+        function startTimer() {
+            intervalId = setInterval(() => {
+                seconds++;
+                updateTimerDisplay();
+            }, 1000);  // Update every second
+        }
+    
+        function resetTimer() {
+            clearInterval(intervalId);  
+            seconds = 0;  
+            updateTimerDisplay();  
+            startTimer();  
+        }
+    
+    
+        // Add event listener to the refresh button
+        refreshButton.addEventListener('click', () => {
+            globalData = waiting_globalData;
+            this.filterData();
+            resetTimer();
+        });
+        
+    
+        // Initially start the timer
+        startTimer();
+    }
+    
     
     
     
     runSpecificScript() {
 
         this.set_event_listener_for_sort_click_and_select();
+
+        this.make_timer_run_and_add_event_listener();
 
     }
 
@@ -815,8 +838,8 @@ class QualBetOddsmatcher extends HTMLElement {
     // Method to inject CSS styles into the shadow DOM.
 
     render() {
-        return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/qualifying_bet/z.html')
-        //return fetch('z.html')
+        //return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/qualifying_bet/z.html')
+        return fetch('z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
@@ -845,8 +868,8 @@ class QualBetOddsmatcher extends HTMLElement {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/qualifying_bet/styles.css'); 
-                //link.setAttribute('href', 'styles.css'); 
+                //link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/qualifying_bet/styles.css'); 
+                link.setAttribute('href', 'styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);
@@ -880,9 +903,69 @@ class QualBetOddsmatcher extends HTMLElement {
         const width = (window.innerWidth * 0.98)-10;
         const contentDiv = this.shadowRoot.getElementById('outer-container-div');
         contentDiv.style.width = `${width}px`; // MAKE THE OUTER CONTAINER BE THE WIDTH OF THE WINDOW
-        contentDiv.style.margin = "0 auto";     // Center the div within its parent
+
+        this.set_margin_top_for_select_buttons_and_info();
+
+    }  
+
+
+
+
+    set_margin_top_for_select_buttons_and_info() {
+
+        // then margin top of table - which is 2.5vw
+
+        // then check if filter-panel-container is display flex and if so add that height and the margin-top
+
+        // then also get the height of the header
+
+
+        let margin_top_table = 2.5;
+
+        let filter_panel_container_height = 13.16;
+
+        let added_height_for_showing_filters = filter_panel_container_height + margin_top_table;
+
+        let table_header_height = 5.43;
+
+
+        let row_height = 4.64; // this is set here as 4.64 as its mostly set by the images as they are the maxmimum
+
+        let select_button_height = 2.2;
+
+        let more_info_button_height = 2.5;
+
+
+        let total_height_above_table = margin_top_table + table_header_height;
+
+
+        let select_buttons = this.shadowRoot.querySelectorAll('.select_button');
+        let select_buttons_index = 0;
+        select_buttons.forEach((button) => {
+            select_buttons_index++;
+            if (select_buttons_index == 1) {
+                button.style.marginTop = (total_height_above_table + ((row_height - select_button_height) / 2)).toString() + 'vw';
+            } else {
+                button.style.marginTop = ((row_height - select_button_height)).toString() + 'vw';
+            }
+        });
+
+        let more_info_buttons = this.shadowRoot.querySelectorAll('.info_button');
+        let more_info_buttons_index = 0;
+        more_info_buttons.forEach((button) => {
+            more_info_buttons_index++;
+            if (more_info_buttons_index == 1) {
+                button.style.marginTop = (total_height_above_table + ((row_height - more_info_button_height) / 2)).toString() + 'vw';
+            } else {
+                button.style.marginTop = (row_height - more_info_button_height).toString() + 'vw';
+            }
+        });
+
     
-    }   
+
+    }
+
+
 
 
 

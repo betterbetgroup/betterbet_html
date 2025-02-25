@@ -15,10 +15,10 @@
 (function () {
 
 
-    let is_premium_member = true;
+    let is_premium_member = false;
 
 
-
+    let waiting_globalData = []
     let globalData = [];
     let filteredData = [];
 
@@ -99,15 +99,72 @@ class TwoUpOddsmatcher extends HTMLElement {
         const width = (window.innerWidth * 0.98)-10;
         const contentDiv = this.shadowRoot.getElementById('outer-container-div');
         contentDiv.style.width = `${width}px`; // MAKE THE OUTER CONTAINER BE THE WIDTH OF THE WINDOW
-        contentDiv.style.margin = "0 auto";     // Center the div within its parent
 
         this.make_premium_box_correct_size();
+
+        this.set_margin_top_for_select_buttons_and_info();
 
     }   
 
 
 
 
+
+
+
+    set_margin_top_for_select_buttons_and_info() {
+
+        // then margin top of table - which is 2.5vw
+
+        // then check if filter-panel-container is display flex and if so add that height and the margin-top
+
+        // then also get the height of the header
+
+
+        let margin_top_table = 2.5;
+
+        let filter_panel_container_height = 13.16;
+
+        let added_height_for_showing_filters = filter_panel_container_height + margin_top_table;
+
+        let table_header_height = 5.45;
+
+
+        let row_height = 4.64; // this is set here as 4.64 as its mostly set by the images as they are the maxmimum
+
+        let select_button_height = 2.2;
+
+        let more_info_button_height = 2.5;
+
+
+        let total_height_above_table = margin_top_table + table_header_height;
+
+
+        let select_buttons = this.shadowRoot.querySelectorAll('.select_button');
+        let select_buttons_index = 0;
+        select_buttons.forEach((button) => {
+            select_buttons_index++;
+            if (select_buttons_index == 1) {
+                button.style.marginTop = (total_height_above_table + ((row_height - select_button_height) / 2)).toString() + 'vw';
+            } else {
+                button.style.marginTop = ((row_height - select_button_height)).toString() + 'vw';
+            }
+        });
+
+        let more_info_buttons = this.shadowRoot.querySelectorAll('.info_button');
+        let more_info_buttons_index = 0;
+        more_info_buttons.forEach((button) => {
+            more_info_buttons_index++;
+            if (more_info_buttons_index == 1) {
+                button.style.marginTop = (total_height_above_table + ((row_height - more_info_button_height) / 2)).toString() + 'vw';
+            } else {
+                button.style.marginTop = (row_height - more_info_button_height).toString() + 'vw';
+            }
+        });
+
+    
+
+    }
 
 
 
@@ -123,8 +180,6 @@ class TwoUpOddsmatcher extends HTMLElement {
     }
 
   
-
-    
     
     go_to_input_and_update_global_for_the_input(filterId, scope, globalFilters) {
     
@@ -230,6 +285,35 @@ class TwoUpOddsmatcher extends HTMLElement {
         scope.querySelector('#filters-dropdown-select-container').style.borderRadius = '0.71vw';
     
     }
+
+
+    add_event_listener_for_show_filters_switch() {
+
+        let filter_switch = this.shadowRoot.querySelector('.show_filters_switch');
+        let filters_container = this.shadowRoot.querySelector('#filter-panel-container');
+        let covering_filters = this.shadowRoot.querySelector('#covering_filters');
+    
+        filter_switch.addEventListener('change', () => {
+    
+            if (!filter_switch.checked) {
+                filters_container.style.display = 'none';
+                covering_filters.style.display = 'none';
+
+            } else {
+                filters_container.style.display = 'flex';
+                if (is_premium_member) {
+                    covering_filters.style.display = 'none';
+                } else {
+                    covering_filters.style.display = 'flex';
+                    this.make_premium_box_correct_size();
+                }
+            }
+                        
+        });
+    }
+
+
+
     
     
     add_lock_if_premium() {
@@ -403,9 +487,7 @@ class TwoUpOddsmatcher extends HTMLElement {
         selectButton.setAttribute('data-id', row._id);
     
         buttonContainer.appendChild(selectButton);
-    
-        selectButton.style.display = 'none';
-    
+        
         let infoButton = document.createElement('button');
         infoButton.innerHTML = 
                 `   
@@ -418,41 +500,7 @@ class TwoUpOddsmatcher extends HTMLElement {
         infoButton.className = 'info_button';
     
         infoContainer.appendChild(infoButton);
-    
-        infoButton.style.display = 'none';
-    
-    
-        setTimeout(() => {
-    
-            infoButton.style.display = 'block'
-    
-            selectButton.style.display = 'block'
-    
-            const row_height = getComputedStyle(tr).height.replace('px', '');
-    
-            const select_button_height = getComputedStyle(selectButton).height.replace('px', '');
-            const margin_top_for_select_button_on_row = (row_height - select_button_height) / 2;  
-    
-            const info_button_height = getComputedStyle(selectButton).height.replace('px', '');
-            const margin_top_for_info_button_on_row = (row_height - info_button_height) / 2;
-                    
-            const trRect = tr.getBoundingClientRect();
-            const selectRect = selectButton.getBoundingClientRect();
-            const infoRect = infoButton.getBoundingClientRect();
-    
-            selectButton.style.marginTop = `${trRect.top - selectRect.top + margin_top_for_select_button_on_row}px`;
-            infoButton.style.marginTop = `${trRect.top - infoRect.top + margin_top_for_info_button_on_row}px`;
-    
-            setTimeout(() => {
-                selectButton.style.transition = 'all 0.2s ease';
-            }, 100);
-    
-                    
-        }, 100);
-
-        this.add_hover_listener_to_select_boxes_and_calculator();
-    
-    
+            
     }
 
 
@@ -670,28 +718,31 @@ class TwoUpOddsmatcher extends HTMLElement {
         });
         this.attributeChangeQueue = [];
     }
-
+    
+    
     process_new_final_data(data) {
 
         data_loaded_from_wix = true;
-
         data = JSON.parse(data);
 
+
+
         if (data.wix_filters) {
-            // ADD FILTERS TO OPTIONS
             this.add_filters(data.wix_filters)
         }
 
         is_premium_member = data.premium_member;
-        this.shadowRoot.querySelector('#covering_filters').style.display = is_premium_member ? 'none' : 'flex';
+        if (window.getComputedStyle(this.shadowRoot.querySelector('#filter-panel-container')).display == 'flex') {
+            this.shadowRoot.querySelector('#covering_filters').style.display = is_premium_member ? 'none' : 'flex';
+        }
 
-
-        // use rows to update the table - filter and sort appropriatly first
-        globalData = data.rows;
-        this.filterData();
-
-
-        // run something with filters
+        if (data.rows) {
+            waiting_globalData = data.rows;
+            if (data.is_first) {
+                globalData = data.rows;
+                this.filterData();
+            }
+        }   
 
     }
 
@@ -735,8 +786,10 @@ class TwoUpOddsmatcher extends HTMLElement {
     }
 
 
-    displayRows(page, rows, totalPages) {
 
+    
+
+    displayRows(page, rows, totalPages) {
 
         const start = (page - 1) * rowsPerPage;
         const end = start + rowsPerPage;
@@ -746,10 +799,12 @@ class TwoUpOddsmatcher extends HTMLElement {
         this.shadowRoot.getElementById('button-container').innerHTML = '';
         this.shadowRoot.getElementById('info-container').innerHTML = '';
  
- 
+        this.shadowRoot.getElementById('info-container').style.display = 'none';
+
+        
         this.add_loading_row();
- 
- 
+        
+        
         let min = 169;
         let max = 420;
  
@@ -760,8 +815,8 @@ class TwoUpOddsmatcher extends HTMLElement {
             this.shadowRoot.querySelector('table tbody').innerHTML = '';
  
  
-            this.shadowRoot.querySelector('#info-container').style.display = 'block';
-            this.shadowRoot.querySelector('#button-container').style.display = 'block';
+            this.shadowRoot.querySelector('#info-container').style.display = 'flex';
+            this.shadowRoot.querySelector('#button-container').style.display = 'flex';
  
  
            
@@ -832,7 +887,9 @@ class TwoUpOddsmatcher extends HTMLElement {
         });
 
         this.handleResize();
-    
+
+        this.add_hover_listener_to_select_boxes_and_calculator();
+
     }
 
     add_listener_for_whole_oddsmatcher() {
@@ -1140,6 +1197,10 @@ class TwoUpOddsmatcher extends HTMLElement {
             this.shadowRoot.querySelector('.save-filter-button').style.display = 'none';
             this.shadowRoot.querySelector('.get-alerts-button').style.display = 'none';
 
+            this.shadowRoot.querySelector('.div-outside-switch').style.display = 'none';
+            this.shadowRoot.querySelector('#data_timer').style.display = 'none';
+            this.shadowRoot.querySelector('.refresh_results').style.display = 'none';
+
         }
 
         close_boxes() {
@@ -1157,6 +1218,10 @@ class TwoUpOddsmatcher extends HTMLElement {
             this.shadowRoot.querySelector('.div-outside-filter-dropdown').style.display = 'flex';
             this.shadowRoot.querySelector('.save-filter-button').style.display = 'block';
             this.shadowRoot.querySelector('.get-alerts-button').style.display = 'flex';
+
+            this.shadowRoot.querySelector('.div-outside-switch').style.display = 'flex';
+            this.shadowRoot.querySelector('#data_timer').style.display = 'block';
+            this.shadowRoot.querySelector('.refresh_results').style.display = 'flex';
         }
 
 
@@ -1205,6 +1270,10 @@ class TwoUpOddsmatcher extends HTMLElement {
             this.shadowRoot.querySelector('.div-outside-filter-dropdown').style.display = 'flex';
             this.shadowRoot.querySelector('.save-filter-button').style.display = 'block';
             this.shadowRoot.querySelector('.get-alerts-button').style.display = 'flex';
+
+            this.shadowRoot.querySelector('.div-outside-switch').style.display = 'flex';
+            this.shadowRoot.querySelector('#data_timer').style.display = 'block';
+            this.shadowRoot.querySelector('.refresh_results').style.display = 'flex';
 
             return filter_name;
 
@@ -1270,7 +1339,7 @@ class TwoUpOddsmatcher extends HTMLElement {
 
             // First, ensure all options have a bottom border
             list_of_options.forEach(option => {
-                option.style.borderBottom = '1px solid #444';
+                option.style.borderBottom = '0.07vw solid #444';
             });
 
             // Remove the border from the last option
@@ -1386,8 +1455,6 @@ class TwoUpOddsmatcher extends HTMLElement {
 
 
     add_loading_row() {
-
-        console.log('adding loading row')
 
         const loadingrow = document.createElement('tr');
         loadingrow.setAttribute('id', 'loadingScreenRow'); 
@@ -1553,6 +1620,58 @@ alternateText() {
             this.create_event_listeners_for_select_containers();
         }
 
+        make_timer_run_and_add_event_listener() {
+
+            let timer = this.shadowRoot.getElementById('data_timer');
+            let refreshButton = this.shadowRoot.getElementById('refresh_results');
+        
+            let seconds = 0;  
+            let intervalId = null;
+        
+            function updateTimerDisplay() {
+                const minutes = Math.floor(seconds / 60);
+                const secs = seconds % 60;
+                timer.textContent = 
+                    (minutes < 10 ? "0" + minutes : minutes) + ":" + 
+                    (secs < 10 ? "0" + secs : secs);
+
+                    if (seconds > 60) {
+                        timer.style.color = 'red';
+                    } else {
+                        timer.style.color = 'white'; // Reset to default color if timer is reset
+                    }
+            }
+        
+            function startTimer() {
+                intervalId = setInterval(() => {
+                    seconds++;
+                    updateTimerDisplay();
+                }, 1000);  // Update every second
+            }
+        
+            function resetTimer() {
+                clearInterval(intervalId);  
+                seconds = 0;  
+                updateTimerDisplay();  
+                startTimer();  
+            }
+        
+
+            // Add event listener to the refresh button
+            refreshButton.addEventListener('click', () => {
+                globalData = waiting_globalData;
+                this.filterData();
+                resetTimer();
+            });
+            
+        
+            // Initially start the timer
+            startTimer();
+        }
+
+
+
+
         runSpecificScript() {
 
             this.shadowRoot.querySelector('.save-filter-button').addEventListener('click', () => { this.open_text_box_and_confirm(); });
@@ -1568,6 +1687,10 @@ alternateText() {
             //this.make_filter_selection_value_as_saved(filter_name_first); 
             //this.set_background_for_current_option(filter_name_first);
             this.add_listener_for_whole_oddsmatcher();
+
+            this.add_event_listener_for_show_filters_switch();
+
+            this.make_timer_run_and_add_event_listener();
 
             let filterobj = customFilters[filter_name_first];
 
@@ -1600,8 +1723,8 @@ alternateText() {
     // Method to inject CSS styles into the shadow DOM.
 
 render() {
-    return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/2up_oddsmatcher/z.html')
-    //return fetch('z.html')
+    //return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/2up_oddsmatcher/z.html')
+    return fetch('z.html')
         .then(response => response.text())
         .then(html => {
             this.shadowRoot.innerHTML = html;
@@ -1675,35 +1798,24 @@ render() {
 
 
 
+
+
     make_premium_box_correct_size() {
         return new Promise((resolve) => {
-            setTimeout(() => {
-                requestAnimationFrame(() => {
-                    const filter_panel_container = this.shadowRoot.querySelector('#filter-panel');
-                    const box_for_covering_filters_ = this.shadowRoot.querySelector('#covering_filters');
-    
-                    if (!filter_panel_container || !box_for_covering_filters_) {
-                        console.error("Elements not found.");
-                        resolve(); // Resolve anyway to prevent infinite waiting
-                        return;
-                    }
-    
-                    box_for_covering_filters_.style.margin = '0 auto';
-    
-                    const rect = filter_panel_container.getBoundingClientRect();
 
-                    let filter_panel_container_outer = getComputedStyle(this.shadowRoot.querySelector('#filter-panel-container'));
-                    let padding_bottom_container = parseFloat((filter_panel_container_outer.paddingBottom).replace('px', ''));
-                        
-                    box_for_covering_filters_.style.width = `${rect.width + 4}px`;
-                    box_for_covering_filters_.style.height = `${rect.height + padding_bottom_container + 2}px`;
-                    box_for_covering_filters_.style.top = `${8.28}vw`;
+                    const box_for_covering_filters_ = this.shadowRoot.querySelector('#covering_filters');
+                    
+                    let width = window.innerWidth
+                    let filter_cover_width = ((width * 0.98) - 10) - (0.0072 * width);
+
+                    box_for_covering_filters_.style.width = `${filter_cover_width}px`;
+                    box_for_covering_filters_.style.height = `${13.16}vw`; // 13.16 vw from height of filter-panel-container
+                    box_for_covering_filters_.style.top = `${11.3}vw`; // 8.8 vw from above columns height + 2.5 vw from filter-panel-container margin top
     
                     resolve(); 
-                });
-            }, 100);
         });
     }
+
 
 
 
@@ -1717,8 +1829,8 @@ render() {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/2up_oddsmatcher/styles.css'); 
-                //link.setAttribute('href', 'styles.css'); 
+                //link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/2up_oddsmatcher/styles.css'); 
+                link.setAttribute('href', 'styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);
