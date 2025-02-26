@@ -27,7 +27,6 @@ body {
     padding-right: 0.36vw;
     margin: 0 auto;
     justify-content: center;  
-    min-height: 100vh;        /* Ensures the body is at least the height of the viewport */
     align-items: center;
     width: 100%;
     padding-bottom: 7.14vw;
