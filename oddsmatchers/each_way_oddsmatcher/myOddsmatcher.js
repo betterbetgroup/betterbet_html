@@ -2061,8 +2061,8 @@ add_lock_if_premium() {
     // Method to inject CSS styles into the shadow DOM.
 
     render() {
-        //return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/each_way_oddsmatcher/z.html')
-        return fetch('z.html')
+        return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/each_way_oddsmatcher/z.html')
+        //return fetch('z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
@@ -2169,8 +2169,8 @@ add_lock_if_premium() {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                //link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/each_way_oddsmatcher/styles.css'); 
-                link.setAttribute('href', 'styles.css'); 
+                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/each_way_oddsmatcher/styles.css'); 
+                //link.setAttribute('href', 'styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);
