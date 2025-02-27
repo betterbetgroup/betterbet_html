@@ -2142,7 +2142,7 @@ alternateText() {
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
                 link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/list_pages/sign_up/sign_up/styles.css'); 
-                
+                //link.setAttribute('href', 'styles.css'); 
 
                 this.shadowRoot.appendChild(link);
 
