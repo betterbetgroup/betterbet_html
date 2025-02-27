@@ -209,7 +209,7 @@ body {
     min-height: 100vh;        /* Ensures the body is at least the height of the viewport */
     align-items: center;
     width: 100%;
-
+    padding-top: 0;
 }
 
 #container-div {
@@ -283,6 +283,7 @@ body {
 .no-data-div {
     background: linear-gradient(270deg, #0a0010, #0c0033, #0a0010);
     height: 10.71vw;
+    padding: 2vw 4vw;
 }
 
 
@@ -354,6 +355,7 @@ table {
     overflow: hidden;
     transition: box-shadow 0.3s;
     width: 100%;
+    margin-top: 2.5vw;
 
 }
 
@@ -373,7 +375,7 @@ th, td {
     background: linear-gradient(180deg, #000000, #121212);
     border: 0.07vw solid #222;
     border-radius: 0.86vw 0.86vw 0 0; /* top-left, top-right, bottom-right, bottom-left */
-
+    height: 5.06vw;
 }
 th {
 
@@ -614,14 +616,15 @@ box-shadow: 0 0.14vw 0.36vw rgba(0, 0, 0, 0.2); /* Subtle but more pronounced sh
 
 
 
+
 #button-container {
+    display: flex;        /* Enable flexbox */
+    flex-direction: column; /* Stack children vertically */
     padding: 0;
     margin: 0;
     margin-left: 0.6%;
-    background: None;
+    background: none;
     width: auto;
-
-
 }
 
 
@@ -630,10 +633,10 @@ box-shadow: 0 0.14vw 0.36vw rgba(0, 0, 0, 0.2); /* Subtle but more pronounced sh
     width: 2.86vw;
     background: None;
     margin-right: 0.14vw;
-    flex: 0 0 auto; /* Do not grow, allow shrinking, basis auto */
-    
-
+    display: flex;
+    flex-direction: column;
 }
+
 
 .select_button {
     width: 4.6vw;
@@ -658,8 +661,8 @@ box-shadow: 0 0.14vw 0.36vw rgba(0, 0, 0, 0.2); /* Subtle but more pronounced sh
     padding: 0;
     margin: 0;
     background: None;
-    height: 2.50vw;
-    width: 2.50vw;
+    height: 2.5vw;
+    width: 2.5vw;
 }
 
 #more_info_button:hover {
@@ -849,20 +852,23 @@ div[id^='qualifying_loss_'] {
 
 
 
-#filter-panel-container {
+#filter-panel-container, #above-columns-container {
     width: 100%;
     padding: 0;
     display: flex;
     flex-direction: column; 
     color: #eee;
     margin: 0;
-    margin-bottom: 2.86vw;
-    border-radius: 1.43vw;
-    box-shadow: 0 0.43vw 0.86vw rgba(0, 0, 0, 0.5);
+    border-radius: 0.86vw;
     padding-top: 0.00vw;
-    padding-bottom: 0.36vw;
-    border: 0.07vw solid #121212;
-    background: linear-gradient(180deg, #000000, #121212);
+    background: #0b0b0b;
+}
+
+#filter-panel-container {
+    height: 13.16vw;
+    margin-top: 2.5vw;
+    padding-bottom: 0.22vw;
+    display: none;
 }
 
 
@@ -1340,37 +1346,57 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 .above-columns {
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 6.79vw;
+    height: 8.8vw;
     width: 100%;
     background: 0;
     border-top-right-radius: 1.43vw;
     border-top-left-radius: 1.43vw;
-    border-bottom: 0.07vw solid #121212;
 
+    
 }
 
-.save-filter-button, .get-alerts-button, .confirm-filter-name {
+.save-filter-button, .get-alerts-button, .confirm-filter-name, .refresh_results {
     background: linear-gradient( 145deg, #ff00c6, #ff00c6); 
-    width: 14.29vw;
+    width: 16.29vw;
     border-radius: 0.71vw;
     color: white;
-    font-size: 1.00vw;
+    font-size: 1.14vw;
     padding: 0;
     cursor: pointer;
     transition: background 0.3s, transform 0.3s;
-    height: 2.50vw;
-    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); 
+    height: 2.86vw;
     font-weight: bold;
     border: 0;
-    margin-bottom: -1.29vw;
-
 }
 
+.refresh_results {
+    width: 14.29vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.refresh_results_img {
+    width: 1.5vw;
+    margin-left: 0.51vw;
+}
 
 
 .cancel-making-filter {
@@ -1379,7 +1405,6 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
     height: 2.50vw;
     width: 2.50vw;
     transition: background 0.3s, transform 0.3s;
-    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); 
     color: #eee;
     font-size: 1.57vw;
     background: #333;
@@ -1390,15 +1415,7 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
     margin-left: 1.07vw;
     align-items: center;
     justify-content: center;
-    margin-bottom: -1.29vw;
     display: none;
-}
-
-
-
-.save-filter-button:hover, .get-alerts-button:hover, .confirm-filter-name:hover{
-    box-shadow: 0.00vw 0.43vw 0.86vw rgba(0, 0, 0, 0.8); 
-
 }
 
 .get-alerts-button {
@@ -1406,10 +1423,13 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 13.29vw;
 }
+
+
 .save-filter-button {
-    margin-left: 2.14vw;
-    margin-right: 2.14vw;
+    margin-left: 1.55vw;
+    margin-right: 1.55vw;
 }
 .confirm-filter-name {
 
@@ -1422,13 +1442,9 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
 .cancel-making-filter:hover {
 
     cursor: pointer;
-    box-shadow: 0.00vw 0.43vw 0.86vw rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
 
 
 }
-
-
-
 
 .custom-select-container-filter {
 
@@ -1446,7 +1462,6 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
     width: 22.86vw;
     font-size: 1.14vw;
     font-weight: bold;
-    box-shadow: 0 0.14vw 0.36vw rgba(0, 0, 0, 0.2); /* Subtle but more pronounced shadow */
     vertical-align: middle;
     display: flex;
     justify-content: center;
@@ -1458,12 +1473,17 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
 
 
 
+
+
+
+
+
 .filter-dropdown-name-div {
     display: flex;
     flex-direction: column;
     align-items: left;
     justify-content: center;
-    margin-bottom: 7.0.36vw;
+    margin-bottom: 1.25vw;
     margin-right: 0.71vw;
     display: none;
 }
@@ -1494,7 +1514,7 @@ input[id="min-actual-profit"], input[id="min-qualifying-loss"], input[id="min-po
     justify-content: center;
     padding: 0;
     margin: 0;
-    margin-bottom: 7.0.36vw;
+    margin-bottom: 1.25vw;
 
     z-index: 10000;
     
@@ -1596,3 +1616,106 @@ td[class='not_premium_member_row'] {
 .highlight {
     background-color: #333 !important;  /* Ensuring it overrides other background-color settings */
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 5.72vw; 
+    height: 2.86vw; 
+    margin-right: 1.55vw;
+  }
+  
+  .switch:hover {
+      cursor: pointer
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #bbb; /* Off state color */
+    transition: .4s;
+    border-radius: 1.714vw; /* Round borders for the slider */
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 2.5743vw; /* Diameter of the circle */
+    width: 2.5743vw; /* Diameter of the circle */
+    left: 0.142vw;
+    bottom: 0.142vw;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%; /* Circular shape for the toggle */
+  }
+  
+  input:checked + .slider {
+    background-color: #ff00c6; /* Pink color when the switch is ON */
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(2.86vw); /* Move the toggle on switch activation */
+  }
+
+  .switch_container {
+
+    align-content: center;
+    display: flex;
+    justify-content: center;
+
+}
+  
+
+
+.div-outside-switch {
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1.25vw;
+}
+  
+
+
+#data_timer {
+    margin-left: 1.55vw;
+    margin-right: 1.55vw;
+    font-size: 1.54vw;
+    font-weight: bold;
+}
+ 

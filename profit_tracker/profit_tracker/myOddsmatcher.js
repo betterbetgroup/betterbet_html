@@ -2,9 +2,6 @@
 (function () {
 
 
-    let is_premium_member = false;
-
-
     let globalData = [];
     let filteredData = [];
 
@@ -259,25 +256,15 @@ class ProfitTracker extends HTMLElement {
         data = JSON.parse(data);
 
         if (data.wix_filters) {
-            // ADD FILTERS TO OPTIONS
             this.add_filters(data.wix_filters)
         }
-
-        is_premium_member = data.premium_member;
-        this.shadowRoot.querySelector('#covering_filters').style.display = 'none';
-
-
-        // use rows to update the table - filter and sort appropriatly first
 
         if (data.rows) {
             globalData = data.rows;
             this.clean_global_data();
             this.filterData();
         }
-
-
         // run something with filters
-
     }
 
 
@@ -517,6 +504,8 @@ class ProfitTracker extends HTMLElement {
         this.shadowRoot.getElementById('button-container').innerHTML = '';
         this.shadowRoot.getElementById('info-container').innerHTML = '';
 
+        this.shadowRoot.getElementById('info-container').style.display = 'none';
+
         this.add_loading_row();
 
         let min = 169;
@@ -524,8 +513,8 @@ class ProfitTracker extends HTMLElement {
 
         setTimeout(() => {
 
-            this.shadowRoot.querySelector('#info-container').style.display = 'block';
-            this.shadowRoot.querySelector('#button-container').style.display = 'block';
+            this.shadowRoot.querySelector('#info-container').style.display = 'flex';
+            this.shadowRoot.querySelector('#button-container').style.display = 'flex';
 
             this.shadowRoot.querySelector('table tbody').innerHTML = '';
             
@@ -753,9 +742,7 @@ class ProfitTracker extends HTMLElement {
     
     
         buttonContainer.appendChild(selectButton);
-    
-        selectButton.style.display = 'none';
-    
+        
     
     
         let infoButton = document.createElement('button');
@@ -774,80 +761,13 @@ class ProfitTracker extends HTMLElement {
         if (row.calculator != 'No Calculator') {
 
             infoContainer.appendChild(infoButton);
-            infoButton.style.display = 'none';
 
         }
     
     }
 
 
-    alignControls() {
 
-        const rows = this.shadowRoot.querySelectorAll('.table_data_row'); // Select all rows in your table
-    
-        rows.forEach(row => {
-
-            const trRect = row.getBoundingClientRect();
-    
-            const betId = row.getAttribute('data-id');
-
-            let selectButton = this.shadowRoot.querySelector(`button.select_button[data-id="${betId}"]`);
-            let infoButton = this.shadowRoot.querySelector(`button.info_button[data-id="${betId}"]`);
-
-
-            // RESET THE STLYES SO IT DOESN'T MESS UP
-            selectButton.style.display = 'none';
-            selectButton.style.marginTop = ''; 
-            
-            if (infoButton) {
-                infoButton.style.display = 'none';
-                infoButton.style.marginTop = '';  // Reset any specific styles
-            }
-    
-
-            if (selectButton) {
-                selectButton.style.display = 'block'; // Set display to block or the appropriate display style
-            }
-    
-            if (infoButton) {
-                infoButton.style.display = 'block'; // Set display to block or the appropriate display style
-            }
-
-
-
-
-            const row_height = trRect.height;
-
-            const selectRect = selectButton.getBoundingClientRect();
-
-    
-
-            const select_button_height = getComputedStyle(selectButton).height.replace('px', '');
-
-            const margin_top_for_select_button_on_row = (row_height - select_button_height) / 2; 
-            
-            
-
-            selectButton.style.marginTop = `${trRect.top - selectRect.top + margin_top_for_select_button_on_row}px`;
-
-
-            if (infoButton) {
-                const infoRect = infoButton.getBoundingClientRect();
-                const info_button_height = infoRect.height;
-                const margin_top_for_info_button_on_row = (row_height - info_button_height) / 2;
-                infoButton.style.marginTop = `${trRect.top - infoRect.top + margin_top_for_info_button_on_row}px`;
-            }
-
-        });
-
-
-        this.add_hover_listener_to_select_boxes_and_calculator();
-
-    }
-
-
-
-    
     
     add_loading_row() {
     
@@ -1407,6 +1327,9 @@ alternateText() {
     
         this.shadowRoot.querySelector('.div-outside-filter-dropdown').style.display = 'none';
         this.shadowRoot.querySelector('.save-filter-button').style.display = 'none';
+
+        this.shadowRoot.querySelector('.div-outside-switch').style.display = 'none';
+
     
     }
     
@@ -1424,6 +1347,9 @@ alternateText() {
     
         this.shadowRoot.querySelector('.div-outside-filter-dropdown').style.display = 'flex';
         this.shadowRoot.querySelector('.save-filter-button').style.display = 'block';
+
+        this.shadowRoot.querySelector('.div-outside-switch').style.display = 'flex';
+
     }
     
     
@@ -1472,6 +1398,9 @@ alternateText() {
     
         this.shadowRoot.querySelector('.div-outside-filter-dropdown').style.display = 'flex';
         this.shadowRoot.querySelector('.save-filter-button').style.display = 'block';
+
+        this.shadowRoot.querySelector('.div-outside-switch').style.display = 'flex';
+
     
         return filter_name;
     
@@ -1701,7 +1630,7 @@ alternateText() {
     
         // First, ensure all options have a bottom border
         list_of_options.forEach(option => {
-            option.style.borderBottom = '1px solid #444';
+            option.style.borderBottom = '0.07vw solid #444';
         });
     
         // Remove the border from the last option
@@ -1857,11 +1786,10 @@ alternateText() {
     
         });
 
-        this.add_event_listener_for_complete_settled_checkboxes();
-
         this.handleResize();
 
-    
+        this.add_event_listener_for_complete_settled_checkboxes();
+
     }
     
     
@@ -2146,6 +2074,30 @@ alternateText() {
     }
 
 
+    add_event_listener_for_show_filters_switch() {
+
+        let filter_switch = this.shadowRoot.querySelector('.show_filters_switch');
+        let filters_container = this.shadowRoot.querySelector('#filter-panel-container');
+        let covering_filters = this.shadowRoot.querySelector('#covering_filters');
+    
+        filter_switch.addEventListener('change', () => {
+    
+            if (!filter_switch.checked) {
+                filters_container.style.display = 'none';
+                covering_filters.style.display = 'none';
+    
+            } else {
+                filters_container.style.display = 'flex';
+                if (is_premium_member) {
+                    covering_filters.style.display = 'none';
+                } else {
+                    covering_filters.style.display = 'flex';
+                    this.make_premium_box_correct_size();
+                }
+            }
+                        
+        });
+    }
 
 
     runSpecificScript() {
@@ -2164,6 +2116,9 @@ alternateText() {
         this.shadowRoot.querySelector('.confirm-filter-name').addEventListener('click', () => { this.confirm_filter_name() });    
 
         this.append_filter_to_options(filtName);
+
+        this.add_event_listener_for_show_filters_switch();
+
         //this.make_filter_selection_value_as_saved(filtName);
         //this.set_background_for_current_option(filtName) 
         //let filterobj = customFilters[filtName];
@@ -2349,11 +2304,62 @@ alternateText() {
         const contentDiv = this.shadowRoot.getElementById('outer-container-div');
         contentDiv.style.width = `${width}px`; // MAKE THE OUTER CONTAINER BE THE WIDTH OF THE WINDOW
 
-        setTimeout(() => {
-            this.alignControls();
-        }, 120);
+        this.set_margin_top_for_select_buttons_and_info();
 
     }   
+
+
+    set_margin_top_for_select_buttons_and_info() {
+
+        // then margin top of table - which is 2.5vw
+
+        // then check if filter-panel-container is display flex and if so add that height and the margin-top
+
+        // then also get the height of the header
+
+
+        let margin_top_table = 2.5;
+
+        let table_header_height = 5.06;
+
+
+        let row_height = 3.93; // this is set here as 4.64 as its mostly set by the images as they are the maxmimum
+
+
+
+        let select_button_height = 2;
+
+        let more_info_button_height = 2.5;
+
+
+        let total_height_above_table = margin_top_table + table_header_height;
+
+
+        let select_buttons = this.shadowRoot.querySelectorAll('.select_button');
+        let select_buttons_index = 0;
+        select_buttons.forEach((button) => {
+            select_buttons_index++;
+            if (select_buttons_index == 1) {
+                button.style.marginTop = (total_height_above_table + ((row_height - select_button_height) / 2)).toString() + 'vw';
+            } else {
+                button.style.marginTop = ((row_height - select_button_height)).toString() + 'vw';
+            }
+        });
+
+        let more_info_buttons = this.shadowRoot.querySelectorAll('.info_button');
+        let more_info_buttons_index = 0;
+        more_info_buttons.forEach((button) => {
+            more_info_buttons_index++;
+            if (more_info_buttons_index == 1) {
+                button.style.marginTop = (total_height_above_table + ((row_height - more_info_button_height) / 2)).toString() + 'vw';
+            } else {
+                button.style.marginTop = (row_height - more_info_button_height).toString() + 'vw';
+            }
+        });
+
+    
+
+    }
 
 
 
