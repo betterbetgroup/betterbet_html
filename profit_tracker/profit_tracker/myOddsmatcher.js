@@ -2078,22 +2078,14 @@ alternateText() {
 
         let filter_switch = this.shadowRoot.querySelector('.show_filters_switch');
         let filters_container = this.shadowRoot.querySelector('#filter-panel-container');
-        let covering_filters = this.shadowRoot.querySelector('#covering_filters');
     
         filter_switch.addEventListener('change', () => {
     
             if (!filter_switch.checked) {
                 filters_container.style.display = 'none';
-                covering_filters.style.display = 'none';
     
             } else {
                 filters_container.style.display = 'flex';
-                if (is_premium_member) {
-                    covering_filters.style.display = 'none';
-                } else {
-                    covering_filters.style.display = 'flex';
-                    this.make_premium_box_correct_size();
-                }
             }
                         
         });
