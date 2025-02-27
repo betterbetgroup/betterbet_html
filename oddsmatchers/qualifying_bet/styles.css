@@ -1,3 +1,5 @@
+@media (max-width: 2499px) {
+
 
 * {
     box-sizing: border-box; 
@@ -1491,4 +1493,16 @@ td[id^='rating_'] {
     margin-right: 2.55vw;
     font-size: 1.54vw;
     font-weight: bold;
+}
+
+
+
+
+}
+
+@media (width: 2500px) {
+    * {
+        width: 1px;
+        height: 1px;
+    }
 }

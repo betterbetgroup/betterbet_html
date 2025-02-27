@@ -1,4 +1,4 @@
-
+@media (max-width: 2499px) {
 
 
 
@@ -1715,5 +1715,21 @@ td[class='not_premium_member_row'] {
     margin-right: 1.55vw;
     font-size: 1.54vw;
     font-weight: bold;
+}
+
+
+
+
+
+
+
+
+}
+
+@media (width: 2500px) {
+    * {
+        width: 1px;
+        height: 1px;
+    }
 }
  

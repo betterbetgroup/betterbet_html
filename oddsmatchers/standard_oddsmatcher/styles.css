@@ -1,3 +1,5 @@
+@media (max-width: 2499px) {
+
 
 * {
     box-sizing: border-box; 
@@ -1563,3 +1565,16 @@ input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potent
     font-weight: bold;
 }
  
+
+
+
+
+
+}
+
+@media (width: 2500px) {
+    * {
+        width: 1px;
+        height: 1px;
+    }
+}

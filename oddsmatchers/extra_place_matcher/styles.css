@@ -1,3 +1,5 @@
+@media (max-width: 2499px) {
+
 
 * {
     box-sizing: border-box; /* Ensures padding and border are included in the width and height */
@@ -1619,4 +1621,16 @@ input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potent
     margin-right: 1.55vw;
     font-size: 1.54vw;
     font-weight: bold;
+}
+
+
+
+
+}
+
+@media (width: 2500px) {
+    * {
+        width: 1px;
+        height: 1px;
+    }
 }
