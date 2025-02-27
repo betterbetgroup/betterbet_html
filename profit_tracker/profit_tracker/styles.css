@@ -373,7 +373,6 @@ th, td {
 
 .table-header {
     background: linear-gradient(180deg, #000000, #121212);
-    border: 0.07vw solid #222;
     border-radius: 0.86vw 0.86vw 0 0; /* top-left, top-right, bottom-right, bottom-left */
     height: 5.06vw;
 }
