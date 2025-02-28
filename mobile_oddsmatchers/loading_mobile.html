@@ -64,7 +64,6 @@ body {
 }
 
 .loading {
-    height: 290px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -73,10 +72,19 @@ body {
     background-size: 400% 400%;
     animation: bgAnimation 8s ease infinite;
     color: white;
-    width: 100%;
-    border-radius: 10px;
-    border: 1px solid #333;
+    width: 150%;
+    border: 1px solid #121212;
 
+}
+
+.content_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    text-align: center;
+    height: 380px;
 }
 
 @keyframes bgAnimation {
@@ -104,10 +112,14 @@ body {
 #content {
     opacity: 0;
     animation: contentFadeIn 2s forwards;
-    text-align: center;
     color: white;
-    width: 290px;
-    height: 290px;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: center;
+    
 }
 
 @keyframes contentFadeIn {
@@ -129,15 +141,16 @@ body {
     <body>
 
         <div id="content">
-            <div >
-                <div class="loading">
+            <div class="loading">
+                <div class="content_container">
                     <div class="neon-pulse">
                         <div class="neon-bar"></div>
                         <div class="neon-bar"></div>
                         <div class="neon-bar"></div>
                         <div class="neon-bar"></div>
                     </div>
-                    <h2 class="loading-text">Collecting Bookmaker Data...</h2>
+                        <h2 class="loading-text">Collecting Bookmaker Data...</h2>
+                    </div>
                 </div>
             </div>
         </div>
