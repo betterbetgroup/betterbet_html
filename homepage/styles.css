@@ -100,7 +100,7 @@ body {
     flex-direction: column;
     padding: 0 30px;
 
-    margin-top: -2vw;
+    margin-top: -2.2vw;
 }
 
 #left_main_div {
@@ -183,21 +183,32 @@ button {
     background-color: #ff00c6;
     border: none;
     color: white;
-    padding: 0.57em 2em;
-    font-size: 1.65vw; 
+    padding: 0.65em 3em;
+    font-size: 1.55vw; 
     cursor: pointer;
     border-radius: 25em;
     transition: background-color 0.3s;
     font-weight: bold;
-    margin-top: 6vw;
+    margin-top: 2.5vw;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7); 
     transition: background-color 0.3s, box-shadow 0.3s;
-
+    align-self: first baseline;
+    margin-left: 25px;
 }
 
-button:hover {
+#tutorial-button {
+    padding: 0.65em 3.7em;
+}
+
+#tutorial-button:hover {
     background-color: #e600ac; 
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9); 
+}
+
+
+#learn-more-button {
+    background: none;
+    border: 1px solid #ff00c6;
 }
 
 
