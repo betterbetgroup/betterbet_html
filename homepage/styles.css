@@ -1,6 +1,7 @@
 
 
 
+@media (max-width: 2499px) {
 
 
 * { 
@@ -239,3 +240,14 @@ button {
     50%, 99% { background-color: transparent; }
 }
 
+
+
+
+}
+
+@media (width: 2500px) {
+    * {
+        width: 1px;
+        height: 1px;
+    }
+}
