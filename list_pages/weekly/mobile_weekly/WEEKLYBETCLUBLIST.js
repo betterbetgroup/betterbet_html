@@ -2225,6 +2225,7 @@ alternateText() {
 
     render() {
         return fetch('https://betterbetgroup.github.io/betterbet_html/list_pages/weekly/mobile_weekly/z.html')
+        //return fetch('z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;

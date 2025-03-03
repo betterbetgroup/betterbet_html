@@ -141,7 +141,7 @@
 
 
 .table_data_row, .premium_div_box {
-    border: 1px solid rgba(51, 51, 51, 0.5);
+    border: 1px solid #121212;
     background-color: #080808;
     margin: 0;
     height: 300px;
@@ -1248,7 +1248,7 @@ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle but more pronounced shadow *
 
 .upgrade-button {
 
-    background: linear-gradient( 145deg, #a70707, #ff3321); 
+    background: linear-gradient( 145deg, #d61b0a, #d61b0a);
     color: white;
     border: None;
     text-decoration: none;
@@ -1275,7 +1275,6 @@ box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle but more pronounced shadow *
 
 .upgrade-button:hover {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); 
-    transform: translateY(-3px); 
 }
 
 
@@ -1389,7 +1388,20 @@ div[id^='qualifying_loss_'] {
     padding-right: 0;
     justify-content: space-evenly;
     padding-top: 0;
+
+    background: 0;
+    border: 0;
+    box-shadow: none;
 }
+
+.div_around_div_around_filters{
+    width: 600px;
+    align-self: center;
+    justify-self: center;
+    background: #0b0b0b;
+}
+
+
 
 .div_around_profit_left_or_available_and_profit {
     display: flex;
