@@ -3,7 +3,7 @@
       {
         "offer_description": "Bet £30, Get £5 Free Bet",
         "odds_details": "2.0",
-        "bookmaker": "Sky Bet",
+        "bookmaker": "Skybet",
         "profit": "£1.50",
         "guide": "",
         "offer": "https://m.skybet.com/skybetclub",

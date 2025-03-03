@@ -29,12 +29,12 @@
           "logo": "https://static.wixstatic.com/media/7a0e3a_3b25d869c20042f38fc666d42118cedb~mv2.png",
           "promo": "",
           "offer": "https://m.skybet.com/lp/acq-bet-x-get-30-2024",
-          "guide": "https://www.betterbetgroup.com/sign-up-offer-guides/sky-bet-sign-up-offer",
+          "guide": "https://www.betterbetgroup.com/sign-up-offer-guides/skybet-sign-up-offer",
           "odds_details": "2.0",
           "offer_description": "Bet £5, Get £30 Free Bet",
           "difficulty": "Easy",
           "profit": "£24.00",
-          "bookmaker": "Sky Bet"
+          "bookmaker": "Skybet"
         },
         {
           "logo": "https://static.wixstatic.com/media/7a0e3a_74b1758549414a87aef5c7d5d4a2c619~mv2.png",
