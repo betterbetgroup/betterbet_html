@@ -6,6 +6,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <link rel="stylesheet" href="https://betterbetgroup.github.io/betterbet_html/mobile_oddsmatchers/2up_oddsmatcher_filters/styles.css">
 
+
 <style >
 
 
@@ -20,7 +21,7 @@
 
 
         <div class="box box2" id="covering_filters">
-            <svg fill="#ffffff" height="180px" width="160px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_509_"> <path id="XMLID_510_" d="M65,330h200c8.284,0,15-6.716,15-15V145c0-8.284-6.716-15-15-15h-15V85c0-46.869-38.131-85-85-85 S80,38.131,80,85v45H65c-8.284,0-15,6.716-15,15v170C50,323.284,56.716,330,65,330z M180,234.986V255c0,8.284-6.716,15-15,15 s-15-6.716-15-15v-20.014c-6.068-4.565-10-11.824-10-19.986c0-13.785,11.215-25,25-25s25,11.215,25,25 C190,223.162,186.068,230.421,180,234.986z M110,85c0-30.327,24.673-55,55-55s55,24.673,55,55v45H110V85z"></path> </g> </g></svg>
+            <svg fill="#ffffff" height="150px" width="130px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_509_"> <path id="XMLID_510_" d="M65,330h200c8.284,0,15-6.716,15-15V145c0-8.284-6.716-15-15-15h-15V85c0-46.869-38.131-85-85-85 S80,38.131,80,85v45H65c-8.284,0-15,6.716-15,15v170C50,323.284,56.716,330,65,330z M180,234.986V255c0,8.284-6.716,15-15,15 s-15-6.716-15-15v-20.014c-6.068-4.565-10-11.824-10-19.986c0-13.785,11.215-25,25-25s25,11.215,25,25 C190,223.162,186.068,230.421,180,234.986z M110,85c0-30.327,24.673-55,55-55s55,24.673,55,55v45H110V85z"></path> </g> </g></svg>
             <a class="upgrade-button">Upgrade to Premium <img src="https://img.icons8.com/?size=100&id=60654&format=png&color=ffffff" class="padlock-image-button" alt="Padlock" > </a>
 
         </div>
@@ -883,27 +884,7 @@ function parseDateAndTime_filterData(dateString) {
 }
 
 
-function make_premium_box_correct_size() {
 
-
-    setTimeout(() => {
-        
-            const filter_panel_container = document.querySelector('#filter-panel-container');
-            const box_for_covering_filters_ = document.querySelector('#covering_filters');
-
-            box_for_covering_filters_.style.margin = '0 auto';
-
-            const rect = filter_panel_container.getBoundingClientRect(); // Get the dimensions and position
-
-
-            // Use the dimensions from getBoundingClientRect()
-            box_for_covering_filters_.style.width = `${rect.width}px`;
-            box_for_covering_filters_.style.height = `${rect.height}px`;
-            box_for_covering_filters_.style.top = `${0}px`;
-
-    }, 100);
-
-}
 
 
 
@@ -1112,8 +1093,6 @@ document.addEventListener('DOMContentLoaded', () => {
     create_text_box_and_time_dropdown_event_listeners();
 
     add_event_listener_for_upgrade();
-
-    make_premium_box_correct_size();
 
 });
 

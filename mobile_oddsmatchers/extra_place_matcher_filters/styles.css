@@ -523,25 +523,24 @@ td[id^='outcome'] {
 }
 
 .upgrade-button {
-    background: linear-gradient( 145deg, #a70707, #ff3321); /* Shiny red gradient */
+    background: linear-gradient( 145deg, #d61b0a, #d61b0a);
 
     color: white;
     border: None;
-    padding: 12px 24px;
+    padding: 10px 20px;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 14px;
     border-radius: 30px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
     transition: all 0.3s ease;
-    margin-top: 85px;
+    margin-top: 35px;
     margin-bottom: 15px;
     display: inline-flex; /* Use inline-flex to keep the button inline and align children */
     align-items: center; /* Align items vertically in the center */
     justify-content: center; /* Center the contents horizontally */
 }
-
 
 
 
@@ -554,7 +553,7 @@ td[id^='outcome'] {
 
 .padlock-image-button {
 
-    width: 22px;
+    width: 18px;
     height: auto;
     margin-left: 8px; 
 
@@ -622,19 +621,17 @@ div[id^='qualifying_loss_'] {
 
 
 #filter-panel-container {
-    width: 280px;
+    width: 600px;
     display: flex;
     flex-direction: column; /* Change to column to stack elements vertically */
     color: #eee;
     align-items: center;
-    background: linear-gradient(145deg, #000, #222);
+    background: linear-gradient(145deg, #111, #111);
     margin: 0;
     border-radius: 20px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     padding-top: 0px;
     padding-bottom: 0px;
-    border: 1px solid #444;
-
 }
 
 
@@ -661,7 +658,7 @@ div[id^='qualifying_loss_'] {
   .box2 {
     background-color: black;
     border-radius: 20px;
-    height: 250px;
+    height: 465px;
     z-index: 23000;
     /* Removed opacity */
 }
@@ -677,7 +674,6 @@ div[id^='qualifying_loss_'] {
     right: 0;
     bottom: 0;
     background-color: black;
-    border-radius: 20px;
     opacity: 89%;
     z-index: -1; /* Behind the content */
 }
@@ -696,7 +692,7 @@ div[id^='qualifying_loss_'] {
 
 #filter-panel {
     width: 280px;
-    padding: 10px;
+    padding: 20px;
     padding-left: 2px;
     padding-right: 2px;
     display: block;
@@ -1049,7 +1045,7 @@ input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potent
     content: '£';
     position: absolute;
     color: #eee;
-    font-size: 18px;
+    font-size: 20px;
     z-index: 40; /* Ensure dropdown is always on top */
     background: linear-gradient(to right, #000000, #1d1b1b); /* Brighter hover state */
     height: 33px;
