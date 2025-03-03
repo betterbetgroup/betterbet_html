@@ -492,6 +492,7 @@ class AllGuides extends HTMLElement {
 
     render() {
         return fetch('https://betterbetgroup.github.io/betterbet_html/list_pages/all_guides/all_guides/z.html')
+        //return fetch('z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
@@ -549,6 +550,7 @@ class AllGuides extends HTMLElement {
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
                 link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/list_pages/all_guides/all_guides/styles.css'); 
+                //link.setAttribute('href', 'styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);

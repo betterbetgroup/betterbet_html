@@ -2090,6 +2090,7 @@ alternateText() {
 
     render() {
         return fetch('https://betterbetgroup.github.io/betterbet_html/list_pages/sign_up/sign_up/z.html')
+        //return fetch('z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
