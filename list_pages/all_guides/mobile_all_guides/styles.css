@@ -1415,7 +1415,7 @@ div[id^='qualifying_loss_'] {
 }
 
 .div_around_div_around_filters{
-    width: 600px;
+    width: 100%;
     align-self: center;
     justify-self: center;
     background: #0b0b0b;

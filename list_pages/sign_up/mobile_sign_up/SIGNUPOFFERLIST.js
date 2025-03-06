@@ -2254,7 +2254,7 @@ alternateText() {
 
     handleResize() {
 
-        const width = (window.innerWidth * 0.98)-10;
+        const width = window.innerWidth;
         const contentDiv = this.shadowRoot.getElementById('outer-container-div');
         contentDiv.style.width = `${width}px`; // MAKE THE OUTER CONTAINER BE THE WIDTH OF THE WINDOW
 
