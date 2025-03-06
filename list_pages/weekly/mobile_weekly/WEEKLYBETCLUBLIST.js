@@ -2282,8 +2282,8 @@ alternateText() {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/list_pages/weekly/mobile_weekly/styles.css'); 
-                //link.setAttribute('href', 'styles.css'); 
+                //link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/list_pages/weekly/mobile_weekly/styles.css'); 
+                link.setAttribute('href', 'styles.css'); 
 
                 this.shadowRoot.appendChild(link);
 
@@ -2309,8 +2309,9 @@ alternateText() {
 
     handleResize() {
 
-        const width = (window.innerWidth * 0.98)-10;
-        const contentDiv = this.shadowRoot.getElementById('outer-container-div');
+        const width = window.innerWidth;
+        const contentDiv = this.shadowRoot.getElementById('outer-container-div')
+
         contentDiv.style.width = `${width}px`; // MAKE THE OUTER CONTAINER BE THE WIDTH OF THE WINDOW
 
         //this.set_font_size(width);
