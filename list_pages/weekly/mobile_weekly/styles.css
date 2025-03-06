@@ -1418,7 +1418,6 @@ div[id^='qualifying_loss_'] {
     background: 0;
     border: 0;
     box-shadow: none;
-    border: 1px solid yellow;
 }
 
 .div_around_div_around_filters{
@@ -1428,7 +1427,6 @@ div[id^='qualifying_loss_'] {
     background: #0b0b0b;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
 }
 
 .div_around_profit_left_or_available_and_profit {
