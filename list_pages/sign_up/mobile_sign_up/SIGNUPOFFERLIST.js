@@ -497,7 +497,7 @@ class MobileSignUpOfferList extends HTMLElement {
             show_premium_cover = false;
         }
 
-        if (row.bookmaker == 'Bet365' || row.bookmaker == 'Betfred' || row.bookmaker == 'Sky Bet') {
+        if (row.bookmaker == 'Bet365' || row.bookmaker == 'Betfred' || row.bookmaker == 'Skybet') {
             show_premium_cover = false;
         }
 

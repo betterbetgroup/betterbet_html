@@ -517,7 +517,7 @@ class ProfitTracker extends HTMLElement {
             show_premium_cover = false;
         }
 
-        if (row.bookmaker == 'Sky Bet' || row.bookmaker == 'BetUK' || row.bookmaker == 'Midnite') {
+        if (row.bookmaker == 'Skybet' || row.bookmaker == 'BetUK' || row.bookmaker == 'Midnite') {
             show_premium_cover = false;
         }
 

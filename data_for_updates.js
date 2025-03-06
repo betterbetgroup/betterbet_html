@@ -129,5 +129,14 @@ let unused_sign_up_offers = [
       "offer": "https://promo.kwiff.com/sports-reward-club/",
       "logo": "https://static.wixstatic.com/media/7a0e3a_c2ecfb4964e3445a8989ac350cc547a6~mv2.png",
     },
+    {
+      "offer_description": "Bet £100, Get £10 Free Bet",
+      "odds_details": "2.0",
+      "bookmaker": "PlanetSportBet",
+      "profit": "£3",
+      "guide": "",
+      "offer": "https://planetsportbet.com/",
+      "logo": "https://static.wixstatic.com/media/7a0e3a_1ca0c9f5bb514a22ad2a42c2726bd1f1~mv2.png",
+    },
   ]
   

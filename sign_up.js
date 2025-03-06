@@ -180,17 +180,6 @@
           "bookmaker": "LiveScoreBet"
         },
         {
-          "logo": "https://static.wixstatic.com/media/7a0e3a_aba860a329d2463798f4ee53469710a0~mv2.png",
-          "promo": "",
-          "offer": "https://www.vickers.bet/promotions/sports-welcome-offer/",
-          "guide": "https://www.betterbetgroup.com/sign-up-offer-guides/vickers-bet-sign-up-offer",
-          "odds_details": "2",
-          "offer_description": "Bet £10, Get £10 Free Bet",
-          "difficulty": "Easy",
-          "profit": "£7.50",
-          "bookmaker": "Vickers Bet"
-        },
-        {
           "logo": "https://static.wixstatic.com/media/7a0e3a_41c0f42c2b03417a96756cf09238256c~mv2.png",
           "promo": "b20g10fbfs",
           "offer": "https://nrg.bet/?promo=bet20-get10freebet-10freespins",
@@ -320,7 +309,7 @@
           "offer_description": "£30 Risk Free Bet",
           "difficulty": "Adv",
           "profit": "£18.00",
-          "bookmaker": "BetWay"
+          "bookmaker": "Betway"
         },
         {
           "logo": "https://static.wixstatic.com/media/7a0e3a_aef8f4249eb84014b9d101801ed16833~mv2.png",
