@@ -140,7 +140,7 @@ const SMALL_FONT_WIDTH = 1190;
         "Space Casino": "https://www.spacecasino.co.uk/",
         "Sporting Bet": "https://sports.sportingbet.com/en/sports",
         "Sporting Index": "https://www.sportingindex.com/sports/en-GB/spread-betting",
-        "SpreadEx": "https://www.spreadex.com/sports/en-GB/spread-betting",
+        "SpreadEx": "https://www.SpreadEx.com/sports/en-GB/spread-betting",
         "StarSports": "https://starsports.bet/",
         "TalkSPORT BET": "https://www.talksportbet.com/",
         "The Pools": "https://www.thepools.com/",

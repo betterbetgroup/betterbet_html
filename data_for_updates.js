@@ -35,7 +35,7 @@ let unused_sign_up_offers = [
     {
       "logo": "https://static.wixstatic.com/media/7a0e3a_45609bd37d194c1f8d17cc2d32f47dc4~mv2.png",
       "promo": "",
-      "offer": "https://www.spreadex.com/sports/offers/bet-25-get-50/",
+      "offer": "https://www.SpreadEx.com/sports/offers/bet-25-get-50/",
       "guide": "",
       "odds_details": "1.5",
       "offer_description": "Bet £25, Get 5 x £5 Free Bets + £26 in Bonuses",
