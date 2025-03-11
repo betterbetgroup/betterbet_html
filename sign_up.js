@@ -292,13 +292,13 @@
         {
           "logo": "https://static.wixstatic.com/media/7a0e3a_4a787aa683664c4aaa145705e0ebc893~mv2.png",
           "promo": "",
-          "offer": "https://www.unibet.co.uk/registration",
-          "guide": "https://www.betterbetgroup.com/sign-up-offer-guides/unibet-sign-up-offer",
+          "offer": "https://www.Unibet.co.uk/registration",
+          "guide": "https://www.betterbetgroup.com/sign-up-offer-guides/Unibet-sign-up-offer",
           "odds_details": "2",
           "offer_description": "Bet £10, Get £20 Free Bet",
           "difficulty": "Avg",
           "profit": "£14.00",
-          "bookmaker": "UniBet"
+          "bookmaker": "Unibet"
         },
         {
           "logo": "https://static.wixstatic.com/media/7a0e3a_2e3ef618674d4c94a2850b097873d5bb~mv2.png",
