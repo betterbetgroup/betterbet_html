@@ -999,7 +999,7 @@
                     const ratingA = parseFloat(a.rating.replace('%', ''));
                     const ratingB = parseFloat(b.rating.replace('%', ''));
         
-                    if (method == 'descending') {
+                    if (true) {
                         return ratingB - ratingA;  // Sort in descending order
                     } else {
                         return ratingA - ratingB;
@@ -1013,7 +1013,7 @@
                     const ratingA = parseFloat(a.qualifying_loss.replace('£', '').replace('+', ''));
                     const ratingB = parseFloat(b.qualifying_loss.replace('£', '').replace('+', ''));
         
-                    if (method == 'descending') {
+                    if (true) {
                         return ratingB - ratingA;  // Sort in descending order
                     } else {
                         return ratingA - ratingB;
@@ -1027,7 +1027,7 @@
                     const ratingA = parseFloat(a.potential_profit.replace('£', '').replace('+', ''));
                     const ratingB = parseFloat(b.potential_profit.replace('£', '').replace('+', ''));
         
-                    if (method == 'descending') {
+                    if (true) {
                         return ratingB - ratingA;  // Sort in descending order
                     } else {
                         return ratingA - ratingB;

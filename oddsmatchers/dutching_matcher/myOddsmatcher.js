@@ -40,6 +40,7 @@
 
     let current_sort = 'rating';
 
+    const marketsList = ['Match Odds', 'BTTS', 'Over/Under'];
 
 
     let globalFilters = {}
@@ -618,7 +619,7 @@ sort_rows_by_rating(rows, method) {
             const ratingA = parseFloat(a.rating);
             const ratingB = parseFloat(b.rating);
 
-            if (method == 'descending') {
+            if (true) {
                 return ratingB - ratingA;  // Sort in descending order
             } else {
                 return ratingA - ratingB;
@@ -627,19 +628,13 @@ sort_rows_by_rating(rows, method) {
 }
 
 
-
-
-
-
-
-
 sort_rows_by_qualifying_loss(rows, method) {
 	return rows.sort((a, b) => {
 
             const ratingA = parseFloat(a.qualifying_loss.replace('£', '').replace('+', ''));
             const ratingB = parseFloat(b.qualifying_loss.replace('£', '').replace('+', ''));
 
-            if (method == 'descending') {
+            if (true) {
                 return ratingB - ratingA;  // Sort in descending order
             } else {
                 return ratingA - ratingB;
@@ -654,7 +649,7 @@ sort_rows_by_potential_profit(rows, method) {
             const ratingA = parseFloat(a.potential_profit.replace('£', '').replace('+', ''));
             const ratingB = parseFloat(b.potential_profit.replace('£', '').replace('+', ''));
 
-            if (method == 'descending') {
+            if (true) {
                 return ratingB - ratingA;  // Sort in descending order
             } else {
                 return ratingA - ratingB;
@@ -732,14 +727,11 @@ create_row(row) {
     let third_outcome = '';
 
 
-    if (row.market_type == 'Dutching') {
+    if (row.market_type == 'Match Odds') {
         first_outcome = 'HOME';
         second_outcome = 'DRAW';
         third_outcome = 'AWAY'; 
-    } else if (row.market_type == 'BTTS') {
-        first_outcome = row.first_outcome.replace(' - ', '');
-        second_outcome = row.second_outcome.replace(' - ', '');
-    } else if (row.market_type == 'Over/Under') {
+    } else {
         first_outcome = row.first_outcome;
         second_outcome = row.second_outcome;
     }
@@ -795,13 +787,9 @@ create_row(row) {
                     <a ${row.first_link ? `href="${row.first_link}" target="_blank"` : ''} class="odds-link">${first_outcome}</a>
                 </div>    
 
-                <div class="at_symbol_outcome">@</div>
-
                 <div id="back_odds_value_${row._id}" class="back_odds_value">
                     <a ${row.first_link ? `href="${row.first_link}" target="_blank"` : ''} class="odds-link">${row.first_odds}</a>
                 </div>    
-
-                <div class="at_symbol">@</div>
 
                 <div id="bookmaker_logo_${row._id}" class="bookmaker_logo_div">
                     <a class="div_around_logo" ${row.first_link ? `href="${row.first_link}" target="_blank"` : ''} >
@@ -820,13 +808,9 @@ create_row(row) {
                     <a ${row.second_link ? `href="${row.second_link}" target="_blank"` : ''} class="odds-link">${second_outcome}</a>
                 </div>    
 
-                <div class="at_symbol_outcome">@</div>
-
-
                 <div id="lay_odds_value_${row._id}" class="lay_odds_value">
                     <a ${row.second_link ? `href="${row.second_link}" target="_blank"` : ''} class="odds-link">${row.second_odds}</a>
                 </div>
-                <div class="at_symbol">@</div>
                 <div id="exchange_logo_${row._id}" class="exchange_logo_div">
                     <a class="div_around_logo" ${row.second_link ? `href="${row.second_link}" target="_blank"` : ''} >
                         <img class='exchange_logo_img' src="${win_exchange_image}" alt="${row.sport} ${row.win_exchange}" >
@@ -843,13 +827,9 @@ create_row(row) {
                     <a ${row.third_link ? `href="${row.third_link}" target="_blank"` : ''} class="odds-link">${third_outcome}</a>
                 </div>    
 
-                <div class="at_symbol_outcome">@</div>
-
-
                 <div id="lay_odds_value_${row._id}" class="lay_odds_value_2">
                     <a ${row.third_link ? `href="${row.third_link}" target="_blank"` : ''} class="odds-link">${row.third_odds}</a>
                 </div>
-                <div class="at_symbol">@</div>
                 <div id="exchange_logo_${row._id}" class="exchange_logo_div">
                     <a class="div_around_logo" ${row.third_link ? `href="${row.third_link}" target="_blank"` : ''} >
                         <img class='exchange_logo_img' src="${place_exchange_image}" alt="${row.sport} ${row.place_exchange}" >
@@ -866,7 +846,6 @@ create_row(row) {
         <td class="no_padding_margin">
             <div class="expected_profit_data">
                 <div id='qualifying_loss_${row._id}' class='${qualifying_loss_class}'>${qualifying_loss}</div>
-                <div id='potential_profit_${row._id}' class='${potential_profit_class}'>${potential_profit}</div>
             </div>
         </td>
 
@@ -1050,10 +1029,9 @@ set_global_filters_as_filters_selected_in_dropdown(filters) {
     // Update each key in globalFilters with the new values from filters
     globalFilters.bookmakers = filters.bookmakers || [];
     globalFilters.exchanges = filters.exchanges || [];
+    globalFilters.markets = filters.markets || [];
     globalFilters.startTime = filters.startTime || '';
 
-    // Handle potential "null" strings and convert them back to null
-    globalFilters.minoutcomes = filters.minoutcomes !== "null" ? parseFloat(filters.minoutcomes) : null;
     globalFilters.minrating = filters.minrating !== "null" ? parseFloat(filters.minrating) : null;
     globalFilters.maxrating = filters.maxrating !== "null" ? parseFloat(filters.maxrating) : null;
     globalFilters.minQualifyingLoss = filters.minQualifyingLoss !== "null" ? parseFloat(filters.minQualifyingLoss) : null;
@@ -1061,7 +1039,6 @@ set_global_filters_as_filters_selected_in_dropdown(filters) {
 
 
 }
-
 
 
 set_input_values_using_filter(filters) {
@@ -1099,6 +1076,7 @@ set_input_values_using_filter(filters) {
     // Apply filters for dropdowns with select-all functionality
     manageDropdownCheckboxes('bookmakers-dropdown-options', filters.bookmakers, 'Select All Bookmakers');
     manageDropdownCheckboxes('exchanges-dropdown-options', filters.exchanges, 'Select All Exchanges');
+    manageDropdownCheckboxes('markets-dropdown-options', filters.markets, 'Select All Markets');
 
 
     const startTimeSelect = this.shadowRoot.getElementById('date-range');
@@ -1110,7 +1088,6 @@ set_input_values_using_filter(filters) {
         input.value = value === 'null' ? '' : value;
     }
 
-    setInputValue('min-outcomes', filters.minoutcomes);
     setInputValue('min-rating', filters.minrating);
     setInputValue('max-rating', filters.maxrating);
     setInputValue('min-qualifying-loss', filters.minQualifyingLoss);
@@ -1120,7 +1097,6 @@ set_input_values_using_filter(filters) {
 
 
 }
-
 
 
 function_that_takes_global_filters_and_appends_it_to_current_with_name(name_for_filter) {
@@ -1146,8 +1122,8 @@ function_that_takes_global_filters_and_appends_it_to_current_with_name(name_for_
     customFilters[name_for_filter] = {
         "bookmakers": globalFilters.bookmakers.slice(), // Shallow copy
         "exchanges": globalFilters.exchanges.slice(), // Shallow copy
+        "markets": globalFilters.markets.slice(), // Shallow copy
         "startTime": globalFilters.startTime || "", // Default to "null" if undefined or empty
-        "minoutcomes": globalFilters.minoutcomes || "null",
         "minrating": globalFilters.minrating || "null",
         "maxrating": globalFilters.maxrating || "null",
         "minQualifyingLoss": globalFilters.minQualifyingLoss || "null",
@@ -1164,11 +1140,6 @@ function_that_takes_global_filters_and_appends_it_to_current_with_name(name_for_
 }
 
 
-
-
-
-
-
 function_using_global_data_and_global_filters_to_make_filtered_data() {
 
     const now = new Date(); 
@@ -1183,8 +1154,10 @@ function_using_global_data_and_global_filters_to_make_filtered_data() {
         }
         const bookmakerMatch = allBookmakers.every(bookmaker => allPlatforms.includes(bookmaker));
         
-        const outcomesMatch = globalFilters.minoutcomes === null || (parseFloat(row.outcomes) >= globalFilters.minoutcomes) && (parseFloat(row.outcomes) >= globalFilters.minoutcomes);
 
+        const marketMatch = globalFilters.markets.includes(row.market_type);
+
+        
         const ratingMatch = (globalFilters.minrating === null || parseFloat(row.rating) >= globalFilters.minrating) &&
                             (globalFilters.maxrating === null || parseFloat(row.rating) <= globalFilters.maxrating);
         const qualifyingLossMatch = globalFilters.minQualifyingLoss === null || parseFloat(row.qualifying_loss.replace('£', '')) >= globalFilters.minQualifyingLoss;
@@ -1221,7 +1194,7 @@ function_using_global_data_and_global_filters_to_make_filtered_data() {
             }
         }
 
-        return bookmakerMatch && outcomesMatch && ratingMatch && qualifyingLossMatch && potentialProfitMatch && timeMatch;
+        return bookmakerMatch && marketMatch && ratingMatch && qualifyingLossMatch && potentialProfitMatch && timeMatch;
 
 
     });
@@ -1323,11 +1296,10 @@ go_to_input_and_update_global_for_the_input(filterId) {
         case 'exchanges-dropdown-select-container':
             globalFilters.exchanges = this.getCheckedOptions('#exchanges-dropdown-options');
             break;
-
-
-        case 'min-outcomes':
-            globalFilters.minoutcomes = parseFloat(this.shadowRoot.getElementById('min-outcomes').value) || null;
+        case 'markets-dropdown-select-container':
+            globalFilters.markets = this.getCheckedOptions('#markets-dropdown-options');
             break;
+
         case 'min-rating':
             globalFilters.minrating = parseFloat(this.shadowRoot.getElementById('min-rating').value) || null;
             break;
@@ -1479,6 +1451,8 @@ append_options_for_dropdowns() {
 
     this.append_options_for_the_four_filter_dropdowns('#bookmakers-dropdown-options', Object.keys(bookmakerImages));
     this.append_options_for_the_four_filter_dropdowns('#exchanges-dropdown-options', Object.keys(exchangeImages));
+    this.append_options_for_the_four_filter_dropdowns('#markets-dropdown-options', marketsList);
+
 
     this.create_event_listeners_for_select_containers();
 }
@@ -1633,8 +1607,8 @@ check_if_dropdown_matches_global_filter_settings() {
         let adjusted_global_filters = {
             "bookmakers": globalFilters.bookmakers.slice(), 
             "exchanges": globalFilters.exchanges.slice(), 
+            "markets": globalFilters.markets.slice(), 
             "startTime": globalFilters.startTime || "", 
-            "minoutcomes": globalFilters.minoutcomes || "null",
             "minrating": globalFilters.minrating || "null",
             "maxrating": globalFilters.maxrating || "null",
             "minQualifyingLoss": globalFilters.minQualifyingLoss || "null",
@@ -2168,8 +2142,8 @@ make_timer_run_and_add_event_listener() {
                 {
                     "bookmakers": Object.keys(bookmakerImages),
                     "exchanges": Object.keys(exchangeImages),
+                    "markets": marketsList,
                     "startTime": "",
-                    "minoutcomes": "null",
                     "minrating": "null",
                     "maxrating": "null",
                     "minQualifyingLoss": "null",
@@ -2180,8 +2154,8 @@ make_timer_run_and_add_event_listener() {
         globalFilters = {
             bookmakers: Object.keys(bookmakerImages),
             exchanges: Object.keys(exchangeImages),
+            markets: marketsList,
             startTime: '',
-            minoutcomes: null,
             minrating: null,
             maxrating: null,
             minQualifyingLoss: null,
@@ -2229,8 +2203,8 @@ make_timer_run_and_add_event_listener() {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                //link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/dutching_matcher/styles.css'); 
-                link.setAttribute('href', 'styles.css'); 
+                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/dutching_matcher/styles.css'); 
+                //link.setAttribute('href', 'styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);

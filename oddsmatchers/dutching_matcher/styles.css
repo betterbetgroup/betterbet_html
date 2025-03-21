@@ -301,13 +301,10 @@ table {
 }
 
 #expected_profit_header {
-    width: 12.86vw;
+    width: 5.71vw;
     padding: 0;
     padding-top: 0.93vw;
-    padding-left: 0.14vw;
-    padding-right: 0.14vw;
 
-    
 }
 td[id^='date_time_'] {
 
@@ -415,7 +412,7 @@ td.odds_and_bookmaker {
 
 .div_around_logo {
     display: inline-block; 
-    width: 7.14vw;
+    width: 8.14vw;
 }
 
 .bookmaker_logo_img, .exchange_logo_img {
@@ -458,8 +455,8 @@ box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced sh
     margin-left: 0.43vw;
     display: flex;
     color: white;              
-    min-width: 2.50vw;              
-    height: 1.43vw;   
+    min-width: 3vw;              
+    height: 1.69vw;   
 
     box-shadow: 0.00vw 0.14vw 0.43vw rgba(0, 0, 0, 0.2); 
     line-height: normal;
@@ -468,7 +465,7 @@ box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced sh
     transition: background 0.3s, transform 0.3s;
 
     max-width: 2.50vw;
-    font-size: 0.80vw;
+    font-size: 0.90vw;
 
 }
 
@@ -500,6 +497,7 @@ box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced sh
 .outcome_value {
     margin-left: 0.43vw;
     font-weight: bold;
+    width: 5.5vw;
 }
 
 
@@ -632,7 +630,6 @@ td[id^='outcome'] {
     align-items: center;
     display: flex;
     justify-content: space-evenly;
-    margin-left: 3vw;
 }
 
 #pagination-container button {

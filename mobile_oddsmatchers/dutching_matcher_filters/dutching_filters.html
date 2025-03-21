@@ -16,7 +16,6 @@
     <div id="outer-container-div">
 
 
-
         <div class="box box2" id="covering_filters">
             <svg fill="#ffffff" height="150px" width="130px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_509_"> <path id="XMLID_510_" d="M65,330h200c8.284,0,15-6.716,15-15V145c0-8.284-6.716-15-15-15h-15V85c0-46.869-38.131-85-85-85 S80,38.131,80,85v45H65c-8.284,0-15,6.716-15,15v170C50,323.284,56.716,330,65,330z M180,234.986V255c0,8.284-6.716,15-15,15 s-15-6.716-15-15v-20.014c-6.068-4.565-10-11.824-10-19.986c0-13.785,11.215-25,25-25s25,11.215,25,25 C190,223.162,186.068,230.421,180,234.986z M110,85c0-30.327,24.673-55,55-55s55,24.673,55,55v45H110V85z"></path> </g> </g></svg>
             <a class="upgrade-button">Upgrade to Premium <img src="https://img.icons8.com/?size=100&id=60654&format=png&color=ffffff" class="padlock-image-button" alt="Padlock" > </a>
@@ -62,6 +61,20 @@
 
         <div class="filter-column">
 
+            <div class="label_and_input_container" >
+
+                <label class="filter-label for="markets-select">Markets</label>
+                <div id="markets-dropdown-select-container" class="custom-select-container" tabindex="0">
+                    <div class="custom-select-trigger">
+                        <input id="markets-select" type="text" value="Markets" readonly>
+                    </div>
+                    <div class="dropdown-options" id="markets-dropdown-options">
+                        <label><input type="checkbox" checked class="select-all"> <span></span>Select All Markets</label>
+                    </div>
+                </div>
+
+            </div>
+
             <div class="label_and_input_container">
 
                     <label class="filter-label" for="date-range">Start Time</label>
@@ -76,14 +89,6 @@
                         <option value="3days">Next 3 Days</option>
                     </select>
             </div>
-
-            <div class="label_and_input_container">
-
-                <label class="filter-label" for="min-outcomes">Min Outcomes</label>
-                <input class="text-input" id="min-outcomes" placeholder="Min Outcomes" autocomplete="off">
-            </div>
-
-
 
         </div>
 
@@ -146,8 +151,8 @@
 <script>
     
 
-let is_premium_member = true;
-apply_container_changes();
+let is_premium_member = false;
+
 
 
 
@@ -163,11 +168,13 @@ exchangeImages = Object.fromEntries(
     .sort((a, b) => a[0].localeCompare(b[0])) 
 );
 
+const marketsList = ['Match Odds', 'BTTS', 'Over/Under'];
+
 let globalFilters = {
     bookmakers: Object.keys(bookmakerImages),
     exchanges: Object.keys(exchangeImages),
+    markets: marketsList,
     startTime: '',
-    minoutcomes: null,
     minrating: null,
     maxrating: null,
     minQualifyingLoss: null,
@@ -181,8 +188,8 @@ let customFilters = {
         {
             "bookmakers": Object.keys(bookmakerImages),
             "exchanges": Object.keys(exchangeImages),
+            "markets": marketsList,
             "startTime": "",
-            "minoutcomes": "null",
             "minrating": "null",
             "maxrating": "null",
             "minQualifyingLoss": "null",
@@ -211,7 +218,7 @@ function check_if_dropdown_matches_global_filter_settings() {
             "bookmakers": globalFilters.bookmakers.slice(), 
             "exchanges": globalFilters.exchanges.slice(), 
             "startTime": globalFilters.startTime || "", 
-            "minoutcomes": globalFilters.minoutcomes || "null",
+            "markets": globalFilters.markets.slice(), 
             "minrating": globalFilters.minrating || "null",
             "maxrating": globalFilters.maxrating || "null",
             "minQualifyingLoss": globalFilters.minQualifyingLoss || "null",
@@ -242,6 +249,8 @@ function check_if_dropdown_matches_global_filter_settings() {
 
 
 }
+
+
 
 function set_input_values_using_filter(filters) {
 
@@ -277,6 +286,8 @@ function set_input_values_using_filter(filters) {
     // Apply filters for dropdowns with select-all functionality
     manageDropdownCheckboxes('bookmakers-dropdown-options', filters.bookmakers, 'Select All Bookmakers');
     manageDropdownCheckboxes('exchanges-dropdown-options', filters.exchanges, 'Select All Exchanges');
+    manageDropdownCheckboxes('markets-dropdown-options', filters.markets, 'Select All Markets');
+
 
 
     const startTimeSelect = document.getElementById('date-range');
@@ -288,7 +299,6 @@ function set_input_values_using_filter(filters) {
         input.value = value === 'null' ? '' : value;
     }
 
-    setInputValue('min-outcomes', filters.minoutcomes);
     setInputValue('min-rating', filters.minrating);
     setInputValue('max-rating', filters.maxrating);
     setInputValue('min-qualifying-loss', filters.minQualifyingLoss);
@@ -321,7 +331,7 @@ function function_that_takes_global_filters_and_appends_it_to_current_with_name(
         "bookmakers": globalFilters.bookmakers.slice(), // Shallow copy
         "exchanges": globalFilters.exchanges.slice(), // Shallow copy
         "startTime": globalFilters.startTime || "", // Default to "null" if undefined or empty
-        "minoutcomes": globalFilters.minoutcomes || "null",
+        "markets": globalFilters.markets.slice(), // Shallow copy
         "minrating": globalFilters.minrating || "null",
         "maxrating": globalFilters.maxrating || "null",
         "minQualifyingLoss": globalFilters.minQualifyingLoss || "null",
@@ -347,11 +357,10 @@ case 'bookmakers-dropdown-select-container':
 case 'exchanges-dropdown-select-container':
     globalFilters.exchanges = getCheckedOptions('#exchanges-dropdown-options');
     break;
-
-
-case 'min-outcomes':
-    globalFilters.minoutcomes = parseFloat(document.getElementById('min-outcomes').value) || null;
+case 'markets-dropdown-select-container':
+    globalFilters.markets = getCheckedOptions('#markets-dropdown-options');
     break;
+
 case 'min-rating':
     globalFilters.minrating = parseFloat(document.getElementById('min-rating').value) || null;
     break;
@@ -380,6 +389,7 @@ function append_options_for_dropdowns() {
 
     append_options_for_the_four_filter_dropdowns('#bookmakers-dropdown-options', Object.keys(bookmakerImages));
     append_options_for_the_four_filter_dropdowns('#exchanges-dropdown-options', Object.keys(exchangeImages));
+    append_options_for_the_four_filter_dropdowns('#markets-dropdown-options', marketsList);
 
 }
 

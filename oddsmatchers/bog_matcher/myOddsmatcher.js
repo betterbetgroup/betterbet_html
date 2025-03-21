@@ -258,7 +258,7 @@ sort_rows_by_rating(rows, method) {
             const ratingA = parseFloat(a.rating.replace('%', ''));
             const ratingB = parseFloat(b.rating.replace('%', ''));
 
-            if (method == 'descending') {
+            if (true) {
                 return ratingB - ratingA;  // Sort in descending order
             } else {
                 return ratingA - ratingB;
@@ -274,7 +274,7 @@ sort_rows_by_qualifying_loss(rows, method) {
             const ratingA = parseFloat(a.qualifying_loss.replace('£', '').replace('+', ''));
             const ratingB = parseFloat(b.qualifying_loss.replace('£', '').replace('+', ''));
 
-            if (method == 'descending') {
+            if (true) {
                 return ratingB - ratingA;  // Sort in descending order
             } else {
                 return ratingA - ratingB;
@@ -292,7 +292,7 @@ sort_rows_by_ROI(rows, method) {
             const ratingB = parseFloat(b.ROI.replace('%', ''));
 
 
-            if (method == 'descending') {
+            if (true) {
                 return ratingB - ratingA;  // Sort in descending order
             } else {
                 return ratingA - ratingB;
