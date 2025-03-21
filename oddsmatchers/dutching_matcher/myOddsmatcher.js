@@ -206,7 +206,7 @@ class dutchingOddsmatcher extends HTMLElement {
             this.shadowRoot.querySelector('table tbody').innerHTML = '';
  
  
-            this.shadowRoot.querySelector('#info-container').style.display = 'flex';
+            this.shadowRoot.querySelector('#info-container').style.display = 'none';
             this.shadowRoot.querySelector('#button-container').style.display = 'flex';
  
  
