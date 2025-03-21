@@ -608,8 +608,7 @@ get_exchange_image(exchange) {
     if (exchangeImages[exchange]) {
         return exchangeImages[exchange];
     } else {
-        console.log("No image found for exchange:", exchange);
-        return null; // Or a default URL if you prefer
+        return null; 
     }
 }
 
@@ -733,10 +732,16 @@ create_row(row) {
     let third_outcome = '';
 
 
-    if (row.sport == 'Football') {
+    if (row.market_type == 'Dutching') {
         first_outcome = 'HOME';
         second_outcome = 'DRAW';
         third_outcome = 'AWAY'; 
+    } else if (row.market_type == 'BTTS') {
+        first_outcome = row.first_outcome.replace(' - ', '');
+        second_outcome = row.second_outcome.replace(' - ', '');
+    } else if (row.market_type == 'Over/Under') {
+        first_outcome = row.first_outcome;
+        second_outcome = row.second_outcome;
     }
 
 
@@ -771,7 +776,7 @@ create_row(row) {
     const tr = document.createElement('tr');
 
     tr.className = 'table_data_row';
-tr.setAttribute('data-id', row._id)
+    tr.setAttribute('data-id', row._id)
 
     tr.innerHTML = `
 
@@ -831,7 +836,8 @@ tr.setAttribute('data-id', row._id)
         </td>
 
         <td id="lay_odds_data_${row._id}" class="no_padding_margin">
-            <div class="odds_and_bookmaker" id='place_lay_odds_and_bookmaker'>
+            
+            <div class="odds_and_bookmaker ${row.outcomes !== 3 ? 'hide_data' : ''}" id='place_lay_odds_and_bookmaker'>
 
                 <div id="first_outcome_${row._id}" class="outcome_value">
                     <a ${row.third_link ? `href="${row.third_link}" target="_blank"` : ''} class="odds-link">${third_outcome}</a>
@@ -849,7 +855,8 @@ tr.setAttribute('data-id', row._id)
                         <img class='exchange_logo_img' src="${place_exchange_image}" alt="${row.sport} ${row.place_exchange}" >
                     </a>
                 </div>
-            </div>                
+            </div>  
+
         </td>
         
 
@@ -876,6 +883,7 @@ tr.setAttribute('data-id', row._id)
     const tableBody = this.shadowRoot.querySelector('table tbody');
     const buttonContainer = this.shadowRoot.getElementById('button-container');
     const infoContainer = this.shadowRoot.getElementById('info-container');
+
 
 
     tableBody.appendChild(tr);
@@ -1169,7 +1177,10 @@ function_using_global_data_and_global_filters_to_make_filtered_data() {
 
     filteredData = globalData.filter(row => {
 
-        const allBookmakers = [row.first_bookmaker, row.second_bookmaker, row.third_bookmaker];
+        let allBookmakers = [row.first_bookmaker, row.second_bookmaker, row.third_bookmaker];
+        if (row.outcomes == 2) {
+            allBookmakers = [row.first_bookmaker, row.second_bookmaker];
+        }
         const bookmakerMatch = allBookmakers.every(bookmaker => allPlatforms.includes(bookmaker));
         
         const outcomesMatch = globalFilters.minoutcomes === null || (parseFloat(row.outcomes) >= globalFilters.minoutcomes) && (parseFloat(row.outcomes) >= globalFilters.minoutcomes);
