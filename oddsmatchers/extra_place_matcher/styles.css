@@ -440,19 +440,18 @@ box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced sh
     margin-left: 0.57vw;
     display: flex;
     color: white;              
-    border-radius: 10%;        
     width: 2.50vw;              
     height: 1.43vw;   
-    border: 0.07vw solid #bbb;  
-    line-height: 1.43vw;
 
-    box-shadow: 0.00vw 0.14vw 0.43vw rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+    box-shadow: 0.00vw 0.14vw 0.43vw rgba(0, 0, 0, 0.2); 
+    line-height: normal;
+    border-radius: 0.36vw;        
 
     transition: background 0.3s, transform 0.3s;
 
     max-width: 2.50vw;
 
-    font-size: 0.86vw;
+    font-size: 0.80vw;
 
 }
 

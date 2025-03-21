@@ -2218,8 +2218,8 @@ make_timer_run_and_add_event_listener() {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/dutching_matcher/styles.css'); 
-                //link.setAttribute('href', 'styles.css'); 
+                //link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/dutching_matcher/styles.css'); 
+                link.setAttribute('href', 'styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);

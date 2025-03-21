@@ -392,12 +392,13 @@ box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced sh
     display: flex;
     color: white;              
     border-radius: 10%;        
-    width: 3.57vw;              
+    width: 3.57vw;           
     height: 2.14vw;   
-    border: 0.07vw solid #bbb;  
-    line-height: 2.14vw;
 
-    box-shadow: 0.00vw 0.14vw 0.43vw rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+    box-shadow: 0.00vw 0.14vw 0.43vw rgba(0, 0, 0, 0.2); 
+    line-height: normal;
+    border-radius: 0.36vw;        
+    font-size: 1vw;
 
     transition: background 0.3s, transform 0.3s;
 }
