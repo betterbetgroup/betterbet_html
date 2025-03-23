@@ -32,13 +32,13 @@
     let currentPage = 1;
     const rowsPerPage = 10;
 
-    let sort_rating = 'descending';
-    let sort_qualifying_loss = 'ascending';
+    let sort_rating = 'ascending';
+    let sort_qualifying_loss = 'descending';
     let sort_potential_profit = 'ascending';
     let sort_date_and_time = 'ascending';
 
 
-    let current_sort = 'rating';
+    let current_sort = 'qualifying loss';
 
     const marketsList = ['Match Odds', 'BTTS', 'Over/Under'];
 
@@ -821,7 +821,7 @@ create_row(row) {
 
         <td id="lay_odds_data_${row._id}" class="no_padding_margin">
             
-            <div class="odds_and_bookmaker ${row.outcomes !== 3 ? 'hide_data' : ''}" id='place_lay_odds_and_bookmaker'>
+            <div class="odds_and_bookmaker ${parseInt(row.outcomes) !== 3 ? 'hide_data' : ''}" id='place_lay_odds_and_bookmaker'>
 
                 <div id="first_outcome_${row._id}" class="outcome_value">
                     <a ${row.third_link ? `href="${row.third_link}" target="_blank"` : ''} class="odds-link">${third_outcome}</a>
@@ -1149,7 +1149,7 @@ function_using_global_data_and_global_filters_to_make_filtered_data() {
     filteredData = globalData.filter(row => {
 
         let allBookmakers = [row.first_bookmaker, row.second_bookmaker, row.third_bookmaker];
-        if (row.outcomes == 2) {
+        if (parseInt(row.outcomes) == 2) {
             allBookmakers = [row.first_bookmaker, row.second_bookmaker];
         }
         const bookmakerMatch = allBookmakers.every(bookmaker => allPlatforms.includes(bookmaker));
@@ -2102,8 +2102,8 @@ make_timer_run_and_add_event_listener() {
     // Method to inject CSS styles into the shadow DOM.
 
     render() {
-        return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/dutching_matcher/z.html')
-        //return fetch('z.html')
+        //return fetch('https://betterbetgroup.github.io/betterbet_html/oddsmatchers/dutching_matcher/z.html')
+        return fetch('z.html')
             .then(response => response.text())
             .then(html => {
                 this.shadowRoot.innerHTML = html;
