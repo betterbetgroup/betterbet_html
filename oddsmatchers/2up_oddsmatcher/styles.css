@@ -385,8 +385,8 @@ box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced sh
 
 
 .bookmaker_logo_img:hover, .exchange_logo_img:hover {
-    transform: scale(1.03); 
-    box-shadow: 0.00vw 0.43vw 0.86vw rgba(0, 0, 0, 0.8); /* Stronger shadow on hover */
+
+    box-shadow: 0.00vw 0.43vw 0.86vw rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
 
 }
 
@@ -409,6 +409,7 @@ box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced sh
 
 .back_odds_value, .lay_odds_value {
     margin-left: 1.07vw;
+    margin-right: 0.5vw;
     display: flex;
     color: white;              
     width: 3.57vw;              
@@ -430,7 +431,7 @@ box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced sh
     font-size: 1.00vw;
     margin-right: 1.07vw;
     margin-left: 1.07vw;
-    display: flex;
+    display: none;
     align-items: center;
 }
 
