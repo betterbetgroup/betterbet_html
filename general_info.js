@@ -2,27 +2,27 @@
 
 
     // STANDARD
-    var STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes']
+    var STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes', 'William Hill']
     var STANDARD_EXCHANGES = ['Smarkets', 'Betfair Exchange', 'Matchbook']
 
     //2UP
-    var TWOUP_BOOKMAKERS = ['Bet365', 'Ladbrokes', 'Skybet']
+    var TWOUP_BOOKMAKERS = ['Bet365', 'Ladbrokes', 'Skybet', 'William Hill']
     var TWOUP_EXCHANGES = ['Smarkets', 'Betfair Exchange', 'Matchbook']
 
     //EXTRA PLACE
-    var EXTRA_PLACE_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes']
+    var EXTRA_PLACE_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes', 'William Hill']
     var EXTRA_PLACE_EXCHANGES = ['Smarkets', 'Betfair Exchange', 'Matchbook']
 
     //EACH WAY
-    var EACH_WAY_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes']
+    var EACH_WAY_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes', 'William Hill']
     var EACH_WAY_EXCHANGES = ['Smarkets', 'Betfair Exchange', 'Matchbook']
 
     //DUTCHING 
-    var DUTCHING_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes']
+    var DUTCHING_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes', 'William Hill']
     var DUTCHING_EXCHANGES = ['Smarkets', 'Betfair Exchange', 'Matchbook']
 
     //BOG 
-    var BOG_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes']
+    var BOG_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes', 'William Hill']
     var BOG_EXCHANGES = ['Smarkets', 'Betfair Exchange', 'Matchbook']
 
 
