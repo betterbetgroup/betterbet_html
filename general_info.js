@@ -5,6 +5,13 @@
     var STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes', 'William Hill', 'Livescore', 'Coral']
     var STANDARD_EXCHANGES = ['Smarkets', 'Betfair Exchange', 'Matchbook']
 
+
+    // OTHER MARKETS
+    var OVER_UNDER_BOOKMAKERS = ['888Sport', 'Virgin Bet', 'Betway', 'Skybet', 'Betfred', 'Ladbrokes', 'William Hill', 'Livescore', 'Coral']
+    var OVER_UNDER_EXCHANGES = ['Betfair Exchange']
+    var BTTS_BOOKMAKERS = ['888Sport', 'Virgin Bet', 'Betway', 'Skybet', 'Betfred', 'Ladbrokes', 'William Hill', 'Livescore', 'Coral']
+    var BTTS_EXCHANGES = ['Betfair Exchange']
+
     //2UP
     var TWOUP_BOOKMAKERS = ['Bet365', 'Ladbrokes', 'Skybet', 'William Hill', 'Coral']
     var TWOUP_EXCHANGES = ['Smarkets', 'Betfair Exchange', 'Matchbook']
