@@ -1,6 +1,3 @@
-
-
-
     // STANDARD
     var STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes', 'William Hill', 'Livescore', 'Coral']
     var STANDARD_EXCHANGES = ['Smarkets', 'Betfair Exchange', 'Matchbook']
@@ -31,6 +28,9 @@
     //BOG 
     var BOG_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes', 'William Hill', 'Livescore', 'Coral']
     var BOG_EXCHANGES = ['Smarkets', 'Betfair Exchange', 'Matchbook']
+
+    // DON'T PUT IN BET365 AS THIS IS THE ODDSCHECKER ONE
+    var ODDSCHECKER_BOOKMAKERS = ['BetVictor', 'Unibet', 'SpreadEx', 'BetMGM', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets']
 
 
     // WIX SITE JUST NEEDS AN UPDATED LIST OF ALL OF THEM LIKE BELOW, AND IT WILL DO USE GENERAL INFO HERE TO FILTER
