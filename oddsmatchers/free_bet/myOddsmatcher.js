@@ -156,6 +156,9 @@
             this.shadowRoot.getElementById('info-container').innerHTML = '';
     
             this.shadowRoot.getElementById('info-container').style.display = 'none';
+
+            this.shadowRoot.querySelector('.not_premium_member_row')?.remove();
+            this.shadowRoot.querySelector('table tbody').classList.remove("blurred_tbody");
     
             this.add_loading_row();
     
@@ -169,6 +172,9 @@
                 this.shadowRoot.querySelector('#button-container').style.display = 'flex';
     
                 this.shadowRoot.querySelector('table tbody').innerHTML = '';
+
+                this.shadowRoot.querySelector('.not_premium_member_row')?.remove();
+
     
                 if (globalData.length == 0) {
                     this.add_no_data_row();

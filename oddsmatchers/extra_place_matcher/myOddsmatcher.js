@@ -313,6 +313,8 @@ class extraPlaceOddsmatcher extends HTMLElement {
 
     this.shadowRoot.getElementById('info-container').style.display = 'none';
 
+    this.shadowRoot.querySelector('.not_premium_member_row')?.remove();
+    this.shadowRoot.querySelector('table tbody').classList.remove("blurred_tbody");
 
     this.add_loading_row();
 
@@ -330,6 +332,7 @@ class extraPlaceOddsmatcher extends HTMLElement {
         this.shadowRoot.querySelector('#info-container').style.display = 'none';
         this.shadowRoot.querySelector('#button-container').style.display = 'flex';
 
+        this.shadowRoot.querySelector('.not_premium_member_row')?.remove();
 
        
         if (filteredData.length == 0) {
