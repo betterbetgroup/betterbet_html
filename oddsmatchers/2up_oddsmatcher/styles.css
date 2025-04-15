@@ -405,8 +405,6 @@ box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced sh
 
 
 
-
-
 .back_odds_value, .lay_odds_value {
     margin-left: 1.07vw;
     margin-right: 0.5vw;
@@ -1545,6 +1543,14 @@ input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potent
     margin-right: 1.55vw;
     font-size: 1.54vw;
     font-weight: bold;
+}
+
+
+
+.blurred_tbody {
+    filter: blur(4px);
+    pointer-events: none; 
+    user-select: none;
 }
 
 

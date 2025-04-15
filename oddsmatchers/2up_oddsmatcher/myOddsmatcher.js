@@ -1829,8 +1829,8 @@ render() {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/2up_oddsmatcher/styles.css'); 
-                //link.setAttribute('href', 'styles.css'); 
+                //link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/2up_oddsmatcher/styles.css'); 
+                link.setAttribute('href', 'styles.css'); 
                 
 
                 this.shadowRoot.appendChild(link);
