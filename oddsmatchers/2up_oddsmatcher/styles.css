@@ -201,6 +201,7 @@ table {
     transition: box-shadow 0.3s;
     width: 100%;
     margin-top: 2.5vw;
+
  }
  
  
@@ -224,6 +225,8 @@ table {
     background: linear-gradient(180deg, #000000, #121212);
     border-radius: 0.86vw 0.86vw 0 0; /* top-left, top-right, bottom-right, bottom-left */
     height: 5.45vw;
+    position: relative; 
+    z-index: 1;
 }   
 
  th {
@@ -645,7 +648,7 @@ td[id^='outcome'] {
     background: linear-gradient( 145deg, #d61b0a, #d61b0a);
     color: white;
     border: None;
-    padding: 0.85vw 3.5vw;
+    padding: 0.75vw 3.2vw;
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
@@ -675,10 +678,10 @@ td[id^='outcome'] {
  
  .padlock-image-button {
  
- 
-    width: 1.66vw;
+
+    width: 2vw;
     height: auto;
-    margin-left: 0.76vw;
+    margin-left: 1.25vw;
  
  
  }
@@ -1548,7 +1551,7 @@ input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potent
 
 
 .blurred_tbody {
-    filter: blur(4px);
+    filter: blur(5px);
     pointer-events: none; 
     user-select: none;
 }

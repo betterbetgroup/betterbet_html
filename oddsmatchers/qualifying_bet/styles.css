@@ -215,6 +215,8 @@ th, td {
     background: linear-gradient(180deg, #000000, #121212);
     border-radius: 0.86vw 0.86vw 0 0; /* top-left, top-right, bottom-right, bottom-left */
     height: 5.43vw;
+    position: relative;  
+    z-index: 1;
 }
 th {
 
@@ -645,7 +647,7 @@ td[id^='outcome'] {
     background: linear-gradient( 145deg, #d61b0a, #d61b0a);
     color: white;
     border: None;
-    padding: 0.85vw 3.5vw;
+    padding: 0.75vw 3.2vw;    
     text-decoration: none;
     font-weight: bold;
     cursor: pointer;
@@ -675,12 +677,10 @@ td[id^='outcome'] {
  
  .padlock-image-button {
  
- 
-    width: 1.66vw;
-    height: auto;
-    margin-left: 0.76vw;
- 
- 
+    width: 2vw; 
+    height: auto;  
+    margin-left: 1.25vw;
+
  }
 
 
@@ -1496,7 +1496,11 @@ td[id^='rating_'] {
 }
 
 
-
+.blurred_tbody {
+    filter: blur(4px);
+    pointer-events: none; 
+    user-select: none;
+}
 
 }
 
