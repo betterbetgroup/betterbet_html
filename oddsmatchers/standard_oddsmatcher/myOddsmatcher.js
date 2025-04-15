@@ -583,8 +583,9 @@ tr.setAttribute('data-id', row._id)
     
     
     
-        buttonContainer.appendChild(selectButton);
-        
+        if (is_premium_member) {
+            buttonContainer.appendChild(selectButton);
+        }        
     
         let infoButton = document.createElement('button');
         infoButton.innerHTML = 
