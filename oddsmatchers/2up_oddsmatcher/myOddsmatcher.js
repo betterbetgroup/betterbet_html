@@ -71,9 +71,8 @@ class TwoUpOddsmatcher extends HTMLElement {
                 .then(() => {
 
                     this.make_premium_box_correct_size().then(() => {
-                        setTimeout(() => {
-                            this.style.visibility = 'visible'; 
-                        }, 100);
+
+                        this.style.visibility = 'visible';
 
                         this.runSpecificScript(); 
                         this.add_loading_row();
@@ -1841,9 +1840,10 @@ render() {
 
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
-                //link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/2up_oddsmatcher/styles.css'); 
-                link.setAttribute('href', 'styles.css'); 
+                link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/2up_oddsmatcher/styles.css'); 
+                //link.setAttribute('href', 'styles.css'); 
                 
+                link.onload = () => { resolve('done'); };
 
                 this.shadowRoot.appendChild(link);
 
@@ -1855,7 +1855,6 @@ render() {
 
                 this.handleResize();
 
-                return resolve('done')
 
             } catch(error) {
                 return reject(error)

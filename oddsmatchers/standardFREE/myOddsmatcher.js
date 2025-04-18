@@ -81,9 +81,8 @@
                     .then(() => {
     
                         this.make_premium_box_correct_size().then(() => {
-                            setTimeout(() => {
-                                this.style.visibility = 'visible'; 
-                            }, 100);
+
+                            this.style.visibility = 'visible'; 
     
                             this.runSpecificScript(); 
                             this.add_loading_row();
@@ -2231,7 +2230,8 @@
                     link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/standard_oddsmatcher/styles.css'); 
                     //link.setAttribute('href', 'styles.css'); 
                     
-    
+                    link.onload = () => { resolve('done'); };
+
                     this.shadowRoot.appendChild(link);
     
                     const fontAwesomeLink = document.createElement('link');
@@ -2240,7 +2240,6 @@
                     
                     this.shadowRoot.appendChild(fontAwesomeLink);
     
-                    return resolve('done')
     
                 } catch(error) {
                     return reject(error)

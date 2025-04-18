@@ -232,9 +232,7 @@ class ProfitTracker extends HTMLElement {
                 this.addStyles()
                 .then(() => {
 
-                    setTimeout(() => {
-                        this.style.visibility = 'visible'; 
-                    }, 250);
+                    this.style.visibility = 'visible';
 
                     this.runSpecificScript(); 
                     this.add_loading_row();

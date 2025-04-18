@@ -69,9 +69,7 @@ class QualBetOddsmatcher extends HTMLElement {
                 this.addStyles()
                 .then(() => {
 
-                    setTimeout(() => {
-                        this.style.visibility = 'visible'; 
-                    }, 100);
+                    this.style.visibility = 'visible';
 
                     this.runSpecificScript(); 
                     this.add_loading_row();
@@ -884,6 +882,7 @@ class QualBetOddsmatcher extends HTMLElement {
                 link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/qualifying_bet/styles.css'); 
                 //link.setAttribute('href', 'styles.css'); 
                 
+                link.onload = () => { resolve('done'); };
 
                 this.shadowRoot.appendChild(link);
 
@@ -893,13 +892,6 @@ class QualBetOddsmatcher extends HTMLElement {
                 
                 this.shadowRoot.appendChild(fontAwesomeLink);
 
-                setTimeout(() => {
-
-                    this.style.visibility = 'visible'; // Make the host element visible
-                    
-                }, 250);
-
-                return resolve('done')
 
             } catch(error) {
                 return reject(error)

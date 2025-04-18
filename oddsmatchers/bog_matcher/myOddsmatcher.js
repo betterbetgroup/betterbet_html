@@ -80,9 +80,7 @@ class bogOddsmatcher extends HTMLElement {
                 .then(() => {
 
                     this.make_premium_box_correct_size().then(() => {
-                        setTimeout(() => {
-                            this.style.visibility = 'visible'; 
-                        }, 100);
+                        this.style.visibility = 'visible';
 
                         this.runSpecificScript(); 
                         this.add_loading_row();
@@ -2220,9 +2218,9 @@ setInterval(() => {
                 link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/oddsmatchers/bog_matcher/styles.css'); 
                 //link.setAttribute('href', 'styles.css'); 
                 
+                link.onload = () => { resolve('done'); };
 
                 this.shadowRoot.appendChild(link);
-
 
                 const fontAwesomeLink = document.createElement('link');
                 fontAwesomeLink.setAttribute('rel', 'stylesheet');
@@ -2231,7 +2229,6 @@ setInterval(() => {
                 this.shadowRoot.appendChild(fontAwesomeLink);
                 this.handleResize();
 
-                return resolve('done')
 
             } catch(error) {
                 return reject(error)
