@@ -2271,6 +2271,7 @@ alternateText() {
                 link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/profit_tracker/profit_tracker/styles.css'); 
                 //link.setAttribute('href', 'styles.css'); 
                 
+                link.onload = () => { resolve('done'); };
 
                 this.shadowRoot.appendChild(link);
                     const fontAwesomeLink = document.createElement('link');
@@ -2280,7 +2281,6 @@ alternateText() {
                     this.shadowRoot.appendChild(fontAwesomeLink);
 
 
-                return resolve('done')
 
             } catch(error) {
                 return reject(error)

@@ -2280,7 +2280,9 @@ alternateText() {
                 const link = document.createElement('link');
                 link.setAttribute('rel', 'stylesheet');
                 link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/list_pages/weekly/weekly/styles.css'); 
-                //link.setAttribute('href', 'styles.css'); 
+                //link.setAttribute('href', 'styles.css');
+                
+                link.onload = () => { resolve('done'); };
 
                 this.shadowRoot.appendChild(link);
 
@@ -2290,7 +2292,6 @@ alternateText() {
                     
                     this.shadowRoot.appendChild(fontAwesomeLink);
 
-                return resolve('done')
 
             } catch(error) {
                 return reject(error)

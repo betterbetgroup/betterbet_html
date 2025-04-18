@@ -550,6 +550,7 @@ class AllGuides extends HTMLElement {
                 link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/list_pages/all_guides/all_guides/styles.css'); 
                 //link.setAttribute('href', 'styles.css'); 
                 
+                link.onload = () => { resolve('done'); };
 
                 this.shadowRoot.appendChild(link);
                 
@@ -560,7 +561,6 @@ class AllGuides extends HTMLElement {
                     
                     this.shadowRoot.appendChild(fontAwesomeLink);
 
-                return resolve('done')
 
             } catch(error) {
                 return reject(error)

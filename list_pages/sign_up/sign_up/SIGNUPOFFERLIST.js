@@ -2143,6 +2143,8 @@ alternateText() {
                 link.setAttribute('href', 'https://betterbetgroup.github.io/betterbet_html/list_pages/sign_up/sign_up/styles.css'); 
                 //link.setAttribute('href', 'styles.css'); 
 
+                link.onload = () => { resolve('done'); };
+
                 this.shadowRoot.appendChild(link);
 
 
@@ -2152,9 +2154,6 @@ alternateText() {
                     
                     this.shadowRoot.appendChild(fontAwesomeLink);
 
-
-
-                return resolve('done')
 
             } catch(error) {
                 return reject(error)
