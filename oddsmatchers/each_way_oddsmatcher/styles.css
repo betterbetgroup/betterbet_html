@@ -1234,6 +1234,10 @@ input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potent
 
 }
 
+.text-input-container-roi:before {
+    content: '%';
+}
+
 .text-input:hover {
     box-shadow: 0.00vw 0.43vw 0.71vw rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
 
