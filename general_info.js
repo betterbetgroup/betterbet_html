@@ -36,6 +36,9 @@
     // WIX SITE JUST NEEDS AN UPDATED LIST OF ALL OF THEM LIKE BELOW, AND IT WILL DO USE GENERAL INFO HERE TO FILTER
     // ALSO NEED TO UPDATE PROFIT TRACKER AND MOBILE PROFIT TRACKER
 
+
+    var DutchingMarketsList = ['Match Odds', 'BTTS', 'Over/Under'];
+
     var bookmakerImages = {
         "10Bet": "https://static.wixstatic.com/media/7a0e3a_dc4396b6acac4f8e8c6b48d4236747c7~mv2.png",
         "888Sport": "https://static.wixstatic.com/media/7a0e3a_39af396146c84a38a96e953f938290ef~mv2.png",
