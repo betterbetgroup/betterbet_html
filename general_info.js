@@ -39,6 +39,12 @@
 
     var DutchingMarketsList = ['Match Odds', 'BTTS', 'Over/Under'];
 
+    var marketsListStandard = ['Match Odds', 'Winner', 'BTTS', 'Over/Under'];
+    var sportIconUrlsStandard = {
+        "Football": "https://img.icons8.com/?size=100&id=65497&format=png&color=000000",
+        "Horse Racing": "https://img.icons8.com/?size=100&id=LuhFumPGCq9L&format=png&color=000000"
+    };
+
     var bookmakerImages = {
         "10Bet": "https://static.wixstatic.com/media/7a0e3a_dc4396b6acac4f8e8c6b48d4236747c7~mv2.png",
         "888Sport": "https://static.wixstatic.com/media/7a0e3a_39af396146c84a38a96e953f938290ef~mv2.png",
