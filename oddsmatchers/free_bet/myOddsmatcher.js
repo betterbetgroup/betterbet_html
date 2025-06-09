@@ -1089,7 +1089,7 @@
     }
     
     customElements.define('freebet-oddsmatcher', QualBetOddsmatcher);
-    
+
     
     
     })();
