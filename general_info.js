@@ -33,13 +33,22 @@
     var ODDSCHECKER_BOOKMAKERS = ['BetVictor', 'Unibet', 'SpreadEx', 'BetMGM', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets']
 
 
-    // WIX SITE JUST NEEDS AN UPDATED LIST OF ALL OF THEM LIKE BELOW, AND IT WILL DO USE GENERAL INFO HERE TO FILTER
-    // ALSO NEED TO UPDATE PROFIT TRACKER AND MOBILE PROFIT TRACKER
 
-
+    // MARKETS LIST FOR THOSE THAT USE IT
     var DutchingMarketsList = ['Match Odds', 'BTTS', 'Over/Under'];
 
     var marketsListStandard = ['Match Odds', 'Winner', 'BTTS', 'Over/Under'];
+
+
+
+    // FOR PROFIT TRACKERS
+    var oddsmatcher_list = ['Manual', 'Standard', '2up', 'BOG', 'Each Way', 'Extra Place', 'Dutching', 'Sequential Lay', 'Multi Lay']   
+    var calculator_list = ['No Calculator', 'Standard', '2up', 'Extra Place', 'Each Way', 'Dutching', 'Sequential Lay', 'Multi Lay']
+
+
+
+
+
     var sportIconUrlsStandard = {
         "Football": "https://img.icons8.com/?size=100&id=65497&format=png&color=000000",
         "Horse Racing": "https://img.icons8.com/?size=100&id=LuhFumPGCq9L&format=png&color=000000"
