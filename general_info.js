@@ -115,6 +115,12 @@
         "Matchbook": "https://static.wixstatic.com/media/7a0e3a_c44a32e46bc34b6da0c9665311ed48b1~mv2.png"
     };
 
+    var exchangeLinks = {
+        "Betfair Exchange": 'https://www.betfair.com/exchange/plus/',
+        "Smarkets": "https://smarkets.com/",
+        "Matchbook": "https://www.matchbook.com/"
+    };
+
     var bookmakerLinks = {
         "10Bet": "https://www.10bet.co.uk/sports",
         "888Sport": "https://www.888sport.com/",
