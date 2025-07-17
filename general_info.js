@@ -52,9 +52,10 @@
     var sportIconUrlsStandard = {
         "Football": "https://img.icons8.com/?size=100&id=65497&format=png&color=000000",
         "Horse Racing": "https://img.icons8.com/?size=100&id=LuhFumPGCq9L&format=png&color=000000", 
-        "Tennis": "https://img.icons8.com/?size=100&id=108785&format=png&color=000000",
-        "Cricket": "https://img.icons8.com/?size=100&id=65497&format=png&color=000000", 
-        "Boxing": "https://img.icons8.com/?size=100&id=65497&format=png&color=000000"
+        "Golf": "https://img.icons8.com/?size=100&id=AVMZVnuizApd&format=png&color=000000", 
+        "Tennis": "https://img.icons8.com/?size=100&id=AF2FJWsPaMoY&format=png&color=000000",
+        "Cricket": "https://img.icons8.com/?size=100&id=12982&format=png&color=000000", 
+        "Boxing": "https://img.icons8.com/?size=100&id=RqQeO1sLIHFS&format=png&color=000000"
     };
 
     var bookmakerImages = {
