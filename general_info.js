@@ -43,7 +43,7 @@
 
     // FOR PROFIT TRACKERS
     var oddsmatcher_list = ['Manual', 'Standard', '2up', 'BOG', 'Each Way', 'Extra Place', 'Dutching']   
-    var calculator_list = ['No Calculator', 'Standard', '2up', 'Each Way','Extra Place', 'Dutching', 'Sequential Lay', 'Bonus']
+    var calculator_list = ['No Calculator', 'Standard', '2up', 'Each Way','Extra Place', 'Dutching', 'Sequential Lay', 'Bonus', 'Refund If']
 
 
 
