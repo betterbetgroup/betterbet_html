@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Better Bet 2up Filters</title>
+<link rel="stylesheet" href="https://betterbetgroup.github.io/betterbet_html/mobile_oddsmatchers/extra_place_matcher_filters/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<style >
+
+
+
+</style>
+</head>
+<body>
+
+
+    <div id="outer-container-div">
+
+
+
+        <div class="box box2" id="covering_filters">
+            <svg fill="#ffffff" height="150px" width="130px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_509_"> <path id="XMLID_510_" d="M65,330h200c8.284,0,15-6.716,15-15V145c0-8.284-6.716-15-15-15h-15V85c0-46.869-38.131-85-85-85 S80,38.131,80,85v45H65c-8.284,0-15,6.716-15,15v170C50,323.284,56.716,330,65,330z M180,234.986V255c0,8.284-6.716,15-15,15 s-15-6.716-15-15v-20.014c-6.068-4.565-10-11.824-10-19.986c0-13.785,11.215-25,25-25s25,11.215,25,25 C190,223.162,186.068,230.421,180,234.986z M110,85c0-30.327,24.673-55,55-55s55,24.673,55,55v45H110V85z"></path> </g> </g></svg>
+            <a class="upgrade-button">Upgrade to Premium <img src="https://img.icons8.com/?size=100&id=60654&format=png&color=ffffff" class="padlock-image-button" alt="Padlock" > </a>
+
+        </div>
+
+
+    <div id="filter-panel-container">
+        
+    
+    <div id="filter-panel">
+
+
+        <div class="filter-column">
+            
+                <div class="label_and_input_container">
+                    <label class="filter-label no-margin-top" for="bookmakers-select">Bookmakers</label>
+                    <div id="bookmakers-dropdown-select-container" class="custom-select-container" tabindex="0">
+                        <div class="custom-select-trigger">
+                            <input id="bookmakers-select" type="text" value="Bookmakers" readonly>
+                        </div>
+                        <div class="dropdown-options" id="bookmakers-dropdown-options">
+                            <label><input type="checkbox" checked class="select-all"> <span></span>Select All Bookmakers</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="label_and_input_container">
+
+                    <label class="filter-label no-margin-top" for="exchanges-select">Exchanges</label>
+                    <div id="exchanges-dropdown-select-container" class="custom-select-container" tabindex="0">
+                        <div class="custom-select-trigger">
+                            <input id="exchanges-select" type="text" value="Exchanges" readonly>
+                        </div>
+                        <div class="dropdown-options" id="exchanges-dropdown-options">
+                            <label><input type="checkbox" checked class="select-all"> <span></span>Select All Exchanges</label>
+                        </div>
+                    </div>
+
+                </div>
+        </div>
+
+
+        <div class="filter-column">
+
+            <div class="label_and_input_container">
+
+                    <label class="filter-label" for="date-range">Start Time</label>
+                    <select id="date-range" class="custom-input-container">
+                        <option value="">All</option>
+                        <option value="1h">Next Hour</option>
+                        <option value="12h">Next 12 Hours</option>
+                        <option value="24h">Next 24 Hours</option>
+                        <option value="today">Today</option>
+                        <option value="tomorrow">Tomorrow</option>
+                        <option value="today-tomorrow">Today and Tomorrow</option>
+                        <option value="3days">Next 3 Days</option>
+                    </select>
+            </div>
+
+            <div class="label_and_input_container">
+
+                    <label class="filter-label" for="min-liquidity">Min Liquidity</label>
+                    <div class="text-input-container">
+                        <input class="text-input" id="min-liquidity" placeholder="Min Liquidity" autocomplete="off">
+                    </div>
+            </div>
+
+
+
+        </div>
+
+
+        <div class="filter-column">
+
+
+            <div class="label_and_input_container">
+
+                <label class="filter-label" for="min-back-odds">Min E/W Odds</label>
+                <input class="text-input"  id="min-back-odds" placeholder="Min E/W Odds" autocomplete="off">
+
+            </div>
+            <div class="label_and_input_container">
+
+                <label class="filter-label" for="max-back-odds">Max E/W Odds</label>
+                <input class="text-input"  id="max-back-odds" placeholder="Max E/W Odds" autocomplete="off">
+
+            </div>
+
+
+        </div>
+        <div class="filter-column">
+
+            <div class="label_and_input_container">
+
+                <label class="filter-label" for="min-Implied Odds">Min Implied Odds</label>
+                <input class="text-input"  id="min-Implied Odds" placeholder="Min Implied Odds" autocomplete="off">
+
+            </div>
+            <div class="label_and_input_container">
+
+                <label class="filter-label" for="max-Implied Odds">Max Implied Odds</label>
+                <input class="text-input"  id="max-Implied Odds" placeholder="Max Implied Odds" autocomplete="off">
+
+            </div>
+
+
+        </div>
+
+        <div class="filter-column">
+
+            <div class="label_and_input_container">
+
+                <label class="filter-label" for="min-places">Min Places</label>
+                <input class="text-input"  id="min-places" placeholder="Min Places" autocomplete="off">
+
+            </div>
+            <div class="label_and_input_container">
+                
+                <label class="filter-label" for="min-extra_places">Min Extra Places</label>
+                <input class="text-input"  id="min-extra_places" placeholder="Min Extra Places" autocomplete="off">
+
+            </div>
+
+
+        </div>
+        <div class="filter-column">
+
+            <div class="label_and_input_container">
+
+            <label class="filter-label" for="min-qualifying-loss">Min QL</label>
+            <div class="text-input-container">
+                <input class="text-input"  id="min-qualifying-loss" placeholder="Min QL" autocomplete="off">
+            </div>
+
+            </div>
+            <div class="label_and_input_container">
+
+            <label class="filter-label" for="min-potential-profit">Min Profit</label>
+            <div class="text-input-container">
+                <input class="text-input"  id="min-potential-profit" placeholder="Min Profit" autocomplete="off">
+            </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+<script src="https://betterbetgroup.github.io/betterbet_html/general_info.js"></script>
+
+<script>
+    
+
+let is_premium_member = false;
+
+
+bookmakerImages = Object.fromEntries(
+    Object.entries(bookmakerImages)
+    .filter(([key]) => EXTRA_PLACE_BOOKMAKERS.includes(key))
+    .sort((a, b) => a[0].localeCompare(b[0])) 
+);
+
+exchangeImages = Object.fromEntries(
+    Object.entries(exchangeImages)
+    .filter(([key]) => EXTRA_PLACE_EXCHANGES.includes(key))
+    .sort((a, b) => a[0].localeCompare(b[0])) 
+);
+
+
+let globalFilters = {
+    bookmakers: Object.keys(bookmakerImages),
+    exchanges: Object.keys(exchangeImages),
+    startTime: '',
+    minLiquidity: null,
+    minBackOdds: null,
+    maxBackOdds: null,
+    minImpliedOdds: null,
+    maxImpliedOdds: null,
+    minPlaces: null,
+    minExtraPlaces: null,
+    minQualifyingLoss: null,
+    minPotentialProfit: null,
+};
+
+
+
+
+let customFilters = {
+
+'No Filter':
+
+        {
+            "bookmakers": Object.keys(bookmakerImages),
+            "exchanges": Object.keys(exchangeImages),
+            "startTime": "",
+            "minLiquidity": "null",
+            "minBackOdds": "null",
+            "maxBackOdds": "null",
+            "minImpliedOdds": "null",
+            "maxImpliedOdds": "null",
+            "minPlaces": "null",
+            "minExtraPlaces": "null",
+            "minQualifyingLoss": "null",
+            "minPotentialProfit": "null"
+        }
+
+}
+
+
+
+
+function check_if_dropdown_matches_global_filter_settings() {
+
+    let keys = Object.keys(customFilters)
+
+    filtersDropdown = document.querySelector('#filters-select');
+
+    remove_all_option_style();
+
+    let found_match = false;
+
+    keys.forEach((key) => {
+
+
+        let adjusted_global_filters = {
+                "bookmakers": globalFilters.bookmakers.slice(), 
+                "exchanges": globalFilters.exchanges.slice(), 
+                "startTime": globalFilters.startTime || "", 
+                "minLiquidity": globalFilters.minLiquidity || "null",
+                "minBackOdds": globalFilters.minBackOdds || "null",
+                "maxBackOdds": globalFilters.maxBackOdds || "null",
+                "minImpliedOdds": globalFilters.minImpliedOdds || "null",
+                "maxImpliedOdds": globalFilters.maxImpliedOdds || "null",
+                "minPlaces": globalFilters.minPlaces || "null",
+                "minExtraPlaces": globalFilters.minExtraPlaces || "null",
+                "minQualifyingLoss": globalFilters.minQualifyingLoss || "null",
+                "minPotentialProfit": globalFilters.minPotentialProfit || "null"
+            };
+    
+
+
+        if (deepEqual(customFilters[key], adjusted_global_filters)) {
+
+            filtersDropdown.value = key;
+
+            set_background_for_current_option(key)
+
+            found_match = true;
+
+        }
+
+
+    });
+
+
+    if (!found_match) {
+
+        filtersDropdown.value = 'Select Filter';
+
+    }
+
+
+}
+
+function set_input_values_using_filter(filters) {
+
+    function manageDropdownCheckboxes(dropdownId, selectedItems, selectAllText) {
+
+        const dropdown = document.getElementById(dropdownId);
+        const checkboxes = dropdown.querySelectorAll('input[type="checkbox"]:not(.select-all)');
+        const selectAllCheckbox = dropdown.querySelector('.select-all');
+
+        // Check all boxes if the list is empty
+        if (selectedItems.length === 0) {
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            selectAllCheckbox.checked = false; // Ensure the select-all box is checked
+        } else {
+            let allChecked = true;
+
+            checkboxes.forEach(checkbox => {
+                if (selectedItems.includes(checkbox.parentNode.textContent.trim())) {
+                    checkbox.checked = true;
+                } else {
+                    checkbox.checked = false;
+                    allChecked = false;
+                }
+            });
+
+            // Manage the select-all checkbox based on individual checkbox states
+            selectAllCheckbox.checked = allChecked;
+        }
+    }
+
+    // Apply filters for dropdowns with select-all functionality
+    manageDropdownCheckboxes('bookmakers-dropdown-options', filters.bookmakers, 'Select All Bookmakers');
+    manageDropdownCheckboxes('exchanges-dropdown-options', filters.exchanges, 'Select All Exchanges');
+
+
+    const startTimeSelect = document.getElementById('date-range');
+    startTimeSelect.value = filters.startTime || '';
+
+
+    function setInputValue(id, value) {
+        const input = document.getElementById(id);
+        input.value = value === 'null' ? '' : value;
+    }
+
+        setInputValue('min-liquidity', filters.minLiquidity);
+        setInputValue('min-back-odds', filters.minBackOdds);
+        setInputValue('max-back-odds', filters.maxBackOdds);
+        setInputValue('min-Implied Odds', filters.minImpliedOdds);
+        setInputValue('max-Implied Odds', filters.maxImpliedOdds);
+        setInputValue('min-places', filters.minPlaces);
+        setInputValue('min-extra_places', filters.minExtraPlaces);
+        setInputValue('min-qualifying-loss', filters.minQualifyingLoss);
+        setInputValue('min-potential-profit', filters.minPotentialProfit);
+
+}
+
+
+function function_that_takes_global_filters_and_appends_it_to_current_with_name(name_for_filter) {
+
+    let is_delete_option = false;
+
+    if (!name_for_filter) {
+        return {
+            filters_to_send: null,
+            is_delete: false
+        };
+    }
+
+    // Check if the filter name already exists and log the action
+    if (customFilters.hasOwnProperty(name_for_filter)) {
+        console.log("Duplicate filter name provided; updating existing filter.");
+        is_delete_option = true;
+    } else {
+        console.log("Adding new filter:", name_for_filter);
+    }
+
+
+    customFilters[name_for_filter] = {
+            "bookmakers": globalFilters.bookmakers.slice(), // Shallow copy
+            "exchanges": globalFilters.exchanges.slice(), // Shallow copy
+            "startTime": globalFilters.startTime || "", // Default to "null" if undefined or empty
+            "minLiquidity": globalFilters.minLiquidity || "null",
+            "minBackOdds": globalFilters.minBackOdds || "null",
+            "maxBackOdds": globalFilters.maxBackOdds || "null",
+            "minImpliedOdds": globalFilters.minImpliedOdds || "null",
+            "maxImpliedOdds": globalFilters.maxImpliedOdds || "null",
+            "minPlaces": globalFilters.minPlaces || "null",
+            "minExtraPlaces": globalFilters.minExtraPlaces || "null",
+            "minQualifyingLoss": globalFilters.minQualifyingLoss || "null",
+            "minPotentialProfit": globalFilters.minPotentialProfit || "null"
+        };
+
+    return {
+
+        filters_to_send: customFilters[name_for_filter],
+        is_delete: is_delete_option
+
+    }
+}
+
+
+function go_to_input_and_update_global_for_the_input(filterId) {
+
+    switch (filterId) {
+    
+    case 'bookmakers-dropdown-select-container':
+        globalFilters.bookmakers = getCheckedOptions('#bookmakers-dropdown-options');
+        break;
+    case 'exchanges-dropdown-select-container':
+        globalFilters.exchanges = getCheckedOptions('#exchanges-dropdown-options');
+        break;
+
+
+    case 'min-liquidity':
+        globalFilters.minLiquidity = parseFloat(document.getElementById('min-liquidity').value) || null;
+        break;
+    case 'min-back-odds':
+        globalFilters.minBackOdds = parseFloat(document.getElementById('min-back-odds').value) || null;
+        break;
+    case 'max-back-odds':
+        globalFilters.maxBackOdds = parseFloat(document.getElementById('max-back-odds').value) || null;
+        break;
+    case 'min-Implied Odds':
+        globalFilters.minImpliedOdds = parseFloat(document.getElementById('min-Implied Odds').value) || null;
+        break;
+    case 'max-Implied Odds':
+        globalFilters.maxImpliedOdds = parseFloat(document.getElementById('max-Implied Odds').value) || null;
+        break;
+    case 'min-places':
+        globalFilters.minPlaces = parseFloat(document.getElementById('min-places').value) || null;
+        break;
+    case 'min-extra_places':
+        globalFilters.minExtraPlaces = parseFloat(document.getElementById('min-extra_places').value) || null;
+        break;
+    case 'min-qualifying-loss':
+        let ql = parseFloat(document.getElementById('min-qualifying-loss').value);
+        globalFilters.minQualifyingLoss = isNaN(ql) ? null : ql;
+        break;
+    case 'min-potential-profit':
+        globalFilters.minPotentialProfit = parseFloat(document.getElementById('min-potential-profit').value) || null;
+        break;
+        
+    case 'date-range':
+        globalFilters.startTime = document.getElementById('date-range').value;
+        break;
+}
+
+    send_global_filters_to_wix();
+
+}
+
+
+function append_options_for_dropdowns() {
+
+    append_options_for_the_four_filter_dropdowns('#bookmakers-dropdown-options', Object.keys(bookmakerImages));
+    append_options_for_the_four_filter_dropdowns('#exchanges-dropdown-options', Object.keys(exchangeImages));
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function check_options_filter_border_bottom() {
+    const list_of_options = document.querySelectorAll('.dropdown-option-filter');
+
+    // First, ensure all options have a bottom border
+    list_of_options.forEach(option => {
+        option.style.borderBottom = '1px solid #444';
+    });
+
+    // Remove the border from the last option
+    if (list_of_options.length > 0) {
+        list_of_options[list_of_options.length - 1].style.borderBottom = 'none';
+    }
+}
+
+
+
+
+
+
+function parseDateAndTime(dateString) {
+    const [date, time] = dateString.split(' ');
+    const [day, month, year] = date.split('/');
+    const [hour, minute] = time.split(':');
+
+    const fullYear = parseInt(year, 10) + 2000; // Adjust based on your specific needs
+    return new Date(fullYear, parseInt(month, 10) - 1, parseInt(day, 10), parseInt(hour, 10), parseInt(minute, 10));
+}
+
+function parseDateAndTime_filterData(dateString) {
+    const [date, time] = dateString.split(' ');
+    const [day, month, year] = date.split('/');
+    const [hour, minute] = time.split(':');
+    return new Date(`20${year}`, month - 1, day, hour, minute);
+}
+
+
+
+
+
+
+
+function closeAllDropdowns() {
+    const dropdowns = document.querySelectorAll('.dropdown-options');
+    dropdowns.forEach(dropdown => {
+        dropdown.style.display = 'none';
+    });
+
+    let dropdown_corners = document.querySelectorAll('.custom-select-container');
+
+    dropdown_corners.forEach((dropdown) => {
+
+        dropdown.style.borderRadius = '5px';
+
+    });
+
+}
+
+
+function append_options_for_the_four_filter_dropdowns(containerId, optionsList) {
+    const container = document.querySelector(containerId);
+    optionsList.forEach(option => {
+        const label = document.createElement('label');
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.checked = true;
+        label.appendChild(input);
+        label.appendChild(document.createTextNode(option));
+        container.appendChild(label);
+    });
+}
+function getCheckedOptions(containerId) {
+    const container = document.querySelector(containerId);
+    const labels = container.querySelectorAll('label');
+    const checkedOptions = [];
+
+    labels.forEach(label => {
+        const checkbox = label.querySelector('input[type="checkbox"]');
+        if (checkbox && !checkbox.classList.contains('select-all') && checkbox.checked) {
+            checkedOptions.push(label.textContent.trim());
+        }
+    });
+
+    return checkedOptions;
+}
+
+
+function send_global_filters_to_wix() {
+
+    const message = {
+        type: 'Filter Change',
+        globalFilters: globalFilters,
+    };
+    window.parent.postMessage(message, '*'); 
+
+}
+
+
+
+
+function add_event_listener_for_upgrade() {
+
+    document.querySelector('.upgrade-button').addEventListener('click', () => {
+
+        const message = {
+            type: 'Upgrade',
+        };
+
+        window.parent.postMessage(message, '*'); 
+
+    });
+
+}
+
+
+function create_event_listeners_for_select_containers() {
+
+    const selectContainers = document.querySelectorAll('.custom-select-container');
+
+    selectContainers.forEach(container => {
+         
+        const selectAll = container.querySelector('.select-all');
+            const checkboxes = container.querySelectorAll('input[type="checkbox"]:not(.select-all)');
+
+
+            // EVENT LISTENERS FOR THE DROPDOWNS, FOR CLICKING AND VALUE CHANGES. IT JUST CALLS THE UPDATEGLOBALFILTERS FOR EACH, AND TOGGLES DISPLAY OF DROPDOWNS
+
+            selectAll.addEventListener('change', function() {
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = selectAll.checked;
+                });
+                updateGlobalFilters(container.id);
+            });
+
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    selectAll.checked = Array.from(checkboxes).every(c => c.checked);
+                    updateGlobalFilters(container.id);
+                });
+            });
+
+            container.addEventListener('click', (event) => {
+
+                event.stopPropagation(); // Stop the click from closing the dropdown immediately
+
+                if (container.querySelector('.dropdown-options').style.display == 'block') {
+                    container.querySelector('.dropdown-options').style.display = 'none';
+                    container.style.borderRadius = '5px';
+
+                } else {
+                closeAllDropdowns(); // Close all other dropdowns
+                container.querySelector('.dropdown-options').style.display = 'block'; // Show current dropdown
+                container.style.borderRadius = '5px 5px 0 0';
+                
+                }
+            });
+
+    });
+
+
+
+
+
+    document.addEventListener('click', (event) => {
+        if (!event.target.closest('.custom-select-container')) {
+            closeAllDropdowns();
+        }
+    });
+
+
+}
+
+function create_text_box_and_time_dropdown_event_listeners() {
+
+    const textInputs = document.querySelectorAll('.text-input');
+    textInputs.forEach(input => {
+        input.addEventListener('input', () => updateGlobalFilters(input.id));
+    });
+
+    const startTimeSelect = document.getElementById('date-range');
+    startTimeSelect.addEventListener('change', () => updateGlobalFilters(startTimeSelect.id));
+
+
+}
+function deepEqual(obj1, obj2) {
+
+    if (obj1 === obj2) {
+        return true;
+    }
+    if (obj1 == null || typeof obj1 != "object" || obj2 == null || typeof obj2 != "object") {
+        return false;
+    }
+
+    let keysA = Object.keys(obj1), keysB = Object.keys(obj2);
+    if (keysA.length != keysB.length) {
+        
+        return false;
+    }
+
+    for (let key of keysA) {
+        if (!keysB.includes(key) || !deepEqual(obj1[key], obj2[key])) {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+
+function remove_all_option_style() {
+    let option_divs = document.querySelectorAll('.dropdown-option-filter');
+    option_divs.forEach((option) => {
+        // Remove the active class from all options
+        option.classList.remove('active');
+    });
+}
+
+function set_background_for_current_option(name) {
+    // Ensure all styles are reset first
+    remove_all_option_style();
+
+    let option_divs = document.querySelectorAll('.dropdown-option-filter');
+    option_divs.forEach((option) => {
+        if (option.dataset.value == name) {
+            // Add the active class to the matching option
+            option.classList.add('active');
+        }
+    });
+}
+
+
+
+
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    append_options_for_dropdowns();
+
+    create_event_listeners_for_select_containers();
+
+    create_text_box_and_time_dropdown_event_listeners();
+
+    add_event_listener_for_upgrade();
+
+});
+
+
+
+
+
+
+function updateGlobalFilters(filterId) {
+
+    go_to_input_and_update_global_for_the_input(filterId);
+
+}
+
+
+
+function append_global_filters_to_options(name_for_filter) {
+
+    return function_that_takes_global_filters_and_appends_it_to_current_with_name(name_for_filter)
+
+}
+
+
+
+function apply_custom_filters_from_dropdown(filters) {
+
+    set_input_values_using_filter(filters);
+
+}
+
+
+window.addEventListener('message', (event) => {
+    
+    const data = event.data;
+
+    if (data.updated_filters) {
+        apply_custom_filters_from_dropdown(data.updated_filters)
+    }
+    if (data.is_premium) {
+        is_premium_member = data.is_premium;
+        apply_container_changes();
+    } 
+    
+});
+
+
+
+function apply_container_changes() {
+
+    if (is_premium_member) {
+
+        const box_for_covering_filters = document.querySelector('#covering_filters')
+        box_for_covering_filters.style.display = 'none';
+
+    } else {
+
+        const box_for_covering_filters = document.querySelector('#covering_filters')
+        box_for_covering_filters.style.display = 'flex';
+
+    }
+
+}
+
+
+
+
+ 
+</script>
+
+</body>
+</html>

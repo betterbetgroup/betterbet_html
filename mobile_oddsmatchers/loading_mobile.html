@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Oddsmatcher Place Holder Row</title>
+
+<style >
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    justify-content: center;  
+    height: 354px;
+    display: flex;
+    padding: 0;
+
+}
+
+
+.neon-pulse {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    perspective: 1000px;
+    animation: rotatePulse 2s linear infinite; 
+}
+
+.neon-bar {
+    width: 15px;
+    height: 60px;
+    background: #ff00c6;
+    box-shadow: 0px 0px 20px rgba(255, 0, 198, 0.8); 
+    border-radius: 5px;
+    transform-origin: center bottom;
+    animation: neonGrow 1s ease-in-out infinite;
+}
+
+
+@keyframes neonGrow {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.5); 
+    }
+}
+
+@keyframes rotatePulse {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #0a0010, #330033, #0a0010);
+    background-size: 400% 400%;
+    animation: bgAnimation 8s ease infinite;
+    color: white;
+    width: 150%;
+    border: 1px solid #121212;
+    height: 354px;
+}
+
+.content_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    text-align: center;
+}
+
+@keyframes bgAnimation {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+.loading-text {
+    margin-top: 50px;
+    font-size: 22px;
+    color: #ff00c6;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-in-out infinite;
+}
+
+
+
+
+
+
+#content {
+    opacity: 0;
+    animation: contentFadeIn 2s forwards;
+    color: white;
+    width: 500px;
+    height: 354px;
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: center;
+    
+}
+
+@keyframes contentFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+  
+    
+    
+</style>
+
+
+</head>
+    <body>
+
+        <div id="content">
+            <div class="loading">
+                <div class="content_container">
+                    <div class="neon-pulse">
+                        <div class="neon-bar"></div>
+                        <div class="neon-bar"></div>
+                        <div class="neon-bar"></div>
+                        <div class="neon-bar"></div>
+                    </div>
+                        <h2 class="loading-text">Collecting Bookmaker Data...</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

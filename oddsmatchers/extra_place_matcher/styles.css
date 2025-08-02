@@ -1,0 +1,1642 @@
+@media (max-width: 2499px) {
+
+
+* {
+    box-sizing: border-box; /* Ensures padding and border are included in the width and height */
+}
+
+
+body {
+    background: rgb(0, 0, 0);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding: 1.43vw;
+    margin: 0;
+    justify-content: center;  
+    min-height: 100vh;        /* Ensures the body is at least the height of the viewport */
+    align-items: center;
+    display: flex;
+
+}
+
+
+#outer-container-div {
+    background: none;
+    color: white;
+    font-family: 'Arial', sans-serif;
+    padding: 1.43vw;
+    padding-left: 0.36vw;
+    padding-right: 0.36vw;
+    margin: 0 auto;
+    justify-content: center;  
+    align-items: center;
+    width: 100%;
+    padding-bottom: 11.52vw;
+    padding-top: 0;
+}
+
+#container-div {
+    display: flex;
+    width: 100%;
+
+}
+
+
+
+
+
+
+
+/* Neon Pulse Bars */
+.neon-pulse {
+    position: relative;
+    width: 7.14vw;
+    height: 7.14vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    perspective: 71.43vw;
+    animation: rotatePulse 2s linear infinite; /* Rotating neon bars */
+ }
+ 
+ 
+ .neon-bar {
+    width: 1.07vw;
+    height: 4.29vw;
+    background: #ff00c6;
+    box-shadow: 0.00vw 0.00vw 1.43vw rgba(255, 0, 198, 0.8); /* Neon pink glow */
+    border-radius: 0.36vw;
+    transform-origin: center bottom;
+    animation: neonGrow 1s ease-in-out infinite;
+ }
+ 
+ 
+ /* Keyframes for the growing and shrinking effect */
+ @keyframes neonGrow {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.5); /* Grow the bars */
+    }
+ }
+ 
+ 
+ /* Keyframes for rotating the bars */
+ @keyframes rotatePulse {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); /* Full rotation */
+    }
+ }
+ 
+ 
+ /* Background with a glowing gradient */
+ .loading, .no-data-div {
+    height: 21.43vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #0a0010, #330033, #0a0010);
+    background-size: 400% 400%;
+    animation: bgAnimation 8s ease infinite;
+    color: white;
+    width: 100%;
+ }
+ 
+ 
+ .no-data-div {
+    background: linear-gradient(270deg, #0a0010, #0c0033, #0a0010);
+    height: 10.71vw;
+    padding: 2vw 4vw;
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ /* Smooth gradient animation */
+ @keyframes bgAnimation {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+ }
+ 
+ 
+ /* Loading text styling */
+ .loading-text {
+    margin-top: 2.86vw;
+    font-size: 1.71vw;
+    color: #ff00c6;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-in-out infinite;
+ }
+ 
+ 
+ .no-data-text {
+    margin: 0;
+    color: white;
+ }
+ 
+
+
+/*
+
+
+// NEW SETTINGS FOR CONTENT
+
+
+*/
+/* Hide loading screen and show content after load */
+#content {
+    opacity: 0;
+    animation: contentFadeIn 2s forwards;
+    text-align: center;
+    color: white;
+}
+
+@keyframes contentFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+#content {
+    width: 100%; 
+}
+table {
+    border-collapse: collapse;
+    margin: 1.43vw auto;
+    background: #121212;
+    border: 0.07vw solid #121212;
+    border-radius: 0.86vw;
+    box-shadow: 0 0.57vw 1.14vw rgba(0,0,0,0.6);
+    overflow: hidden;
+    transition: box-shadow 0.3s;
+    width: 100%;
+    margin-top: 2.5vw;
+ 
+ }
+ 
+ 
+ 
+ 
+ table:hover {
+    box-shadow: 0 0.86vw 1.71vw rgba(0,0,0,0.8); /* Enhanced hover effect */
+ }
+ 
+ 
+ th, td {
+    padding: 1.07vw 0.71vw; /* More balanced padding */
+    text-align: center; /* Center alignment for better readability */
+    border-bottom: 0.00vw solid #555; /* Slightly lighter border for rows */
+ 
+ 
+ }
+ 
+ 
+ .table-header {
+    background: linear-gradient(180deg, #000000, #121212);
+    border-radius: 0.86vw 0.86vw 0 0; /* top-left, top-right, bottom-right, bottom-left */
+    height: 5.43vw;
+    position: relative;  
+    z-index: 1;
+ }
+ th {
+ 
+ 
+    color: #eee; /* Icy blue for clarity and visual appeal */
+    font-size: 1.00vw;
+    font-weight: bold;
+    text-shadow: 0.07vw 0.07vw 0.07vw black; /* Text shadow for depth */
+    border-right: 0.00vw solid #666;
+ 
+
+ }
+ td {
+    background: #222; /* Horizontal gradient for a glossy header */
+    color: #ddd;
+    font-size: 0.86vw;
+    transition: background-color 0.3s; /* Smooth transition for hover */
+ }
+ tr:last-child td {
+    border-bottom: none;
+ }
+ 
+ 
+ tbody tr:nth-child(even) td {
+    background-color: #222; /* Darker shade */
+ }
+ 
+ 
+ tbody tr:nth-child(odd) td {
+    background-color: #1e1e1e; /* Lighter shade */
+ }
+ 
+ 
+ tbody tr:hover td {
+    background-color: #333; /* Subtle hover effect for cells */
+ }
+ 
+ 
+ 
+
+#rating_header {
+    width: 4.29vw;
+    padding: 0;
+    padding-top: 0.93vw;
+}
+
+
+#extra_places_header {
+    width: 4.29vw;
+    padding: 0;
+}
+
+#outcome_header, #fixture_header {
+    max-width: 15.71vw;
+}
+
+
+
+
+.rating_header_span, .extra_places_header_span {
+    margin-bottom: 1.43vw;    
+}
+
+
+#fixture_info_header {
+    width: 2.86vw;
+}
+
+#date_and_time_header {
+    width: 4.29vw;
+    padding: 0;
+    padding-top: 0.93vw;
+
+
+}
+
+#expected_profit_header {
+    width: 10.36vw;
+    padding: 0;
+    padding-top: 0.93vw;
+    padding-left: 0.14vw;
+    padding-right: 0.14vw;
+
+    
+}
+td[id^='date_time_'] {
+
+line-height: 135%;
+padding-top: 0.00vw;
+padding-bottom: 0.00vw;
+
+}
+
+
+div[class='expected_profit_data'] {
+    display: flex;  
+    align-items: center;  
+    justify-content: space-around; 
+    padding: 0;
+    margin: 0;
+    height: 4.64vw;
+}
+
+.negative_profit_data, .positive_profit_data {
+    flex: 1;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+    height: 4.64vw;
+    font-size: 0.86vw;
+    display: grid;
+    line-height: 4.64vw;
+
+}
+
+
+
+
+
+
+div[class='odds_and_bookmaker'] {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    height: 4.64vw;
+}
+
+td[class='odds_and_bookmaker'] {
+    background: #222;
+    background: linear-gradient(145deg, #141313, #1e1d1d); /* Horizontal gradient for a glossy header */
+
+}
+
+
+
+#win_lay_odds_and_bookmaker, #place_lay_odds_and_bookmaker {
+
+    background: linear-gradient( 145deg, rgba(84, 8, 84, 0.2), rgb(224, 46, 224, 0.2)); /* A green to light green gradient */
+
+}
+
+
+
+#back_each_way_odds_and_bookmaker {
+
+    background-color: rgba(37, 71, 221, 0.15);
+    background: linear-gradient( 145deg, rgba(23, 46, 144, 0.15), rgba(60, 90, 223, 0.12)); /* A green to light green gradient */
+
+}
+
+
+.no_padding_margin {
+    padding: 0;
+    margin: 0;
+}
+
+
+.back_odds_value {
+    background: linear-gradient( 145deg, #007bff, #5396de); /* A green to light green gradient */
+    display: flex;
+    align-items: center;  
+    justify-content: center;  
+
+}
+
+.lay_odds_value {
+    background: linear-gradient( 145deg, rgb(225, 104, 124), rgb(230, 127, 144)); /* A green to light green gradient */
+    display: flex;
+    align-items: center;  
+    justify-content: center;  
+
+}
+
+
+
+
+
+
+.div_around_logo {
+    display: inline-block; 
+    width: 7.86vw;
+}
+
+.bookmaker_logo_img, .exchange_logo_img {
+
+display: flex;
+align-items: center;  
+justify-content: space-around; 
+transition: all 0.3s ease;
+width: 100%;
+border-radius: 0.36vw;
+box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+
+
+}
+
+
+.bookmaker_logo_img:hover, .exchange_logo_img:hover {
+
+    box-shadow: 0.00vw 0.43vw 0.86vw rgba(0, 0, 0, 0.4); /* Stronger shadow on hover */
+
+}
+
+
+.back_odds_value, .bookmaker_logo_div, .lay_odds_value, .exchange_logo_div {
+    flex: 1;
+    justify-content: space-evenly;
+    align-items: center;
+    font-weight: bold;
+    height: 4.64vw;
+    display: grid;
+
+}
+
+
+
+
+
+
+.back_odds_value, .lay_odds_value {
+    margin-left: 0.57vw;
+    margin-right: 0.5vw;
+    display: flex;
+    color: white;              
+    width: 2.50vw;              
+    height: 1.43vw;   
+
+    box-shadow: 0.00vw 0.14vw 0.43vw rgba(0, 0, 0, 0.2); 
+    line-height: normal;
+    border-radius: 0.36vw;        
+
+    transition: background 0.3s, transform 0.3s;
+
+    max-width: 2.50vw;
+
+    font-size: 0.80vw;
+
+}
+
+
+
+.at_symbol, .and_symbol {
+
+    display: none;
+    align-items: center;
+    font-size: 1.00vw;
+}
+
+.and_symbol {
+   display: flex;
+
+}
+
+.bookmaker_logo_div, .exchange_logo_div {
+    padding: 0;
+    margin: 0;
+    margin-right: 0.57vw;
+    max-width: 7.86vw;
+                           
+}
+
+
+
+
+.positive_profit_data {
+    background: linear-gradient( 145deg, #00ab00, #27d427); /* A green to light green gradient */
+    color: white;
+    transition: background 0.3s ease-in-out;
+
+}
+.negative_profit_data {
+    background: linear-gradient( 145deg, #e40000, #ec4747); /* A red to orange gradient */
+    color: white; /* Ensures text is readable */
+    transition: background 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+
+
+
+
+#button-container {
+    display: flex;        /* Enable flexbox */
+    flex-direction: column; /* Stack children vertically */
+    padding: 0;
+    margin: 0;
+    margin-left: 0.6%;
+    background: none;
+    width: auto;
+}
+
+
+
+#info-container {
+    width: 2.86vw;
+    background: None;
+    margin-right: 0.14vw;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.select_button {
+    width: 6vw;
+    height: 2.2vw;
+    background: linear-gradient( 145deg, #ff00c6, #ff00c6); 
+    border-radius: 0.71vw;
+    color: white;
+    font-size: 1vw;
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); 
+    border: 0;
+    font-weight: bold;
+}
+
+
+.select_button:hover {
+    cursor: pointer;
+    box-shadow: 0.00vw 0.36vw 0.71vw rgba(0, 0, 0, 0.4); 
+}
+
+.info_button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    background: None;
+    height: 2.5vw;
+    width: 2.5vw;
+
+
+}
+
+#more_info_button:hover {
+    cursor: pointer;
+}
+
+
+
+td[id^='fixture_'] {
+    padding-top: 0.07vw;
+    padding-bottom: 0.07vw;
+}
+
+td[id^='outcome'] {
+    padding-top: 0.07vw;
+    padding-bottom: 0.07vw;
+}
+
+
+
+
+
+[data-tooltip] {
+    position: relative;
+    cursor: pointer;
+}
+
+[data-tooltip]::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 100%;
+    white-space: nowrap;
+    background-color: black;
+    color: white;
+    padding: 0.36vw 0.71vw;
+    border-radius: 0.43vw;
+    font-size: 1.00vw;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+    z-index: 1; /* Ensure it's above other elements */
+}
+
+[data-tooltip]:hover::after {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+
+#pagination-container {
+    background: linear-gradient(180deg, #000000, #121212);
+    width: 30.00vw;
+    justify-self: center;
+    border-radius: 0.86vw;
+    border: 0.07vw solid #121212;
+    height: 3.21vw;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#pagination-container button {
+    width: 5.71vw;
+    height: 100%;
+    background: 0;
+    color: #fff;
+    border-radius: 0.36vw;
+    cursor: pointer;
+    margin: 0 0.71vw;
+    transition: all 0.3s ease;
+    font-weight: bold; 
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+#pagination-info {
+    text-shadow: 0.14vw 0.14vw 0.14vw black;
+    font-size: 1.00vw;
+    padding: 0;
+    margin: 0;
+}
+
+#prev-page, #next-page {
+    font-size: 1.00vw;
+}
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.not_premium_member_row {
+    padding: 0;
+    margin: 0;
+    padding: 1.43vw;
+    background: linear-gradient(180deg, #000000, #121212);
+    padding-top: 0.71vw;
+    padding-bottom: 0.71vw;
+    transition: all 0.3s ease;
+ }
+ 
+ 
+ .outer_div_upgrade {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0 1.43vw;
+ }
+ 
+ 
+ .outer_div_upgrade_text_row {
+    flex-grow: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1.4vw;
+    line-height: normal;
+    font-weight: bold;
+ }
+ 
+ 
+ .padlock-image {
+    width: 5.71vw;
+    height: 5.71vw;
+    margin: 0 5%;
+ }
+ 
+ 
+ .upgrade-button {
+    background: linear-gradient( 145deg, #d61b0a, #d61b0a);
+    color: white;
+    border: None;
+    padding: 0.75vw 3.2vw;    
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.25vw;
+    border-radius: 2.14vw;
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+ 
+ .upgrade-button:hover {
+    box-shadow: 0 0.57vw 1.14vw rgba(0, 0, 0, 0.4);
+ }
+ 
+ 
+ 
+ 
+ .not_premium_member_row:hover {
+    background-color: #222;
+ 
+ 
+ }
+ 
+ 
+ .padlock-image-button {
+ 
+    width: 2vw; 
+    height: auto;  
+    margin-left: 1.25vw;
+
+ }
+ 
+
+
+
+
+
+
+
+
+
+
+
+td[id^='rating_'] {
+
+    color: white;
+    font-weight: bold;
+    padding: 0.71vw 0.57vw;
+
+}
+
+
+
+
+#sort_by_img_rating {
+
+    width: 1.57vw;
+    padding-top: 0.21vw;
+}
+
+
+
+
+#sort_by_img_dt, #sort_by_img_ql, #sort_by_img_pp {
+    width: 1.57vw;
+    padding-top: 0.21vw;
+}
+
+
+
+
+.next_to_date_and_time {
+    padding: 0.00vw;
+    margin: 0.00vw;
+    padding-top: 0.14vw;
+
+}
+
+.container_in_expected_profit_header {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+
+.sort_by {
+    transition: all 0.3s ease;
+
+}
+
+
+.sort_by:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+
+}
+
+
+
+
+
+
+#filter-panel-container, #above-columns-container {
+    width: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+    color: #eee;
+    margin: 0;
+    border-radius: 0.86vw;
+    padding-top: 0.00vw;
+    background: #0b0b0b;
+}
+
+#filter-panel-container {
+    height: 13.16vw;
+    margin-top: 2.5vw;
+    padding-bottom: 0.22vw;
+    display: none;
+}
+
+
+
+
+
+
+.box {
+    position: absolute;
+    width: 100%;
+    padding: 0.71vw;
+    height: 7.14vw;
+    display: none;
+    flex-direction: column; /* Change to column to stack elements vertically */
+    left: 0;
+    right: 0;
+    align-items: center;
+    vertical-align: middle;
+    justify-content: center;
+    
+
+  }
+ 
+  .box2 {
+    background-color: rgb(0, 0, 0);
+    height: 17.86vw;
+    margin: 0 auto;
+
+}
+.box2 {
+    z-index: 5;
+    background-color: transparent; /* No background here */
+}
+.box2::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgb(0, 0, 0);
+    border-radius: 0.86vw;   
+    opacity: 75%;
+    z-index: -1; /* Behind the content */
+}
+
+.padlock-image-filters {
+    width: 7.14vw;
+    height: 7.14vw;
+    opacity: 1; /* Full opacity */
+}
+
+
+
+
+
+
+
+
+
+#filter-panel {
+    width: 100%;
+    padding: 0.71vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+
+
+
+
+
+
+.filter-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+    padding: 0.36vw;
+    margin-left: 0.71vw;
+}
+
+.custom-select-container, .custom-input-container {
+    position: relative;
+    width: calc(100% - 0.71vw); /* Adjust width to fit padding */
+    background: #333;
+    border: 0.07vw solid #444;
+    border-radius: 0.36vw;
+    padding: 0.71vw;
+    color: #eee;
+    margin: 0.36vw 0;
+    cursor: pointer;
+    height: 2.86vw; /* Set a fixed height to match the dropdowns */
+    align-items: center;
+    outline: none; /* Remove focus outline */
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+    font-size: 1.04vw;
+    display: flex;
+}
+
+.custom-select-container:hover, .custom-input-container:hover {
+
+    box-shadow: 0.00vw 0.43vw 0.71vw rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+
+}
+
+
+
+.custom-select-trigger, .custom-input-trigger, .custom-select-trigger-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    cursor: pointer;
+}
+
+.custom-select-trigger input, .custom-input-trigger input, .custom-select-trigger-filter input {
+    width: 100%;
+    background: none;
+    border: none;
+    color: #eee;
+    padding-left: 0.36vw;
+    outline: none; /* Remove focus outline */
+    cursor: pointer; /* Ensure pointer cursor */
+    font-size: 1.04vw;
+
+}
+
+.custom-select-trigger input:hover, .custom-select-trigger input:focus, .custom-select-trigger-filter input:hover, .custom-select-trigger-filter input:focus {
+    cursor: pointer; /* Ensure pointer cursor on hover and focus */
+
+}
+
+.custom-select-trigger:after, .custom-input-trigger select, .custom-select-trigger-filter:after {
+    content: '\25BC'; /* Down arrow icon */
+    color: #eee;
+    pointer-events: none;
+    position: absolute;
+    right: 0.71vw;
+}
+
+
+
+
+
+
+
+.custom-select-trigger-filter input {
+
+    font-size: 1.14vw;
+    font-weight: bold;
+    color: white;
+
+}
+
+
+
+
+
+
+
+.dropdown-options {
+    position: absolute;
+    top: 100%;
+    background: #333;
+    border-radius: 0 0 0.57vw 0.57vw;
+    width: calc(100% + 0.14vw);
+    overflow: hidden;
+    display: none;
+    max-height: 14.29vw;
+    overflow-y: auto;
+    box-shadow: 0 0.29vw 0.86vw rgba(0, 0, 0, 0.4);
+    border: 0.07vw solid #444; /* Slight border */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+.dropdown-options label {
+    display: flex;
+    align-items: center;
+    padding: 0.71vw 1.07vw;
+    padding-right: 2.14vw; /* Increase padding to accommodate the scrollbar */
+    cursor: pointer;
+    border-bottom: 0.07vw solid #444;
+}
+
+.dropdown-options label:last-child {
+    border-bottom: none; /* Remove border for the last item */
+}
+
+.dropdown-options label:hover, .dropdown-option-filter:hover {
+    background-color: #444; /* Slight hover effect */
+}
+
+
+
+
+.dropdown-option-filter {
+    display: flex;
+    align-items: center;
+    padding: 0.71vw 1.07vw;
+    padding-right: 1.57vw;; /* Increase padding to accommodate the scrollbar */
+    cursor: pointer;
+    border-bottom: 0.07vw solid #444;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.dropdown-options-filter {
+
+    position: absolute;
+    top: 100%;
+    background: #333;
+    border-radius: 0 0 0.57vw 0.57vw;
+    width: 22.86vw;
+    overflow: hidden;
+    display: none;
+    max-height: 14.29vw;
+    overflow-y: auto;
+    box-shadow: 0 0.29vw 0.86vw rgba(0, 0, 0, 0.4);
+    z-index: 3; /* Ensure dropdown is always on top */
+    transition: all 0.3s ease; /* Smooth transition */
+    border: 0.07vw solid #444; /* Slight border */
+
+
+}
+
+
+.dropdown-options {
+    position: absolute;
+    background: #333;
+    color: #fff;
+    width: calc(100% + 0.14vw);
+    box-shadow: 0 0.14vw 0.36vw rgba(0,0,0,0.5);
+    z-index: 2;
+    display: none; /* Initially hidden */
+    left: -0.07vw;
+}
+
+.dropdown-option-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    width: 22.86vw;
+}
+
+.filter-delete-button {
+    padding: 0.36vw 0.71vw;
+    font-size: 0.86vw;
+    background: linear-gradient(145deg, #ae0404, #e62828);
+    transition: all 0.3s ease; /* Smooth transition */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.36vw;
+    align-self: right;    
+}
+
+.filter-delete-button:hover {
+    background: linear-gradient(145deg, #f40a0a, #d73d3d);
+}
+
+
+
+
+.confirm-delete-button {
+    padding: 0.36vw 0.71vw;
+    font-size: 0.86vw;
+    background: linear-gradient(145deg, #0303d9, #0b149b);
+    transition: all 0.3s ease; /* Smooth transition */
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.36vw;
+    align-self: right;   
+    display: none; 
+}
+
+.confirm-delete-button:hover {
+    background: linear-gradient(145deg, #0303d9, #1b26c1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+
+    REMOVE ALL
+
+    OF THE
+
+    CSS WITH CHECKBOX IN IT
+
+    AND COPY AND PASTE
+
+    THE FOLLOWING 
+
+*/
+
+input[type="checkbox"] {
+
+    padding-left: 0;
+    margin-right: 0.71vw;
+    
+}
+
+
+
+.dropdown-options label {
+
+    padding-left: 0.36vw;
+    padding-right: 0.86vw;
+    padding-top: 0.57vw;
+    padding-bottom: 0.57vw;
+    font-size: 13.0.21vw;    
+
+
+}
+
+
+
+
+
+
+
+.text-input {
+    width: calc(100% - 0.71vw); /* Adjust width to fit padding */
+    padding: 0.71vw;
+    border-radius: 0.36vw;
+    background: #333;
+    color: #eee;
+    margin: 0.36vw 0;
+    height: 2.86vw; /* Set a fixed height to match the dropdowns */
+    outline: none; /* Remove focus outline */
+    border: 0.07vw solid #444;
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+    font-size: 1.04vw;
+
+
+}
+
+input[id="min-liquidity"], input[id="min-qualifying-loss"], input[id="min-potential-profit"] {
+    width: calc(100% - 0.71vw); /* Adjust width to fit padding */
+    padding: 0.71vw;
+    border: 0.07vw solid #444;
+    border-radius: 0.36vw;
+    background: #333;
+    color: #eee;
+    margin: 0.36vw 0;
+    height: 2.86vw; /* Set a fixed height to match the dropdowns */
+    outline: none; /* Remove focus outline */
+    position: relative;
+    padding-left: 2.91vw; 
+    font-size: 1.04vw;
+}
+
+.text-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+}
+
+#filters_padlock {
+    height: 6.42vw;
+    width: 6.42vw;
+}
+
+.text-input-container:before {
+    content: '£';
+    position: absolute;
+    color: #eee;
+    font-size: 1.57vw;
+    z-index: 1; /* Ensure dropdown is always on top */
+    background: linear-gradient(to right, #000000, #1d1b1b); /* Brighter hover state */
+    height: 2.72vw;
+    width: 2.20vw;
+    border-bottom-left-radius: 0.36vw;
+    border-top-left-radius: 0.36vw;
+    font-weight: bold;
+    border: 0.07vw solid #444;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.text-input:hover {
+    box-shadow: 0.00vw 0.43vw 0.71vw rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+
+}
+
+
+.filter-label {
+    font-size: 0.86vw;
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 0.36vw;
+    margin-top: 0.71vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.above-columns {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 8.8vw;
+    width: 100%;
+    background: 0;
+    border-top-right-radius: 1.43vw;
+    border-top-left-radius: 1.43vw;
+
+    
+}
+
+.save-filter-button, .get-alerts-button, .confirm-filter-name, .refresh_results {
+    background: linear-gradient( 145deg, #ff00c6, #ff00c6); 
+    width: 16.29vw;
+    border-radius: 0.71vw;
+    color: white;
+    font-size: 1.14vw;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    height: 2.86vw;
+    font-weight: bold;
+    border: 0;
+}
+
+.refresh_results {
+    width: 14.29vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.refresh_results_img {
+    width: 1.5vw;
+    margin-left: 0.51vw;
+}
+
+
+.cancel-making-filter {
+
+    border-radius: 7.14vw;
+    height: 2.50vw;
+    width: 2.50vw;
+    transition: background 0.3s, transform 0.3s;
+    color: #eee;
+    font-size: 1.57vw;
+    background: #333;
+    margin: 0.36vw 0;
+    border: 0.07vw solid #444;
+    margin: 0;
+    padding: 0;
+    margin-left: 1.07vw;
+    align-items: center;
+    justify-content: center;
+    display: none;
+}
+
+.get-alerts-button {
+    background: linear-gradient(145deg, #5165F6, #5165F6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 13.29vw;
+}
+
+
+.save-filter-button {
+    margin-left: 1.55vw;
+    margin-right: 1.55vw;
+}
+.confirm-filter-name {
+
+    width: 8.57vw;
+    background: linear-gradient(to right, #057001, #057001); 
+    display: none;
+
+}
+
+.cancel-making-filter:hover {
+
+    cursor: pointer;
+
+
+}
+
+.custom-select-container-filter {
+
+    position: relative;
+    background: #333;
+    border: 0.07vw solid #444;
+    color: #eee;
+    padding: 0.71vw;
+    padding-top: 0.14vw;
+    padding-bottom: 0.14vw;
+    cursor: pointer;
+    height: 2.86vw; /* Set a fixed height to match the dropdowns */
+    align-items: center;
+    outline: none; /* Remove focus outline */
+    width: 22.86vw;
+    font-size: 1.14vw;
+    font-weight: bold;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center;
+    border-radius: 0.71vw;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.filter-dropdown-name-div {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin-bottom: 1.25vw;
+    margin-right: 0.71vw;
+    display: none;
+}
+
+
+.get_alerts_img {
+    width: 1.6vw;
+    margin-left: 0.41vw;
+}
+
+
+
+
+.filter-label-filters {
+    font-size: 0.86vw;
+    color: #ffffff;
+    font-weight: bold;
+    margin-left: 0.36vw;
+    margin-bottom: 0.36vw;
+    text-align: left;
+}
+
+
+.div-outside-filter-dropdown {
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1.25vw;
+
+    z-index: 6;
+    
+}
+
+
+.text-input-filter-name {
+
+    width: 21.43vw; /* Adjust width to fit padding */
+    padding: 0;
+    padding-left: 0.71vw;
+    border-radius: 0.71vw;
+    background: #333;
+    color: white;
+    height: 2.86vw; /* Set a fixed height to match the dropdowns */
+    outline: none; /* Remove focus outline */
+    border: 0.07vw solid #444;
+    box-shadow: 0 0.29vw 0.57vw rgba(0, 0, 0, 0.3); /* Subtle but more pronounced shadow */
+    font-size: 1.14vw;
+
+
+}
+
+.text-input-filter-name:hover {
+
+    box-shadow: 0.00vw 0.43vw 0.71vw rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
+
+}
+
+
+
+.dropdown-option-filter {
+    background: #333; /* Default background */
+    transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dropdown-option-filter:hover {
+    background: #444; /* Hover background */
+}
+
+.dropdown-option-filter.active {
+    background: #252424; /* Active background */
+    border-left: 0;
+}
+
+.dropdown-option-filter.active:hover {
+    background: #252424; /* Active background */
+}
+
+
+
+.odds-link {
+    color: inherit; /* Inherits the text color from the parent */
+    text-decoration: none; /* Removes underline */
+    display: inline-block; /* Keeps the layout inline */
+    width: 100%; /* Ensures the link covers the full width of its container */
+}
+
+
+
+
+
+
+#back_odds_header {
+
+    width: 12.86vw;    
+
+
+}
+
+
+
+
+#lay_odds_header, #place_lay_odds_header {
+    width: 8.57vw;
+
+
+}
+#fixture_header {
+    text-align: left;
+ }
+ #fixture_header, .fixture_data, #outcome_header, .outcome_data  {
+    text-align: left;
+ }
+ .highlight {
+    background-color: #333 !important;  /* Ensuring it overrides other background-color settings */
+ }
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 5.72vw; 
+    height: 2.86vw; 
+    margin-right: 1.55vw;
+  }
+  
+  .switch:hover {
+      cursor: pointer
+  }
+  
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #bbb; /* Off state color */
+    transition: .4s;
+    border-radius: 1.714vw; /* Round borders for the slider */
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 2.5743vw; /* Diameter of the circle */
+    width: 2.5743vw; /* Diameter of the circle */
+    left: 0.142vw;
+    bottom: 0.142vw;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%; /* Circular shape for the toggle */
+  }
+  
+  input:checked + .slider {
+    background-color: #ff00c6; /* Pink color when the switch is ON */
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(2.86vw); /* Move the toggle on switch activation */
+  }
+
+  .switch_container {
+
+    align-content: center;
+    display: flex;
+    justify-content: center;
+
+}
+  
+
+
+.div-outside-switch {
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1.25vw;
+}
+  
+
+
+#data_timer {
+    margin-left: 1.55vw;
+    margin-right: 1.55vw;
+    font-size: 1.54vw;
+    font-weight: bold;
+}
+
+
+
+.blurred_tbody {
+    filter: blur(4px);
+    pointer-events: none; 
+    user-select: none;
+}
+
+
+
+
+}
+
+@media (width: 2500px) {
+    * {
+        width: 1px;
+        height: 1px;
+    }
+}

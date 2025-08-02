@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Oddsmatcher Place Holder Row</title>
+
+<style >
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    color: white;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: center;
+}
+
+
+/* Neon Pulse Bars */
+.neon-pulse {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    perspective: 1000px;
+    animation: rotatePulse 2s linear infinite; /* Rotating neon bars */
+}
+
+.neon-bar {
+    width: 15px;
+    height: 60px;
+    background: #ff00c6;
+    box-shadow: 0px 0px 20px rgba(255, 0, 198, 0.8); /* Neon pink glow */
+    border-radius: 5px;
+    transform-origin: center bottom;
+    animation: neonGrow 1s ease-in-out infinite;
+}
+
+/* Keyframes for the growing and shrinking effect */
+@keyframes neonGrow {
+    0%, 100% {
+        transform: scaleY(1);
+    }
+    50% {
+        transform: scaleY(1.5); /* Grow the bars */
+    }
+}
+
+/* Keyframes for rotating the bars */
+@keyframes rotatePulse {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg); /* Full rotation */
+    }
+}
+
+/* Background with a glowing gradient */
+
+
+
+
+.no-data-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(270deg, #0a0010, #0c0033, #0a0010);
+    border: 1px solid #121212;
+    background-size: 400% 400%;
+    animation: bgAnimation 8s ease infinite;
+    color: white;
+    width: 150%;
+    height: 354px;
+}
+
+
+.content_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 280px;
+    text-align: center;
+    height: 354px;
+    padding-bottom: 70px;
+}
+
+
+
+
+
+/* Smooth gradient animation */
+@keyframes bgAnimation {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
+/* Loading text styling */
+.loading-text {
+    margin-bottom: 50px;
+    font-size: 20px;
+    color: #ff00c6;
+    text-transform: uppercase;
+    animation: fadeIn 2s ease-in-out infinite;
+}
+
+.no-data-text {
+    color: white;
+}
+
+
+h3 {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+
+
+
+
+
+
+#content {
+    opacity: 0;
+    animation: contentFadeIn 2s forwards;
+    color: white;
+    width: 500px;
+    height: 354px;
+    display: flex;
+    flex-direction: column;
+    justify-content: first baseline;
+    align-items: center;
+    
+}
+
+
+
+
+@keyframes contentFadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+  
+    
+    
+</style>
+
+
+</head>
+    <body>
+
+        <div id="content">
+            <div class="no-data-div">
+                <div class="content_container">
+    
+                    <h2 class="loading-text no-data-text">No Oddsmatcher Data...</h2>
+                    <h3 class="please_find-event">Sorry, we can't find any events on this bookmaker</h3>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>

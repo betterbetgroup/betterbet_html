@@ -1,0 +1,253 @@
+
+
+
+@media (max-width: 2499px) {
+
+
+* { 
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    justify-content: center;  
+    min-height: 100vh;        /* Ensures the body is at least the height of the viewport */
+    display: flex;
+    align-items: center; 
+}
+
+#outer-container-div {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    justify-content: center;  
+    align-items: center;
+
+    /* Animated Background */
+    background: linear-gradient(270deg, #000000, #21012c, #000000);
+    background-size: 400% 400%;
+    animation: AnimationName 10s ease infinite;
+
+    /* Stronger Gradient Fade at Top and Bottom */
+    mask-image: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0) 0%,        /* Fully transparent at top */
+        rgba(0, 0, 0, 0.3) 2%, 
+        rgba(0, 0, 0, 0.6) 10%, 
+        rgba(0, 0, 0, 0.9) 15%, 
+        rgba(0, 0, 0, 1) 20%,      /* Fully visible in the middle */
+        rgba(0, 0, 0, 1) 80%, 
+        rgba(0, 0, 0, 0.9) 85%, 
+        rgba(0, 0, 0, 0.6) 90%, 
+        rgba(0, 0, 0, 0.3) 98%, 
+        rgba(0, 0, 0, 0) 100%);   /* Fully transparent at bottom */
+
+    -webkit-mask-image: linear-gradient(to bottom, 
+        rgba(0, 0, 0, 0) 0%,        /* Fully transparent at top */
+        rgba(0, 0, 0, 0.3) 2%, 
+        rgba(0, 0, 0, 0.6) 10%, 
+        rgba(0, 0, 0, 0.9) 15%, 
+        rgba(0, 0, 0, 1) 20%,      /* Fully visible in the middle */
+        rgba(0, 0, 0, 1) 80%, 
+        rgba(0, 0, 0, 0.9) 85%, 
+        rgba(0, 0, 0, 0.6) 90%, 
+        rgba(0, 0, 0, 0.3) 98%, 
+        rgba(0, 0, 0, 0) 100%);   /* Fully transparent at bottom */
+        
+}
+
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#div_around_main_container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+#main_container_left, #main_container_right {
+    height: 100%;
+
+    display: flex;
+    align-items: center;     
+    justify-content: center;
+}
+
+#main_container_left {
+    width: 57%;
+}
+#main_container_right {
+    width: 43%;
+    flex-direction: column;
+    padding: 0 30px;
+
+    margin-top: -2.2vw;
+}
+
+#left_main_div {
+    text-align: left;
+    margin: 0 40px;
+
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 58px;
+
+}
+
+#left_main_div h1 {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 8.8vw; 
+    color: #ff00c6;
+
+    font-weight: bold;
+
+    letter-spacing: -3px; 
+
+    margin-top: 0vw;
+    margin-bottom: 1vw;
+
+}
+
+
+
+
+
+
+#left_main_div p {
+    font-size: 2.9vw; 
+    color: white;
+    font-weight: bold;
+
+    margin-top: 0vw;
+    margin-bottom: 2vw;
+
+    margin-left: 0.6vw;
+}
+
+
+
+
+
+
+
+
+#we_offer_div {
+    margin-top: 4vw;
+    margin-bottom: 0;
+}
+
+
+
+#youtube_tutorial {
+    position: relative;
+    width: 90%;
+    padding-bottom: 50.62%; 
+    height: 0;
+}
+
+#youtube_tutorial iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7); 
+
+}
+
+
+
+
+button {
+    background-color: #ff00c6;
+    border: none;
+    color: white;
+    padding: 0.65em 3em;
+    font-size: 1.55vw; 
+    cursor: pointer;
+    border-radius: 25em;
+    transition: background-color 0.3s;
+    font-weight: bold;
+    margin-top: 2.5vw;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.7); 
+    transition: background-color 0.3s, box-shadow 0.3s;
+    align-self: first baseline;
+    margin-left: 25px;
+}
+
+#tutorial-button {
+    padding: 0.65em 3.7em;
+}
+
+#tutorial-button:hover {
+    background-color: #e600ac; 
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9); 
+}
+
+
+#learn-more-button {
+    background: none;
+    border: 1px solid #ff00c6;
+}
+
+
+
+
+
+
+
+
+#we_offer_div p {
+    font-weight: normal;
+}
+
+.typed-text {
+    color: #ff00c6; 
+}
+
+.cursor {
+    display: inline-block;
+    background-color: #0a84ff;
+    margin-left: 5px;
+    width: 3px;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 49%, 100% { background-color: #0a84ff; }
+    50%, 99% { background-color: transparent; }
+}
+
+
+
+
+}
+
+@media (width: 2500px) {
+    * {
+        width: 1px;
+        height: 1px;
+    }
+}

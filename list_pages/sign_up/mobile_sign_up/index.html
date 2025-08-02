@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Tracker</title>
+
+
+</head>
+
+<style>
+  @keyframes pulseBackground {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 1), rgb(0, 0, 0), rgba(0, 0, 0, 1));
+    background-size: 200% 200%;
+    animation: pulseBackground 15s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+</style>
+
+<body style="margin-top: 0;">
+
+    <div id="app"  >
+        <mobile-suo ></mobile-suo>
+    </div>
+
+    <script src="SIGNUPOFFERLIST.js"></script>
+
+    <script>
+        
+        let finalData = {
+    "user_suo_object": [
+    {
+        "bookmaker_name": "Betfred",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Sky Bet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Ladbrokes",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Betfair Exchange",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Bet365",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Grosvenor",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "LeoVegas",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Virgin Bet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "William Hill",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Sporting Index",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "FitzDares",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "PlanetSportBet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "BetMGM",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Kwiff",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "LiveScoreBet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "CopyBet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Vickers Bet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "BetVictor",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Betano",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "NRG",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "SpreadEx",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "DAZN Bet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Lottoland",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Rhino Bet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "NetBet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "BetZone",
+        "is_available": false
+    },
+    {
+        "bookmaker_name": "BetUK",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Tote",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Parimatch",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "StarSports",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "FafaBet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Hollywood Bets",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Paddy Power",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Space Casino",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Unibet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "BetWay",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Midnite",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "VBet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "10Bet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "Bet600",
+        "is_available": false
+    },
+    {
+        "bookmaker_name": "Sporting Bet",
+        "is_available": false
+    },
+    {
+        "bookmaker_name": "BetGoodwin",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "BresBet",
+        "is_available": true
+    },
+    {
+        "bookmaker_name": "QuinnBet",
+        "is_available": true
+    }
+],
+    "premium_member": false
+}
+            setTimeout(() => {
+                document.querySelector('mobile-suo').setAttribute('data-odds', JSON.stringify(finalData));
+            }, 500);
+
+
+            document.querySelector('mobile-suo').addEventListener('Delete-Filter', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('mobile-suo').addEventListener('Save-Filter', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('mobile-suo').addEventListener('Select-Event', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('mobile-suo').addEventListener('suo_array', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('mobile-suo').addEventListener('Upgrade', (event)=>{
+                console.log(event)
+            })
+
+
+
+    </script>
+
+</body>
+</html>

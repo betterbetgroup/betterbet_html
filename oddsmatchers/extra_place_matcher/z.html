@@ -1,0 +1,293 @@
+<body>
+
+
+    <div id="outer-container-div">
+
+
+
+
+        <div class="box box2" id="covering_filters">
+            <svg id="filters_padlock" fill="#ffffff" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330 330" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_509_"> <path id="XMLID_510_" d="M65,330h200c8.284,0,15-6.716,15-15V145c0-8.284-6.716-15-15-15h-15V85c0-46.869-38.131-85-85-85 S80,38.131,80,85v45H65c-8.284,0-15,6.716-15,15v170C50,323.284,56.716,330,65,330z M180,234.986V255c0,8.284-6.716,15-15,15 s-15-6.716-15-15v-20.014c-6.068-4.565-10-11.824-10-19.986c0-13.785,11.215-25,25-25s25,11.215,25,25 C190,223.162,186.068,230.421,180,234.986z M110,85c0-30.327,24.673-55,55-55s55,24.673,55,55v45H110V85z"></path> </g> </g></svg>
+        </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="above-columns-container">
+
+            <div class="above-columns">
+    
+    
+    
+    
+    
+    
+                <div class="div-outside-switch">
+    
+                    <label class="filter-label-filters" for="filters-select">Show Filters</label>
+    
+                    <div class="switch_container">
+                        <label class="switch">
+                            <input type="checkbox" class="show_filters_switch">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+    
+                </div>
+    
+    
+    
+    
+    
+    
+                <div class="div-outside-filter-dropdown">
+    
+                    <label class="filter-label-filters" for="filters-select">Saved Filters</label>
+    
+                    <div id="filters-dropdown-select-container" class="custom-select-container-filter" tabindex="0">
+    
+                        <div class="custom-select-trigger-filter" >
+                            <input id="filters-select" type="text" value="Select Filter" readonly>
+                        </div>
+    
+                        <div class="dropdown-options-filter" id="filters-dropdown-options">
+                 
+                        </div>
+    
+                    </div>
+    
+                </div>
+            
+    
+    
+    
+    
+                <div class="filter-dropdown-name-div">
+    
+                    <label class="filter-label-filters" id="type-filter-name" for="get-filter-name">Filter Name</label>
+    
+                    <input class="text-input-filter-name"  id="get-filter-name" placeholder="Enter a Filter Name" autocomplete="off">
+    
+                </div>
+    
+                <button class="confirm-filter-name">Confirm</button>
+    
+                <button class="cancel-making-filter" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M18.3,5.71a1,1,0,0,0-1.41,0L12,10.59,7.11,5.7A1,1,0,0,0,5.7,7.11L10.59,12,5.7,16.89a1,1,0,1,0,1.41,1.41L12,13.41l4.89,4.89a1,1,0,0,0,1.41-1.41L13.41,12l4.89-4.89A1,1,0,0,0,18.3,5.71Z"/>
+                    </svg>            
+                </button>
+    
+                <button class="save-filter-button">Save Current Filter</button>
+                            
+                <button class="get-alerts-button">Get Alerts <img src="https://img.icons8.com/?size=100&id=84025&format=png&color=ffffff" alt="Get Better Bet Alerts Icon" class="get_alerts_img"></button>
+                
+    
+    
+    
+    
+                <span id="data_timer" >00:00</span>
+                <button id="refresh_results" class="refresh_results" >Refresh Results <img src="https://img.icons8.com/?size=100&id=59872&format=png&color=ffffff" alt="Refresh Oddsmatcher Data" class="refresh_results_img"></button>
+    
+    
+    
+    
+            </div>
+    
+        </div>
+    
+    
+    
+    
+    
+
+
+
+
+
+
+        
+
+    <div id="filter-panel-container">
+      
+    <div id="filter-panel">
+
+
+        <div class="filter-column">
+            <label class="filter-label" for="bookmakers-select">Bookmakers</label>
+            <div id="bookmakers-dropdown-select-container" class="custom-select-container" tabindex="0">
+                <div class="custom-select-trigger">
+                    <input id="bookmakers-select" type="text" value="Bookmakers" readonly>
+                </div>
+                <div class="dropdown-options" id="bookmakers-dropdown-options">
+                    <label><input type="checkbox" checked class="select-all"> <span></span>Select All Bookmakers</label>
+                </div>
+            </div>
+            <label class="filter-label" for="exchanges-select">Exchanges</label>
+            <div id="exchanges-dropdown-select-container" class="custom-select-container" tabindex="0">
+                <div class="custom-select-trigger">
+                    <input id="exchanges-select" type="text" value="Exchanges" readonly>
+                </div>
+                <div class="dropdown-options" id="exchanges-dropdown-options">
+                    <label><input type="checkbox" checked class="select-all"> <span></span>Select All Exchanges</label>
+                </div>
+            </div>
+        </div>
+        <div class="filter-column">
+            <label class="filter-label" for="date-range">Start Time</label>
+            <select id="date-range" class="custom-input-container">
+                <option value="">All</option>
+                <option value="1h">Next Hour</option>
+                <option value="12h">Next 12 Hours</option>
+                <option value="24h">Next 24 Hours</option>
+                <option value="today">Today</option>
+                <option value="tomorrow">Tomorrow</option>
+                <option value="today-tomorrow">Today and Tomorrow</option>
+            </select>
+            <label class="filter-label" for="min-liquidity">Min Liquidity</label>
+            <div class="text-input-container">
+                <input class="text-input" id="min-liquidity" placeholder="Min Liquidity" autocomplete="off">
+            </div>
+        </div>
+        <div class="filter-column">
+            <label class="filter-label" for="min-back-odds">Min E/W Odds</label>
+            <input class="text-input"  id="min-back-odds" placeholder="Min E/W Odds" autocomplete="off">
+            <label class="filter-label" for="max-back-odds">Max E/W Odds</label>
+            <input class="text-input"  id="max-back-odds" placeholder="Max E/W Odds" autocomplete="off">
+        </div>
+        <div class="filter-column">
+            <label class="filter-label" for="min-Implied Odds">Min Implied Odds</label>
+            <input class="text-input"  id="min-Implied Odds" placeholder="Min Implied Odds" autocomplete="off">
+            <label class="filter-label" for="max-Implied Odds">Max Implied Odds</label>
+            <input class="text-input"  id="max-Implied Odds" placeholder="Max Implied Odds" autocomplete="off">
+        </div>
+        <div class="filter-column">
+            <label class="filter-label" for="min-places">Min Places</label>
+            <input class="text-input"  id="min-places" placeholder="Min Places" autocomplete="off">
+            <label class="filter-label" for="min-extra_places">Min Extra Places</label>
+            <input class="text-input"  id="min-extra_places" placeholder="Min Extra Places" autocomplete="off">
+        </div>
+        <div class="filter-column">
+            <label class="filter-label" for="min-qualifying-loss">Min Qualifying Loss</label>
+            <div class="text-input-container">
+                <input class="text-input"  id="min-qualifying-loss" placeholder="Min Qualifying Loss" autocomplete="off">
+            </div>
+            <label class="filter-label" for="min-potential-profit">Min Potential Profit</label>
+            <div class="text-input-container">
+                <input class="text-input"  id="min-potential-profit" placeholder="Min Potential Profit" autocomplete="off">
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+
+
+
+
+<div id="container-div">
+
+<div id="info-container">
+    <!-- SELECT BUTTONS ADDED HERE -->
+</div>
+
+
+    <div id="content">
+
+
+    <table>
+        <thead class="table-header" >
+            <tr>
+                
+
+                <th id="date_and_time_header">Date & Time
+
+                    <div class = 'next_to_date_and_time'>
+                        <img id='sort_by_img_dt' class="sort_by" data-sort="date and time" src="https://img.icons8.com/?size=100&id=69881&format=png&color=ffffff" alt="sort by rating" >
+                    </div>
+                </th>
+                
+
+                <th id="fixture_header">Race</th>
+                <th id="outcome_header">Horse</th>
+                <th id='extra_places_header' ><span class="extra_places_header_span">Places</span>
+                    
+                <th id="back_odds_header" >Each Way Odds & Bookmaker</th>
+                <th id="lay_odds_header" >Win Lay Odds & Exchange</th>
+                <th id="place_lay_odds_header" >Place Lay Odds & Exchange</th>
+
+                <th id="expected_profit_header" >£10 E/W Stake Profit<br>(No EP / EP)
+
+                    <div class="container_in_expected_profit_header">
+                        <div class = 'next_to_date_and_time'>
+                            <img id='sort_by_img_ql' class="sort_by" data-sort="qualifying loss" src="https://img.icons8.com/?size=100&id=69881&format=png&color=ffffff" alt="sort by Qualifying Loss" >
+                        </div>
+                        <div class = 'next_to_date_and_time'>
+                            <img id='sort_by_img_pp' class="sort_by" data-sort="potential profit" src="https://img.icons8.com/?size=100&id=69881&format=png&color=ffffff" alt="sort by Potential Profit" >
+                        </div>
+                    </div>
+                </th>
+                
+
+                <th id='rating_header' ><span class="rating_header_span">Implied Odds</span>
+                    
+                    <div class = 'next_to_date_and_time'>
+
+                        <img id='sort_by_img_rating' class="sort_by" data-sort="Implied Odds" src="https://img.icons8.com/?size=100&id=69881&format=png&color=ffffff" alt="sort by Implied Odds" >
+                    </div>
+
+                </th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+
+            <!-- ROWS GET ADDED TO THE TABLE HERE  -->
+
+
+        </tbody>
+    </table>
+
+    <div id="pagination-container" style="text-align: center; margin-top: 20px;">
+        <button id="prev-page">Previous</button>
+        <span id="pagination-info"></span>
+        <button id="next-page">Next</button>
+    </div>
+
+    </div>
+
+
+
+    <div id="button-container">
+        <!-- SELECT BUTTONS ADDED HERE -->
+    </div>
+
+
+
+</div>
+
+
+</div>
+
+
+</body>

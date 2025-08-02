@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Tracker</title>
+
+
+</head>
+
+<style>
+  @keyframes pulseBackground {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 1), rgb(0, 0, 0), rgba(0, 0, 0, 1));
+    background-size: 200% 200%;
+    animation: pulseBackground 15s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+</style>
+
+<body style="margin-top: 0;">
+
+    <div id="app"  >
+        <allguides-page ></allguides-page>
+    </div>
+
+    <script src="allguidespage.js"></script>
+
+    <script>
+        
+        let finalData = {
+        
+            "all_guides_object": [
+                {
+                    "title": "Sign-up Offer Tutorial",
+                    "complete": false
+                },
+                {
+                    "title": "Backing and Laying Guide",
+                    "complete": true
+                },
+                {
+                    "title": "Betting Exchange Guide",
+                    "complete": false
+                },
+                {
+                    "title": "Sign up Offer Tutorial",
+                    "complete": false
+                },
+                {
+                    "title": "Price Boost Guide",
+                    "complete": false
+                },
+                {
+                    "title": "Arbitrage Betting Guide",
+                    "complete": false
+                },
+                {
+                    "title": "2up Betting Guide",
+                    "complete": false
+                },
+                {
+                    "title": "Extra Place Betting Guide",
+                    "complete": false
+                },
+                {
+                    "title": "Guide to Laying Accumulators",
+                    "complete": false
+                },
+                {
+                    "title": "Dutching Betting Guide",
+                    "complete": false
+                },
+                {
+                    "title": "Sequential Lay Betting Guide",
+                    "complete": false
+                }
+                ]        
+        }
+
+
+
+            setTimeout(() => {
+                document.querySelector('allguides-page').setAttribute('data-odds', JSON.stringify(finalData));
+            }, 500);
+
+
+            document.querySelector('allguides-page').addEventListener('guides_array', (event)=>{
+                console.log(event)
+            })
+
+
+
+
+    </script>
+
+</body>
+</html>

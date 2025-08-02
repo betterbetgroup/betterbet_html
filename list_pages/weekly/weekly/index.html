@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profit Tracker</title>
+
+
+</head>
+
+<style>
+  @keyframes pulseBackground {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  body {
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(270deg, rgba(0, 0, 0, 1), rgb(0, 0, 0), rgba(0, 0, 0, 1));
+    background-size: 200% 200%;
+    animation: pulseBackground 15s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+</style>
+
+<body style="margin-top: 0;">
+
+    <div id="app"  >
+        <weekly-bet-club-offer-list ></weekly-bet-club-offer-list>
+    </div>
+
+    <script src="WEEKLYBETCLUBLIST.js"></script>
+
+    <script>
+        
+        let finalData = {
+    "user_suo_object": [
+    {
+        "bookmaker_name": "BetVictor",
+        "is_available": false,
+        "updated_time": "2024-09-20T22:12:03.736Z"
+    },
+    {
+        "bookmaker_name": "Vickers Bet",
+        "is_available": false,
+        "updated_time": "2024-09-20T18:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "TalkSPORT BET",
+        "is_available": false,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "StarSports",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "BetUK",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "Kwiff",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "BetWay",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "The Pools",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "BetMGM",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "CopyBet",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "Midnite",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "BetZone",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "888Sport",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "PlanetSportBet",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "Virgin Bet",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "Sky Bet",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    },
+    {
+        "bookmaker_name": "Paddy Power",
+        "is_available": true,
+        "updated_time": "2024-09-30T15:20:03.736Z"
+    }
+],
+    "premium_member": false
+}
+            setTimeout(() => {
+                document.querySelector('weekly-bet-club-offer-list').setAttribute('data-odds', JSON.stringify(finalData));
+            }, 500);
+
+
+            document.querySelector('weekly-bet-club-offer-list').addEventListener('Delete-Filter', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('weekly-bet-club-offer-list').addEventListener('Save-Filter', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('weekly-bet-club-offer-list').addEventListener('Select-Event', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('weekly-bet-club-offer-list').addEventListener('suo_array', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('weekly-bet-club-offer-list').addEventListener('Upgrade', (event)=>{
+                console.log(event)
+            })
+
+
+
+    </script>
+
+</body>
+</html>

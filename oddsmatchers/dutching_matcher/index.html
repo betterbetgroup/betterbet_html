@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oddsmatcher</title>
+
+
+</head>
+
+<body style="background: black; margin-top: 0;">
+
+    <div id="app"  >
+        <dutching-oddsmatcher ></dutching-oddsmatcher>
+    </div>
+
+    <script src="myOddsmatcher.js"></script>
+
+    <script>
+        
+        let finalData = {
+
+    "rows": [
+    
+    {
+        "_createdDate": "Tue, 27 Aug 2024 11:06:40 GMT",
+        "_id": "TqDQnPgCLKpyVUDYR9XL3g8x3OxoSGMz1TRI",
+        "_owner": null,
+        "_updatedDate": null,
+        "date_and_time": "24/08/24 15:00",
+        "first_bookmaker": "Paddy Power",
+        "first_link": "https://www.paddypower.com/football/english-league-2/fleetwood-town-v-gillingham-33502744",
+        "first_odds": "2.60",
+        "first_outcome": "Fleetwood Town",
+        "fixture": "Fleetwood Town v Gillingham",
+        "game_day": "24/08/24",
+        "game_time": "15:00",
+        "league": "English League 2",
+        "market_type": "Match Odds",
+        "potential_profit": "£17.75",
+        "qualifying_loss": "-£0.39",
+        "rating": "101.49%",
+        "second_bookmaker": "Betway",
+        "second_link": "https://betway.com/en/sports/evt/14322035",
+        "second_odds": "3.25",
+        "second_outcome": "Draw",
+        "sport": "Football",
+        "third_bookmaker": "Bet365",
+        "third_link": "https://sports.williamhill.com/betting/en-gb/football/OB_EV32539148/fleetwood-vs-gillingham",
+        "third_odds": "3.10",
+        "third_outcome": "Gillingham", 
+        "outcomes": 3
+    },
+    {
+        "_createdDate": "Tue, 27 Aug 2024 11:06:40 GMT",
+        "_id": "pThtAMvVaXXRVhtxhqcqlQtGVz8GlCtzeeBi",
+        "_owner": null,
+        "_updatedDate": null,
+        "date_and_time": "24/08/24 15:00",
+        "first_bookmaker": "Matchbook",
+        "first_link": "https://sports.williamhill.com/betting/en-gb/football/OB_EV32539319/wrexham-vs-reading",
+        "first_odds": "2.15",
+        "first_outcome": "Wrexham",
+        "fixture": "Wrexham v Reading",
+        "game_day": "24/08/24",
+        "game_time": "15:00",
+        "league": "English League 1",
+        "market_type": "Match Odds",
+        "potential_profit": "£15.56",
+        "qualifying_loss": "-£0.30",
+        "rating": "101.40%",
+        "second_bookmaker": "Paddy Power",
+        "second_link": "https://www.paddypower.com/football/english-league-1/wrexham-v-reading-33503432",
+        "second_odds": "3.50",
+        "second_outcome": "Draw",
+        "sport": "Football",
+        "third_bookmaker": "Bet365",
+        "third_link": "https://www.bet365.com/#/AC/B1/C1/D1003/E40/G105626781/",
+        "third_odds": "3.80",
+        "third_outcome": "Reading", 
+        "outcomes": 3
+    },
+    {
+        'sport': 'Football',
+        'market_type': 'Over/Under',
+        'fixture': 'Chelsea v Manchester United',
+        'league': 'Premier League',
+        "game_day": "24/08/24",
+        "date_and_time": "24/08/24 15:00",
+        "game_time": "15:00",
+        'first_outcome': 'Over 2.5 Goals',
+        'second_outcome': 'Under 2.5 Goals',
+        'third_outcome': '',
+        'first_bookmaker': 'Bet365',
+        'second_bookmaker': 'Smarkets',
+        'third_bookmaker': '',
+        'first_link': '/page',
+        'second_link': '/page',
+        'third_link': '',
+        'first_odds': '2',
+        'second_odds': '2.1',
+        'third_odds': '0',
+        'rating': '101.7%',
+        'outcomes': 2,
+        'qualifying_loss': '£17.52',
+        'potential_profit': '£42.19',
+        '_id': "hfioehwrih38453485"
+    }
+],
+    "wix_filters": {},
+    "premium_member": true,
+    "is_first": true,
+}
+            setTimeout(() => {
+                document.querySelector('dutching-oddsmatcher').setAttribute('data-odds', JSON.stringify(finalData));
+            }, 500);
+
+
+            document.querySelector('dutching-oddsmatcher').addEventListener('Get-Alerts', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('dutching-oddsmatcher').addEventListener('Save-Filter', (event)=>{
+                console.log(event)
+            })            
+            document.querySelector('dutching-oddsmatcher').addEventListener('Select-Event', (event)=>{
+                console.log(event)
+            })
+            document.querySelector('dutching-oddsmatcher').addEventListener('More-Info', (event)=>{
+                console.log(event)
+            })            
+            document.querySelector('dutching-oddsmatcher').addEventListener('Upgrade', (event)=>{
+                console.log(event)
+            })
+
+
+    </script>
+
+</body>
+</html>
