@@ -1,5 +1,5 @@
     // STANDARD
-    var STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes', 'William Hill', 'Livescore', 'Coral']
+    var STANDARD_BOOKMAKERS = ['Betfred', '888Sport', 'Paddy Power', 'Betway', 'Skybet', 'Virgin Bet', 'Bet365', 'BetVictor', 'SpreadEx', 'BetMGM', 'Unibet', 'BoyleSports', '10Bet', 'StarSports', 'PricedUP', 'Sporting Index', 'QuinnBet', 'Midnite', 'BetGoodwin', 'VBet', 'AK Bets', 'Ladbrokes', 'William Hill', 'Livescore', 'Coral', 'DAZN Bet']
     var STANDARD_EXCHANGES = ['Smarkets', 'Betfair Exchange', 'Matchbook']
 
 
@@ -43,7 +43,7 @@
 
     // FOR PROFIT TRACKERS
     var oddsmatcher_list = ['Manual', 'Standard', '2up', 'BOG', 'Each Way', 'Extra Place', 'Dutching']   
-    var calculator_list = ['No Calculator', 'Standard', '2up', 'Each Way','Extra Place', 'Dutching', 'Sequential Lay', 'Bonus', 'Refund If']
+    var calculator_list = ['No Calculator', 'Standard', '2up', 'Each Way','Extra Place', 'Dutching', 'Sequential Lay', 'Bonus', 'Refund If', 'Race Refund', 'DD/HH']
 
 
 
