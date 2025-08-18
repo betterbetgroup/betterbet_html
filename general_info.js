@@ -49,57 +49,57 @@
     var calculator_items = [
         {
             "name": "Odds Converter",
-            "link": "odds-converter",
+            "link": "/calculators/odds-converter",
             "description": "Convert odds between decimal, fractional, and American formats instantly."
         },
         {
             "name": "Standard Calculator",
-            "link": "matched-betting-calculator",
+            "link": "/calculators/matched-betting-calculator",
             "description": "Calculate stakes and profit for basic matched betting between bookmaker and exchange."
         },
         {
             "name": "2up Calculator",
-            "link": "early-payout-2up-betting-calculator",
+            "link": "/calculators/early-payout-2up-betting-calculator",
             "description": "Calculate optimal stakes for 2-up early payout promotions to maximize profit potential."
         },
         {
             "name": "Each Way Calculator",
-            "link": "each-way-arbitrage-calculator",
+            "link": "/calculators/each-way-arbitrage-calculator",
             "description": "Calculate stakes for each way betting to guarantee profit from win and place markets."
         },
         {
             "name": "Bonus Calculator",
-            "link": "bonus-calculator",
+            "link": "/calculators/bonus-calculator",
             "description": "Calculate optimal stakes when using bookmaker bonus bets and free bet promotions."
         },
         {
             "name": "DD/HH Calculator",
-            "link": "dd-hh-calculator",
+            "link": "/calculators/dd-hh-calculator",
             "description": "Calculate stakes for Draw Draw/Half Time promotions where bookmakers refund losing bets."
         },
         {
             "name": "Race Refund Calculator",
-            "link": "race-refund-calculator",
+            "link": "/calculators/race-refund-calculator",
             "description": "Calculate stakes for horse racing refund promotions when specific conditions are met."
         },
         {
             "name": "Refund If Calculator",
-            "link": "refund-if-calculator",
+            "link": "/calculators/refund-if-calculator",
             "description": "Calculate optimal stakes for promotions that refund your stake when certain events occur."
         },
         {
             "name": "Extra Place Calculator",
-            "link": "extra-place-calculator",
+            "link": "/calculators/extra-place-calculator",
             "description": "Calculate stakes for extra place promotions with additional paying positions in horse racing."
         },
         {
             "name": "Dutching Calculator",
-            "link": "dutching-calculator",
+            "link": "/calculators/dutching-calculator",
             "description": "Calculate stakes to back multiple selections across bookmakers for guaranteed equal profit."
         },
         {
             "name": "Sequential Lay Calculator",
-            "link": "sequential-lay-calculator",
+            "link": "/calculators/sequential-lay-calculator",
             "description": "Calculate stakes for laying multiple selections in sequence to maximize profit opportunities."
         }
     ]
@@ -108,32 +108,32 @@
     var oddsmatcher_items = [
         {
             "name": "Standard Oddsmatcher",
-            "link": "oddsmatcher",
+            "link": "/oddsmatchers/oddsmatcher",
             "description": "Find profitable matched betting opportunities between bookmakers and exchanges."
         },
         {
             "name": "2up Oddsmatcher",
-            "link": "2up-oddsmatcher",
+            "link": "/oddsmatchers/2up-oddsmatcher",
             "description": "Discover 2-up early payout promotions where bookmakers pay out when your team goes 2 goals ahead."
         },
         {
             "name": "Each Way Matcher",
-            "link": "each-way-matcher",
+            "link": "/oddsmatchers/each-way-matcher",
             "description": "Locate profitable each way betting opportunities on horse racing and sports markets."
         },
         {
             "name": "Extra Place Matcher",
-            "link": "extra-place-matcher",
+            "link": "/oddsmatchers/extra-place-matcher",
             "description": "Find extra place promotions where bookmakers pay out on additional placing positions."
         },
         {
             "name": "Dutching Matcher",
-            "link": "dutching-matcher",
+            "link": "/oddsmatchers/dutching-matcher",
             "description": "Identify dutching opportunities to back multiple selections across different bookmakers for guaranteed profit."
         },
         {
             "name": "BOG Matcher",
-            "link": "bog-oddsmatcher",
+            "link": "/oddsmatchers/bog-oddsmatcher",
             "description": "Find best odds guaranteed (BOG) promotions on horse racing for maximum value betting."
         }
     ]
@@ -142,10 +142,6 @@
     var sportIconUrlsStandard = {
         "Football": "https://img.icons8.com/?size=100&id=65497&format=png&color=000000",
         "Horse Racing": "https://img.icons8.com/?size=100&id=LuhFumPGCq9L&format=png&color=000000", 
-        "Golf": "https://img.icons8.com/?size=100&id=AVMZVnuizApd&format=png&color=000000", 
-        "Tennis": "https://img.icons8.com/?size=100&id=AF2FJWsPaMoY&format=png&color=000000",
-        "Cricket": "https://img.icons8.com/?size=100&id=12982&format=png&color=000000", 
-        "Boxing": "https://img.icons8.com/?size=100&id=RqQeO1sLIHFS&format=png&color=000000"
     };
 
     var bookmakerImages = {
