@@ -60,7 +60,7 @@
         {
             "name": "2up Calculator",
             "link": "/calculators/early-payout-2up-betting-calculator",
-            "description": "Calculate optimal stakes for 2-up early payout promotions to maximize profit potential."
+            "description": "Calculate stakes and profit for early payout offers including 2up promotions."
         },
         {
             "name": "Each Way Calculator",
@@ -70,37 +70,37 @@
         {
             "name": "Bonus Calculator",
             "link": "/calculators/bonus-calculator",
-            "description": "Calculate optimal stakes when using bookmaker bonus bets and free bet promotions."
+            "description": "Calculate optimal stakes and profit for bonus and refund offers."
         },
         {
             "name": "DD/HH Calculator",
             "link": "/calculators/dd-hh-calculator",
-            "description": "Calculate stakes for Draw Draw/Half Time promotions where bookmakers refund losing bets."
+            "description": "Calculate your optimal stake and profit for Double Delight & Hatrick Heaven Offers."
         },
         {
             "name": "Race Refund Calculator",
             "link": "/calculators/race-refund-calculator",
-            "description": "Calculate stakes for horse racing refund promotions when specific conditions are met."
+            "description": "Calculate stakes and profits for racing refund promotions."
         },
         {
             "name": "Refund If Calculator",
             "link": "/calculators/refund-if-calculator",
-            "description": "Calculate optimal stakes for promotions that refund your stake when certain events occur."
+            "description": "Calculate optimal stakes for refund offers that depend on certain conditions."
         },
         {
             "name": "Extra Place Calculator",
             "link": "/calculators/extra-place-calculator",
-            "description": "Calculate stakes for extra place promotions with additional paying positions in horse racing."
+            "description": "Calculate your optimal stakes and profit for extra place offers."
         },
         {
             "name": "Dutching Calculator",
             "link": "/calculators/dutching-calculator",
-            "description": "Calculate stakes to back multiple selections across bookmakers for guaranteed equal profit."
+            "description": "Calculate stakes to back multiple selections across bookmakers for guaranteed profits."
         },
         {
             "name": "Sequential Lay Calculator",
             "link": "/calculators/sequential-lay-calculator",
-            "description": "Calculate stakes for laying multiple selections in sequence to maximize profit opportunities."
+            "description": "Calculate stakes for laying multiple selections in sequence to maximise profits."
         }
     ]
 
@@ -114,27 +114,27 @@
         {
             "name": "2up Oddsmatcher",
             "link": "/oddsmatchers/2up-oddsmatcher",
-            "description": "Discover 2-up early payout promotions where bookmakers pay out when your team goes 2 goals ahead."
+            "description": "Quickly find the best opportunities to profit from using the 2up promotion."
         },
         {
             "name": "Each Way Matcher",
             "link": "/oddsmatchers/each-way-matcher",
-            "description": "Locate profitable each way betting opportunities on horse racing and sports markets."
+            "description": "Find the best each way opportunities to arbitrage and profit from."
         },
         {
             "name": "Extra Place Matcher",
             "link": "/oddsmatchers/extra-place-matcher",
-            "description": "Find extra place promotions where bookmakers pay out on additional placing positions."
+            "description": "Quickly find the best and most profitable extra place opportunities."
         },
         {
             "name": "Dutching Matcher",
             "link": "/oddsmatchers/dutching-matcher",
-            "description": "Identify dutching opportunities to back multiple selections across different bookmakers for guaranteed profit."
+            "description": "Find opportunities to back multiple selections across different bookmakers for guaranteed profit."
         },
         {
             "name": "BOG Matcher",
             "link": "/oddsmatchers/bog-oddsmatcher",
-            "description": "Find best odds guaranteed (BOG) promotions on horse racing for maximum value betting."
+            "description": "Identify the best horses to back to guarantee a profit from the BOG promotion."
         }
     ]
 
