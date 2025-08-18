@@ -94,6 +94,33 @@
     ]
 
 
+    var oddsmatcher_items = [
+        {
+            "name": "Standard Oddsmatcher",
+            "link": "/oddsmatcher"
+        },
+        {
+            "name": "2up Oddsmatcher",
+            "link": "/2up-oddsmatcher"
+        },
+        {
+            "name": "Each Way Matcher",
+            "link": "/each-way-matcher"
+        },
+        {
+            "name": "Extra Place Matcher",
+            "link": "/extra-place-matcher"
+        },
+        {
+            "name": "Dutching Matcher",
+            "link": "/dutching-matcher"
+        },
+        {
+            "name": "BOG Matcher",
+            "link": "/bog-oddsmatcher"
+        }
+    ]
+
 
     var sportIconUrlsStandard = {
         "Football": "https://img.icons8.com/?size=100&id=65497&format=png&color=000000",
