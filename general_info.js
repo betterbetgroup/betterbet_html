@@ -46,6 +46,52 @@
     var calculator_list = ['No Calculator', 'Standard', '2up', 'Each Way','Extra Place', 'Dutching', 'Sequential Lay', 'Bonus', 'Refund If', 'Race Refund', 'DD/HH']
 
 
+    var calculator_items = [
+        {
+            "name": "Odds Converter",
+            "link": "/odds-converter"
+        },
+        {
+            "name": "Standard Calculator",
+            "link": "/matched-betting-calculator"
+        },
+        {
+            "name": "2up Calculator",
+            "link": "/early-payout-2up-betting-calculator"
+        },
+        {
+            "name": "Each Way Calculator",
+            "link": "/each-way-arbitrage-calculator"
+        },
+        {
+            "name": "Bonus Calculator",
+            "link": "/bonus-calculator"
+        },
+        {
+            "name": "DD/HH Calculator",
+            "link": "/dd-hh-calculator"
+        },
+        {
+            "name": "Race Refund Calculator",
+            "link": "/race-refund-calculator"
+        },
+        {
+            "name": "Refund If Calculator",
+            "link": "/refund-if-calculator"
+        },
+        {
+            "name": "Extra Place Calculator",
+            "link": "/extra-place-calculator"
+        },
+        {
+            "name": "Dutching Calculator",
+            "link": "/dutching-calculator"
+        },
+        {
+            "name": "Sequential Lay Calculator",
+            "link": "/sequential-lay-calculator"
+        }
+    ]
 
 
 
